@@ -1,11 +1,12 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 import './App.css'
-import {Footer} from '../Footer'
-import About from '../About'
-import Landing from '../Landing'
-import Story from '../Story'
-import Study from '../Study'
-import SwingStates from '../SwingStates'
+import { Footer } from '../Footer'
+import About from '../About/About'
+import Landing from '../Landing/Landing'
+import Story from '../Story/Story'
+import Study from '../Study/Study'
+import SwingStates from '../SwingStates/SwingStates'
 
 function App() {
   return (
@@ -15,16 +16,16 @@ function App() {
         <div className="logo">The 100 Million Project</div>
       </header>
       <div className="app-body">
-        The body
-      </div>
-      <Footer />
-      <Switch>
+
+
+        <Switch>
+          <Route exact path="/">
+            <Landing />
+          </Route>
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/landing">
-            <Landing />
-          </Route>
+       
           <Route path="/story">
             <Story />
           </Route>
@@ -36,8 +37,10 @@ function App() {
           </Route>
 
         </Switch>
+        <Footer />
+      </div>
     </div>
   );
 }
 
-export {App};
+export { App };
