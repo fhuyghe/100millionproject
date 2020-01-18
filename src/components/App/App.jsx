@@ -1,7 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import './App.css'
+import './App.scss'
 import { Footer } from '../Footer'
+import { Header } from '../Header'
 import About from '../About/About'
 import Landing from '../Landing/Landing'
 import Story from '../Story/Story'
@@ -11,13 +12,8 @@ import SwingStates from '../SwingStates/SwingStates'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="hamburger">Hamburger</div>
-        <div className="logo">The 100 Million Project</div>
-      </header>
+      <Header />
       <div className="app-body">
-
-
         <Switch>
           <Route exact path="/">
             <Landing />
@@ -37,8 +33,8 @@ function App() {
           </Route>
 
         </Switch>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
