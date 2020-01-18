@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import './App.scss'
 import { Footer } from '../Footer'
 import { Header } from '../Header'
+import Splash from '../Splash/Splash'
 import About from '../About/About'
 import Landing from '../Landing'
 import Story from '../Story/Story'
@@ -12,16 +13,22 @@ import SwingStates from '../SwingStates/SwingStates'
 function App() {
   return (
     <div className="App">
-      <Header />
+
+
       <div className="app-body">
+        <Route exact path="/">
+          <Splash />
+        </Route>
+        {/* <Header />
         <Switch>
-          <Route exact path="/">
+
+          <Route exact path="/landing">
             <Landing />
           </Route>
           <Route path="/about">
             <About />
           </Route>
-       
+
           <Route path="/story">
             <Story />
           </Route>
@@ -33,8 +40,9 @@ function App() {
           </Route>
 
         </Switch>
+        <Footer /> */}
       </div>
-      <Footer />
+
     </div>
   );
 }
