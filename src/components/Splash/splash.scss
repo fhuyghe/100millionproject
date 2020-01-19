@@ -1,7 +1,48 @@
-// .splash-page{
-//     background:black;
-//     height:100vh;
-//     display:flex;
-//     flex-direction:column;
-//     justify-content:space-between;
-// }
+$black: #282c34;
+$white: #ffffff;
+
+.splash-page {
+  background: $black;
+  height: unquote("-webkit-calc(96vh - 280px)");
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2vh 10%;
+
+  .logo {
+    margin: 1%;
+    a img {
+      width: 50%;
+    }
+  }
+
+  p {
+    font-family: "Anonymous Pro", monospace;
+    color: $white;
+  }
+  p .desktop {
+    display: none;
+  }
+  form {
+    input {
+      width: 75vw;
+      background: $black;
+      text-align: center;
+      padding: 1vh;
+      color: $white;
+    }
+    input[type="text"] {
+      border: 1px solid $white;
+    }
+    input[type="submit"] {
+      width: 80vw;
+      background: rgb(246, 110, 96);
+    }
+  }
+  .media-icons {
+    color: $white;
+    i {
+      padding: 5%;
+    }
+  }
+}

@@ -13,15 +13,15 @@ import SwingStates from '../SwingStates/SwingStates'
 function App() {
   return (
     <div className="App">
-
+      <Header />
 
       <div className="app-body">
-        <Route exact path="/">
-          <Splash />
-        </Route>
-        {/* <Header />
-        <Switch>
 
+
+        <Switch>
+          <Route exact path="/">
+            <Splash />
+          </Route>
           <Route exact path="/landing">
             <Landing />
           </Route>
@@ -40,9 +40,9 @@ function App() {
           </Route>
 
         </Switch>
-        <Footer /> */}
-      </div>
 
+      </div>
+      <Footer /> 
     </div>
   );
 }
