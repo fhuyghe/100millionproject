@@ -7,7 +7,7 @@ const splash = () => {
     <div className="splash-page">
       <div className="logo">
         <Link to="/">
-          <img src="100_Million_Title-500.png" />
+          <img src="100_Million_Title-500.png" alt="100 Million Project"/>
         </Link>
       </div>
 

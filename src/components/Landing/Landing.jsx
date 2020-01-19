@@ -5,7 +5,7 @@ import './landing.scss'
 const Landing = ()=> {
 
     return (
-        <div>
+        <div className="landing-page">
             <div>Landing page</div>
             <Link to='/story'>Dive In</Link>
             <Link to='/swingstates'>Swing States</Link>

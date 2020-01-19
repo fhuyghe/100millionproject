@@ -4,7 +4,7 @@ import './footer.scss'
 function Footer() {
   return (
     <footer className="App-footer">
-        Website footer
+        {/* Website footer */}
     </footer>
   );
 }

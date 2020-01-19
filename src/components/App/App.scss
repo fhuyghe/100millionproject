@@ -1,7 +1,6 @@
 //Variables
 $black: #282c34;
 $white: #ffffff;
-
 $grid-gutter: 50px;
 
 .App {
@@ -10,7 +9,6 @@ $grid-gutter: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // align-items:center;
   background-color: $black;
   max-width: 1450px;
   margin: 0 auto;
@@ -23,6 +21,7 @@ $grid-gutter: 50px;
   width: 90%;
   margin: 0 auto;
   background: $black;
+  color:$white;
 }
 .App-header {
   background-image: url("../../assets/images/blue-bars.svg");
@@ -48,8 +47,6 @@ $grid-gutter: 50px;
 
 .app-body {
   flex: 1;
-
-  // margin:0 auto;
   // padding: $grid-gutter 0;
 }
 
@@ -66,7 +63,7 @@ $grid-gutter: 50px;
     width:95%;
     max-width:1450px;
     height: 147px;
-    // width: 100%;
+    
   }
 }
 
