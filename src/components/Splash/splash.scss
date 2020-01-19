@@ -1,5 +1,6 @@
 $black: #282c34;
 $white: #ffffff;
+$red: rgb(246, 110, 96);
 
 .splash-page {
   background: $black;
@@ -8,6 +9,7 @@ $white: #ffffff;
   flex-direction: column;
   justify-content: space-around;
   padding: 2vh 10%;
+  color: $white;
 
   .logo {
     margin: 1%;
@@ -18,31 +20,57 @@ $white: #ffffff;
 
   p {
     font-family: "Anonymous Pro", monospace;
-    color: $white;
   }
-  p .desktop {
+
+  .desktop-text {
     display: none;
   }
+
   form {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     input {
-      width: 75vw;
       background: $black;
       text-align: center;
       padding: 1vh;
       color: $white;
+      width: 75vw;
+      box-sizing: border-box;
     }
     input[type="text"] {
       border: 1px solid $white;
     }
     input[type="submit"] {
-      width: 80vw;
-      background: rgb(246, 110, 96);
+      background: $red;
     }
   }
   .media-icons {
     color: $white;
     i {
-      padding: 5%;
+      padding:0 5%;
+    }
+  }
+
+  //DESKTOP BREAKPOINT//
+  @media only screen and (min-width: 900px) {
+    height: 100vh;
+
+    .logo {
+      a img {
+        width: 40%;
+      }
+    }
+    .desktop-text{
+        display: block;
+        width:30vw;
+        margin:0 auto;
+    }
+    .mobile-text{
+        display: none;
+    }
+    form input{
+        width: 30vw;
     }
   }
 }
