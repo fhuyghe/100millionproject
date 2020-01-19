@@ -17,12 +17,18 @@ $grid-gutter: 50px;
   background-position: center;
   padding: 20px;
   height: 100px;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
+  background: $black;
 }
 .App-header {
+   
   background-image: url("../../assets/images/blue-bars.svg");
 
+
+
+
+ 
   display: flex;
   font-size: calc(10px + 2vmin);
   color: $white;
@@ -46,6 +52,8 @@ $grid-gutter: 50px;
 
 .app-body {
   flex: 1;
+
+  margin:0 auto;
   // padding: $grid-gutter 0;
 }
 
@@ -54,9 +62,10 @@ $grid-gutter: 50px;
 }
 
 @media only screen and (min-width: 900px) {
-  .App-header {
+  .App-header, .App-footer {
+    max-width:1200px;
     height: 135px;
-    width: 100%;
+    // width: 100%;
   }
 }
 
