@@ -10,25 +10,23 @@ $grid-gutter: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: $black;
+  // align-items:center;
+  // background-color: $black;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .App-header,
 .App-footer {
   background-position: center;
   padding: 20px;
   height: 100px;
-  width: 100%;
+  width: 70%;
   margin: 0 auto;
   background: $black;
 }
 .App-header {
-   
   background-image: url("../../assets/images/blue-bars.svg");
 
-
-
-
- 
   display: flex;
   font-size: calc(10px + 2vmin);
   color: $white;
@@ -40,20 +38,18 @@ $grid-gutter: 50px;
 
 .App-footer {
   background-image: url("../../assets/images/red-bars.svg");
-  
+
   form {
     input {
       width: 100vw;
     }
   }
- 
-
 }
 
 .app-body {
   flex: 1;
 
-  margin:0 auto;
+  // margin:0 auto;
   // padding: $grid-gutter 0;
 }
 
@@ -62,7 +58,9 @@ $grid-gutter: 50px;
 }
 
 @media only screen and (min-width: 900px) {
-  .App-header, .App-footer {
+  .App-header,
+  .App-footer {
+    width:95%;
     max-width:1200px;
     height: 135px;
     // width: 100%;

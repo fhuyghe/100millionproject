@@ -10,7 +10,7 @@ $red: rgb(246, 110, 96);
   justify-content: space-around;
   padding: 2vh 10%;
   color: $white;
-  width:100vw;
+  // width:100vw;
 
   .logo {
     margin: 1%;
@@ -57,8 +57,8 @@ $red: rgb(246, 110, 96);
   @media only screen and (min-width: 900px) {
     // height: 60vh;
     // max-width:1200px;
-    width:100%;
-    padding: 10%;
+    // width:100%;
+    // padding: 10%;
     .logo {
       a img {
         width: 26%;
@@ -66,7 +66,7 @@ $red: rgb(246, 110, 96);
     }
     .desktop-text {
       display: block;
-      width: 28vw;
+      // width: 28vw;
       margin: 0 auto;
       
       p {
