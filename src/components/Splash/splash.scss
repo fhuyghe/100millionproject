@@ -58,20 +58,24 @@ $red: rgb(246, 110, 96);
     // height: 60vh;
     // max-width:1200px;
     // width:100%;
-    // padding: 10%;
+    padding: 5%;
+    min-height:525px;
+    max-height:525px;
+
+    // max-height:800px;
     .logo {
       a img {
-        width: 26%;
+        width: 28%;
       }
     }
     .desktop-text {
       display: block;
-      // width: 28vw;
+      width: 22vw;
       margin: 0 auto;
       
       p {
         padding: 2%;
-        font-size: 0.9em;
+        font-size: 1em;
       }
     }
     .mobile-text {
@@ -81,9 +85,9 @@ $red: rgb(246, 110, 96);
       line-height: 1.4em;
     }
     form input {
-      width: 25vw;
+      width: 25%;
     //   padding:1.2em;
-      font-size:1.2em;
+      font-size:1em;
     }
     .media-icons {
        

@@ -11,16 +11,16 @@ $grid-gutter: 50px;
   flex-direction: column;
   justify-content: space-between;
   // align-items:center;
-  // background-color: $black;
-  max-width: 1200px;
+  background-color: $black;
+  max-width: 1450px;
   margin: 0 auto;
 }
 .App-header,
 .App-footer {
-  background-position: center;
+  background-position: right;
   padding: 20px;
   height: 100px;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   background: $black;
 }
@@ -58,11 +58,14 @@ $grid-gutter: 50px;
 }
 
 @media only screen and (min-width: 900px) {
+  .App{
+    min-height:95vh
+  }
   .App-header,
   .App-footer {
     width:95%;
-    max-width:1200px;
-    height: 135px;
+    max-width:1450px;
+    height: 147px;
     // width: 100%;
   }
 }
