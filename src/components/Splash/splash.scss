@@ -1,0 +1,96 @@
+$black: #282c34;
+$white: #ffffff;
+$red: rgb(246, 110, 96);
+
+.splash-page {
+  background: $black;
+  height: unquote("-webkit-calc(96vh - 280px)");
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2vh 10%;
+  color: $white;
+ 
+  .logo {
+    margin: 1%;
+    a img {
+      width: 50%;
+    }
+  }
+
+  p {
+    font-family: "Anonymous Pro", monospace;
+  }
+
+  .desktop-text {
+    display: none;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input {
+      background: $black;
+      text-align: center;
+      padding: 1vh;
+      color: $white;
+      width: 75vw;
+      box-sizing: border-box;
+     
+    }
+    input[type="text"] {
+      border:2px solid grey;
+      border-bottom: none;
+    }
+    input[type="submit"] {
+      background: $red;
+     border:none;
+    }
+  }
+  .media-icons {
+    color: $white;
+    i {
+      padding: 0 5%;
+    }
+  }
+
+  //DESKTOP BREAKPOINT//
+  @media only screen and (min-width: 900px) {
+    padding: 5%;
+    min-height:525px;
+    max-height:525px;
+
+    // max-height:800px;
+    .logo {
+      a img {
+        width: 28%;
+      }
+    }
+    .desktop-text {
+      display: block;
+      width: 26vw;
+      margin: 0 auto;
+      
+      p {
+        padding: 2%;
+        font-size: 1em;
+      }
+    }
+    .mobile-text {
+      display: none;
+    }
+    p {
+      line-height: 1.4em;
+    }
+    form input {
+      width: 25%;
+      font-size:1em;
+    }
+    .media-icons {
+        i {
+          padding: 1% 2%;
+        }
+      }
+  }
+}

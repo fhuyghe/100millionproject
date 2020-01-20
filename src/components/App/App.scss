@@ -1,7 +1,6 @@
 //Variables
 $black: #282c34;
 $white: #ffffff;
-
 $grid-gutter: 50px;
 
 .App {
@@ -9,42 +8,70 @@ $grid-gutter: 50px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.App-header {
-  background-color: $black;
-  display: flex;
   justify-content: space-between;
+  background-color: $black;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+.App-header,
+.App-footer {
+  background-position: right;
   padding: 20px;
+  height: 100px;
+  width: 90%;
+  margin: 0 auto;
+  background: $black;
+  color:$white;
+}
+.App-header {
+  background-image: url("../../assets/images/blue-bars.svg");
+ 
+  display: flex;
   font-size: calc(10px + 2vmin);
   color: $white;
-
-  a{
+  a {
     color: $white;
     text-decoration: none;
   }
 }
 
-.App-footer{
-  background-color: $black;
-  color: $white;
-  padding: 20px;
+.App-footer {
+  background-image: url("../../assets/images/red-bars.svg");
+
+  form {
+    input {
+      width: 100vw;
+    }
+  }
 }
 
-.app-body{
+.app-body {
   flex: 1;
-  padding: $grid-gutter 0;
+  // padding: $grid-gutter 0;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 900px) {
+  .App{
+    min-height:95vh
   }
-  to {
-    transform: rotate(360deg);
+  .App-header,
+  .App-footer {
+    width:95%;
+    max-width:1450px;
+    height: 147px;
+    
   }
 }
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
