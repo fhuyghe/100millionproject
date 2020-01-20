@@ -19,7 +19,8 @@
 .env.production.local
 .npmrc
 
-npm-debug.log*
+npm-debug.log*y
+
 yarn-debug.log*
 yarn-error.log*
 
