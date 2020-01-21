@@ -1,10 +1,9 @@
-$black: #282c34;
+@import "../App/App.scss";
 
-$white: #ffffff;
-$red: rgb(246, 110, 96);
+
 
 .splash-page {
-  background: black;
+  background:$black;
   // min-height: 66vh;
   // font-size:calc(1em + .25vmin);
   // max-height:64vh;
@@ -33,6 +32,7 @@ $red: rgb(246, 110, 96);
    
     }
   }
+  a{width:100%}
   .desktop-text{
     max-width:75vw;
     margin:0 auto;
@@ -44,7 +44,7 @@ $red: rgb(246, 110, 96);
     font-family: "Anonymous Pro", monospace;
   }
   .hash-tag{
-    margin:.5em 0 .3em;
+    margin:.75em 0;
   }
 
   form {
@@ -76,15 +76,19 @@ $red: rgb(246, 110, 96);
       padding: 0 2%;
     }
   }
+
+  @media only screen and (max-width: 300px) {
+    .logo {
+     
+      height:15%;
+    
+    }
+  }
   @media only screen and (min-width: 600px) {
     .logo {
-      width:100%;
+     
       height:23%;
-      a img {
-        max-width:100%;
-        max-height:100%;
-        
-      }
+     
     }
   }
   //DESKTOP BREAKPOINT//
@@ -94,14 +98,9 @@ $red: rgb(246, 110, 96);
     // height:60vh;
     // box-sizing:border-box;
     .logo {
-      width:100%;
-      height:25%;
-      a img {
-        height:100%;
-        max-width:100%;
-        max-height:100%;
-        
-      }
+      
+      height:26%;
+      
     }
   
     .desktop-text {
@@ -119,17 +118,20 @@ $red: rgb(246, 110, 96);
       box-sizing: border-box;
     }
  
-    // p {
-    //   line-height: 1.4em;
-    // }
-    // form input {
-    //   width: 25%;
-    //   font-size:1em;
-    // }
-    // .media-icons {
-    //     i {
-    //       padding: 1% 2%;
-    //     }
-    //   }
+       .logo {
+     
+      height:26%;
+    
+    }
+    
   }
+  @media only screen and (max-height: 600px) {
+    .logo{
+      height:20%;
+    }
+    p{
+      font-size:.6em;
+    }
+  }
+
 }

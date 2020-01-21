@@ -1,8 +1,7 @@
-
-
-
+@import '../App/App';
 
 .App-header {
+  @include headerFooter;
   background: transparent url("../../assets/images/blue-bars.svg");
   // border:1px solid red;    
   background-position:cover;
@@ -10,14 +9,6 @@
   margin:0 auto;
   width:80%;                                                             
 
- 
-  // display: flex;
-  // font-size: 10px + 2vmin);
-  // color: --g-white;
-  // a {
-  //   color: --g-white;
-  //   text-decoration: none;
-  // }
 }
 
 

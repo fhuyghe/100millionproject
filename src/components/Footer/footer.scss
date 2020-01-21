@@ -1,13 +1,7 @@
+@import '../App/App';
 .App-footer {
+  @include headerFooter;
     background-image: url("../../assets/images/red-bars.svg");
     margin:0 auto;
     width:80%;      
-    // background-position-y: bottom;
-    // border:1px solid green;
-    
-    // form {
-    //   input {
-    //     width: 100vw;
-    //   }
-    // }
   }
