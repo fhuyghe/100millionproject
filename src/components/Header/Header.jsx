@@ -15,6 +15,7 @@ class Header extends Component {
     console.log(this.props.location.pathname);
     return (
       <header className="App-header">
+        {/* <img src="/blue-bars.svg"></img> */}
         {this.props.location.pathname === "/landing" && (
           <div className="hamburger">
             <i className="far fa-bars"></i>

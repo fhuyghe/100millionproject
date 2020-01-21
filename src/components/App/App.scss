@@ -5,70 +5,38 @@ $grid-gutter: 50px;
 
 .App {
   text-align: center;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: $black;
+  background-color: black;
   max-width: 1450px;
   margin: 0 auto;
 }
 
-.App-header,
-.App-footer {
-  background-position: right;
-  padding: 20px;
-  height: 100px;
-  width: 90%;
-  margin: 0 auto;
+.app-body {
+  flex: 1;
+  height:100vh;
+}
+
+.App-header{
+  height: 18vh;
   background: $black;
   color:$white;
 }
-
-.App-header {
-  background-image: url("../../assets/images/blue-bars.svg");
- 
-  display: flex;
-  font-size: calc(10px + 2vmin);
-  color: $white;
-  a {
-    color: $white;
-    text-decoration: none;
-  }
-}
-
 .App-footer {
-  background-image: url("../../assets/images/red-bars.svg");
-  background-position-y: bottom;
-
-  form {
-    input {
-      width: 100vw;
-    }
-  }
-}
-
-.app-body {
-  flex: 1;
-  // padding: $grid-gutter 0;
+  height: 18vh;
+  background: black;
+  color:$white;
+  
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@media only screen and (min-width: 900px) {
-  .App{
-    min-height:95vh
-  }
-  .App-header,
-  .App-footer {
-    width:95%;
-    max-width:1450px;
-    height: 147px;
-    
-  }
-}
+
+
 
 // @keyframes App-logo-spin {
 //   from {

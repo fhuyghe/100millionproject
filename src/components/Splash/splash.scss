@@ -1,29 +1,50 @@
 $black: #282c34;
+
 $white: #ffffff;
 $red: rgb(246, 110, 96);
 
 .splash-page {
-  background: $black;
-  height: unquote("-webkit-calc(96vh - 280px)");
+  background: black;
+  // min-height: 66vh;
+  // font-size:calc(1em + .25vmin);
+  // max-height:64vh;
+  height:58vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 2vh 10%;
+  // margin:5vh 5vw 1vh;
   color: $white;
+  width:100%;
+  margin:3vh 0;
+  box-sizing:border-box;
  
   .logo {
-    margin: 1%;
+    // border:1px solid red;
+    width:100%;
+    height:20%;
+    display:flex;
+    // align-items:center;
+    justify-content:center;
     a img {
-      width: 50%;
+      
+      // border:1px solid yellow;
+      max-width:100%;
+      max-height:100%;
+   
     }
   }
-
+  .desktop-text{
+    max-width:75vw;
+    margin:0 auto;
+    font-size:.95em;
+    // letter-spacing:.05px;
+    line-height: 1.5em;
+  }
   p {
     font-family: "Anonymous Pro", monospace;
   }
-
-  .desktop-text {
-    display: none;
+  .hash-tag{
+    margin:.5em 0 .3em;
   }
 
   form {
@@ -35,7 +56,7 @@ $red: rgb(246, 110, 96);
       text-align: center;
       padding: 1vh;
       color: $white;
-      width: 75vw;
+      width: 75%;
       box-sizing: border-box;
      
     }
@@ -51,46 +72,64 @@ $red: rgb(246, 110, 96);
   .media-icons {
     color: $white;
     i {
-      padding: 0 5%;
+      font-size:.8em; 
+      padding: 0 2%;
     }
   }
-
+  @media only screen and (min-width: 600px) {
+    .logo {
+      width:100%;
+      height:23%;
+      a img {
+        max-width:100%;
+        max-height:100%;
+        
+      }
+    }
+  }
   //DESKTOP BREAKPOINT//
   @media only screen and (min-width: 900px) {
-    padding: 5%;
-    min-height:525px;
-    max-height:525px;
+    // margin:5vh;
 
-    // max-height:800px;
+    // height:60vh;
+    // box-sizing:border-box;
     .logo {
+      width:100%;
+      height:25%;
       a img {
-        width: 28%;
+        height:100%;
+        max-width:100%;
+        max-height:100%;
+        
       }
     }
+  
     .desktop-text {
-      display: block;
-      width: 26vw;
-      margin: 0 auto;
-      
+      height:20%;
+      max-width:30vw;
+      margin:0 auto;
       p {
-        padding: 2%;
+        // padding: 2%;
         font-size: 1em;
       }
-    }
-    .mobile-text {
-      display: none;
-    }
-    p {
-      line-height: 1.4em;
+
     }
     form input {
-      width: 25%;
-      font-size:1em;
+      width: 30vw;
+      box-sizing: border-box;
     }
-    .media-icons {
-        i {
-          padding: 1% 2%;
-        }
-      }
+ 
+    // p {
+    //   line-height: 1.4em;
+    // }
+    // form input {
+    //   width: 25%;
+    //   font-size:1em;
+    // }
+    // .media-icons {
+    //     i {
+    //       padding: 1% 2%;
+    //     }
+    //   }
   }
 }
