@@ -2,7 +2,8 @@
 $white: #ffffff;
 $black: #282c34;
 $red: rgb(246, 110, 96);
-$main-splash-font:"Anonymous Pro", monospace;
+$anon-pro:"Anonymous Pro", monospace;
+$swing-blue: #6272EC;
 
 @mixin headerFooter{
   height: 18vh;

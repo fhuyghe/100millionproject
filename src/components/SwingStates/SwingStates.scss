@@ -1,0 +1,30 @@
+@import "../App/App";
+
+.swingstates-page {
+  height: 100vh;
+
+  .main-swing {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    padding-top:20%;
+    background: #6272EC;
+    color: $white;
+    height: 95%;
+    .state-name {
+      font-size: 2em;
+    }
+  }
+  .title-swing {
+    font-family: $anon-pro;
+    color:$black;
+    margin-bottom:3%;
+  }
+  .state-name{
+      padding:1%;
+  }
+  .state-name-link{
+      text-decoration: none;
+      color:$white;
+  }
+}

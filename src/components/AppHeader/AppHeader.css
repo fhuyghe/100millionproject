@@ -1,0 +1,12 @@
+.app-header{
+    height:5%;
+    display:flex;
+    color:white;
+    align-items:center;
+    margin:1% 5%;  
+   
+} 
+
+.title{
+        margin-left:20px;
+    }
