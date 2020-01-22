@@ -1,13 +1,16 @@
 //Variables
-  $white: #ffffff;
-  $black: #282c34;
-  $red: rgb(246, 110, 96);
-  
-  @mixin headerFooter{
-    height: 18vh;
-    background: --black;
-    color:--white;
-  }
+$white: #ffffff;
+$black: #282c34;
+$red: rgb(246, 110, 96);
+$main-splash-font:"Anonymous Pro", monospace;
+
+@mixin headerFooter{
+  height: 18vh;
+  background: $black;
+  color: $white;
+  background-position: cover;
+  margin:0 auto;
+}
 
 .App {
   text-align: center;
@@ -21,11 +24,9 @@
 }
 
 .app-body {
-  flex: 1;
+  // flex: 1;
   height:100vh;
 }
-
-
 
 .App-link {
   color: #61dafb;

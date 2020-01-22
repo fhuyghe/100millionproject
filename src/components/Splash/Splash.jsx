@@ -26,7 +26,7 @@ const Splash = () => {
             choose not to participate
           </p>
         </div> */}
-        <div className="desktop-text">
+        <div className="upper">
           <p>
             Inaction is the greatest threat to democracy. In the 2016 election,
             over 100 million people did not vote.
@@ -34,8 +34,10 @@ const Splash = () => {
           <p>It's time to find out why.</p>
          
         </div>
+        
+        <div className="lower"> 
         <p>Coming Soon.</p>
-        <div> 
+        
         <form>
           <input type="text" placeholder="Email"></input>
           <input type="submit" value="NOTIFY ME"></input>
