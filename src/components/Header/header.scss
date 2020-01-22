@@ -1,5 +1,15 @@
+@import "../App/App";
+
 .App-header {
-  img {
-    width: 200px;
+  @include headerFooter;
+  background: transparent url("../../assets/images/blue-bars.svg");
+  margin: 0 auto;
+  width: 80%;
+
+  @media only screen and (min-width: 900px) {
+    width: 100%;
+  }
+  @media only screen and (max-height: 600px) {
+    height:10vh;
   }
 }

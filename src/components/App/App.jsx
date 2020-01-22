@@ -13,8 +13,7 @@ import SwingStates from "../SwingStates/SwingStates";
 function App() {
   return (
     <div className="App">
-       <Route path="/" render={props => <Header {...props} />} />
-
+     
       <div className="app-body">
         <Switch>
           <Route exact path="/">
@@ -38,7 +37,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <Footer />
+   
     </div>
   );
 }

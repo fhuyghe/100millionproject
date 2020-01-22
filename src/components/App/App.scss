@@ -1,80 +1,35 @@
 //Variables
-$black: #282c34;
 $white: #ffffff;
-$grid-gutter: 50px;
+$black: #282c34;
+$red: rgb(246, 110, 96);
+$main-splash-font:"Anonymous Pro", monospace;
+
+@mixin headerFooter{
+  height: 18vh;
+  background: $black;
+  color: $white;
+  background-position: cover;
+  margin:0 auto;
+}
 
 .App {
   text-align: center;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: $black;
+  background-color:$black;
   max-width: 1450px;
   margin: 0 auto;
 }
 
-.App-header,
-.App-footer {
-  background-position: right;
-  padding: 20px;
-  height: 100px;
-  width: 90%;
-  margin: 0 auto;
-  background: $black;
-  color:$white;
-}
-
-.App-header {
-  background-image: url("../../assets/images/blue-bars.svg");
- 
-  display: flex;
-  font-size: calc(10px + 2vmin);
-  color: $white;
-  a {
-    color: $white;
-    text-decoration: none;
-  }
-}
-
-.App-footer {
-  background-image: url("../../assets/images/red-bars.svg");
-  background-position-y: bottom;
-
-  form {
-    input {
-      width: 100vw;
-    }
-  }
-}
-
 .app-body {
-  flex: 1;
-  // padding: $grid-gutter 0;
+  // flex: 1;
+  height:100vh;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@media only screen and (min-width: 900px) {
-  .App{
-    min-height:95vh
-  }
-  .App-header,
-  .App-footer {
-    width:95%;
-    max-width:1450px;
-    height: 147px;
-    
-  }
-}
 
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
