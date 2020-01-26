@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Chart from "chart.js";
 import BarChart from "../Charts/BarChart";
 import AppHeader from "../AppHeader/AppHeader"
-import ReactSelect from './ReactSelect.js'
+
 
 class SwingBarChart extends Component {
   constructor() {
