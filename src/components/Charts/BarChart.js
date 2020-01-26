@@ -3,7 +3,7 @@ import Chart from "chart.js";
 import { render } from "@testing-library/react";
 const fakeData = [
   { name: "Voters", amount: 60 },
-  { name: "NonVoters", amount: 50 },
+  { name: "Non-Voters", amount: 50 },
   { name: "18-24", amount: 40 }
 ];
 Chart.defaults.global.defaultFontColor = '#fff';
