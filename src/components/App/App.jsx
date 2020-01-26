@@ -36,10 +36,12 @@ function App() {
           <Route path="/swingstates">
             <SwingStates />
           </Route>
-          <Route exact path="/swingbarchart">
+          <Route exact path="/swingstatesbar">
             <SwingBarChart />
           </Route>
-
+          <Route exact path="/swingstatescircle">
+            <SwingBarChart />
+          </Route>
 
         </Switch>
       </div>
