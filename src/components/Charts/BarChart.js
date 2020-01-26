@@ -116,7 +116,7 @@ class BarChart extends Component {
             className = "chart"
             style={{ height: '85%' }}
           ></canvas>
-          <section class="backdrop">
+          <section className="backdrop">
               More Non-Voters in New Hampshire plan to vote compared to the average for swing states.
             </section>
         </div>
