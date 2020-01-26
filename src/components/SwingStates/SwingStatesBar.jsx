@@ -24,14 +24,16 @@ class SwingBarChart extends Component {
         <main className="swing-states-main">
           <h3 className="title-swing-bar">Swing States</h3>
           <form>
-        <label>
-          <select className={"select"} value={this.state.value} onChange={this.handleChange}>
+            <div className="select-box">
+        {/* <label> */}
+          <select className="select" style={{textAlign:'center'}} value={this.state.value} onChange={this.handleChange}>
             <option value="NH">New Hampshire</option>
             <option value="CO">Colorado</option>
             <option value="MI">Michigan</option>
             <option value="GA">Georgia</option>
           </select>
-        </label>
+        {/* </label> */}
+        </div>
        
       </form>
             <BarChart />
