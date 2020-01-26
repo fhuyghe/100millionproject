@@ -17,7 +17,13 @@ const dot = (color = '#ccc') => ({
 });
 
 const colourStyles = {
-  control: styles => ({ ...styles, backgroundColor: 'transparent', width:'80%', margin: '0 auto 10%', corlor:'white'}),
+  control: styles => ({ ...styles, 
+    backgroundColor: 'transparent', 
+    width:'80%', 
+    margin: '0 auto 10%', 
+    corlor:'white', 
+    border: 'green'
+}),
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     const color = 'green';
     return {

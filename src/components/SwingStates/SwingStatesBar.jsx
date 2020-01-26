@@ -9,6 +9,11 @@ class SwingBarChart extends Component {
     super();
     this.state = {};
   }
+  handleChange = (event) => {
+    this.setState({value: event.target.value});
+  }
+
+
   render() {
     const options = [
       { value: 'NewHampshire', label: 'New Hampshire'}
@@ -18,7 +23,17 @@ class SwingBarChart extends Component {
         <AppHeader/>
         <main className="swing-states-main">
           <h3 className="title-swing-bar">Swing States</h3>
-            <ReactSelect options={options} />
+          <form>
+        <label>
+          <select className={"select"} value={this.state.value} onChange={this.handleChange}>
+            <option value="NH">New Hampshire</option>
+            <option value="CO">Colorado</option>
+            <option value="MI">Michigan</option>
+            <option value="GA">Georgia</option>
+          </select>
+        </label>
+       
+      </form>
             <BarChart />
           
               
