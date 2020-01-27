@@ -9,6 +9,8 @@ import Landing from "../Landing";
 import Story from "../Story/Story";
 import Study from "../Study/Study";
 import SwingStates from "../SwingStates/SwingStates";
+import SwingBarChart from "../SwingStates/SwingStatesBar"
+import SwingStatesBubble from "../SwingStates/SwingStatesBubble"
 
 function App() {
   return (
@@ -35,6 +37,13 @@ function App() {
           <Route path="/swingstates">
             <SwingStates />
           </Route>
+          <Route exact path="/swingstatesbar">
+            <SwingBarChart />
+          </Route>
+          <Route exact path="/swingstatesbubble">
+            <SwingStatesBubble />
+          </Route>
+
         </Switch>
       </div>
    
