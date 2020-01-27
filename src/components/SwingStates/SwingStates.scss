@@ -1,0 +1,147 @@
+@import "../App/App";
+
+.swingstates-page {
+  height: 100vh;
+
+  .main-swing {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    padding-top: 20%;
+    background: #009fdd;
+    color: $white;
+    height: 95%;
+    .state-name {
+      font-size: 2em;
+    }
+  }
+  .title-swing {
+    font-family: $anon-pro;
+    color: $black;
+    margin-bottom: 3%;
+    height:10%;
+  }
+  .state-name {
+    padding: 1%;
+  }
+  .state-name-link {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+.bar-chart {
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  min-height: 60%;
+  height:60%;
+  
+}
+
+.title-swing-bar {
+  font-family: $anon-pro;
+  // font-weight: Regular;
+  letter-spacing: 0.03em;
+  font-size: 0.9em;
+  width:100%;
+  color: $black;
+  margin: 7% 0 2%;
+}
+
+.swing-states-main{
+  height:95%;
+}
+.swing-states-bar {
+  background: #009fdd;
+  height: 100vh;
+}
+
+.chart{
+  background: #E57349;
+  z-index: 1;
+  width: 100%;
+  height: 80%;
+  border-radius: 5px;
+
+
+
+
+}
+
+// .select {
+//   background:transparent;
+//   border-color:black;
+//   width:90%;
+//   color:white;
+//   text-align:right;
+//   font-size: 20px;
+//   text-align-last: center;
+//   font-size:2em;
+//   padding: 1%;
+// }
+
+.select-box{
+  width: 90%;
+  overflow: hidden;
+  border: 1px solid #000;
+  position: relative;
+  padding: 10px 0;
+  margin:0 auto;
+  text-align:center;
+  display:flex;
+  justify-content:center;
+  
+}
+.select-box:after{
+  width: 0; 
+  height: 0; 
+  // border-left: 6px solid transparent;
+  // border-right: 6px solid transparent;
+  // border-top: 6px solid #f00;
+  position: absolute;
+  top: 40%;
+  right: 15px;
+  content: "^";
+  z-index: 98;
+  transform:rotate(180deg) translate(0, -.7em) scaleX(1.7);
+  font-weight: 100;
+ }
+.select-box select{
+  appearance: none;
+  width: 100%;
+  border: 0;
+  position: relative;
+  z-index: 99;
+  background: none;
+  color:white;
+  font-size:1.5em;
+  padding:1%;
+  text-align-last:center;
+  // display:inline;
+  
+}
+
+
+.backdrop {
+  font-family: $anon-pro;
+  padding:10% 4%;
+  font-size:1em;
+  line-height:1.25em;
+  height:90%;
+  // min-height: 110%;
+  width: 87%;
+  background: $white;
+  // border: 2px solid black;
+  position: absolute;
+  top: 10%;
+  left: -3%;
+  display:flex;
+  justify-content:flex-start;
+  text-align:left;
+  align-items:flex-end;
+  border-radius:5px;
+  
+}
