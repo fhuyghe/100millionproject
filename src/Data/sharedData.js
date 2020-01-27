@@ -12,3 +12,9 @@ export const swingStates = [
     "Pennsylvania",
     "Virginia"
   ];
+
+  export const fakeData = [
+    { name: "Voters", amount: 60 },
+    { name: "Non-Voters", amount: 50 },
+    { name: "18-24", amount: 20 }
+  ];

@@ -41,7 +41,7 @@ class SwingBarChart extends Component {
               {/* </label> */}
             </div>
           </form>
-          <BarChart />
+          <BarChart type={'bar'}/>
         </main>
       </div>
     );

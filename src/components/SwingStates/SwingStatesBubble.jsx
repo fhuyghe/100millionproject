@@ -14,13 +14,13 @@ class SwingStatesCircle extends Component {
   };
 
   render() {
-    console.log(swingStates)
-    let options = swingStates.map((d, i) => (
-      <option key={i} value={i}>{d}</option>
+    // console.log(swingStates)
+    // let options = swingStates.map((d, i) => (
+    //   <option key={i} value={i}>{d}</option>
       
-    ));
+    // ));
 
-    console.log(options);
+    // console.log(options);
     return (
       <div className="swing-states-bar">
         <AppHeader />
@@ -35,13 +35,13 @@ class SwingStatesCircle extends Component {
                 value={this.state.value}
                 onChange={this.handleChange}
               >
-               {options}
+               {/* {options} */}
 
               </select>
               {/* </label> */}
             </div>
           </form>
-          <BarChart />
+          <BarChart type={'bubble'}/>
         </main>
       </div>
     );
