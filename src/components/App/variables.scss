@@ -1,0 +1,16 @@
+//Variables
+$white: #ffffff;
+$black: #111111;
+$red: #F2705E;
+$blue: #009DE0;
+
+$anon-pro:"Anonymous Pro", monospace;
+
+@mixin headerFooter{
+  width: 100%;
+  min-height: 100px;
+  background: $black;
+  color: $white;
+  background-position: cover;
+  margin:0 auto;
+}

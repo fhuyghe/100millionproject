@@ -1,104 +1,89 @@
-@import "../App/App.scss";
+@import "../App/variables";
 
 .splash-page {
   background: $black;
-  height: 58vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   color: $white;
   width: 100%;
-  margin: 3vh 0;
+  padding: 50px 20px;
   box-sizing: border-box;
 
   .logo {
-    height: 20%;
-    display: flex;
+    max-width: 200px;
+    margin-bottom: 30px;
   }
+
   a {
     width: 100%;
+
     img {
       max-width: 100%;
       max-height: 100%;
     }
   }
+
   .upper {
     display:flex;
     flex-direction:column;
     justify-content:center;
-    max-width: 75vw;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     height:40%;
     line-height: 1.5em;
   }
+
   p {
     font-family: $anon-pro;
   }
+
   .hash-tag {
     margin: 0.75em 0;
   }
-  .lower{
-    height:40%;
-  }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    input {
-      background: $black;
-      text-align: center;
-      padding: 1vh;
+  .social-icons {
+    margin-top: 2vh;
+
+    a{
       color: $white;
-      width: 75%;
-      box-sizing: border-box;
-      font-family: $anon-pro;
     }
-    input[type="text"] {
-      border: 2px solid grey;
-      border-bottom: none;
-    }
-    input[type="submit"] {
-      background: $red;
-      border: none;
-    }
-  }
-  .media-icons {
-    color: $white;
+
     i {
-      font-size: 0.8em;
+      font-size: 1em;
       padding: 0 2%;
     }
   }
 
 
   //MEDIA QUERIES
-  @media only screen and (max-width: 300px) {
-    .logo {
-      height: 15%;
-    }
-  }
   @media only screen and (min-width: 600px) {
+    padding: 100px 20px;
+
     .logo {
-      height: 23%;
+      max-width: 250px;
     }
   }
+
   //DESKTOP BREAKPOINT//
   @media only screen and (min-width: 900px) {
     .logo {
       height: 26%;
     }
+
     .upper {
-      max-width: 30%;
+
       p {
         // padding: 2%;
         font-size: 1em;
       }
     }
+
     form input {
-      width: 30%;
+      //width: 30%;
       box-sizing: border-box;
     }
+
     .logo {
       height: 26%;
     }
@@ -107,27 +92,9 @@
 
   //ADJUST FOR SMALL HEIGHTS 
   @media only screen and (max-height: 600px) {
-   height:74vh;
+
     .logo { // margin:5vh;
       height: 25%;
     }
-    .upper{
-      height: 25%;
-     
-    }
-    .lower{
-      height:30%;
-    }
-    .upper, .lower{
-      font-size: 0.8em;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    
-    
-    }
-    
   }
 }

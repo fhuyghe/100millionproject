@@ -1,32 +1,22 @@
-//Variables
-$white: #ffffff;
-$black: #282c34;
-$red: rgb(246, 110, 96);
-$anon-pro:"Anonymous Pro", monospace;
-$swing-blue: #6272EC;
-
-@mixin headerFooter{
-  height: 18vh;
-  background: $black;
-  color: $white;
-  background-position: cover;
-  margin:0 auto;
-}
+@import './variables.scss';
 
 .App {
   text-align: center;
-  height: 100vh;
+  min-height:100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // background-color:$black;
-  max-width: 1450px;
+  background-color:$black;
+  //max-width: 1450px;
   margin: 0 auto;
 }
 
+// Splash page styling
 .app-body {
-  // flex: 1;
-  height:100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .App-link {
