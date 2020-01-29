@@ -16,35 +16,35 @@ export const swingStates = [
 export const fakeData = [
   {
     name: "Voters",
-    
+    color: 'red',
     // amount: 6,
     
     children: [
       {
         name: 'Immigration',
-        value: 190,
-        nonSizing: true
-        
+        value: 900,
+      
       },
       {
         name: 'Gun Control',
-        value: 289
+        value: 800,
+       
       },
       {
         name: 'Climate Change',
-        value: 635
+        value: 700
       },
       {
         name: 'Race Relations',
-        value: 732
+        value: 600
       },
       {
         name: 'Health Care',
-        value: 835
+        value: 500
       },
       {
         name: 'Jobs',
-        value: 600
+        value: 400
       },
     
     ]

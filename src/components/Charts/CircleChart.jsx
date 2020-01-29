@@ -9,7 +9,7 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 // am4core.useTheme(dataviz);
 am4core.useTheme(am4themes_animated);
 
-class AmChartTest extends Component {
+class CircleChart extends Component {
   componentDidMount() {
     am4core.useTheme(am4themes_animated);
     // Themes end
@@ -19,23 +19,59 @@ class AmChartTest extends Component {
       am4plugins_forceDirected.ForceDirectedTree
     );
     chart.background.fill = "#F2705E";
+    chart.dataFields.color = "color";
 
+    let title = chart.titles.create();
+    title.text = this.props.title;
+    title.fill = "white";
+    title.fontSize = 20;
+    title.marginTop = 30;
+    title.fontStyle = "italic";
+    title.wrap = true;
+    title.textAlign = "middle";
+    title.paddingLeft = 30;
+    title.paddingRight = 30;
+    title.align = "center";
+
+    // let label = chart.chartContainer.createChild(am4core.Label);
+    // label.text = "Km / h";
+    // label.align = "center";
+    // label.isMeasured = false;
+    // label.x = 70;
+    // label.y = 480;
 
     let series = chart.series.push(
       new am4plugins_forceDirected.ForceDirectedSeries()
     );
-   // Set up data fields
-series.dataFields.value = "value";
-series.dataFields.name = "name";
-series.dataFields.children = "children";
+    // Set up data fields
+    series.dataFields.value = "value";
+    series.dataFields.name = "name";
+    series.dataFields.children = "children";
+    series.dataFields.color = "color";
 
-// Add labels
-series.nodes.template.label.text = "{name}";
-series.fontSize = 10;
-series.minRadius = 15;
-series.maxRadius = 80;
+    series.colors.list = [
+      // am4core.color("#FBD535"),
+      // am4core.color("#6B9BCA"),
+      // am4core.color("#37B98B"),
+      // am4core.color("#AD7FB5"),
+      // am4core.color("#DDBA8C"),
+      // am4core.color("#EDEDED")
 
-    series.data = this.props.fakeData[0].children
+      am4core.color("green"),
+      am4core.color("red"),
+      am4core.color("orange"),
+      am4core.color("blue"),
+      am4core.color("red"),
+      am4core.color("yellow")
+    ];
+
+    series.nodes.template.label.text = "[black]{name}[/]";
+    series.nodes.template.label.fontFamily = "Anonymous Pro";
+    series.fontSize = 10;
+    series.minRadius = 15;
+    series.maxRadius = 80;
+
+    series.data = this.props.fakeData[0].children;
   }
 
   componentWillUnmount() {
@@ -54,4 +90,4 @@ series.maxRadius = 80;
   }
 }
 
-export default AmChartTest;
+export default CircleChart;

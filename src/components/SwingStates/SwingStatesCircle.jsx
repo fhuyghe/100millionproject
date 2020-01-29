@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
- 
-import AmChartTest from '../Charts/CircleChart';
-import { fakeData, swingStates } from '../../Data/sharedData.js'
-import AppHeader from '../AppHeader/AppHeader'
+import React, { Component } from "react";
 
-class SwingStatesAmChart extends Component {
+import CircleChart from "../Charts/CircleChart";
+import { fakeData, swingStates } from "../../Data/sharedData.js";
+import AppHeader from "../AppHeader/AppHeader";
+
+class SwingStatesCircle extends Component {
   constructor() {
     super();
     this.state = {};
@@ -14,9 +14,6 @@ class SwingStatesAmChart extends Component {
   };
 
   render() {
-    
-  
-
     let options = swingStates.map((d, i) => (
       <option key={i} value={i}>
         {d}
@@ -33,24 +30,26 @@ class SwingStatesAmChart extends Component {
           <form>
             <div className="select-box">
               <label>
-              <select
-                className="select"
-                // style={{ textAlign: "center" }}
-                value={this.state.value}
-                onChange={this.handleChange}
-              >
-                {options}
-              </select>
+                <select
+                  className="select"
+                  // style={{ textAlign: "center" }}
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                >
+                  {options}
+                </select>
               </label>
             </div>
           </form>
-          <AmChartTest fakeData={fakeData} swingStates={swingStates}/>
+          <CircleChart
+            title={title}
+            fakeData={fakeData}
+            swingStates={swingStates}
+          />
         </main>
       </div>
     );
   }
 }
 
-
- 
-export default SwingStatesAmChart;
+export default SwingStatesCircle;
