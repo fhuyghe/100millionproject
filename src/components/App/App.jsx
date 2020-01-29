@@ -9,6 +9,8 @@ import Study from "../Study/Study";
 import SwingStates from "../SwingStates/SwingStates";
 import SwingBarChart from "../SwingStates/SwingStatesBar"
 import SwingStatesBubble from "../SwingStates/SwingStatesBubble"
+import SwingStatesCircle from "../SwingStates/SwingStatesCircle"
+
 
 function App() {
   return (
@@ -32,14 +34,17 @@ function App() {
           <Route path="/study">
             <Study />
           </Route>
-          <Route path="/swingstates">
+          <Route exact path="/swingstates">
             <SwingStates />
           </Route>
-          <Route exact path="/swingstatesbar">
+          <Route path="/swingstates/bar">
             <SwingBarChart />
           </Route>
-          <Route exact path="/swingstatesbubble">
+          <Route path="/swingstates/bubble">
             <SwingStatesBubble />
+          </Route>
+          <Route path="/swingstates/circle">
+            <SwingStatesCircle />
           </Route>
 
         </Switch>
