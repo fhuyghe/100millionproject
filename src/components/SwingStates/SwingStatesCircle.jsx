@@ -14,6 +14,7 @@ class SwingStatesCircle extends Component {
     };
   }
   handleChange = event => {
+    console.log('here')
     this.setState({ value: event.target.value });
   };
 
@@ -25,12 +26,10 @@ class SwingStatesCircle extends Component {
   };
 
   render() {
-    let selectors = fakeData.map((data, i) => (
-      <input type="button" key={i} name={data.name} value={data.name} />
-    ));
+  
 
-    let options = swingStates.map((state, i) => (
-      <option key={i} value={i}>
+    let options = swingStates.map((state) => (
+      <option key={state} value={state}>
         {state}
       </option>
     ));
@@ -46,7 +45,7 @@ class SwingStatesCircle extends Component {
             <div className="select-box">
               <Select
                 value={this.state.value}
-                // onChange={this.handleChange}
+                handleChange={this.handleChange}
                 options={options}
                 className={"select"}
               />
@@ -57,10 +56,11 @@ class SwingStatesCircle extends Component {
             fakeData={fakeData}
             swingStates={swingStates}
             type={this.state.activeIndex}
+            value={this.state.value}
           />
 
           <div className="swing-circle-selectors">
-            {this.state.fakeData.map((el, index) => (
+            {this.state.fakeData[0].children.map((el, index) => (
               <div
                 key={index}
                 active={this.state.activeIndex === index ? 1 : 0}

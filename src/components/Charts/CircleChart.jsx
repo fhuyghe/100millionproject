@@ -72,13 +72,12 @@ class CircleChart extends Component {
     series.minRadius = 15;
     series.maxRadius = 75;
 
-    series.data = this.props.fakeData[this.props.type].children;
+    series.data = this.props.fakeData[0].children[this.props.type].children;
   }
   componentDidUpdate(prevProps, prevState){
-    console.log(prevProps.type, this.props.type)
+   
     if(this.props.type !== prevProps.type){
-      console.log(this.props.type)
-      // this.setState({type:this.props.type})
+   
       this.componentDidMount()
     }
 
