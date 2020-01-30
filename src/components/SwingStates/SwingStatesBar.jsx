@@ -16,9 +16,9 @@ class SwingBarChart extends Component {
 
   render() {
     console.log(swingStates);
-    let options = swingStates.map((d, i) => (
+    let options = swingStates.map((stateName, i) => (
       <option key={i} value={i}>
-        {d}
+        {stateName}
       </option>
     ));
 
@@ -32,7 +32,7 @@ class SwingBarChart extends Component {
             <div className="select-box">
               <Select
                 value={this.state.value}
-                onChange={this.state.onChange}
+                // onChange={this.state.onChange}
                 options={options}
                 className={"select"}
               />

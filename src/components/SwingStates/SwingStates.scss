@@ -146,4 +146,28 @@
   border-radius:5px;
   
 }
+#chartdiv{
+  margin: 0 auto;
+  width: 90%;
+  height: 75%;
+  position:relative;
+  // border:'2px solid red',
+  // borderRadius:'50px'
+
+}
+.swing-circle-selectors{
+
+  display:flex;
+  justify-content: space-around;
+  padding:0 5%;
+  transform:translateY(-150%);
+  color:$white;
+  font-family:$anon-pro;
+  
+
+
+  // position: absolute;
+
+
+}
 

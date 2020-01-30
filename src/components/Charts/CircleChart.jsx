@@ -10,7 +10,9 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 am4core.useTheme(am4themes_animated);
 
 class CircleChart extends Component {
+  
   componentDidMount() {
+    console.log('cdm')
     am4core.useTheme(am4themes_animated);
     // Themes end
 
@@ -19,8 +21,9 @@ class CircleChart extends Component {
       am4plugins_forceDirected.ForceDirectedTree
     );
     chart.background.fill = "#F2705E";
-    chart.cornerRadiusTopRight = 60;
+ 
     chart.dataFields.color = "color";
+  
 
 
 
@@ -28,21 +31,18 @@ class CircleChart extends Component {
     title.text = this.props.title;
     title.fill = "white";
     title.fontSize = 20;
-    title.marginTop = 30;
+ 
     title.fontStyle = "italic";
     title.wrap = true;
     title.textAlign = "middle";
+    title.isMeasured = false;
+    title.y = 20;
+    title.x = 10;
     title.paddingLeft = 30;
     title.paddingRight = 30;
-    title.align = "center";
+    title.paddingBotton = 50;
 
-    // let label = chart.chartContainer.createChild(am4core.Label);
-    // label.text = "Km / h";
-    // label.align = "center";
-    // label.isMeasured = false;
-    // label.x = 70;
-    // label.y = 480;
-
+  
     let series = chart.series.push(
       new am4plugins_forceDirected.ForceDirectedSeries()
     );
@@ -65,11 +65,23 @@ class CircleChart extends Component {
 
     series.nodes.template.label.text = "[black]{name}[/]";
     series.nodes.template.label.fontFamily = "Anonymous Pro";
+    series.nodes.template.label.wrap = true;
+
+    
     series.fontSize = 14;
     series.minRadius = 15;
-    series.maxRadius = 80;
+    series.maxRadius = 75;
 
-    series.data = this.props.fakeData[0].children;
+    series.data = this.props.fakeData[this.props.type].children;
+  }
+  componentDidUpdate(prevProps, prevState){
+    console.log(prevProps.type, this.props.type)
+    if(this.props.type !== prevProps.type){
+      console.log(this.props.type)
+      // this.setState({type:this.props.type})
+      this.componentDidMount()
+    }
+
   }
 
   componentWillUnmount() {
@@ -79,17 +91,9 @@ class CircleChart extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
-      <div
-        id="chartdiv"
-        style={{
-          margin: "0 auto",
-          width: "90%",
-          height: "75%",
-          // border:'2px solid red',
-          // borderRadius:'50px'
-        }}
-      ></div>
+      <div id="chartdiv"></div>
     );
   }
 }
