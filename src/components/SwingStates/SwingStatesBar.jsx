@@ -3,6 +3,7 @@ import Chart from "chart.js";
 import BarChart from "../Charts/BarChart";
 import AppHeader from "../AppHeader/AppHeader";
 import { swingStates } from "../../Data/sharedData.js";
+import { Select } from "../Shared/Select"
 
 class SwingBarChart extends Component {
   constructor() {
@@ -14,10 +15,11 @@ class SwingBarChart extends Component {
   };
 
   render() {
-    console.log(swingStates)
+    console.log(swingStates);
     let options = swingStates.map((d, i) => (
-      <option key={i} value={i}>{d}</option>
-      
+      <option key={i} value={i}>
+        {d}
+      </option>
     ));
 
     console.log(options);
@@ -28,20 +30,15 @@ class SwingBarChart extends Component {
           <h3 className="title-swing-bar">Swing States</h3>
           <form>
             <div className="select-box">
-              {/* <label> */}
-              <select
-                className="select"
-                style={{ textAlign: "center" }}
+              <Select
                 value={this.state.value}
-                onChange={this.handleChange}
-              >
-               {options}
-
-              </select>
-              {/* </label> */}
+                onChange={this.state.onChange}
+                options={options}
+                className={"select"}
+              />
             </div>
           </form>
-          <BarChart type={'bar'}/>
+          <BarChart type={"bar"} />
         </main>
       </div>
     );

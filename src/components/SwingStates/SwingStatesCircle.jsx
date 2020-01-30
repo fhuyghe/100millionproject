@@ -3,11 +3,14 @@ import React, { Component } from "react";
 import CircleChart from "../Charts/CircleChart";
 import { fakeData, swingStates } from "../../Data/sharedData.js";
 import AppHeader from "../AppHeader/AppHeader";
+import { Select } from "../Shared/Select";
 
 class SwingStatesCircle extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      value: ""
+    };
   }
   handleChange = event => {
     this.setState({ value: event.target.value });
@@ -30,14 +33,12 @@ class SwingStatesCircle extends Component {
           <form>
             <div className="select-box">
               <label>
-                <select
-                  className="select"
-                  // style={{ textAlign: "center" }}
+                <Select
                   value={this.state.value}
-                  onChange={this.handleChange}
-                >
-                  {options}
-                </select>
+                  onChange={this.state.onChange}
+                  options={options}
+                  className={"select"}
+                />
               </label>
             </div>
           </form>

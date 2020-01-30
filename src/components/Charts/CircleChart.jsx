@@ -19,7 +19,10 @@ class CircleChart extends Component {
       am4plugins_forceDirected.ForceDirectedTree
     );
     chart.background.fill = "#F2705E";
+    chart.cornerRadiusTopRight = 60;
     chart.dataFields.color = "color";
+
+
 
     let title = chart.titles.create();
     title.text = this.props.title;
@@ -50,24 +53,19 @@ class CircleChart extends Component {
     series.dataFields.color = "color";
 
     series.colors.list = [
-      // am4core.color("#FBD535"),
-      // am4core.color("#6B9BCA"),
-      // am4core.color("#37B98B"),
-      // am4core.color("#AD7FB5"),
-      // am4core.color("#DDBA8C"),
-      // am4core.color("#EDEDED")
-
+      am4core.color("#FBD535"),
+      am4core.color("#6B9BCA"),
+      am4core.color("#37B98B"),
+      am4core.color("white"),
       am4core.color("green"),
-      am4core.color("red"),
-      am4core.color("orange"),
-      am4core.color("blue"),
-      am4core.color("red"),
-      am4core.color("yellow")
+      am4core.color("blue")
+
+      
     ];
 
     series.nodes.template.label.text = "[black]{name}[/]";
     series.nodes.template.label.fontFamily = "Anonymous Pro";
-    series.fontSize = 10;
+    series.fontSize = 14;
     series.minRadius = 15;
     series.maxRadius = 80;
 
@@ -84,7 +82,13 @@ class CircleChart extends Component {
     return (
       <div
         id="chartdiv"
-        style={{ margin: "0 auto", width: "90%", height: "80%" }}
+        style={{
+          margin: "0 auto",
+          width: "90%",
+          height: "75%",
+          // border:'2px solid red',
+          // borderRadius:'50px'
+        }}
       ></div>
     );
   }
