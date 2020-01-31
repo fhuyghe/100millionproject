@@ -10,7 +10,7 @@ const EmailSignupForm = () => {
         fields={[
           {
             name: 'EMAIL',
-            placeholder: 'Email',
+            placeholder: 'Email Address',
             type: 'email',
             required: true
           }

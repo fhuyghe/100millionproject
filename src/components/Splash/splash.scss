@@ -48,11 +48,15 @@
 
     a{
       color: $white;
+
+      &:hover{
+        color: $yellow;
+      }
     }
 
     i {
       font-size: 1em;
-      padding: 0 2%;
+      padding: 0 $grid-gutter / 2;
     }
   }
 
