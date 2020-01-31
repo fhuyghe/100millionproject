@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import '../../assets/styles/variables.scss';
 
 .App {
   text-align: center;
@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: space-between;
   background-color:$black;
-  //max-width: 1450px;
   margin: 0 auto;
 }
 
@@ -23,4 +22,18 @@
   color: #61dafb;
 }
 
+
+.desktop-only{
+  display: none;
+}
+
+@include media-breakpoint-up(md){
+  .mobile-only{
+    display: none;
+  }
+
+  .desktop-only{
+    display: inherit;
+  }
+}
 

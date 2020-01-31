@@ -1,10 +1,7 @@
-@import '../App/variables';
+@import '../../assets/styles/variables.scss';
 
 .App-footer {
   @include headerFooter;
     background-image: url("../../assets/images/red-bars.svg");
-
-    @media only screen and (max-height: 600px) {
-      height:10vh;
-    }
+    bottom: 0;
   }

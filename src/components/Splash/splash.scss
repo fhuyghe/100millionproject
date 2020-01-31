@@ -1,18 +1,20 @@
-@import "../App/variables";
+@import '../../assets/styles/variables';
 
 .splash-page {
   background: $black;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   color: $white;
   width: 100%;
-  padding: 50px 20px;
+  padding: $grid-gutter * 2 $grid-gutter / 2;
   box-sizing: border-box;
+  flex: 1;
 
   .logo {
-    max-width: 200px;
+    width: 80%;
+    max-width: 250px;
     margin-bottom: 30px;
   }
 
@@ -20,8 +22,7 @@
     width: 100%;
 
     img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
     }
   }
 
@@ -57,44 +58,15 @@
 
 
   //MEDIA QUERIES
-  @media only screen and (min-width: 600px) {
+  @include media-breakpoint-up(md){
     padding: 100px 20px;
 
     .logo {
-      max-width: 250px;
-    }
-  }
-
-  //DESKTOP BREAKPOINT//
-  @media only screen and (min-width: 900px) {
-    .logo {
-      height: 26%;
+      max-width: 1000px;
     }
 
-    .upper {
-
-      p {
-        // padding: 2%;
-        font-size: 1em;
-      }
-    }
-
-    form input {
-      //width: 30%;
-      box-sizing: border-box;
-    }
-
-    .logo {
-      height: 26%;
-    }
-  }
-
-
-  //ADJUST FOR SMALL HEIGHTS 
-  @media only screen and (max-height: 600px) {
-
-    .logo { // margin:5vh;
-      height: 25%;
+    .upper{
+      font-size: 1.2em;
     }
   }
 }

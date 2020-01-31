@@ -13,7 +13,8 @@ const Splash = () => {
       <div className="splash-page">
         <div className="logo">
           <Link to="/">
-            <img src="100_Million_Title-500.gif" alt="100 Million Project"/>
+            <img className='desktop-only' src="100million_logo_long.svg" alt="100 Million Project" />
+            <img className='mobile-only' src="100_Million_Title-500.gif" alt="100 Million Project"/>
           </Link>
         </div>
 

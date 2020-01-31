@@ -1,0 +1,33 @@
+// Bootstrap Grid
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+//Colors
+$white: #ffffff;
+$black: #111111;
+$red: #F2705E;
+$blue: #009DE0;
+
+// Gutter
+$grid-gutter: 50px;
+
+// Fonts
+$anon-pro:"Anonymous Pro", monospace;
+
+// Mixins
+@mixin headerFooter{
+    width: 100%;
+    min-height: $grid-gutter;
+    background: $black;
+    color: $white;
+    position: fixed;
+    margin:0 auto;
+    background-size: 48%; // Making sure it shows a bar at the end
+
+    @include media-breakpoint-up(md){
+        background-size: 48%; // Making sure it shows a bar at the end
+    }
+
+    @include media-breakpoint-up(lg){
+        background-size: 20.37%; // Making sure it shows a bar at the end
+    }
+}
