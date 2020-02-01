@@ -6,7 +6,7 @@ export const Select = props => {
     <select
       className="select"
       value={props.value}
-      onChange={props.handleChange}
+      onChange={(event)=>props.handleChange(event, props.value)}
     >
       {props.options}
     </select>

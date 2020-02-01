@@ -39,11 +39,11 @@ class BarChart extends Component {
     this.state = {};
   }
   componentDidMount() {
-    this.createChart(this.prepareData());
+    this.createChart(this.prepareData(this.props.value));
   }
 
-  prepareData(type) {
-   
+  prepareData(id) {
+   console.log(id)
     const chartData = {
       labels: [],
       datasets: [{
@@ -54,13 +54,22 @@ class BarChart extends Component {
       }]
     };
 
-    fakeData[0].children.forEach(d => {
+    fakeData[id].children.forEach(d => {
       
       chartData.labels.push(d.name)
       chartData.datasets[0].data.push(d.value);
     });
     
     return chartData;
+  }
+
+  componentDidUpdate(prevProps, prevState){
+   console.log(prevProps)
+    if(this.props.type !== prevProps.type){
+   
+      this.componentDidMount()
+    }
+
   }
 
   createChart(data) {
@@ -130,7 +139,7 @@ class BarChart extends Component {
   }
 
   render() {
-  
+    console.log(this.props.value)
     return (
       <>
         <div className="bar-chart">
