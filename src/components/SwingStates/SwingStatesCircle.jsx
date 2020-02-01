@@ -11,9 +11,10 @@ class SwingStatesCircle extends Component {
     super(props);
     this.state = {
       fakeData: fakeData,
-      activeIndex: 1
+      activeIndex: 0
     };
   }
+  
   handleChange = event => {
     this.setState({ value: event.target.value });
   };
@@ -23,7 +24,7 @@ class SwingStatesCircle extends Component {
     event.preventDefault();
     this.setState({ [event.target.name]: event.target.value });
   };
-
+  
   render() {
     let options = swingStates.map(state => (
       <option key={state} value={state}>

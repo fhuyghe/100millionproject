@@ -32,7 +32,6 @@ class CircleChart extends Component {
     title.fill = "white";
     title.fontSize = 20;
  
-    title.fontStyle = "italic";
     title.wrap = true;
     title.textAlign = "middle";
     title.isMeasured = false;
@@ -40,7 +39,7 @@ class CircleChart extends Component {
     title.x = 10;
     title.paddingLeft = 30;
     title.paddingRight = 30;
-    title.paddingBotton = 50;
+    title.marginBottom = 50;
 
   
     let series = chart.series.push(
@@ -70,17 +69,15 @@ class CircleChart extends Component {
     
     series.fontSize = 14;
     series.minRadius = 15;
-    series.maxRadius = 80;
+    series.maxRadius = 75;
 
     series.data = this.props.fakeData[0].children[this.props.type].children;
   }
-  componentDidUpdate(prevProps, prevState){
-   
+  componentDidUpdate(prevProps){
     if(this.props.type !== prevProps.type){
    
       this.componentDidMount()
     }
-
   }
 
   componentWillUnmount() {

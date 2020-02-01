@@ -43,11 +43,14 @@ class BarChart extends Component {
     this.state = {};
   }
   componentDidMount() {
-    this.createChart(this.prepareData(this.props.value));
+    console.log(this.props.value)
+    let id = this.props.value ? this.props.value : 0
+    console.log(id)
+    this.createChart(this.prepareData(id));
   }
 
   componentDidUpdate(prevProps, prevState){
-   
+  console.log('here')
     if(this.props.value !== prevProps.value){
    
       this.componentDidMount()
@@ -55,6 +58,7 @@ class BarChart extends Component {
 
   }
   prepareData(id) {
+    console.log(id)
     const chartData = {
       labels: [],
       datasets: [
@@ -65,7 +69,7 @@ class BarChart extends Component {
         }
       ]
     };
-
+    console.log(id)
     fakeData[id].children.forEach(d => {
       chartData.labels.push(d.name);
       chartData.datasets[0].data.push(d.value);
@@ -137,9 +141,17 @@ class BarChart extends Component {
         }
       }
     });
-    //    Chart.defaults.scale.gridLines.drawOnChartArea = false;
-  }
 
+   
+    //    Chart.defaults.scale.gridLines.drawOnChartArea = false;
+    Chart.defaults.global.maintainAspectRatio = false
+    
+  }
+ componentWillUnmount() {
+      if (this.chart) {
+        this.chart.dispose();
+      }
+    }
   render() {
     console.log(this.props.value);
     return (
@@ -148,7 +160,7 @@ class BarChart extends Component {
           <canvas
             id="states"
             className="chart"
-            style={{ height: "95%" }}
+            style={{ height: "95%"}}
           ></canvas>
           <section className="backdrop">
             More Non-Voters in New Hampshire plan to vote compared to the

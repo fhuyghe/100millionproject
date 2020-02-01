@@ -14,10 +14,25 @@ class SwingBarChart extends Component {
     };
   }
   componentDidMount() {
-    let id = window.location.pathname.lastIndexOf("/");
+    console.log('here')
+    let idx = window.location.pathname.lastIndexOf("/")
+    let id = window.location.pathname.substring(idx + 1)
+    console.log('id', idx, parseInt(id))
+    console.log(isNaN(id))
+    let stateId = isNaN(parseInt(id)) ? 0 : id 
+
+    // let stateId = isNaN(idx) ? 0 : 1
+    console.log(stateId)
     this.setState({
-      value: window.location.pathname.substring(id + 1)
+      value: stateId
     });
+  }
+  componentDidUpdate(prevProps, prevState){
+    console.log('dup')
+    if(this.props.withoutID !== prevState.withoutID){
+   
+      this.componentDidMount()
+    }
   }
   handleChange = (event) => {
     console.log(event.target.value)
@@ -33,7 +48,7 @@ class SwingBarChart extends Component {
         {stateName}
       </option>
     ));
-    console.log(this.state)
+    console.log(this.state.value)
     let redirect = this.state.redirect && <Redirect to={`./${this.state.value}`}/> 
     return (
       <div className="swingstates-bar">
@@ -51,7 +66,7 @@ class SwingBarChart extends Component {
               />
             </div>
           </form>
-          {this.state.value && this.state.value &&
+          { 
           <BarChart type={"bar"} value={this.state.value} />}
         </main>
       </div>

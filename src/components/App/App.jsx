@@ -37,11 +37,11 @@ function App() {
           <Route exact path="/swingstates">
             <SwingStates />
           </Route>
+          <Route path="/swingstates/bar" render={props => <SwingBarChart {...props} />} />
           <Route path="/swingstates/bar/:stateID" render={props => <SwingBarChart {...props} />} />
 
-          <Route path="/swingstates/circle/:stateName">
-            <SwingStatesCircle />
-          </Route>
+          <Route path="/swingstates/circle/" render={props => <SwingStatesCircle {...props} />} />
+          <Route path="/swingstates/circle/:stateID" render={props => <SwingBarChart {...props} />} />
           {/* ROUTE FOR CHARTJS BUBBLE, NOT USING ATM
           {/* <Route path="/swingstates/bubble">
             <SwingStatesBubble />
