@@ -23,14 +23,11 @@ class SwingBarChart extends Component {
     });
   }
   componentDidUpdate(prevProps, prevState){
-    console.log('dup')
     if(this.props.withoutID !== prevState.withoutID){
-   
       this.componentDidMount()
     }
   }
   handleChange = (event) => {
-    console.log(event.target.value)
     this.setState({
       value:event.target.value,
       redirect: true
@@ -43,7 +40,6 @@ class SwingBarChart extends Component {
         {stateName}
       </option>
     ));
-    console.log(this.state.value)
     let redirect = this.state.redirect && <Redirect to={`./${this.state.value}`}/> 
     return (
       <div className="swingstates-bar">

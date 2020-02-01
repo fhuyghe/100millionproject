@@ -43,22 +43,18 @@ class BarChart extends Component {
     this.state = {};
   }
   componentDidMount() {
-    console.log(this.props.value)
     let id = this.props.value ? this.props.value : 0
-    console.log(id)
     this.createChart(this.prepareData(id));
   }
 
-  componentDidUpdate(prevProps, prevState){
-  console.log('here')
+  componentDidUpdate(prevProps){
     if(this.props.value !== prevProps.value){
-   
       this.componentDidMount()
     }
 
   }
   prepareData(id) {
-    console.log(id)
+    
     const chartData = {
       labels: [],
       datasets: [
@@ -69,7 +65,7 @@ class BarChart extends Component {
         }
       ]
     };
-    console.log(id)
+   
     fakeData[id].children.forEach(d => {
       chartData.labels.push(d.name);
       chartData.datasets[0].data.push(d.value);
@@ -153,7 +149,7 @@ class BarChart extends Component {
       }
     }
   render() {
-    console.log(this.props.value);
+    
     return (
       <>
         <div className="bar-chart">

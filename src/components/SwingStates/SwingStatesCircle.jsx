@@ -25,7 +25,6 @@ class SwingStatesCircle extends Component {
 
   }
   handleChange = event => {
-    console.log(event.target.value)
     this.setState({
       value:event.target.value,
       redirect: true

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import * as am4core from "@amcharts/amcharts4/core";
 // import * as am4charts from "@amcharts/amcharts4/charts";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected";
@@ -12,15 +11,10 @@ am4core.useTheme(am4themes_animated);
 class CircleChart extends Component {
   
   componentDidMount() {
-    
-    console.log(this.props.value)
     let id = this.props.value ? this.props.value : 0
-    console.log(id)
-  
-   
+     
     am4core.useTheme(am4themes_animated);
    
-
     let chart = am4core.create(
       "circle-chart",
       am4plugins_forceDirected.ForceDirectedTree
@@ -29,9 +23,6 @@ class CircleChart extends Component {
  
     chart.dataFields.color = "color";
   
-
-
-
     let title = chart.titles.create();
     title.text = this.props.title;
     title.fill = "white";
@@ -63,32 +54,25 @@ class CircleChart extends Component {
       am4core.color("white"),
       am4core.color("green"),
       am4core.color("blue")
-
-      
     ];
 
     series.nodes.template.label.text = "[black]{name}[/]";
     series.nodes.template.label.fontFamily = "Anonymous Pro";
     series.nodes.template.label.wrap = true;
 
-    
     series.fontSize = 14;
     series.minRadius = 15;
     series.maxRadius = 75;
-console.log(this.props.type)
+
     series.data = this.props.fakeData[id].children[this.props.type].children;
   }
   componentDidUpdate(prevProps, prevState){
-    console.log(this.props, prevProps, prevState)
     if(this.props.value !== prevProps.value){
-   
       this.componentDidMount()
     }
     if(this.props.type !== prevProps.type){
-   
       this.componentDidMount()
     }
-   
   }
 
   componentWillUnmount() {
