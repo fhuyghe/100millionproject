@@ -14,7 +14,7 @@ class SwingStatesCircle extends Component {
     };
   }
   handleChange = event => {
-    console.log('here')
+    console.log("here");
     this.setState({ value: event.target.value });
   };
 
@@ -26,9 +26,7 @@ class SwingStatesCircle extends Component {
   };
 
   render() {
-  
-
-    let options = swingStates.map((state) => (
+    let options = swingStates.map(state => (
       <option key={state} value={state}>
         {state}
       </option>
@@ -60,16 +58,25 @@ class SwingStatesCircle extends Component {
           />
 
           <div className="swing-circle-selectors">
+            let act = ''
             {this.state.fakeData[0].children.map((el, index) => (
-              <div
-                key={index}
-                active={this.state.activeIndex === index ? 1 : 0}
-                onClick={() =>
-                  this.setState({ activeIndex: index, name: el.name })
-                }
-                name={el.name}
-              >
-                {el.name}
+              <div className="selectors">
+                <div className={"arrow-up"}></div>
+                <div
+                  key={index}
+                  active={this.state.activeIndex === index ? 1 : 0}
+                  style={
+                    this.state.activeIndex === index
+                      ? { background: "black" }
+                      : { background: "transparent" }
+                  }
+                  onClick={() =>
+                    this.setState({ activeIndex: index, name: el.name })
+                  }
+                  name={el.name}
+                >
+                  {el.name}
+                </div>
               </div>
             ))}
           </div>
