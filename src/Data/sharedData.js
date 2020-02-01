@@ -120,11 +120,11 @@ export const fakeData = [
         children: [
           {
             name: "Immigration",
-            value: 900
+            value: 200
           },
           {
             name: "Gun Control",
-            value: 800
+            value: 300
           },
           {
             name: "Climate Change",
@@ -140,7 +140,7 @@ export const fakeData = [
           },
           {
             name: "Jobs",
-            value: 400
+            value: 900
           }
         ]
       },

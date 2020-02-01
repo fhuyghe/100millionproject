@@ -5,6 +5,7 @@ import { fakeData, swingStates } from "../../Data/sharedData.js";
 import AppHeader from "../AppHeader/AppHeader";
 import { Select } from "../Shared/Select";
 import './SwingStatesCircle.scss'
+import { Redirect } from 'react-router-dom'
 
 class SwingStatesCircle extends Component {
   constructor(props) {
@@ -14,9 +15,21 @@ class SwingStatesCircle extends Component {
       activeIndex: 0
     };
   }
-  
+  componentDidMount(){
+    let idx = window.location.pathname.lastIndexOf("/")
+    let id = window.location.pathname.substring(idx + 1)
+    let stateId = isNaN(parseInt(id)) ? 0 : id 
+    this.setState({
+      value: stateId
+    });
+
+  }
   handleChange = event => {
-    this.setState({ value: event.target.value });
+    console.log(event.target.value)
+    this.setState({
+      value:event.target.value,
+      redirect: true
+    })
   };
 
   handleClick = event => {
@@ -26,16 +39,18 @@ class SwingStatesCircle extends Component {
   };
   
   render() {
-    let options = swingStates.map(state => (
-      <option key={state} value={state}>
-        {state}
+    let options = swingStates.map((stateName, i) => (
+      <option key={i} value={i}>
+        {stateName}
       </option>
     ));
+    let redirect = this.state.redirect && <Redirect to={`./${this.state.value}`}/> 
 
     
     const title = "What is the most important issue facing the U.S. today?";
     return (
       <div className="swingstates-circle">
+        {redirect}
         <AppHeader />
         <main className="swingstates-circle-main">
           <h3 className="swingstates-circle-title">Swing States</h3>

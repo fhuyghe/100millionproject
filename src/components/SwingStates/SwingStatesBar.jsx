@@ -14,15 +14,10 @@ class SwingBarChart extends Component {
     };
   }
   componentDidMount() {
-    console.log('here')
     let idx = window.location.pathname.lastIndexOf("/")
     let id = window.location.pathname.substring(idx + 1)
-    console.log('id', idx, parseInt(id))
-    console.log(isNaN(id))
     let stateId = isNaN(parseInt(id)) ? 0 : id 
 
-    // let stateId = isNaN(idx) ? 0 : 1
-    console.log(stateId)
     this.setState({
       value: stateId
     });

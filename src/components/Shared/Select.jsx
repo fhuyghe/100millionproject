@@ -2,7 +2,7 @@ import React from "react";
 import './Select.scss'
 
 export const Select = props => {
-  console.log(props.value)
+ 
   return (
     <select
       className="select"

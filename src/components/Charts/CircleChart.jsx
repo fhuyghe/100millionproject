@@ -12,6 +12,11 @@ am4core.useTheme(am4themes_animated);
 class CircleChart extends Component {
   
   componentDidMount() {
+    
+    console.log(this.props.value)
+    let id = this.props.value ? this.props.value : 0
+    console.log(id)
+  
    
     am4core.useTheme(am4themes_animated);
    
@@ -70,14 +75,20 @@ class CircleChart extends Component {
     series.fontSize = 14;
     series.minRadius = 15;
     series.maxRadius = 75;
-
-    series.data = this.props.fakeData[0].children[this.props.type].children;
+console.log(this.props.type)
+    series.data = this.props.fakeData[id].children[this.props.type].children;
   }
-  componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps, prevState){
+    console.log(this.props, prevProps, prevState)
+    if(this.props.value !== prevProps.value){
+   
+      this.componentDidMount()
+    }
     if(this.props.type !== prevProps.type){
    
       this.componentDidMount()
     }
+   
   }
 
   componentWillUnmount() {
