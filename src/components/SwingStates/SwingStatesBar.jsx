@@ -4,6 +4,7 @@ import AppHeader from "../AppHeader/AppHeader";
 import { swingStates } from "../../Data/sharedData.js";
 import { Select } from "../Shared/Select";
 import "./SwingStatesBar.scss";
+import { Redirect } from "react-router-dom"
 
 class SwingBarChart extends Component {
   constructor() {
@@ -18,9 +19,12 @@ class SwingBarChart extends Component {
       value: window.location.pathname.substring(id + 1)
     });
   }
-  handleChange = (event, value) => {
-    console.log(value);
-    this.setState({ value: value });
+  handleChange = (event) => {
+    console.log(event.target.value)
+    this.setState({
+      value:event.target.value,
+      redirect: true
+    })
   };
 
   render() {
@@ -29,16 +33,18 @@ class SwingBarChart extends Component {
         {stateName}
       </option>
     ));
-      console.log(this.state.value)
+    console.log(this.state)
+    let redirect = this.state.redirect && <Redirect to={`./${this.state.value}`}/> 
     return (
       <div className="swingstates-bar">
+        {redirect}
         <AppHeader />
         <main className="swingstates-bar-main">
           <h3 className="swingstates-bar-title">Swing States</h3>
           <form>
             <div className="select-box">
               <Select
-                value={this.state.value && this.state.value}
+                value={this.state.value}
                 handleChange={this.handleChange}
                 options={options}
                 className={"select"}
