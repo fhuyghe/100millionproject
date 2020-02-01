@@ -1,100 +1,78 @@
 @import "../App/variables";
 
 .splash-page {
-  background: $black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: $white;
-  width: 100%;
-  padding: 50px 20px;
-  box-sizing: border-box;
-
-  .logo {
-    max-width: 200px;
-    margin-bottom: 30px;
-  }
-
-  a {
-    width: 100%;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  }
-
-  .upper {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    margin: 0 auto 30px;
-    height:40%;
-    line-height: 1.5em;
-  }
-
-  p {
-    font-family: $anon-pro;
-  }
-
-  .hash-tag {
-    margin: 0.75em 0;
-  }
-
-  .social-icons {
-    margin-top: 2vh;
-
-    a{
-      color: $white;
-    }
-
-    i {
-      font-size: 1em;
-      padding: 0 2%;
-    }
-  }
-
-
-  //MEDIA QUERIES
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	background: $black;
+	padding: 50px 20px;
+	width: 100%;
+	color: $white;
+	.logo {
+		margin-bottom: 30px;
+		max-width: 200px;
+	}
+	a {
+		width: 100%;
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	.upper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 auto 30px;
+		height: 40%;
+		line-height: 1.5em;
+	}
+	p {
+		font-family: $anon-pro;
+	}
+	.hash-tag {
+		margin: 0.75em 0;
+	}
+	.social-icons {
+		margin-top: 2vh;
+		a {
+			color: $white;
+		}
+		i {
+			padding: 0 2%;
+			font-size: 1em;
+		}
+	}
+	//MEDIA QUERIES
   @media only screen and (min-width: 600px) {
-    padding: 100px 20px;
-
-    .logo {
-      max-width: 250px;
-    }
-  }
-
-  //DESKTOP BREAKPOINT//
+		padding: 100px 20px;
+		.logo {
+			max-width: 250px;
+		}
+	}
+	//DESKTOP BREAKPOINT//
   @media only screen and (min-width: 900px) {
-    .logo {
-      height: 26%;
-    }
-
-    .upper {
-
-      p {
-        // padding: 2%;
-        font-size: 1em;
-      }
-    }
-
-    form input {
-      //width: 30%;
-      box-sizing: border-box;
-    }
-
-    .logo {
-      height: 26%;
-    }
-  }
-
-
-  //ADJUST FOR SMALL HEIGHTS 
+		.logo {
+			height: 26%;
+		}
+		.upper {
+			p {
+				font-size: 1em;
+				// padding: 2%;
+			}
+		}
+		form input {
+			box-sizing: border-box;
+			//width: 30%;
+		}
+	}
+	//ADJUST FOR SMALL HEIGHTS 
   @media only screen and (max-height: 600px) {
-
-    .logo { // margin:5vh;
-      height: 25%;
-    }
-  }
+		.logo {
+			height: 25%;
+			// margin: 5vh;
+		}
+	}
 }

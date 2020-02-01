@@ -1,0 +1,43 @@
+@import "../App/variables";
+
+.select-box {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	margin: 0 auto;
+	border: 1px solid #000;
+	padding: 10px 0;
+	width: 90%;
+	height: 50%;
+	overflow: hidden;
+	text-align: center;
+	.select {
+		position: relative;
+		z-index: 99;
+		border: 0;
+		background: none;
+		padding: 1%;
+		width: 100%;
+		text-align-last: center;
+		color: white;
+		font-size: 1.5em;
+		appearance: none;
+		option {
+			background: $blue;
+		}
+	}
+}
+.select-box:after {
+	top: 40%;
+	right: 15px;
+	transform: rotate(180deg) translate(0, -0.7em) scaleX(1.7);
+	z-index: 98;
+	border-right: 6px solid transparent;
+	width: 0;
+	height: 0;
+	font-weight: 100;
+	content: "^";
+	/* border-left: 6px solid transparent;
+	*/
+  position: absolute;
+}

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import Chart from "chart.js";
 import BarChart from "../Charts/BarChart";
 import AppHeader from "../AppHeader/AppHeader";
-// import { SwingStatesCircle } from "../../Data/sharedData.js";
 
 class SwingStatesCircle extends Component {
   constructor() {
@@ -14,13 +12,7 @@ class SwingStatesCircle extends Component {
   };
 
   render() {
-    // console.log(swingStates)
-    // let options = swingStates.map((d, i) => (
-    //   <option key={i} value={i}>{d}</option>
-      
-    // ));
-
-    // console.log(options);
+   
     return (
       <div className="swing-states-bar">
         <AppHeader />
@@ -28,7 +20,7 @@ class SwingStatesCircle extends Component {
           <h3 className="title-swing-bar">Swing States</h3>
           <form>
             <div className="select-box">
-              {/* <label> */}
+           
               <select
                 className="select"
                 style={{ textAlign: "center" }}
@@ -38,7 +30,7 @@ class SwingStatesCircle extends Component {
                {/* {options} */}
 
               </select>
-              {/* </label> */}
+             
             </div>
           </form>
           <BarChart type={'bubble'}/>

@@ -4,32 +4,30 @@
     clear:left; 
 }
 
+
 form {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    width: 100%;
-    max-width: 450px;
-    margin-bottom: 30px;
-
-    input, button {
-      background: transparent;
-      text-align: center;
-      padding: 1vh;
-      width: 100%;
-      color: $white;
-      box-sizing: border-box;
-      font-family: $anon-pro;
-      font-size: 1em;
-    }
-
-    input[type="text"] {
-      border: 2px solid grey;
-      border-bottom: none;
-    }
-
-    button[type="submit"] {
-      background: $red;
-      border: none;
-    }
-  }
+	margin-bottom: 30px;
+	width: 100%;
+	max-width: 450px;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+	input, button {
+		box-sizing: border-box;
+		background: transparent;
+		padding: 1vh;
+		width: 100%;
+		text-align: center;
+		color: $white;
+		font-family: $anon-pro;
+		font-size: 1em;
+	}
+	input[type="text"] {
+		border: 2px solid grey;
+		border-bottom: none;
+	}
+	button[type="submit"] {
+		border: none;
+		background: $red;
+	}
+}

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Chart from "chart.js";
-import { render } from "@testing-library/react";
 import { fakeData } from "../../Data/sharedData.js";
 
 Chart.defaults.global.defaultFontColor = "#fff";
@@ -10,7 +9,7 @@ Chart.plugins.register({
 
     chart.data.datasets.forEach(function(dataset, i) {
       var meta = chart.getDatasetMeta(i);
-      if (meta.type == "bubble") { //exclude scatter
+      if (meta.type === "bubble") { 
         meta.data.forEach(function(element, index) {
           // Draw the text in black, with the specified font
           ctx.fillStyle = 'rgb(0, 0, 0)';
@@ -40,72 +39,27 @@ class BarChart extends Component {
     this.state = {};
   }
   componentDidMount() {
-    // this.getData()
     this.createChart(this.prepareData());
   }
-  //  getData() {
-  //    fetch('')
-  //      .then(response => response.json())
-  //      .then(jData => this.prepareData(jData))
-  //      .then(data => this.createChart(data))
-  //  }
+
   prepareData(type) {
-    console.log(type);
+   
     const chartData = {
-      labels: ['one', 'two'],
+      labels: [],
       datasets: [{
-        label: ["China"],
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
-        fontSize:40,
-        fontStyle:'italic',
-        title: "dataTitle1",
-        color: 'green',
-        textsize:40,
-        data: [{
-          x: 21269017,
-          y: 5.245,
-          r: 60
-          }]
-      }, {
-        label: ["Denmark"],
-        backgroundColor: "rgba(60,186,159,0.2)",
-        borderColor: "rgba(60,186,159,1)",
-        title: "dataTitle2",
-        fontSize:50,
-        data: [{
-          x: 258702,
-          y: 7.526,
-          r: 10
-        }]
-      }, {
-        label: ["Germany"],
-        backgroundColor: "rgba(0,0,0,0.2)",
-        borderColor: "#000",
-        title: "dataTitle3",
-        data: [{
-          x: 3979083,
-          y: 6.994,
-          r: 15
-        }]
-      }, {
-        label: ["Japan"],
-        backgroundColor: "rgba(193,46,120,0.2)",
-        borderColor: "rgba(193,46,12,1)",
-        title: "dataTitle4",
-        data: [{
-          x: 4931877,
-          y: 5.921,
-          r: 15
-        }]
+        data:[],
+        backgroundColor: ["#37B98B", "#E5F83C", "#6B9BCA"],
+        borderWidth: 1
+     
       }]
     };
 
-    fakeData.forEach(d => {
-      chartData.labels.push(d.name);
-      chartData.datasets[0].data.push(d.amount);
+    fakeData[0].children.forEach(d => {
+      
+      chartData.labels.push(d.name)
+      chartData.datasets[0].data.push(d.value);
     });
-    console.log(chartData);
+    
     return chartData;
   }
 
@@ -133,7 +87,7 @@ class BarChart extends Component {
         },
 
         title: {
-          display: false,
+          display: true,
           text: "Do you plan on voting in 2020?",
           padding: 20,
           fontColor: "white",
@@ -176,14 +130,14 @@ class BarChart extends Component {
   }
 
   render() {
-    console.log(this.props);
+  
     return (
       <>
         <div className="bar-chart">
           <canvas
             id="states"
             className="chart"
-            style={{ height: "85%" }}
+            style={{ height: "95%" }}
           ></canvas>
           <section className="backdrop">
             More Non-Voters in New Hampshire plan to vote compared to the
@@ -191,8 +145,55 @@ class BarChart extends Component {
           </section>
         </div>
       </>
-    );
+    )
   }
 }
 
 export default BarChart;
+
+////TEST DATA FOR CHARTJS BUBBLE CHART, NOW USING AMCHART CIRCLE
+
+ //   label: [],
+      //   backgroundColor: "rgba(255,221,50,0.2)",
+      //   borderColor: "rgba(255,221,50,1)",
+      //   fontSize:40,
+      //   fontStyle:'italic',
+      //   title: "dataTitle1",
+      //   color: 'green',
+      //   textsize:40,
+      //   data: [{
+      //     x: 21269017,
+      //     y: 5.245,
+      //     r: 60
+      //     }]
+      // }, {
+      //   label: [],
+      //   backgroundColor: "rgba(60,186,159,0.2)",
+      //   borderColor: "rgba(60,186,159,1)",
+      //   title: "dataTitle2",
+      //   fontSize:50,
+      //   data: [{
+      //     x: 258702,
+      //     y: 7.526,
+      //     r: 10
+      //   }]
+      // }, {
+      //   label: [],
+      //   backgroundColor: "rgba(0,0,0,0.2)",
+      //   borderColor: "#000",
+      //   title: "dataTitle3",
+      //   data: [{
+      //     x: 3979083,
+      //     y: 6.994,
+      //     r: 15
+      //   }]
+      // }, {
+      //   label: [],
+      //   backgroundColor: "rgba(193,46,120,0.2)",
+      //   borderColor: "rgba(193,46,12,1)",
+      //   title: "dataTitle4",
+      //   data: [{
+      //     x: 4931877,
+      //     y: 5.921,
+      //     r: 15
+      //   }]

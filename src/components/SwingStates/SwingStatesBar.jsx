@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Chart from "chart.js";
 import BarChart from "../Charts/BarChart";
 import AppHeader from "../AppHeader/AppHeader";
 import { swingStates } from "../../Data/sharedData.js";
 import { Select } from "../Shared/Select"
+import "./SwingStatesBar.scss"
 
 class SwingBarChart extends Component {
   constructor() {
@@ -15,19 +15,19 @@ class SwingBarChart extends Component {
   };
 
   render() {
-    console.log(swingStates);
+   
     let options = swingStates.map((stateName, i) => (
       <option key={i} value={i}>
         {stateName}
       </option>
     ));
 
-    console.log(options);
+  
     return (
-      <div className="swing-states-bar">
+      <div className="swingstates-bar">
         <AppHeader />
-        <main className="swing-states-main">
-          <h3 className="title-swing-bar">Swing States</h3>
+        <main className="swingstates-bar-main">
+          <h3 className="swingstates-bar-title">Swing States</h3>
           <form>
             <div className="select-box">
               <Select

@@ -13,8 +13,8 @@ const SwingStates = () => {
     <div className="swingstates-page">
       <AppHeader />
       
-      <main className="main-swing">
-      <div className="title-swing">Swing States</div>{swingList}
+      <main className="swingstates-main">
+      <div className="swing-states-title">Swing States</div>{swingList}
       </main>
     </div>
   );

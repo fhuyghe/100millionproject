@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import * as am4core from "@amcharts/amcharts4/core";
-import * as am4charts from "@amcharts/amcharts4/charts";
+// import * as am4charts from "@amcharts/amcharts4/charts";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 // import dataviz from "@amcharts/amcharts4/themes/dataviz.js";
@@ -12,12 +12,12 @@ am4core.useTheme(am4themes_animated);
 class CircleChart extends Component {
   
   componentDidMount() {
-    console.log('cdm')
+   
     am4core.useTheme(am4themes_animated);
-    // Themes end
+   
 
     let chart = am4core.create(
-      "chartdiv",
+      "circle-chart",
       am4plugins_forceDirected.ForceDirectedTree
     );
     chart.background.fill = "#F2705E";
@@ -70,7 +70,7 @@ class CircleChart extends Component {
     
     series.fontSize = 14;
     series.minRadius = 15;
-    series.maxRadius = 75;
+    series.maxRadius = 80;
 
     series.data = this.props.fakeData[0].children[this.props.type].children;
   }
@@ -90,9 +90,8 @@ class CircleChart extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
-      <div id="chartdiv"></div>
+      <div id="circle-chart"></div>
     );
   }
 }

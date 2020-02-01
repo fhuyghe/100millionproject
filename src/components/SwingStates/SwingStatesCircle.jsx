@@ -4,6 +4,7 @@ import CircleChart from "../Charts/CircleChart";
 import { fakeData, swingStates } from "../../Data/sharedData.js";
 import AppHeader from "../AppHeader/AppHeader";
 import { Select } from "../Shared/Select";
+import './SwingStatesCircle.scss'
 
 class SwingStatesCircle extends Component {
   constructor(props) {
@@ -14,12 +15,10 @@ class SwingStatesCircle extends Component {
     };
   }
   handleChange = event => {
-    console.log("here");
     this.setState({ value: event.target.value });
   };
 
   handleClick = event => {
-    console.log("hr", event.target.name);
 
     event.preventDefault();
     this.setState({ [event.target.name]: event.target.value });
@@ -32,13 +31,13 @@ class SwingStatesCircle extends Component {
       </option>
     ));
 
-    console.log(this.state);
+    
     const title = "What is the most important issue facing the U.S. today?";
     return (
-      <div className="swing-states-bar">
+      <div className="swingstates-circle">
         <AppHeader />
-        <main className="swing-states-main">
-          <h3 className="title-swing-bar">Swing States</h3>
+        <main className="swingstates-circle-main">
+          <h3 className="swingstates-circle-title">Swing States</h3>
           <form>
             <div className="select-box">
               <Select
@@ -58,18 +57,25 @@ class SwingStatesCircle extends Component {
           />
 
           <div className="swing-circle-selectors">
-            let act = ''
-            {this.state.fakeData[0].children.map((el, index) => (
+            {this.state.fakeData[0].children.map((el, index) => {
+              let active = this.state.activeIndex === index ? 1 : 0
+              let bgcolor = this.state.activeIndex === index ? 'black' : 'transparent'
+              let vis = this.state.activeIndex === index ? 'visible' : 'hidden'
+             return (
+               
               <div className="selectors">
-                <div className={"arrow-up"}></div>
+                <div 
+                className={"arrow-up"}
+                 style={{
+                  // background: `${bgcolor}`,
+                  visibility: `${vis}`
+                }}></div>
                 <div
                   key={index}
-                  active={this.state.activeIndex === index ? 1 : 0}
-                  style={
-                    this.state.activeIndex === index
-                      ? { background: "black" }
-                      : { background: "transparent" }
-                  }
+                  active = {active}
+                  style={{
+                    background: `${bgcolor}`
+                  }}
                   onClick={() =>
                     this.setState({ activeIndex: index, name: el.name })
                   }
@@ -78,7 +84,8 @@ class SwingStatesCircle extends Component {
                   {el.name}
                 </div>
               </div>
-            ))}
+             )
+  })}
           </div>
         </main>
       </div>

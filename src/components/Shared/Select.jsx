@@ -1,8 +1,7 @@
 import React from "react";
-import './Select.css'
+import './Select.scss'
 
 export const Select = props => {
-  console.log('hi', props)
   return (
     <select
       className="select"

@@ -1,4 +1,3 @@
-import React from "react";
 
 export const swingStates = [
   "Colorado",
@@ -19,8 +18,8 @@ export const fakeData = [
     children: [
       {
         name: "Voters",
-        color: "red",
-        value: 1,
+        // color: "red",
+        value: 80,
 
         children: [
           {
@@ -51,7 +50,7 @@ export const fakeData = [
       },
       {
         name: "Non-Voters",
-        value: 600,
+        value: 50,
         children: [
           {
             name: "Immigration",
@@ -81,7 +80,7 @@ export const fakeData = [
       },
       {
         name: "18-24",
-        value: 60,
+        value: 30,
         children: [
           {
             name: "Immigration",
