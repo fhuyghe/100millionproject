@@ -1,14 +1,12 @@
-.app-header{
-    height: 5%;
-    display: flex;
-    color: white;
-    align-items: center;
-    margin: 1% 0; 
-    padding: 0 3%;
-    background:black; 
-   
-} 
-
-.title{
-        margin-left:20px;
-    }
+.app-header {
+	display: flex;
+	align-items: center;
+	margin: 1% 0;
+	background: black;
+	padding: 0 3%;
+	height: 5%;
+	color: white;
+}
+.title {
+	margin-left: 20px;
+}

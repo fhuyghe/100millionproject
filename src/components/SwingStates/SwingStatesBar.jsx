@@ -1,47 +1,64 @@
 import React, { Component } from "react";
-import Chart from "chart.js";
 import BarChart from "../Charts/BarChart";
 import AppHeader from "../AppHeader/AppHeader";
 import { swingStates } from "../../Data/sharedData.js";
+import { Select } from "../Shared/Select";
+import "./SwingStatesBar.scss";
+import { Redirect } from "react-router-dom"
 
 class SwingBarChart extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      // value: 0
+    };
   }
-  handleChange = event => {
-    this.setState({ value: event.target.value });
+  componentDidMount() {
+    let idx = window.location.pathname.lastIndexOf("/")
+    let id = window.location.pathname.substring(idx + 1)
+    let stateId = isNaN(parseInt(id)) ? 0 : id 
+
+    this.setState({
+      value: stateId
+    });
+  }
+  componentDidUpdate(prevProps, prevState){
+    if(this.props.withoutID !== prevState.withoutID){
+      this.componentDidMount()
+    }
+  }
+  handleChange = (event) => {
+    this.setState({
+      value:event.target.value,
+      redirect: true
+    })
   };
 
   render() {
-    console.log(swingStates)
-    let options = swingStates.map((d, i) => (
-      <option key={i} value={i}>{d}</option>
-      
+    let options = swingStates.map((stateName, i) => (
+      <option key={i} value={i}>
+        {stateName}
+      </option>
     ));
-
-    console.log(options);
+    let redirect = this.state.redirect && <Redirect to={`./${this.state.value}`}/> 
     return (
-      <div className="swing-states-bar">
+      <div className="swingstates-bar">
+        {redirect}
         <AppHeader />
-        <main className="swing-states-main">
-          <h3 className="title-swing-bar">Swing States</h3>
+        <main className="swingstates-bar-main">
+          <h3 className="swingstates-bar-title">Swing States</h3>
           <form>
             <div className="select-box">
-              {/* <label> */}
-              <select
-                className="select"
-                style={{ textAlign: "center" }}
+              <Select
                 value={this.state.value}
-                onChange={this.handleChange}
-              >
-               {options}
-
-              </select>
-              {/* </label> */}
+                handleChange={this.handleChange}
+                options={options}
+                className={"select"}
+              />
             </div>
           </form>
-          <BarChart type={'bar'}/>
+          { 
+          <BarChart type={"bar"} value={this.state.value} />}
         </main>
       </div>
     );

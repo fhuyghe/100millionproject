@@ -10,6 +10,8 @@ import Study from "../Study/Study";
 import SwingStates from "../SwingStates/SwingStates";
 import SwingBarChart from "../SwingStates/SwingStatesBar"
 import SwingStatesBubble from "../SwingStates/SwingStatesBubble"
+import SwingStatesCircle from "../SwingStates/SwingStatesCircle"
+
 
 function App() {
   return (
@@ -33,16 +35,19 @@ function App() {
           <Route path="/study">
             <Study />
           </Route>
-          <Route path="/swingstates">
+          <Route exact path="/swingstates">
             <SwingStates />
           </Route>
-          <Route exact path="/swingstatesbar">
-            <SwingBarChart />
-          </Route>
-          <Route exact path="/swingstatesbubble">
-            <SwingStatesBubble />
-          </Route>
+          <Route path="/swingstates/bar" render={props => <SwingBarChart {...props} />} />
+          <Route path="/swingstates/bar/:stateID" render={props => <SwingBarChart {...props} />} />
 
+          <Route path="/swingstates/circle/" render={props => <SwingStatesCircle {...props} />} />
+          <Route path="/swingstates/circle/:stateID" render={props => <SwingBarChart {...props} />} />
+          {/* ROUTE FOR CHARTJS BUBBLE, NOT USING ATM
+          {/* <Route path="/swingstates/bubble">
+            <SwingStatesBubble />
+          </Route> */}
+          
         </Switch>
       </div>
    

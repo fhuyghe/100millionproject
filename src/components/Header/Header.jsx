@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Menu from "../Menu";
 import "./header.scss";
-import { Link, useRouteMatch, useParams } from "react-router-dom";
+// import { Link, useRouteMatch, useParams } from "react-router-dom";
 import "@fortawesome/fontawesome-pro/css/all.css";
-import { render } from "@testing-library/react";
+
 
 class Header extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Header extends Component {
   }
 
   render() {
-    console.log(this.props.location.pathname);
+    
     return (
       <header className="App-header">
       

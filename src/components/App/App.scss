@@ -1,26 +1,28 @@
 @import '../../assets/styles/variables.scss';
 
-.App {
-  text-align: center;
-  min-height:100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color:$black;
-  margin: 0 auto;
-}
 
+.App {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0 auto;
+	background-color: $black;
+	min-height: 100vh;
+	text-align: center;
+	
+
+}
 // Splash page styling
 .app-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+.App-link {
+	color: #61dafb;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 
 .desktop-only{

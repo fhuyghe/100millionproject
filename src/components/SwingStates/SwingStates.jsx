@@ -6,15 +6,19 @@ import { swingStates } from "../../Data/sharedData.js";
 
 const SwingStates = () => {
 
-  const swingList = swingStates.map(stateName => (
-    <div className="state-name"><NavLink className="state-name-link" activeClassName="active" to="/">{stateName}</NavLink></div>
+  const swingList = swingStates.map((stateName, index) => (
+    <div className="state-name">
+      <NavLink className="state-name-link" activeClassName="active" to={`/swingstates/bar/${index}`}>
+        {stateName}
+      </NavLink>
+      </div>
   ));
   return (
     <div className="swingstates-page">
       <AppHeader />
       
-      <main className="main-swing">
-      <div className="title-swing">Swing States</div>{swingList}
+      <main className="swingstates-main">
+      <div className="swing-states-title">Swing States</div>{swingList}
       </main>
     </div>
   );
