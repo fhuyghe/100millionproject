@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.scss";
+import "bootstrap/dist/css/bootstrap.css"
 import Splash from "../Splash/Splash";
 import About from "../About/About";
 import Landing from "../Landing";

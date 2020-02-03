@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import '../../assets/styles/variables.scss';
 
 
 .App {
@@ -10,6 +10,7 @@
 	min-height: 100vh;
 	text-align: center;
 	
+
 }
 // Splash page styling
 .app-body {
@@ -21,3 +22,20 @@
 .App-link {
 	color: #61dafb;
 }
+
+
+
+.desktop-only{
+  display: none;
+}
+
+@include media-breakpoint-up(md){
+  .mobile-only{
+    display: none;
+  }
+
+  .desktop-only{
+    display: inherit;
+  }
+}
+
