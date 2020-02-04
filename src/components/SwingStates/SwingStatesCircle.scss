@@ -1,10 +1,12 @@
-@import "../App/variables";
+@import '../../assets/styles/variables';
 
 .swingstates-circle {
 	background: #009fdd;
-    height: 100vh;
+    min-height: 100vh;
+
     .swingstates-circle-main {
-        height: 90%;
+        //height: 90%;
+
         .swingstates-circle-title {
             margin: 7% 0 2%;
             width: 100%;
@@ -19,7 +21,7 @@
             position: relative;
             margin: 0 auto;
             width: 90%;
-            height: 80%;
+            height: 500px;
         }
 
         .swing-circle-selectors {
@@ -35,6 +37,7 @@
                 flex-direction: column;
                 align-items: center;
                 height: 20px;
+                
                 .arrow-up {
                     border-right: 5px solid transparent;
                     border-bottom: 5px solid black;

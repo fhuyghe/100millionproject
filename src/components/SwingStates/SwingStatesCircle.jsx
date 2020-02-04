@@ -15,6 +15,7 @@ class SwingStatesCircle extends Component {
       activeIndex: 0
     };
   }
+
   componentDidMount(){
     let idx = window.location.pathname.lastIndexOf("/")
     let id = window.location.pathname.substring(idx + 1)
@@ -24,6 +25,7 @@ class SwingStatesCircle extends Component {
     });
 
   }
+  
   handleChange = event => {
     this.setState({
       value:event.target.value,
