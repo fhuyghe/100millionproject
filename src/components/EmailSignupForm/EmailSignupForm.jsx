@@ -22,7 +22,7 @@ const EmailSignupForm = () => {
             error: "An unexpected internal error has occurred.",
             empty: "You must write an e-mail.",
             duplicate: "Too many subscribe attempts for this email address",
-            button: "Subscribe"
+            button: "Notify Me!"
           }
         }
         />

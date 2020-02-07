@@ -19,7 +19,7 @@ Chart.plugins.register({
           ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
 
           // Just naively convert to string for now
-          var dataString = dataset.data[index].toString();
+          //var dataString = dataset.data[index].toString();
           // Make sure alignment settings are correct
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";

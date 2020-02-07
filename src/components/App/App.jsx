@@ -9,7 +9,6 @@ import Story from "../Story/Story";
 import Study from "../Study/Study";
 import SwingStates from "../SwingStates/SwingStates";
 import SwingBarChart from "../SwingStates/SwingStatesBar"
-import SwingStatesBubble from "../SwingStates/SwingStatesBubble"
 import SwingStatesCircle from "../SwingStates/SwingStatesCircle"
 
 
