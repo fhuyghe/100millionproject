@@ -70,22 +70,23 @@ class CircleChart extends Component {
     series.maxRadius = 75;
 
     series.data = this.props.fakeData[0].children[this.state.activeIndex].children;
+    this.setState({series:series})
   }
 
   componentDidUpdate(prevProps, prevState) {
     console.log(prevProps, prevState)
-    if (this.props.value !== prevProps.value) {
+    // if (this.props.value !== prevProps.value) {
       // console.log(this.state.series)
-      this.state.series.data = this.props.fakeData[this.props.value].children[this.props.type].children
+      // this.state.series.data = this.state.fakeData[this.state.value].children[this.state.activeIndex].children
       // this.componentDidMount()
-    }
-    if (this.props.type !== prevProps.type) {
-      this.state.series.data = this.props.fakeData[this.props.value].children[
-        this.props.type
-      ].children;
+    // }
+    // if (this.props.type !== prevProps.type) {
+    //   this.state.series.data = this.props.fakeData[this.props.value].children[
+    //     this.props.type
+    //   ].children;
 
-      // this.componentDidMount()
-    }
+    //   // this.componentDidMount()
+    // }
   }
 
   componentWillUnmount() {
@@ -121,7 +122,10 @@ class CircleChart extends Component {
                     background: `${bgcolor}`
                   }}
                   onClick={() =>
-                    this.setState({ activeIndex: index, name: el.name })
+                    this.setState({ 
+                      activeIndex: index, 
+                      name: el.name,
+                     })
                   }
                   name={el.name}
                 >
