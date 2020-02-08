@@ -11,6 +11,7 @@ import SwingStates from "../SwingStates/SwingStates";
 import SwingBarChart from "../SwingStates/SwingStatesBar"
 import SwingStatesBubble from "../SwingStates/SwingStatesBubble"
 import SwingStatesCircle from "../SwingStates/SwingStatesCircle"
+import Quiz from "../Quiz/Quiz"
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route exact path="/swingstates">
             <SwingStates />
+          </Route>
+          <Route path="/quiz">
+            <Quiz />
           </Route>
           <Route path="/swingstates/bar" render={props => <SwingBarChart {...props} />} />
           <Route path="/swingstates/bar/:stateID" render={props => <SwingBarChart {...props} />} />
