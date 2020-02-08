@@ -4,7 +4,7 @@ export const questions = [
         type: "slider",
         responses: [
             {
-                response: 0,
+                responseValue: 0,
                 resultChange: [
                     1,
                     0,
@@ -12,7 +12,7 @@ export const questions = [
                 ]
             },
             {
-                response: 1,
+                responseValue: 1,
                 resultChange: [
                     2,
                     -1,
@@ -20,7 +20,7 @@ export const questions = [
                 ]
             },
             {
-                response: 2,
+                responseValue: 2,
                 resultChange: [
                     0,
                     -1,
@@ -28,7 +28,7 @@ export const questions = [
                 ]
             },
             {
-                response: 3,
+                responseValue: 3,
                 resultChange: [
                     +2,
                      1,
@@ -36,7 +36,7 @@ export const questions = [
                 ]
             },
             {
-                response: 4,
+                responseValue: 4,
                 resultChange: [
                     2,
                     0,
@@ -44,7 +44,7 @@ export const questions = [
                 ]
             },
             {
-                response: 5,
+                responseValue: 5,
                 resultChange: [
                     0,
                     -1,
@@ -58,7 +58,7 @@ export const questions = [
         type: "choices",
         responses: [
             {
-                response: "Liberal",
+                responseValue: "Liberal",
                 resultChange: [
                     2,
                     -1,
@@ -66,7 +66,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Moderate",
+                responseValue: "Moderate",
                 resultChange: [
                     -1,
                     2,
@@ -74,7 +74,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Conservative",
+                responseValue: "Conservative",
                 resultChange: [
                     -4,
                      3,
@@ -82,7 +82,7 @@ export const questions = [
                 ]
             },
             {
-                response: "I don't know",
+                responseValue: "I don't know",
                 resultChange: [
                     -2,
                      1,
@@ -96,7 +96,7 @@ export const questions = [
         type: "choices",
         responses: [
             {
-                respopnse: "Very closely",
+                respopnseValue: "Very closely",
                 resultChange: [
                     -1,
                     +3,
@@ -104,7 +104,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Somewhat closely",
+                responseValue: "Somewhat closely",
                 resultChange: [
                     -3,
                     +2,
@@ -112,7 +112,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Not very closely",
+                responseValue: "Not very closely",
                 resultChange: [
                     -1,
                     -2,
@@ -120,7 +120,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Not at all",
+                responseValue: "Not at all",
                 resultChange: [
                     2,
                     -1,
@@ -134,7 +134,7 @@ export const questions = [
         type: "choices",
         responses: [
             {
-                response: "Yes",
+                responseValue: "Yes",
                 resultChange: [
                     0,
                     1,
@@ -142,7 +142,7 @@ export const questions = [
                 ]
             },
             {
-                response: "No",
+                responseValue: "No",
                 resultChange: [
                     2,
                     1,
@@ -156,7 +156,7 @@ export const questions = [
         type: "choices",
         responses: [
             {
-                response: "Very Confident",
+                responseValue: "Very Confident",
                 resultChange: [
                     1,
                     0,
@@ -164,7 +164,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Somewhat Confident",
+                responseValue: "Somewhat Confident",
                 resultChange: [
                     0,
                     2,
@@ -172,7 +172,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Not very confident",
+                responseValue: "Not very confident",
                 resultChange: [
                     1, 
                     0,
@@ -180,7 +180,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Not confident at all",
+                responseValue: "Not confident at all",
                 resultChange: [
                     0, 
                     1, 
@@ -194,7 +194,7 @@ export const questions = [
         type: "choices",
         responses: [
             {
-                response: "News",
+                responseValue: "News",
                 resultChange: [
                     2, 
                     -1, 
@@ -202,7 +202,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Social Media",
+                responseValue: "Social Media",
                 resultChage: [
                     1,
                     -1,
@@ -210,7 +210,7 @@ export const questions = [
                 ]
             },
             {
-                response: "TV Shows & Movies",
+                responseValue: "TV Shows & Movies",
                 resultChange: [
                     0,
                     -1,
@@ -218,7 +218,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Gaming",
+                responseValue: "Gaming",
                 resultChange: [
                     1,
                     1,
@@ -226,7 +226,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Sports",
+                responseValue: "Sports",
                 resultChange: [
                     0,
                     -1,
@@ -234,7 +234,7 @@ export const questions = [
                 ]
             },
             {
-                response: "Something else",
+                responseValue: "Something else",
                 resultChange: [
                     1,
                     -1,

@@ -1,7 +1,14 @@
 @import '../../assets/styles/variables';
 
+.question-heading {
+    color: $white; 
+    size: 30px;   
+}
+
 .question-text {
-    color: $white;    
+    color: $white; 
+    size: 20px; 
+    margin-top: 50px;  
 }
 
 .range-selector {
@@ -11,13 +18,40 @@
     margin: 10px auto;
 }
 
-.range-choice {
+.range-option {
     color: $white;
     background: gray;
     border: 1px solid $black;
     width: 100%;
 }
 
-.range-choice:hover {
+.range-option:hover {
     cursor: pointer;
+}
+
+.multiple-choice-container {
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: center;    
+}
+
+.multiple-choice-options {
+    color: $white;
+    width: 150px;
+    height: 50px;
+    margin: 30px 50px;
+    border: 1px solid $white;
+    border-radius: 10px;
+    background: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.multiple-choice-options:hover {
+    cursor: pointer;
+    background: $green;
+    transition: background 0.5s;
 }
