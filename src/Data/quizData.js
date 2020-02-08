@@ -247,18 +247,15 @@ export const questions = [
 
 export const results = [
     {
-        result: "Result 1",
-        points: null,
+        result: "Result 1",        
         description: "You believe in X..."
     },
     {
-        result: "Result 2",
-        points: null,
+        result: "Result 2",    
         description: "You believe in Y..."
     },
     {
-        result: "Result 3",
-        points: null,
+        result: "Result 3",        
         description: "You believe in Z..."
     }
 ]

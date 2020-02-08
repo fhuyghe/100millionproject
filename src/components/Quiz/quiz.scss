@@ -1,0 +1,23 @@
+@import '../../assets/styles/variables';
+
+.question-text {
+    color: $white;    
+}
+
+.range-selector {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;    
+    margin: 10px auto;
+}
+
+.range-choice {
+    color: $white;
+    background: gray;
+    border: 1px solid $black;
+    width: 100%;
+}
+
+.range-choice:hover {
+    cursor: pointer;
+}
