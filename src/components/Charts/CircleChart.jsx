@@ -9,25 +9,31 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 am4core.useTheme(am4themes_animated);
 
 class CircleChart extends Component {
-  
-  componentDidMount() {
-    let id = this.props.value ? this.props.value : 0
-     
-    am4core.useTheme(am4themes_animated);
+
+  state={
    
+    index:0,
+    activeIndex: 0
+  }
+  componentDidMount() {
+    let id = this.props.value ? this.props.value : 0;
+    console.log(this.props, id);
+
+    am4core.useTheme(am4themes_animated);
+
     let chart = am4core.create(
       "circle-chart",
       am4plugins_forceDirected.ForceDirectedTree
     );
     chart.background.fill = "#F2705E";
- 
+
     chart.dataFields.color = "color";
-  
+
     let title = chart.titles.create();
     title.text = this.props.title;
     title.fill = "white";
     title.fontSize = 20;
- 
+
     title.wrap = true;
     title.textAlign = "middle";
     title.isMeasured = false;
@@ -37,7 +43,6 @@ class CircleChart extends Component {
     title.paddingRight = 30;
     title.marginBottom = 50;
 
-  
     let series = chart.series.push(
       new am4plugins_forceDirected.ForceDirectedSeries()
     );
@@ -64,17 +69,20 @@ class CircleChart extends Component {
     series.minRadius = 15;
     series.maxRadius = 75;
 
-    series.data = this.props.fakeData[id].children[this.props.type].children;
+    series.data = this.props.fakeData[0].children[this.state.activeIndex].children;
   }
-  
-  componentDidUpdate(prevProps, prevState){
-    if(this.props.value !== prevProps.value){
-      console.log(this.state.series)
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps, prevState)
+    if (this.props.value !== prevProps.value) {
+      // console.log(this.state.series)
       this.state.series.data = this.props.fakeData[this.props.value].children[this.props.type].children
       // this.componentDidMount()
     }
-    if(this.props.type !== prevProps.type){
-      this.state.series.data = this.props.fakeData[this.props.value].children[this.props.type].children
+    if (this.props.type !== prevProps.type) {
+      this.state.series.data = this.props.fakeData[this.props.value].children[
+        this.props.type
+      ].children;
 
       // this.componentDidMount()
     }
@@ -87,8 +95,43 @@ class CircleChart extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
-      <div id="circle-chart"></div>
+      <div>
+        <div id="circle-chart"></div>
+        <div className="swing-circle-selectors">
+          {this.props.fakeData[0].children.map((el, index) => {
+            let active = this.state.activeIndex === index ? 1 : 0;
+            let bgcolor =
+              this.state.activeIndex === index ? "black" : "transparent";
+            let vis = this.state.activeIndex === index ? "visible" : "hidden";
+            return (
+              <div className="selectors">
+                <div
+                  className={"arrow-up"}
+                  style={{
+                    // background: `${bgcolor}`,
+                    visibility: `${vis}`
+                  }}
+                ></div>
+                <div
+                  key={index}
+                  active={active}
+                  style={{
+                    background: `${bgcolor}`
+                  }}
+                  onClick={() =>
+                    this.setState({ activeIndex: index, name: el.name })
+                  }
+                  name={el.name}
+                >
+                  {el.name}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     );
   }
 }
