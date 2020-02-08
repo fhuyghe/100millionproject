@@ -69,10 +69,14 @@ class CircleChart extends Component {
   
   componentDidUpdate(prevProps, prevState){
     if(this.props.value !== prevProps.value){
-      this.componentDidMount()
+      console.log(this.state.series)
+      this.state.series.data = this.props.fakeData[this.props.value].children[this.props.type].children
+      // this.componentDidMount()
     }
     if(this.props.type !== prevProps.type){
-      this.componentDidMount()
+      this.state.series.data = this.props.fakeData[this.props.value].children[this.props.type].children
+
+      // this.componentDidMount()
     }
   }
 
