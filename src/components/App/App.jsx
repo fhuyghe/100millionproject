@@ -8,8 +8,8 @@ import Landing from "../Landing";
 import Story from "../Story/Story";
 import Study from "../Study/Study";
 import SwingStates from "../SwingStates/SwingStates";
-import SwingBarChart from "../SwingStates/SwingStatesBar"
-import SwingStatesCircle from "../SwingStates/SwingStatesCircle"
+
+import SwingStatesChart from "../SwingStates/SwingStatesChart"
 
 
 function App() {
@@ -37,11 +37,10 @@ function App() {
           <Route exact path="/swingstates">
             <SwingStates />
           </Route>
-          <Route path="/swingstates/bar" render={props => <SwingBarChart {...props} />} />
-          <Route path="/swingstates/bar/:stateID" render={props => <SwingBarChart {...props} />} />
+          <Route path="/swingstates/:statename" render={props => <SwingStatesChart {...props} />} />
 
-          <Route path="/swingstates/circle/" render={props => <SwingStatesCircle {...props} />} />
-          <Route path="/swingstates/circle/:stateID" render={props => <SwingBarChart {...props} />} />
+
+         
           {/* ROUTE FOR CHARTJS BUBBLE, NOT USING ATM
           {/* <Route path="/swingstates/bubble">
             <SwingStatesBubble />
