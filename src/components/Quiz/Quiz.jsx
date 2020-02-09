@@ -23,34 +23,48 @@ class Quiz extends Component {
     });
   }
 
-  render() {    
-    return (      
+  render() {
+    return (
       <div>
-        <h1 className="question-heading">Here is the quiz page.</h1>
-        <p className="question-text">{this.state.currentQuestionText}</p>
-        {this.state.currentQuestionType === "slider" ? (                    
-          <div className="range-selector">            
-            {this.state.sliderQuestionChoices.map((choice, i) => {
-              return <div key={i}
-                          className="range-option"
-                          value={choice}
-                          onClick={() => this.choiceSelected(choice)}>{choice}</div>
-            })}
-          </div>
+        {this.state.currentQuestion === questions.length - 1 ? (
+          <h1 className="question-heading">Here are the results</h1>
         ) : (
-          <div className="multiple-choice-container">
-            {questions[this.state.currentQuestion].responses.map(
-              (response, i) => {
-                return (
-                  <div
-                    className="multiple-choice-options"                    
-                    key={i}
-                    onClick={() => this.choiceSelected(response.responseValue)}
-                  >
-                    {response.responseValue}
-                  </div>
-                );
-              }
+          <div>
+            <h1 className="question-heading">Here is the quiz page.</h1>
+            <p className="question-text">{this.state.currentQuestionText}</p>
+            {this.state.currentQuestionType === "slider" ? (
+              <div className="range-selector">
+                {this.state.sliderQuestionChoices.map((choice, i) => {
+                  return (
+                    <div
+                      key={i}
+                      className="range-option"
+                      value={choice}
+                      onClick={() => this.choiceSelected(choice)}
+                    >
+                      {choice}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="multiple-choice-container">
+                {questions[this.state.currentQuestion].responses.map(
+                  (response, i) => {
+                    return (
+                      <div
+                        className="multiple-choice-options"
+                        key={i}
+                        onClick={() =>
+                          this.choiceSelected(response.responseValue)
+                        }
+                      >
+                        {response.responseValue}
+                      </div>
+                    );
+                  }
+                )}
+              </div>
             )}
           </div>
         )}

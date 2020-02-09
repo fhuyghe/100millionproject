@@ -96,7 +96,7 @@ export const questions = [
         type: "choices",
         responses: [
             {
-                respopnseValue: "Very closely",
+                responseValue: "Very closely",
                 resultChange: [
                     -1,
                     +3,
