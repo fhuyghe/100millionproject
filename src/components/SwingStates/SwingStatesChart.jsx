@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BarChart from "../Charts/BarChart";
+import BarChart from "../Charts/BarChart.jsx";
 import AppHeader from "../AppHeader/AppHeader";
 // import { swingStates } from "../../Data/sharedData.js";
 import { Select } from "../Shared/Select";
@@ -15,7 +15,7 @@ class SwingStatesChart extends Component {
     super();
     this.state = {
       stateId: 0,
-      chartType:'Circle'
+      chartType: "Bar"
     };
   }
   componentDidMount() {
@@ -46,7 +46,7 @@ class SwingStatesChart extends Component {
   };
 
   handleClick = chartType => {
-    console.log('hi', chartType)
+    console.log("hi", chartType);
     this.setState({
       chartType: chartType
     });
@@ -58,14 +58,15 @@ class SwingStatesChart extends Component {
         {stateName}
       </option>
     ));
-    let renderChart = this.state.chartType === "Bar" ? (
-      <BarChart stateId={this.state.stateId} />
-    ) : this.state.chartType === "Circle" ? (
-      <CircleChart
-        stateId={this.state.stateId}
-        handleClick={this.handleClick}
-      />
-    ) : null;
+    let renderChart =
+      this.state.chartType === "Bar" ? (
+        <BarChart stateId={this.state.stateId} />
+      ) : this.state.chartType === "Circle" ? (
+        <CircleChart
+          stateId={this.state.stateId}
+          handleClick={this.handleClick}
+        />
+      ) : null;
     console.log(this.state);
     return (
       <div className="swingstates-chart">
@@ -79,17 +80,12 @@ class SwingStatesChart extends Component {
               stateName={this.state.stateName}
               handleChange={this.handleChange}
               options={options}
-              className={"select"}
             />
           </div>
-          {/* <CircleChart
-            stateId={this.state.stateId}
-            handleClick={this.handleClick}
-          /> */}
-          {renderChart}
-          {/* <BarChart stateId={this.state.stateId} /> */}
 
-          <ChartSelect handleClick={this.handleClick}/>
+          {renderChart}
+
+          <ChartSelect handleClick={this.handleClick} />
         </main>
       </div>
     );

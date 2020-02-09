@@ -83,13 +83,7 @@ class CircleChart extends Component {
       ].children;
       // this.componentDidMount()
     }
-    // if (this.props.type !== prevProps.type) {
-    //   this.state.series.data = this.state.fakeData[this.props.stateId].children[
-    //     this.props.type
-    //   ].children;
 
-    //   // this.componentDidMount()
-    // }
   }
 
   componentWillUnmount() {
@@ -122,7 +116,7 @@ class CircleChart extends Component {
               this.state.activeIndex === index ? "black" : "transparent";
             let vis = this.state.activeIndex === index ? "visible" : "hidden";
             return (
-              <div className="selectors">
+              <div className="selectors" key={index} >
                 <div
                   className={"arrow-up"}
                   style={{

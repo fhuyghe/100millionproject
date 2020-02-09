@@ -19,8 +19,7 @@ Chart.plugins.register({
           var fontFamily = "Helvetica Neue";
           ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
 
-          // Just naively convert to string for now
-          //var dataString = dataset.data[index].toString();
+          
           // Make sure alignment settings are correct
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
@@ -44,13 +43,25 @@ class BarChart extends Component {
     this.state = {};
   }
   componentDidMount() {
-    let id = this.props.value ? this.props.value : 0
-    this.createChart(this.prepareData(id));
+    let id = this.props.stateId ? this.props.stateId : 0
+    console.log(id, this.props.stateId)
+    let chart = this.createChart(this.prepareData(id));
+    console.log(chart)
+    this.setState({
+      chart:chart
+    })
   }
+  update = (chart, id) => {
+    chart.data = this.prepareData(id)
+    chart.update()
 
+  }
   componentDidUpdate(prevProps){
-    if(this.props.value !== prevProps.value){
-      this.componentDidMount()
+    console.log(this.state)
+    if(this.state.chart && this.props.stateId !== prevProps.stateId){
+      
+      this.state.chart.data = this.prepareData(this.props.stateId)
+      this.state.chart.update()
     }
 
   }
@@ -77,7 +88,7 @@ class BarChart extends Component {
 
   createChart(data) {
     const ctx = document.querySelector("#states");
-    new Chart(ctx, {
+    let barChart = new Chart(ctx, {
       type: 'bar',
       data: data,
 
@@ -141,7 +152,8 @@ class BarChart extends Component {
 
    
     //    Chart.defaults.scale.gridLines.drawOnChartArea = false;
-    // Chart.defaults.global.maintainAspectRatio = false
+    Chart.defaults.global.maintainAspectRatio = false
+    return barChart
     
   }
  componentWillUnmount() {
@@ -153,17 +165,17 @@ class BarChart extends Component {
     
     return (
       <>
-        <div className="bar-chart">
+        <main className="bar-chart-main">
           <canvas
             id="states"
-            className="chart"
-            style={{ height: "95%"}}
+            className="bar-chart"
+            style={{ height: "75%", width:"90%"}}
           ></canvas>
           <section className="backdrop">
             More Non-Voters in New Hampshire plan to vote compared to the
             average for swing states.
           </section>
-        </div>
+        </main>
       </>
     );
   }

@@ -7,22 +7,23 @@
   //   height: 95%;
 
   .swingstates-chart-main {
-      height:90%;
+    height: 95%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    // justify-content: space-around;
 
-    .top{
-        height:20%;
+    .top {
+      height: 15%;
+      .swingstates-chart-title {
+        margin: 7% 0 2%;
+        width: 100%;
+        letter-spacing: 0.03em;
+        color: $black;
+        font-family: $anon-pro;
+        font-size: 0.9em;
+        // font-weight: Regular;
+      }
     }
-    .swingstates-chart-title {
-      margin: 7% 0 2%;
-      width: 100%;
-      letter-spacing: 0.03em;
-      color: $black;
-      font-family: $anon-pro;
-      font-size: 0.9em;
-      // font-weight: Regular;
-    }
+   
   }
 }

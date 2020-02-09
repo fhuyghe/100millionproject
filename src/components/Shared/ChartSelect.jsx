@@ -8,8 +8,8 @@ const ChartSelect = props => {
 
   return (
     <div className="chart-select">
-      {chartTypes.map(chartType => {
-        return <div className="selector" onClick={()=>props.handleClick(chartType)}></div>
+      {chartTypes.map((chartType, index) => {
+        return <div key={index} className="selector" onClick={()=>props.handleClick(chartType)}></div>
       })}
     </div>
   )
