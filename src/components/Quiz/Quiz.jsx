@@ -1,33 +1,63 @@
 import React, { Component } from "react";
 import { questions, results } from "../../Data/quizData";
 import "./quiz.scss";
+import { setCommentRange } from "typescript";
 
 class Quiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: [0, 0, 0],
+      resultScores: [0, 0, 0],
       currentQuestion: 0,
       sliderQuestionChoices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       currentQuestionText: questions[0].question,
-      currentQuestionType: questions[0].type
+      currentQuestionType: questions[0].type,
+      leadingResult: {}
     };
   }
 
-  choiceSelected(value) {
-    console.log(value);
+  responseSelected(i) {
+    // Get new result scores
+    let currentResults = this.state.resultScores;
+    let resultChanges =
+      questions[this.state.currentQuestion].responses[i].resultChange;
+    let newResultScores = currentResults.map((result, i) => {
+      return result + resultChanges[i];
+    });    
+    let indexOfLeadingResult = newResultScores.indexOf(this.getHighestScore(newResultScores));
+    console.log(indexOfLeadingResult)
+    let leadingResult = results[indexOfLeadingResult];
+    console.log(leadingResult)
     this.setState({
+      resultScores: newResultScores,
       currentQuestion: this.state.currentQuestion + 1,
       currentQuestionText: questions[this.state.currentQuestion + 1].question,
-      currentQuestionType: questions[this.state.currentQuestion + 1].type
+      currentQuestionType: questions[this.state.currentQuestion + 1].type,
+      leadingResult: leadingResult
     });
   }
 
+  getHighestScore(scores) {
+    let highestScore = 0;
+    scores.forEach(score => {
+      if (score > highestScore) {
+        highestScore = score;
+      }      
+    })
+    return highestScore;
+  }
+
   render() {
+    {console.log(this.state.leadingResult)}
     return (
       <div>
         {this.state.currentQuestion === questions.length - 1 ? (
-          <h1 className="question-heading">Here are the results</h1>
+          <div>
+            <h1 className="question-heading">  
+            You beliefs can best be described as "{this.state.leadingResult.result}"            
+            </h1>
+        <div className="result-description">This means that {this.state.leadingResult.description}</div>
+          </div>
         ) : (
           <div>
             <h1 className="question-heading">Here is the quiz page.</h1>
@@ -40,7 +70,7 @@ class Quiz extends Component {
                       key={i}
                       className="range-option"
                       value={choice}
-                      onClick={() => this.choiceSelected(choice)}
+                      onClick={() => this.responseSelected(i)}
                     >
                       {choice}
                     </div>
@@ -55,9 +85,7 @@ class Quiz extends Component {
                       <div
                         className="multiple-choice-options"
                         key={i}
-                        onClick={() =>
-                          this.choiceSelected(response.responseValue)
-                        }
+                        onClick={() => this.responseSelected(i)}
                       >
                         {response.responseValue}
                       </div>

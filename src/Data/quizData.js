@@ -50,6 +50,46 @@ export const questions = [
                     -1,
                     0
                 ]
+            },
+            {
+                responseValue: 6,
+                resultChange: [
+                    2,
+                    -2,
+                    1
+                ]
+            },
+            {
+                responseValue: 7,
+                resultChange: [
+                    0,
+                    -1,
+                    0
+                ]
+            },
+            {
+                responseValue: 8,
+                resultChange: [
+                    3,
+                    -2,
+                    3
+                ]
+            },
+            {
+                responseValue: 9,
+                resultChange: [
+                    2,
+                    -2,
+                    3
+                ]
+            },
+            {
+                responseValue: 10,
+                resultChange: [
+                    2,
+                    -2,
+                    3
+                ]
             }
         ]
     },
