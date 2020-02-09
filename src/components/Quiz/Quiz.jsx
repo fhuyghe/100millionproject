@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { questions, results } from "../../Data/quizData";
 import "./quiz.scss";
-import { setCommentRange } from "typescript";
 
 class Quiz extends Component {
   constructor(props) {
@@ -24,10 +23,8 @@ class Quiz extends Component {
     let newResultScores = currentResults.map((result, i) => {
       return result + resultChanges[i];
     });    
-    let indexOfLeadingResult = newResultScores.indexOf(this.getHighestScore(newResultScores));
-    console.log(indexOfLeadingResult)
-    let leadingResult = results[indexOfLeadingResult];
-    console.log(leadingResult)
+    let indexOfLeadingResult = newResultScores.indexOf(this.getHighestScore(newResultScores));    
+    let leadingResult = results[indexOfLeadingResult];    
     this.setState({
       resultScores: newResultScores,
       currentQuestion: this.state.currentQuestion + 1,
@@ -47,8 +44,7 @@ class Quiz extends Component {
     return highestScore;
   }
 
-  render() {
-    {console.log(this.state.leadingResult)}
+  render() {    
     return (
       <div>
         {this.state.currentQuestion === questions.length - 1 ? (
