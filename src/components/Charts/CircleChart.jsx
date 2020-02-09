@@ -4,19 +4,20 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 // import dataviz from "@amcharts/amcharts4/themes/dataviz.js";
+import { fakeData, swingStates } from "../../Data/sharedData.js";
+import './CircleChart.scss'
 
 // am4core.useTheme(dataviz);
 am4core.useTheme(am4themes_animated);
 
 class CircleChart extends Component {
-
-  state={
-   
-    index:0,
-    activeIndex: 0
-  }
+  state = {
+    index: 0,
+    activeIndex: 0,
+    fakeData: fakeData
+  };
   componentDidMount() {
-    let id = this.props.value ? this.props.value : 0;
+    let id = this.props.stateId ? this.props.stateId : 0;
     console.log(this.props, id);
 
     am4core.useTheme(am4themes_animated);
@@ -30,7 +31,7 @@ class CircleChart extends Component {
     chart.dataFields.color = "color";
 
     let title = chart.titles.create();
-    title.text = this.props.title;
+    title.text = "What is the most important issue facing the U.S. today?";
     title.fill = "white";
     title.fontSize = 20;
 
@@ -67,21 +68,23 @@ class CircleChart extends Component {
 
     series.fontSize = 14;
     series.minRadius = 15;
-    series.maxRadius = 75;
+    series.maxRadius = 65;
 
-    series.data = this.props.fakeData[0].children[this.state.activeIndex].children;
-    this.setState({series:series})
+    series.data = fakeData[id].children[this.state.activeIndex].children;
+    this.setState({ series: series });
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps, prevState)
-    // if (this.props.value !== prevProps.value) {
-      // console.log(this.state.series)
-      // this.state.series.data = this.state.fakeData[this.state.value].children[this.state.activeIndex].children
+    console.log(prevProps, prevState, this.props);
+    if (this.props.stateId !== prevProps.stateId) {
+      //   console.log(this.state.series)
+      this.state.series.data = this.state.fakeData[this.props.stateId].children[
+        this.state.activeIndex
+      ].children;
       // this.componentDidMount()
-    // }
+    }
     // if (this.props.type !== prevProps.type) {
-    //   this.state.series.data = this.props.fakeData[this.props.value].children[
+    //   this.state.series.data = this.state.fakeData[this.props.stateId].children[
     //     this.props.type
     //   ].children;
 
@@ -94,14 +97,26 @@ class CircleChart extends Component {
       this.chart.dispose();
     }
   }
-
+  handleClick = (el, index) => {
+    this.state.series.data = this.state.fakeData[this.props.stateId].children[
+      index
+    ].children;
+    this.setState({
+      activeIndex: index,
+      name: el.name
+    });
+  };
   render() {
-    console.log(this.state)
+    console.log(this.state);
+    // if(this.state.series){
+    //    this.state.series.data = this.state.series && this.state.fakeData[0].children[this.state.activeIndex].children
+    // }
+
     return (
-      <div>
+      <main className="circle-chart-main">
         <div id="circle-chart"></div>
         <div className="swing-circle-selectors">
-          {this.props.fakeData[0].children.map((el, index) => {
+          {fakeData[0].children.map((el, index) => {
             let active = this.state.activeIndex === index ? 1 : 0;
             let bgcolor =
               this.state.activeIndex === index ? "black" : "transparent";
@@ -121,12 +136,7 @@ class CircleChart extends Component {
                   style={{
                     background: `${bgcolor}`
                   }}
-                  onClick={() =>
-                    this.setState({ 
-                      activeIndex: index, 
-                      name: el.name,
-                     })
-                  }
+                  onClick={()=>this.handleClick(el,index)}
                   name={el.name}
                 >
                   {el.name}
@@ -135,7 +145,7 @@ class CircleChart extends Component {
             );
           })}
         </div>
-      </div>
+      </main>
     );
   }
 }

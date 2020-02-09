@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Chart from "chart.js";
 import { fakeData } from "../../Data/sharedData.js";
+import "./BarChart.scss"
 
 Chart.defaults.global.defaultFontColor = "#fff";
 Chart.plugins.register({
@@ -77,7 +78,7 @@ class BarChart extends Component {
   createChart(data) {
     const ctx = document.querySelector("#states");
     new Chart(ctx, {
-      type: this.props.type,
+      type: 'bar',
       data: data,
 
       options: {
@@ -140,7 +141,7 @@ class BarChart extends Component {
 
    
     //    Chart.defaults.scale.gridLines.drawOnChartArea = false;
-    Chart.defaults.global.maintainAspectRatio = false
+    // Chart.defaults.global.maintainAspectRatio = false
     
   }
  componentWillUnmount() {

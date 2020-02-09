@@ -8,8 +8,8 @@ import Landing from "../Landing";
 import Story from "../Story/Story";
 import Study from "../Study/Study";
 import SwingStates from "../SwingStates/SwingStates";
-import SwingBarChart from "../SwingStates/SwingStatesBar"
-import SwingStatesCircle from "../SwingStates/SwingStatesCircle"
+import SwingBarChart from "../SwingStates/xSwingStatesBar"
+import SwingStatesCircle from "../SwingStates/xSwingStatesCircle"
 import SwingStatesChart from "../SwingStates/SwingStatesChart"
 
 

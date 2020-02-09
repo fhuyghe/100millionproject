@@ -4,7 +4,7 @@ import CircleChart from "../Charts/CircleChart";
 import { fakeData, swingStates } from "../../Data/sharedData.js";
 import AppHeader from "../AppHeader/AppHeader";
 import { Select } from "../Shared/Select";
-import './SwingStatesCircle.scss'
+import './SwingStatesChart.scss'
 import { Redirect } from 'react-router-dom'
 
 class SwingStatesCircle extends Component {
@@ -65,13 +65,13 @@ class SwingStatesCircle extends Component {
               />
             </div>
           </form>
-          <CircleChart
+          {/* <CircleChart
             title={title}
             fakeData={fakeData}
             swingStates={swingStates}
             type={this.state.activeIndex}
             value={this.state.value}
-          />
+          /> */}
 
           <div className="swing-circle-selectors">
             {this.state.fakeData[0].children.map((el, index) => {

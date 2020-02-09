@@ -1,0 +1,14 @@
+@import "../../assets/styles/variables";
+
+.chart-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding:0 15%;
+  .selector {
+    height: 10px;
+    width: 10px;
+    background: rgba(0,0,0,.5);
+    border-radius:50%;
+  }
+}

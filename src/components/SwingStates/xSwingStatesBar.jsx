@@ -3,7 +3,7 @@ import BarChart from "../Charts/BarChart";
 import AppHeader from "../AppHeader/AppHeader";
 import { swingStates } from "../../Data/sharedData.js";
 import { Select } from "../Shared/Select";
-import "./SwingStatesBar.scss";
+// import "./SwingStatesBar.scss";
 import { Redirect } from "react-router-dom"
 
 class SwingBarChart extends Component {

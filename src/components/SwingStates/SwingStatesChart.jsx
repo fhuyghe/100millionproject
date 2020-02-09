@@ -3,39 +3,53 @@ import BarChart from "../Charts/BarChart";
 import AppHeader from "../AppHeader/AppHeader";
 // import { swingStates } from "../../Data/sharedData.js";
 import { Select } from "../Shared/Select";
-import "./SwingStatesCircle.scss";
-import { Redirect } from "react-router-dom"
-import Chart from "../Charts/Chart.jsx"
+import "./SwingStatesChart.scss";
+import { Redirect } from "react-router-dom";
+import Chart from "../Charts/Chart.jsx";
 import CircleChart from "../Charts/CircleChart";
 import { fakeData, swingStates } from "../../Data/sharedData.js";
+import ChartSelect from "../Shared/ChartSelect";
 
-
-class SwingBarChart extends Component {
+class SwingStatesChart extends Component {
   constructor() {
     super();
     this.state = {
-      value: 0
+      stateId: 0,
+      chartType:'Circle'
     };
   }
   componentDidMount() {
-    let idx = window.location.pathname.lastIndexOf("/")
-    let id = window.location.pathname.substring(idx + 1)
-    let stateId = isNaN(parseInt(id)) ? 0 : id 
+    // console.log(this.props);
+    let idx = this.props.location.pathname.lastIndexOf("/");
+    let url = window.location.pathname.substring(idx + 1);
+    let stateName = swingStates.includes(url) ? url : "Colorado";
+    let stateId = stateName && swingStates.indexOf(stateName);
 
     this.setState({
-      value: stateId
+      stateId: stateId,
+      stateName: stateName
     });
   }
-  componentDidUpdate(prevProps, prevState){
-    if(this.props.withoutID !== prevState.withoutID){
-      this.componentDidMount()
-    }
-  }
-  handleChange = (event) => {
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (this.props.withoutID !== prevState.withoutID) {
+  //     this.componentDidMount();
+  //   }
+  // }
+  handleChange = event => {
+    this.props.history.push(swingStates[event.target.value]);
+
     this.setState({
-      value:event.target.value,
-      redirect: true
-    })
+      stateId: event.target.value,
+      stateName: swingStates[event.target.value]
+      // redirect: true
+    });
+  };
+
+  handleClick = chartType => {
+    console.log('hi', chartType)
+    this.setState({
+      chartType: chartType
+    });
   };
 
   render() {
@@ -44,37 +58,42 @@ class SwingBarChart extends Component {
         {stateName}
       </option>
     ));
-    let redirect = this.state.redirect && <Redirect to={`./${this.state.value}`}/> 
-    const title = "What is the most important issue facing the U.S. today?";
-
+    let renderChart = this.state.chartType === "Bar" ? (
+      <BarChart stateId={this.state.stateId} />
+    ) : this.state.chartType === "Circle" ? (
+      <CircleChart
+        stateId={this.state.stateId}
+        handleClick={this.handleClick}
+      />
+    ) : null;
+    console.log(this.state);
     return (
-      <div className="swingstates-circle">
-        {redirect}
+      <div className="swingstates-chart">
         <AppHeader />
-        <main className="swingstates-circle-main">
-          <h3 className="swingstates-circle-title">Swing States</h3>
-          <form>
-            <div className="select-box">
-              <Select
-                value={this.state.value}
-                handleChange={this.handleChange}
-                options={options}
-                className={"select"}
-              />
-            </div>
-          </form>
-          {/* { <Chart value={this.state.value} />} */}
-          <CircleChart
-            title={title}
-            fakeData={fakeData}
-            swingStates={swingStates}
-            type={this.state.activeIndex}
-            value={this.state.value}
-          />
+        <main className="swingstates-chart-main">
+          <div className="top">
+            <h3 className="swingstates-chart-title">Swing States</h3>
+
+            <Select
+              stateId={this.state.stateId}
+              stateName={this.state.stateName}
+              handleChange={this.handleChange}
+              options={options}
+              className={"select"}
+            />
+          </div>
+          {/* <CircleChart
+            stateId={this.state.stateId}
+            handleClick={this.handleClick}
+          /> */}
+          {renderChart}
+          {/* <BarChart stateId={this.state.stateId} /> */}
+
+          <ChartSelect handleClick={this.handleClick}/>
         </main>
       </div>
     );
   }
 }
 
-export default SwingBarChart;
+export default SwingStatesChart;
