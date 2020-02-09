@@ -44,9 +44,9 @@ class BarChart extends Component {
   }
   componentDidMount() {
     let id = this.props.stateId ? this.props.stateId : 0
-    console.log(id, this.props.stateId)
+   
     let chart = this.createChart(this.prepareData(id));
-    console.log(chart)
+  
     this.setState({
       chart:chart
     })
@@ -57,7 +57,7 @@ class BarChart extends Component {
 
   }
   componentDidUpdate(prevProps){
-    console.log(this.state)
+    
     if(this.state.chart && this.props.stateId !== prevProps.stateId){
       
       this.state.chart.data = this.prepareData(this.props.stateId)

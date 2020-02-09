@@ -19,7 +19,7 @@ class SwingStatesChart extends Component {
     };
   }
   componentDidMount() {
-    // console.log(this.props);
+   
     let idx = this.props.location.pathname.lastIndexOf("/");
     let url = window.location.pathname.substring(idx + 1);
     let stateName = swingStates.includes(url) ? url : "Colorado";
@@ -46,7 +46,7 @@ class SwingStatesChart extends Component {
   };
 
   handleClick = chartType => {
-    console.log("hi", chartType);
+  
     this.setState({
       chartType: chartType
     });
@@ -67,7 +67,7 @@ class SwingStatesChart extends Component {
           handleClick={this.handleClick}
         />
       ) : null;
-    console.log(this.state);
+ 
     return (
       <div className="swingstates-chart">
         <AppHeader />

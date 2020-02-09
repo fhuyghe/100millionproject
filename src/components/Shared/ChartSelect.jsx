@@ -3,7 +3,7 @@ import "./Select.scss";
 import "./ChartSelect.scss"
 
 const ChartSelect = props => {
-  console.log(props)
+
   const chartTypes = ['Bar', 'Circle', 'Bar', 'Circle', 'Bar', 'Circle', 'Bar', 'Circle']
 
   return (

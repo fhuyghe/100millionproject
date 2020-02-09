@@ -18,7 +18,7 @@ class CircleChart extends Component {
   };
   componentDidMount() {
     let id = this.props.stateId ? this.props.stateId : 0;
-    console.log(this.props, id);
+   
 
     am4core.useTheme(am4themes_animated);
 
@@ -75,13 +75,12 @@ class CircleChart extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps, prevState, this.props);
     if (this.props.stateId !== prevProps.stateId) {
-      //   console.log(this.state.series)
+   
       this.state.series.data = this.state.fakeData[this.props.stateId].children[
         this.state.activeIndex
       ].children;
-      // this.componentDidMount()
+    
     }
 
   }
@@ -101,10 +100,7 @@ class CircleChart extends Component {
     });
   };
   render() {
-    console.log(this.state);
-    // if(this.state.series){
-    //    this.state.series.data = this.state.series && this.state.fakeData[0].children[this.state.activeIndex].children
-    // }
+
 
     return (
       <main className="circle-chart-main">
