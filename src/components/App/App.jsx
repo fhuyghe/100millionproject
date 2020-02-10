@@ -8,7 +8,7 @@ import Landing from "../Landing";
 import Story from "../Story/Story";
 import Study from "../Study/Study";
 import SwingStates from "../SwingStates/SwingStates";
-import SwingBarChart from "../SwingStates/SwingStatesBar"
+import SwingStatesChart from "../SwingStates/SwingStatesChart"
 import Quiz from "../Quiz/Quiz"
 
 function App() {
