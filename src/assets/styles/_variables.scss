@@ -1,5 +1,12 @@
 // Bootstrap Grid
-@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
 
 //Colors
 $white: #ffffff;

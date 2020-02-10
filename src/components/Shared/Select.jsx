@@ -1,15 +1,17 @@
 import React from "react";
-import './Select.scss'
+import "./Select.scss";
 
 export const Select = props => {
- 
   return (
-    <select
-      className="select"
-      value={props.value}
-      onChange={(event)=>props.handleChange(event)}
-    >
-      {props.options}
-    </select>
+    <form className="select-box">
+      <select
+        className="select"
+        value={props.stateId}
+        name={props.stateName}
+        onChange={event => props.handleChange(event)}
+      >
+        {props.options}
+      </select>
+    </form>
   );
 };

@@ -13,8 +13,8 @@ const Splash = () => {
       <div className="splash-page">
         <div className="logo">
           <Link to="/">
-            <img className='desktop-only' src="100million_logo_long.svg" alt="100 Million Project" />
-            <img className='mobile-only' src="100_Million_Title-500.gif" alt="100 Million Project"/>
+            {/* <img className='desktop-only' src="100million_logo_long.svg" alt="100 Million Project" /> */}
+            <img className='' src="100_Million_Title-500.gif" alt="100 Million Project"/>
           </Link>
         </div>
 
@@ -29,11 +29,7 @@ const Splash = () => {
           </p>
         </div> */}
         <div className="upper">
-          <p>
-            Inaction is the greatest threat to democracy. <br/>
-            In the 2016 election, over 100 million people did not vote.
-          </p>
-          <p>It's time to find out why.</p>
+          <p>The Untold Story of American Non-Voters</p>
           <p>Coming Soon.</p>
         </div>
         
@@ -44,9 +40,9 @@ const Splash = () => {
           <p className="hash-tag">#the100million</p>
           
         <div className="social-icons">
-          <a href="https://www.facebook.com/the100million" target="_blank"><i className="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com/the100_million" target="_blank"><i className="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/the100_million" target="_blank"><i className="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/the100million" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/the100_million" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/the100_million" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
           </div>
           
         </div>
