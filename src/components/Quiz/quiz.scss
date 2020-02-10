@@ -1,0 +1,70 @@
+@import "../../assets/styles/variables";
+
+* {
+  color: $white;
+  font-family: $anon-pro;
+}
+
+.question-heading {
+  size: 30px;
+}
+
+.question-text {
+  size: 20px;
+  margin-top: 50px;
+}
+
+.result-description {
+  size: 20px;
+  margin-top: 50px;
+}
+
+.range-selector {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 10px auto;
+  height: 50px;
+}
+
+.range-option {
+  background: gray;
+  border: 1px solid $black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.range-option:hover {
+  cursor: pointer;
+  background: $green;
+  transition: background 0.3s;
+}
+
+.multiple-choice-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+.multiple-choice-options {
+  color: $white;
+  width: 150px;
+  height: 50px;
+  margin: 30px 50px;
+  border: 1px solid $white;
+  border-radius: 10px;
+  background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.multiple-choice-options:hover {
+  cursor: pointer;
+  background: $green;
+  transition: background 0.5s;
+}
