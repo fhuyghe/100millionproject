@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { questions, results } from "../../Data/quizData";
+import AppHeader from "../AppHeader/AppHeader";
 import "./quiz.scss";
 
 class Quiz extends Component {
@@ -47,6 +48,7 @@ class Quiz extends Component {
   render() {    
     return (
       <div>
+        <AppHeader />
         {this.state.currentQuestion === questions.length - 1 ? (
           <div>
             <h1 className="question-heading">  
