@@ -27,36 +27,13 @@
   margin-top: 50px;
 }
 
-.range-selector {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  margin: 10px auto;
-  height: 50px;
-}
-
-.range-option {
-  background: gray;
-  border: 1px solid $black;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.range-option:hover {
-  cursor: pointer;
-  background: $green;
-  transition: background 0.3s;
-}
-
 .multiple-choice-container {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.multiple-choice-options {
+.option-button {
   color: $black;
   width: 250px;
   height: 50px;
@@ -69,7 +46,7 @@
   font-size: 18px;
 }
 
-.multiple-choice-options:hover {
+.option-button:hover {
   cursor: pointer;
   background: $green;
   transition: background 0.5s;

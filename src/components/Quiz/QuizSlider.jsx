@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./quizSlider.scss"
+import "./quiz.scss"
 
 
 class QuizSlider extends React.Component {
@@ -16,9 +17,10 @@ class QuizSlider extends React.Component {
   render() {
     return (
       <div>
+          <div>Extremely Interested</div>
         <label>
           <input
-            id="typeinp"
+            id="sliderInput"
             type="range"
             min="0" max="10"
             value={this.state.value}
@@ -26,6 +28,8 @@ class QuizSlider extends React.Component {
             step="1"
             orient="vertical"/>        
         </label>
+        <div>Not Interested</div>
+        <button className="next-button" type="submit" for="sliderInput" >NEXT</button>
       </div>
     );
   }

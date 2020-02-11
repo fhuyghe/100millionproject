@@ -85,7 +85,7 @@ class Quiz extends Component {
                       (response, i) => {
                         return (
                           <div
-                            className="multiple-choice-options"
+                            className="option-button"
                             key={i}
                             onClick={() => this.responseSelected(i)}
                           >
