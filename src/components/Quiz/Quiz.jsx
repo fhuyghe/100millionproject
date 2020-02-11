@@ -7,7 +7,7 @@ class Quiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      resultScores: [0, 0, 0],
+      resultScores: [],
       currentQuestion: 0,
       sliderQuestionChoices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       currentQuestionText: questions[0].question,
@@ -16,16 +16,28 @@ class Quiz extends Component {
     };
   }
 
+  componentDidMount() {
+    let initialResultScores = [];
+    results.forEach(() => {
+      initialResultScores.push(0);
+    });
+    this.setState({ resultScores: initialResultScores })
+  }
+
   responseSelected(i) {
-    // Get new result scores
-    let currentResults = this.state.resultScores;
-    let resultChanges =
-      questions[this.state.currentQuestion].responses[i].resultChange;
-    let newResultScores = currentResults.map((result, i) => {
-      return result + resultChanges[i];
-    });    
+    console.log(this.state.resultScores)
+    // Get new result scores    
+    let newResultScores = this.state.resultScores;
+    questions[this.state.currentQuestion].responses[i].resultChange.forEach((result) => {      
+      let resultIndex = result[0]
+      let resultChange = result[1]
+      newResultScores[resultIndex] = newResultScores[resultIndex] += resultChange;  
+    }); 
+    
+    // Get leading result
     let indexOfLeadingResult = newResultScores.indexOf(this.getHighestScore(newResultScores));    
     let leadingResult = results[indexOfLeadingResult];    
+
     this.setState({
       resultScores: newResultScores,
       currentQuestion: this.state.currentQuestion + 1,
@@ -45,7 +57,8 @@ class Quiz extends Component {
     return highestScore;
   }
 
-  render() {    
+  render() {  
+    console.log(this.state.resultScores)  
     return (
       <div>
         <AppHeader />

@@ -235,6 +235,18 @@ export const results = [
     {
         result: "Result 3",        
         description: "You believe in Z..."
+    },
+    {
+        result: "Result 4",        
+        description: "You believe in..."
+    },
+    {
+        result: "Result 5",        
+        description: "You believe in..."
+    },
+    {
+        result: "Result 6",        
+        description: "You believe in..."
     }
 ]
   
