@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 import { questions, results } from "../../Data/quizData";
 import AppHeader from "../AppHeader/AppHeader";
-import QuizResult from "./Quiz";
 import "./quiz.scss";
 
 class Quiz extends Component {
@@ -15,7 +14,7 @@ class Quiz extends Component {
       currentQuestionText: questions[0].question,
       currentQuestionType: questions[0].type,
       leadingResult: {},
-      indexOfLeadingResult: 0
+      indexOfLeadingResult: null
     };
     this.pathRoot = "/quiz/";
     this.resultId = this.state.indexOfLeadingResult;
@@ -29,10 +28,10 @@ class Quiz extends Component {
     this.setState({ resultScores: initialResultScores })
   }
 
-  responseSelected(i) {
-    console.log(this.state.resultScores)
+  responseSelected(i) {    
     // Get new result scores    
     let newResultScores = this.state.resultScores;
+    let highestScore = this.getHighestScore(newResultScores);
     questions[this.state.currentQuestion].responses[i].resultChange.forEach((result) => {
       let resultIndex = result[0]
       let resultChange = result[1]
@@ -40,7 +39,7 @@ class Quiz extends Component {
     });
 
     // Get leading result
-    let indexOfLeadingResult = newResultScores.indexOf(this.getHighestScore(newResultScores));
+    let indexOfLeadingResult = newResultScores.indexOf(highestScore);
     let leadingResult = results[indexOfLeadingResult];
 
     this.setState({
@@ -63,19 +62,19 @@ class Quiz extends Component {
     return highestScore;
   }
 
-  render() {    
+  getLeadingScoreIndex() {
+    return this.state.indexOfLeadingResult;
+  }
+
+  render() {   
+    console.log(this.getLeadingScoreIndex()) 
     return (
       <div>
         {this.state.currentQuestion === questions.length - 1 ? (                    
-          <Redirect to={this.pathRoot + this.resultId} />
-          //   <div>
-          //     <h1 className="question-heading">  
-          //     You beliefs can best be described as "{this.state.leadingResult.result}"            
-          //     </h1>
-          // <div className="result-description">This means that {this.state.leadingResult.description}</div>
-          //   </div>
+          <Redirect to={this.pathRoot + this.resultId} resultId={this.resultId} />
         ) : (
             <div>
+              <AppHeader />
               <h1 className="question-heading">Here is the quiz page.</h1>
               <p className="question-text">{this.state.currentQuestionText}</p>
               {this.state.currentQuestionType === "slider" ? (
