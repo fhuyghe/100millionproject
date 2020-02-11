@@ -10,6 +10,7 @@ import Study from "../Study/Study";
 import SwingStates from "../SwingStates/SwingStates";
 import SwingStatesChart from "../SwingStates/SwingStatesChart"
 import Quiz from "../Quiz/Quiz"
+import QuizResult from "../Quiz/QuizResult";
 
 function App() {
   return (
@@ -37,9 +38,10 @@ function App() {
             <SwingStates />
           </Route>
           <Route path="/swingstates/:statename" render={props => <SwingStatesChart {...props} />} />
-          <Route path="/quiz">
+          <Route exact path="/quiz">
             <Quiz />
           </Route>
+          <Route path="/quiz/:resultId" render={props => <QuizResult {...props} />}  />
 
          
           {/* ROUTE FOR CHARTJS BUBBLE, NOT USING ATM
