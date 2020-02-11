@@ -4,6 +4,7 @@ import { questions, results } from "../../Data/quizData";
 import AppHeader from "../AppHeader/AppHeader";
 import "./quiz.scss";
 import QuizResult from "./QuizResult";
+import QuizSlider from "./QuizSlider";
 
 class Quiz extends Component {
   constructor(props) {
@@ -76,18 +77,7 @@ class Quiz extends Component {
               <p className="question-text">{this.state.currentQuestionText}</p>
               {this.state.currentQuestionType === "slider" ? (
                 <div className="range-selector">
-                  {this.state.sliderQuestionChoices.map((choice, i) => {
-                    return (
-                      <div
-                        key={i}
-                        className="range-option"
-                        value={choice}
-                        onClick={() => this.responseSelected(i)}
-                      >
-                        {choice}
-                      </div>
-                    );
-                  })}
+                  <QuizSlider />
                 </div>
               ) : (
                   <div className="multiple-choice-container">
