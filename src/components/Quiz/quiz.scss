@@ -1,8 +1,14 @@
 @import "../../assets/styles/variables";
 
-* {
-  color: $white;
+.header {
+  height: 20px;
+}
+
+.quiz-main-wrapper {
+  background: #EDE9E4;
+  color: $black;
   font-family: $anon-pro;
+  height: 100vh;
 }
 
 .question-heading {
@@ -10,8 +16,10 @@
 }
 
 .question-text {
-  size: 20px;
-  margin-top: 50px;
+  padding: 28px 40px 0px 40px;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 900;
 }
 
 .result-description {
@@ -45,22 +53,20 @@
 .multiple-choice-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-flow: row wrap;
-  align-content: center;
+  flex-direction: column;
 }
 
 .multiple-choice-options {
-  color: $white;
-  width: 150px;
+  color: $black;
+  width: 250px;
   height: 50px;
-  margin: 30px 50px;
-  border: 1px solid $white;
-  border-radius: 10px;
-  background: gray;
+  margin: 10px 0;
+  border: 1px solid $black;  
+  background: #EDE9E4;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 18px;
 }
 
 .multiple-choice-options:hover {

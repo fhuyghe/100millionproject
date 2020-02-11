@@ -71,8 +71,8 @@ class Quiz extends Component {
           <QuizResult />                 
         ) : (
             <div>
-              <AppHeader />
-              <h1 className="question-heading">Here is the quiz page.</h1>
+              <AppHeader className="header" />   
+              <div className="quiz-main-wrapper">
               <p className="question-text">{this.state.currentQuestionText}</p>
               {this.state.currentQuestionType === "slider" ? (
                 <div className="range-selector">
@@ -106,6 +106,7 @@ class Quiz extends Component {
                     )}
                   </div>
                 )}
+                </div>           
             </div>
           )}
       </div>
