@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { questions, results } from "../../Data/quizData";
 import AppHeader from "../AppHeader/AppHeader";
 import "./quiz.scss";
+import QuizResult from "./QuizResult";
 
 class Quiz extends Component {
   constructor(props) {
@@ -62,16 +63,12 @@ class Quiz extends Component {
     return highestScore;
   }
 
-  getLeadingScoreIndex() {
-    return this.state.indexOfLeadingResult;
-  }
-
   render() {   
-    console.log(this.getLeadingScoreIndex()) 
+    
     return (
       <div>
-        {this.state.currentQuestion === questions.length - 1 ? (                    
-          <Redirect to={this.pathRoot + this.resultId} resultId={this.resultId} />
+        {this.state.currentQuestion === questions.length - 1 ? (                                          
+          <QuizResult />                 
         ) : (
             <div>
               <AppHeader />

@@ -1,0 +1,27 @@
+@import '../../assets/styles/variables';
+
+.main-wrapper {
+    padding: 20px;
+    background: #D8D8D8;
+    height: 100vh;
+    text-align: left;
+}
+
+.lead-in {    
+    font-size: 25px;
+    font-weight: bold;
+    color: $black;
+    font-family: $anon-pro;
+}
+
+.result-heading {    
+    font-size: 33px;
+    color: $black;
+    font-weight: 900;
+}
+
+.result-description {
+    color: $black;
+    font-family: $anon-pro;
+    margin-top: 15px;
+}

@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/quiz">
             <Quiz />
           </Route>
-          <Route path="/quiz/:resultId" render={props => <QuizResult {...props} />}  />
+          <Route path="/quiz/results" render={props => <QuizResult {...props} />}  />
 
          
           {/* ROUTE FOR CHARTJS BUBBLE, NOT USING ATM

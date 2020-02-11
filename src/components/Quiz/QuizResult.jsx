@@ -9,15 +9,18 @@ class QuizResult extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.resultId = this.props.match.params.resultId;
   }
 
-  
-
-  render() {    
-      console.log(this.resultId)  
+  render() {        
     return (
-        <h1>Here are the quiz results</h1>
+        <div>
+        <AppHeader /> 
+        <div className="main-wrapper">
+            <div className="lead-in">You are:</div>
+                <div className="result-heading">{results[0].result}</div>
+                <div className="result-description">{results[0].description}</div>
+            </div>           
+        </div>
     );
   }
 }
