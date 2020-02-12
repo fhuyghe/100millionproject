@@ -6,89 +6,67 @@ export const questions = [
             {
                 responseValue: 0,
                 resultChange: [
-                    1,
-                    0,
-                    1
+                    [1,0],[2,1],[5,-1]
                 ]
             },
             {
                 responseValue: 1,
                 resultChange: [
-                    2,
-                    -1,
-                    1
+                    [0,-1],[2,1],[4,1]
                 ]
             },
             {
                 responseValue: 2,
                 resultChange: [
-                    0,
-                    -1,
-                    0
+                    [0,-1],[3,2],[5,-2]
                 ]
             },
             {
                 responseValue: 3,
                 resultChange: [
-                    +2,
-                     1,
-                    +1
+                    [0,1],[1,4],[2,3],[5,1]
                 ]
             },
             {
                 responseValue: 4,
                 resultChange: [
-                    2,
-                    0,
-                    1
+                    [1,-1],[2,3],[4,1]
                 ]
             },
             {
                 responseValue: 5,
                 resultChange: [
-                    0,
-                    -1,
-                    0
+                    [0,-2],[3,2],[5,-1]
                 ]
             },
             {
                 responseValue: 6,
                 resultChange: [
-                    2,
-                    -2,
-                    1
+                    [1,-2],[2,1],[4,-1]
                 ]
             },
             {
                 responseValue: 7,
                 resultChange: [
-                    0,
-                    -1,
-                    0
+                    [1,-2],[3,-2],[5,-2]
                 ]
             },
             {
                 responseValue: 8,
                 resultChange: [
-                    3,
-                    -2,
-                    3
+                    [0,-2],[3,-1],[5,2]
                 ]
             },
             {
                 responseValue: 9,
                 resultChange: [
-                    2,
-                    -2,
-                    3
+                    [2,-1],[4,-1]
                 ]
             },
             {
                 responseValue: 10,
                 resultChange: [
-                    2,
-                    -2,
-                    3
+                    [0,-1],[3,1],[5,1]
                 ]
             }
         ]
@@ -100,33 +78,25 @@ export const questions = [
             {
                 responseValue: "Liberal",
                 resultChange: [
-                    2,
-                    -1,
-                    1
+                    [0,2],[3,1],[4,-1]
                 ]
             },
             {
                 responseValue: "Moderate",
                 resultChange: [
-                    -1,
-                    2,
-                    -1
+                    [2,-1],[3,-2]
                 ]
             },
             {
                 responseValue: "Conservative",
                 resultChange: [
-                    -4,
-                     3,
-                    -2
+                    [1,3],[2,-1]
                 ]
             },
             {
                 responseValue: "I don't know",
                 resultChange: [
-                    -2,
-                     1,
-                    -4
+                    [1,-2],[4,1]
                 ]
             }                                                      
         ]
@@ -138,33 +108,25 @@ export const questions = [
             {
                 responseValue: "Very closely",
                 resultChange: [
-                    -1,
-                    +3,
-                    -2
+                    [1,3],[2,-1]
                 ]
             },
             {
                 responseValue: "Somewhat closely",
                 resultChange: [
-                    -3,
-                    +2,
-                    -4
+                    [0,-1],[3,1],[5,1]
                 ]
             },
             {
                 responseValue: "Not very closely",
                 resultChange: [
-                    -1,
-                    -2,
-                    3
+                    [0,-2],[3,-1],[5,2]
                 ]
             },
             {
                 responseValue: "Not at all",
                 resultChange: [
-                    2,
-                    -1,
-                    2
+                    [0,2],[3,1],[4,-1]
                 ]
             }                
         ]
@@ -176,17 +138,13 @@ export const questions = [
             {
                 responseValue: "Yes",
                 resultChange: [
-                    0,
-                    1,
-                    1
+                    [1,0],[2,1],[5,-1]
                 ]
             },
             {
                 responseValue: "No",
                 resultChange: [
-                    2,
-                    1,
-                    1
+                    [0,-2],[3,-1],[5,2]
                 ]
             }
         ]
@@ -198,33 +156,25 @@ export const questions = [
             {
                 responseValue: "Very Confident",
                 resultChange: [
-                    1,
-                    0,
-                    2
+                    [1,3],[2,-1]
                 ]
             },
             {
                 responseValue: "Somewhat Confident",
                 resultChange: [
-                    0,
-                    2,
-                    1
+                    [0,1],[1,4],[2,3],[5,1]
                 ]
             },
             {
                 responseValue: "Not very confident",
                 resultChange: [
-                    1, 
-                    0,
-                    -1    
+                    [1,0],[2,1],[5,-1]  
                 ]
             },
             {
                 responseValue: "Not confident at all",
                 resultChange: [
-                    0, 
-                    1, 
-                    1
+                    [0,2],[3,1],[4,-1]
                 ]
             }                                                
         ]
@@ -236,49 +186,37 @@ export const questions = [
             {
                 responseValue: "News",
                 resultChange: [
-                    2, 
-                    -1, 
-                    -1
+                    [0,2],[3,1],[4,-1]
                 ]
             },
             {
                 responseValue: "Social Media",
                 resultChage: [
-                    1,
-                    -1,
-                    0
+                    [0,-1],[3,1],[5,1]
                 ]
             },
             {
                 responseValue: "TV Shows & Movies",
                 resultChange: [
-                    0,
-                    -1,
-                    2
+                    [0,-2],[3,-1],[5,2]
                 ]
             },
             {
                 responseValue: "Gaming",
                 resultChange: [
-                    1,
-                    1,
-                    0
+                    [1,3],[2,-1]
                 ]
             },
             {
                 responseValue: "Sports",
                 resultChange: [
-                    0,
-                    -1,
-                    1
+                    [1,-2],[4,1]
                 ]
             },
             {
                 responseValue: "Something else",
                 resultChange: [
-                    1,
-                    -1,
-                    0
+                    [1,0],[2,1],[5,-1]
                 ]
             }                    
         ]
@@ -297,6 +235,18 @@ export const results = [
     {
         result: "Result 3",        
         description: "You believe in Z..."
+    },
+    {
+        result: "Result 4",        
+        description: "You believe in..."
+    },
+    {
+        result: "Result 5",        
+        description: "You believe in..."
+    },
+    {
+        result: "Result 6",        
+        description: "You believe in..."
     }
 ]
   
