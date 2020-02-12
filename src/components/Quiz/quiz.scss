@@ -11,6 +11,12 @@
   height: 100vh;
 }
 
+.range-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .question-heading {
   size: 30px;
 }
