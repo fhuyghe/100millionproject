@@ -74,7 +74,8 @@ class Quiz extends Component {
   render() {   
     
     return (
-      <div>
+      <div id="quiz-wrap">
+        <div className="wrap">
         {this.state.currentQuestion === questions.length - 1 ? (                                          
           <QuizResult />                 
         ) : (
@@ -104,7 +105,8 @@ class Quiz extends Component {
                 )}
                 </div>           
             </div>
-          )}
+            )}
+          </div>
       </div>
     );
   }

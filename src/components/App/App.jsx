@@ -24,7 +24,7 @@ const App = () => {
 
     return (
       <div className={"App " + pathClass}>
-        <AppHeader location={location} />
+        <AppHeader location={pathClass} />
         <div className="app-body">
           <Switch>
             <Route exact path="/">

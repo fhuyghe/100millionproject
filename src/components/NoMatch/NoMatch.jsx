@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+import './NoMatch.scss'
 
 class NoMatch extends React.Component {
 
     render() { 
         return (
-            <h1>Error 404</h1>
+            <div id="nomatch-wrap">
+                <h1>Error 404</h1>
+                <p>Go back to <Link to="/">the story</Link></p>
+            </div>
         )
     }
 }

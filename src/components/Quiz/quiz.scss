@@ -1,17 +1,14 @@
 @import "../../assets/styles/variables";
 
-.quiz-main-wrapper {
-  background: #EDE9E4;
-  color: $black;
-  font-family: $anon-pro;
-  height: 100vh;
-  text-align: center;
+#quiz-wrap{
+  background: $beige;
+  min-height: 100vh;
 }
 
-.range-selector {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.quiz-main-wrapper {
+  color: $black;
+  font-family: $anon-pro;
+  text-align: center;
 }
 
 .question-heading {

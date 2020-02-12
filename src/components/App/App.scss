@@ -17,7 +17,15 @@ html{
 	
 	.wrap{
 		margin: 0 auto;
-		max-width: $wrap-desktop;
+    padding: 0 $grid-gutter / 2;
+    
+    @include media-breakpoint-up(md){
+      max-width: $wrap-md;
+    }
+    
+    @include media-breakpoint-up(lg){
+      max-width: $wrap-lg;
+    }
 	}
 }
 
@@ -29,7 +37,7 @@ html{
   min-height: 100vh;
   
   &>*:first-child{
-    padding-top: $grid-gutter * 2;
+    padding: $grid-gutter * 2 0;
   }
 }
 
@@ -80,6 +88,11 @@ a{
             color: $black;
         }
     }
+}
+
+input{
+  font-family: $anon-pro;
+  font-size: 1em;
 }
 
 span.red{

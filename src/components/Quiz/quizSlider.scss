@@ -16,6 +16,10 @@
     height: 100%;    
     transform: rotate(90deg);
     color: transparent;
+
+    @include media-breakpoint-up(md){
+      transform: rotate(0);
+    }
 }
 
 .slider:-webkit-slider-thumb{
@@ -28,8 +32,11 @@
 
 .slider-wrapper {
     display: flex;    
-    height: 354px;
     padding: 0;
+
+    @include media-breakpoint-up(md){
+
+    }
 }
 
 .next-button {

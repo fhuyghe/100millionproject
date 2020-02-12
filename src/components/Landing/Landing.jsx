@@ -125,7 +125,7 @@ class Landing extends React.Component {
                     <div className="wrap">
                         <p>The 100 Million Project began as a way to give voice to the concerns of American non-voters since election coverage tends to exclusively favor the opinions of “likely” voters.</p>
                         <p>However, because many non-voters as well as the emerging electorate will participate in the next election, the report ends as a measure of the country’s pulse in the lead up to November and acts as a clarion call for what can happen next.</p>
-                        <Link path="quiz" className="button">What non-voter are you?</Link>
+                        <Link to="quiz" className="button">What non-voter are you?</Link>
                     </div>
                 </section>
 

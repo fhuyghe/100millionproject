@@ -56,6 +56,7 @@ class BarChart extends Component {
     chart.update()
 
   }
+  
   componentDidUpdate(prevProps){
     
     if(this.state.chart && this.props.stateId !== prevProps.stateId){
@@ -65,6 +66,7 @@ class BarChart extends Component {
     }
 
   }
+
   prepareData(id) {
     
     const chartData = {
@@ -72,7 +74,7 @@ class BarChart extends Component {
       datasets: [
         {
           data: [],
-          backgroundColor: ["#37B98B", "#E5F83C", "#6B9BCA"],
+          backgroundColor: ["#3ABA89", "#F8D807", "#009DE0"],
           borderWidth: 1
         }
       ]
@@ -160,7 +162,8 @@ class BarChart extends Component {
       if (this.chart) {
         this.chart.dispose();
       }
-    }
+ }
+  
   render() {
     
     return (
@@ -169,7 +172,7 @@ class BarChart extends Component {
           <canvas
             id="states"
             className="bar-chart"
-            style={{ height: "75%", width:"90%"}}
+            style={{ height: "100%", width:"100%"}}
           ></canvas>
           <section className="backdrop">
             More Non-Voters in New Hampshire plan to vote compared to the

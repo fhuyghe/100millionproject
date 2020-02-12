@@ -48,6 +48,10 @@
         margin-bottom: $grid-gutter / 2;
         text-decoration: none;
 
+        &.active{
+          color: $yellow;
+        }
+
         &:hover{
           color: $yellow;
         }

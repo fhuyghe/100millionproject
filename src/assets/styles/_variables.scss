@@ -10,7 +10,10 @@ $grid-breakpoints: (
 
 // Gutter
 $grid-gutter: 50px;
-$wrap-desktop: 992px;
+$wrap-sm: 576px;
+$wrap-md: 768px;
+$wrap-lg: 992px;
+$wrap-xl: 1200px;
 
 //Colors
 $white: #ffffff;
@@ -21,6 +24,7 @@ $yellow: #F8D807;
 $green: #3ABA89;
 $purple: #AC7EB7;
 $grey: #BFBFBF;
+$beige: #EDE9E4;
 
 // Fonts
 @font-face {

@@ -5,14 +5,12 @@
   position: relative;
   justify-content: center;
   z-index: 2;
-  margin-top:5%;
-  margin-bottom: 10%;
-  height: 80%;
+  height: 100%;
 
   #states {
     z-index: 1;
     border-radius: 5px;
-    background: #e57349;
+    background: $red;
   
   }
 
@@ -30,7 +28,6 @@
     height: 90%;
     text-align: left;
     line-height: 1.25em;
-    font-family: $anon-pro;
     font-size: 1em;
     // min-height: 110%;
     // border: 2px solid black;

@@ -19,6 +19,13 @@ class AppHeader extends Component {
   }
 
   render() {
+
+    let pages = [
+      { path: "", title:"The Story" },
+      { path: "quiz", title:"What kind of non-voter are you?" },
+      { path: "swingstates", title:"Swing States" },
+      { path: "videos", title:"Videos" },
+      { path: "about", title:"About" }]
   
     return (
         <>
@@ -30,12 +37,9 @@ class AppHeader extends Component {
         
         {this.state.active &&
           <div className="menu">
-            <Link to='/quiz' onClick={this.toggleMenu}>What kind of non-voter are you?</Link>
-            <Link to='/swingstates' onClick={this.toggleMenu}>Swing States</Link>
-            <Link to='/videos' onClick={this.toggleMenu}>Videos</Link>
-            <Link to='/study' onClick={this.toggleMenu}>Study</Link>
-            <Link to='/about' onClick={this.toggleMenu}>About</Link>
-        </div>
+            {pages.map((link) => <Link to={"/" + link.path} className={this.props.location === link.path && "active"} onClick={this.toggleMenu}>{link.title}</Link>)}
+            <Link to='/study' className={this.props.location === 'quiz' && "active"} className="button" onClick={this.toggleMenu}>Download the study</Link>
+          </div>
         }
         </header>
       </>
