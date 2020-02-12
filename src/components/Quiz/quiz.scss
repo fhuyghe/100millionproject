@@ -1,12 +1,27 @@
 @import "../../assets/styles/variables";
 
+.quiz-main-wrapper {
+  background: #EDE9E4;
+  color: $black;
+  font-family: $anon-pro;
+  height: 100vh;
+}
+
+.range-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .question-heading {
   size: 30px;
 }
 
 .question-text {
-  size: 20px;
-  margin-top: 50px;
+  padding: 28px 40px 0px 40px;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 900;
 }
 
 .result-description {
@@ -14,51 +29,26 @@
   margin-top: 50px;
 }
 
-.range-selector {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  margin: 10px auto;
-  height: 50px;
-}
-
-.range-option {
-  background: gray;
-  border: 1px solid $black;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.range-option:hover {
-  cursor: pointer;
-  background: $green;
-  transition: background 0.3s;
-}
-
 .multiple-choice-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-flow: row wrap;
-  align-content: center;
+  flex-direction: column;
 }
 
-.multiple-choice-options {
-  color: $white;
-  width: 150px;
+.option-button {
+  color: $black;
+  width: 250px;
   height: 50px;
-  margin: 30px 50px;
-  border: 1px solid $white;
-  border-radius: 10px;
-  background: gray;
+  margin: 10px 0;
+  border: 1px solid $black;  
+  background: #EDE9E4;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 18px;
 }
 
-.multiple-choice-options:hover {
+.option-button:hover {
   cursor: pointer;
   background: $green;
   transition: background 0.5s;

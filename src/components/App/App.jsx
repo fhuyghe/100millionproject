@@ -13,6 +13,7 @@ import Landing from "../Landing";
 import SwingStates from "../SwingStates/SwingStates";
 import SwingStatesChart from "../SwingStates/SwingStatesChart"
 import Quiz from "../Quiz/Quiz"
+import QuizResult from "../Quiz/QuizResult";
 import NoMatch from "../NoMatch"
 import AppHeader from "../AppHeader"
 
@@ -46,16 +47,17 @@ const App = () => {
               <SwingStates />
             </Route>
             <Route path="/swingstates/:statename" render={props => <SwingStatesChart {...props} />} />
+            
             <Route path="/quiz">
               <Quiz />
             </Route>
+            <Route path="/quiz/results" render={props => <QuizResult {...props} />}  />
 
             <Route path="*">
               <NoMatch />
             </Route>
           </Switch>
         </div>
-   
       </div>
     )
 }
