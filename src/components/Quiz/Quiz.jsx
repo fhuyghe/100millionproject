@@ -79,7 +79,6 @@ class Quiz extends Component {
           <QuizResult />                 
         ) : (
             <div>
-              <AppHeader className="header" />   
               <div className="quiz-main-wrapper">
               <p className="question-text">{this.state.currentQuestionText}</p>
               {this.state.currentQuestionType === "slider" ? (
