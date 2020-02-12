@@ -1,5 +1,70 @@
-$white: #ffffff;
+@import '../../assets/styles/variables';
 
 .landing-page{
-    color:$white;
+    section{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    #intro{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    #interviews{
+        .numbers{
+            color: $red;
+            font-family: $spoof;
+            font-size: 200px;
+        }
+    }
+
+    #quizQuestion{
+        background-color: $purple;
+
+        h3{
+            color: $black;
+        }
+
+        ul{
+            margin: $grid-gutter auto;
+            text-align: left;
+            color: $yellow;
+
+            li{
+                list-style: none;
+                display: flex;
+                align-items: center;
+                margin-bottom: $grid-gutter / 2;
+
+                .box{
+                    border: 2px solid $yellow;
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    margin-right: $grid-gutter / 2;
+
+                    &.active{
+                        background-color: $yellow;
+                    }
+                }
+            }
+        }
+    }
+
+    #demographics{
+        background-color: $red;
+        color: $black;
+    }
+
+    #mistrust{
+        background-color: $green;
+        color: $black;
+
+        a{
+            color: $yellow;
+        }
+    }
 }

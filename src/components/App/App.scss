@@ -1,5 +1,9 @@
 @import '../../assets/styles/variables.scss';
 
+html{
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
 
 .App {
 	display: flex;
@@ -8,19 +12,22 @@
 	margin: 0 auto;
 	background-color: $black;
 	min-height: 100vh;
-	text-align: center;
+	color: $white;
+	font-family: $anon-pro;
 	
-
+	.wrap{
+		margin: 0 auto;
+		max-width: $wrap-desktop;
+	}
 }
+
 // Splash page styling
 .app-body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	min-height: 100vh;
-}
-.App-link {
-	color: #61dafb;
+  min-height: 100vh;
+  padding-top: $grid-gutter * 2;
 }
 
 
@@ -39,3 +46,39 @@
   }
 }
 
+//Typography
+
+
+h1{
+	font-family: $spoof;
+    font-size: 2.5em;
+}
+
+h2{
+	font-family: $spoof;
+	letter-spacing: .04em;
+}
+
+a{
+  color: inherit;
+  text-decoration: underline;
+
+    &.button{
+        display: inline-block;
+        text-decoration: none;
+        border: 2px solid $white;
+        padding: 1em 1.5em;
+        margin: 10px;
+        cursor: pointer;
+
+        &.yellow{
+            background-color: $yellow;
+            border-color: $yellow;
+            color: $black;
+        }
+    }
+}
+
+span.red{
+    color: $red;
+}

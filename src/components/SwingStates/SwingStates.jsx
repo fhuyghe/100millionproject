@@ -19,6 +19,7 @@ const SwingStates = () => {
       </NavLink>
     </div>
   ));
+  
   return (
     <div className="swingstates-page">
       <AppHeader />
