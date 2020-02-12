@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import BarChart from "./BarChart";
-import CircleChart from "./CircleChart";
 
 class Chart extends Component {
   componentDidMount() {}

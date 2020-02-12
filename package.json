@@ -49,12 +49,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sean-p-ryan/100millionproject.git"
+    "url": "git+https://github.com/13milliseconds/100millionproject.git"
   },
-  "author": "Sean Ryan",
+  "author": "13milliseconds",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sean-p-ryan/100millionproject/issues"
+    "url": "https://github.com/13milliseconds/100millionproject/issues"
   },
-  "homepage": "https://github.com/sean-p-ryan/100millionproject#readme"
+  "homepage": "https://the100million.org"
 }

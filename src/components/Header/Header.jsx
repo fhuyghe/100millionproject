@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Menu from "../Menu";
 import "./header.scss";
 // import { Link, useRouteMatch, useParams } from "react-router-dom";
 import "@fortawesome/fontawesome-pro/css/all.css";
@@ -21,8 +20,6 @@ class Header extends Component {
             <i className="far fa-bars"></i>
           </div>
         )}
-     
-        <Menu />
       </header>
     );
   }

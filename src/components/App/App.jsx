@@ -1,59 +1,65 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  useLocation
+} from "react-router-dom";
 import "./App.scss";
-import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/css/bootstrap-grid.css"
 import Splash from "../Splash/Splash";
-import About from "../About/About";
+import About from "../About";
+import Videos from "../Videos";
 import Landing from "../Landing";
-import Story from "../Story/Story";
-import Study from "../Study/Study";
 import SwingStates from "../SwingStates/SwingStates";
 import SwingStatesChart from "../SwingStates/SwingStatesChart"
 import Quiz from "../Quiz/Quiz"
 import QuizResult from "../Quiz/QuizResult";
+import NoMatch from "../NoMatch"
+import AppHeader from "../AppHeader"
 
-function App() {
-  return (
-    <div className="App">
-     
-      <div className="app-body">
-        <Switch>
-          <Route exact path="/">
-            <Splash />
-          </Route>
-          <Route path="/landing">
-            <Landing />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
+const App = () => {
 
-          <Route path="/story">
-            <Story />
-          </Route>
-          <Route path="/study">
-            <Study />
-          </Route>
-          <Route exact path="/swingstates">
-            <SwingStates />
-          </Route>
-          <Route path="/swingstates/:statename" render={props => <SwingStatesChart {...props} />} />
-          <Route exact path="/quiz">
-            <Quiz />
-          </Route>
-          <Route path="/quiz/results" render={props => <QuizResult {...props} />}  />
+  let location = useLocation()
+  let pathClass = useLocation().pathname.split('/')[1] //Get the page name from the path
 
-         
-          {/* ROUTE FOR CHARTJS BUBBLE, NOT USING ATM
-          {/* <Route path="/swingstates/bubble">
-            <SwingStatesBubble />
-          </Route> */}
-          
-        </Switch>
+    return (
+      <div className={"App " + pathClass}>
+        <AppHeader location={location} />
+        <div className="app-body">
+          <Switch>
+            <Route exact path="/">
+              <Landing />
+            </Route>
+
+            <Route exact path="/splash">
+              <Splash />
+            </Route>
+
+            <Route exact path="/about">
+              <About />
+            </Route>
+            
+            <Route exact path="/videos">
+              <Videos />
+            </Route>
+
+            <Route exact path="/swingstates">
+              <SwingStates />
+            </Route>
+            <Route path="/swingstates/:statename" render={props => <SwingStatesChart {...props} />} />
+            
+            <Route path="/quiz">
+              <Quiz />
+            </Route>
+            <Route path="/quiz/results" render={props => <QuizResult {...props} />}  />
+
+            <Route path="*">
+              <NoMatch />
+            </Route>
+          </Switch>
+        </div>
       </div>
-   
-    </div>
-  );
+    )
 }
 
 export { App };
