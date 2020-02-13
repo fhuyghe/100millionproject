@@ -76,9 +76,9 @@ class Quiz extends Component {
     return (
       <div id="quiz-wrap">
         <div className="wrap">
-        {this.state.currentQuestion === questions.length - 1 ? (                                          
-          <QuizResult />                 
-        ) : (
+        {this.state.currentQuestion === questions.length - 1 ? 
+        window.location.href = `./${this.state.indexOfLeadingResult}`
+        : (
             <div>
               <div className="quiz-main-wrapper">
               <p className="question-text">{this.state.currentQuestionText}</p>

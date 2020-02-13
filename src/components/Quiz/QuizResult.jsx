@@ -1,7 +1,6 @@
 import Quiz from "./Quiz";
 import React, { Component } from "react";
 import { results } from "../../Data/quizData";
-import AppHeader from "../AppHeader/AppHeader";
 import {withRouter} from 'react-router';
 import "./quizResults.scss";
 
@@ -13,12 +12,11 @@ class QuizResult extends Component {
 
   render() {        
     return (
-        <div>
-        <AppHeader /> 
+        <div>        
         <div className="main-wrapper">
             <div className="lead-in">You are:</div>
-                <div className="result-heading">{results[0].result}</div>
-                <div className="result-description">{results[0].description}</div>
+                <div className="result-heading">test</div>
+                <div className="result-description">test</div>
             </div>           
         </div>
     );
