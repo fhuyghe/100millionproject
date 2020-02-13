@@ -51,7 +51,7 @@ const App = () => {
             {/* Types of Non-Voters */}
             <Route exact path="/typesofnonvoters" render={props => <TypesOfNonVoters {...props} />}  />
             <Route exact path="/typesofnonvoters/quiz" render={props => <Quiz {...props} />}  />
-            <Route path="/typesofnonvoters/:results" render={props => <QuizResult {...props} />}  />
+            <Route path="/typesofnonvoters/:type" render={props => <QuizResult {...props} />}  />
 
             {/* Error 404 */}
             <Route path="*">

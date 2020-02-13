@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { questions, results } from "../../Data/quizData";
-import AppHeader from "../AppHeader/AppHeader";
 import "./quiz.scss";
-import QuizResult from "./QuizResult";
 import QuizSlider from "./QuizSlider";
 
 class Quiz extends Component {
@@ -19,7 +17,7 @@ class Quiz extends Component {
       indexOfLeadingResult: null,
       resultFromSlider: null
     };
-    this.pathRoot = "/quiz/";
+    this.pathRoot = "/typesofnonvoters/";
     this.resultId = this.state.indexOfLeadingResult;    
   }
 
@@ -76,9 +74,9 @@ class Quiz extends Component {
     return (
       <div id="quiz-wrap">
         <div className="wrap">
-        {this.state.currentQuestion === questions.length - 1 ? (                                          
-          <QuizResult />                 
-        ) : (
+        {this.state.currentQuestion === questions.length - 1 ? 
+        window.location.href = `./${this.state.indexOfLeadingResult}`
+        : (
             <div>
               <div className="quiz-main-wrapper">
               <p className="question-text">{this.state.currentQuestionText}</p>
