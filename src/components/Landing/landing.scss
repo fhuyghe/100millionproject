@@ -1,6 +1,8 @@
 @import '../../assets/styles/variables';
 
 .landing-page{
+    padding-top: 0!important;
+
     section{
         min-height: 100vh;
         display: flex;
@@ -10,14 +12,21 @@
     #intro{
         min-height: 100vh;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        
+        .wrap{
+            flex: 1;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
     
     #interviews{
-        .numbers{
+        .number{
             color: $red;
-            font-family: $spoof;
-            font-size: 200px;
+            text-align: center;
         }
     }
 
@@ -54,6 +63,34 @@
         }
     }
 
+    #swingStates{
+        .swing-animation{
+            margin-bottom: $grid-gutter * 2;
+
+            .swing-text{
+                color: $white;
+                border-bottom: 50px solid $purple;
+                font-size: 100px;
+                font-family: $spoof;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: space-between;
+                line-height: 70px;
+
+                transform: rotateZ(10deg);
+            }
+
+            .swing-triangle{
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 50px 100px 50px;
+                border-color: transparent transparent $green transparent;
+                margin: -$grid-gutter / 2 auto 0;
+            }
+        }
+    }
+
     #demographics{
         background-color: $red;
         color: $black;
@@ -66,5 +103,32 @@
         a{
             color: $yellow;
         }
+    }
+
+    #emerging{
+        text-align: center;
+        padding: $grid-gutter * 4 0;
+
+        .dashes{
+            height: 80vh;
+            width: 0px;
+            border-left: 2px dashed $yellow;
+            margin: $grid-gutter auto;
+        }
+
+        p{
+            max-width: $wrap-sm;
+            margin: auto;
+        }
+    }
+
+    #conclusion{
+
+    }
+
+    .number{
+        color: $yellow;
+        font-family: $spoof;
+        font-size: 200px;
     }
 }

@@ -1,0 +1,23 @@
+@import '../../assets/styles/variables';
+
+.insta-window {
+    border: 2px solid $black;
+
+    .insta-image{
+        background-size: cover;
+        height: 200px;
+    }
+
+    .insta-footer{
+        height: $grid-gutter;
+        background-color: $white;
+        color: $black;
+        text-align: right;
+        font-size: 30px;
+        padding: 7px 10px;
+
+        i{
+            margin-left: 10px;
+        }
+    }
+}
