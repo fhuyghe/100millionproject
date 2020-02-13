@@ -1,21 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import AppHeader from "../AppHeader/AppHeader";
 import "./SwingStates.scss";
 import { swingStates } from "../../Data/sharedData.js";
 
 const SwingStates = () => {
-  const swingList = swingStates.map((stateName, index) => (
+  const swingList = swingStates.map((state, index) => (
     <div className="state-name">
       <NavLink
         className="state-name-link"
         activeClassName="active"
         to={{
-          pathname: `/swingstates/${stateName}`,
-          state: {stateId: index}
+          pathname: `/swingstates/${state.path}`,
+          state: {
+            state,
+            stateId: index
+          }
         }}
       >
-        {stateName}
+        {state.name}
       </NavLink>
     </div>
   ));

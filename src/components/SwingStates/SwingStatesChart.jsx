@@ -1,35 +1,31 @@
 import React, { Component } from "react";
 import BarChart from "../Charts/BarChart.jsx";
-import AppHeader from "../AppHeader/AppHeader";
 // import { swingStates } from "../../Data/sharedData.js";
 import { Select } from "../Shared/Select";
 import "./SwingStatesChart.scss";
 import { Redirect } from "react-router-dom";
-import Chart from "../Charts/Chart.jsx";
 import CircleChart from "../Charts/CircleChart";
 import { fakeData, swingStates } from "../../Data/sharedData.js";
 import ChartSelect from "../Shared/ChartSelect";
 
 class SwingStatesChart extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      stateId: 0,
+      stateObject: {},
       chartType: "Bar"
     };
   }
   componentDidMount() {
    
-    let idx = this.props.location.pathname.lastIndexOf("/");
-    let url = window.location.pathname.substring(idx + 1);
-    let stateName = swingStates.includes(url) ? url : "Colorado";
-    let stateId = stateName && swingStates.indexOf(stateName);
+    let stateName = this.props.match.params.statename || "colorado";
+    let stateObject = swingStates.find(obj => { return obj.path === stateName })[0]
 
     this.setState({
-      stateId: stateId,
-      stateName: stateName
+      stateObject
     });
   }
+
   // componentDidUpdate(prevProps, prevState) {
   //   if (this.props.withoutID !== prevState.withoutID) {
   //     this.componentDidMount();
@@ -53,9 +49,9 @@ class SwingStatesChart extends Component {
   };
 
   render() {
-    let options = swingStates.map((stateName, i) => (
+    let options = swingStates.map((state, i) => (
       <option key={i} value={i}>
-        {stateName}
+        {state.name}
       </option>
     ));
     let renderChart =
