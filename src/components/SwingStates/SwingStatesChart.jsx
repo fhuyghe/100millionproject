@@ -3,7 +3,6 @@ import BarChart from "../Charts/BarChart.jsx";
 // import { swingStates } from "../../Data/sharedData.js";
 import { Select } from "../Shared/Select";
 import "./SwingStatesChart.scss";
-import { Redirect } from "react-router-dom";
 import CircleChart from "../Charts/CircleChart";
 import { fakeData, swingStates } from "../../Data/sharedData.js";
 import ChartSelect from "../Shared/ChartSelect";
@@ -18,7 +17,8 @@ class SwingStatesChart extends Component {
   }
   componentDidMount() {
    
-    let stateName = this.props.match.params.statename || "colorado";
+    // Use the parameter directly and find it in the states array
+    let stateName = this.props.match.params.statename || "arizona";
     let stateObject = swingStates.find(obj => { return obj.path === stateName })[0]
 
     this.setState({
