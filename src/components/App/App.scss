@@ -36,6 +36,7 @@ html{
 	flex-direction: column;
 	justify-content: space-between;
   min-height: 100vh;
+  overflow: hidden;
   
   &>*:first-child{
     padding: $grid-gutter * 2 0;
@@ -71,6 +72,10 @@ h2{
 	letter-spacing: .04em;
 }
 
+p{
+  line-height: 1.5em;
+}
+
 a{
   color: inherit;
   text-decoration: underline;
@@ -98,4 +103,8 @@ input{
 
 span.red{
     color: $red;
+}
+
+.text-center{
+  text-align: center;
 }

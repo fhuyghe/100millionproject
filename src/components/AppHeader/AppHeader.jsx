@@ -22,7 +22,7 @@ class AppHeader extends Component {
 
     let pages = [
       { path: "", title:"The Story" },
-      { path: "quiz", title:"What kind of non-voter are you?" },
+      { path: "typesofnonvoters", title:"What kind of non-voter are you?" },
       { path: "swingstates", title:"Swing States" },
       { path: "videos", title:"Videos" },
       { path: "about", title:"About" }]

@@ -20,13 +20,15 @@
 
   .title {
     margin-left: $grid-gutter / 2;
+    width: 100%;
 
     a{
       text-decoration: none;
     }
 
     img{
-      height: 30px;
+      width: 100%;
+      max-width: 400px;
     }
   }
 

@@ -156,7 +156,7 @@ class Landing extends React.Component {
 
                 <section id="quizAnswer" ref={this.answerRef}>
                     <div className="wrap">
-                        {quizAnswers[this.state.answer]}
+                        <p>{quizAnswers[this.state.answer]}</p>
                     </div>
                 </section>
 
