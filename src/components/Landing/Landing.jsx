@@ -50,11 +50,12 @@ class Landing extends React.Component {
         new ScrollMagic.Scene({
             triggerElement: "#countup-12000",
             duration: 200,
-            reverse: false
+            reverse: false,
+            triggerHook: 1 //Start at bottom of page
         })
             .addTo(controller)
             .on("enter", function (e) {
-                var countUp = new CountUp('countup-12000', 12000, {duration: 3});
+                var countUp = new CountUp('countup-12000', 12000, {startVal: 10234, duration: 1});
                 countUp.start();
             })
 
@@ -62,10 +63,10 @@ class Landing extends React.Component {
         var tween = TweenMax.to(".swing-text", 1, { rotation: -20, ease: Linear.easeNone });
         new ScrollMagic.Scene({
             triggerElement: '.swing-text',
-            duration: 1000 // the scene should last for a scroll distance of 100px
+            duration: 1000
         })
             .setTween(tween)
-            .addTo(controller); // assign the scene to the controller
+            .addTo(controller); 
         
         // Browser 18-24 animation
         new ScrollMagic.Scene({
@@ -134,9 +135,10 @@ class Landing extends React.Component {
                         <div className="col-md-6">
                             In 2020, Knight Foundation released a study of
                     </div>
-                        <div className="number" id="countup-12000">0</div>
+                        <div className="number" id="countup-12000">10,234</div>
                         <div className="col-md-6 offset-md-6">
-                            voting-eligible Americans in red, blue, and swing states to discover why non-voters choose to be silent.
+                            <p>chronic non-voters in America, across the country and in key battleground states.</p>
+                            <p>The study sought to understand who they are, what they care about and surface insights about why they don’t vote.</p>
                     </div>
                     </div>
                 </section>
