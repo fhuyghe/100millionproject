@@ -11,6 +11,20 @@
   text-align: center;
 }
 
+.progress-marker-wrapper {
+  height: 10px;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid $black;
+  margin: 0 auto;
+}
+
+.progress-marker-bar {
+  border: 1px solid $black;  
+  width: 10%;
+}
+
 .question-heading {
   size: 30px;
 }
