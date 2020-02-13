@@ -2,71 +2,72 @@ export const questions = [
     {
         question: "What is your level of interest in politics?",
         type: "slider",
+        legend: ['Very Interested', 'Not Interested'],
         responses: [
             {
                 responseValue: 0,
                 resultChange: [
-                    [1, 0], [2, 1], [5, -1]
+                    [3,1],[4,1],[5,1]
                 ]
             },
             {
                 responseValue: 1,
                 resultChange: [
-                    [0, -1], [2, 1], [4, 1]
+                    [3,1],[4,1],[5,1]
                 ]
             },
             {
                 responseValue: 2,
                 resultChange: [
-                    [0, -1], [3, 2], [5, -2]
+                    [3,1],[4,1]
                 ]
             },
             {
                 responseValue: 3,
                 resultChange: [
-                    [0, 1], [1, 4], [2, 3], [5, 1]
+                    [3,1]
                 ]
             },
             {
                 responseValue: 4,
                 resultChange: [
-                    [1, -1], [2, 3], [4, 1]
+
                 ]
             },
             {
                 responseValue: 5,
                 resultChange: [
-                    [0, -2], [3, 2], [5, -1]
+
                 ]
             },
             {
                 responseValue: 6,
                 resultChange: [
-                    [1, -2], [2, 1], [4, -1]
+
                 ]
             },
             {
                 responseValue: 7,
                 resultChange: [
-                    [1, -2], [3, -2], [5, -2]
+                    [0,1]
                 ]
             },
             {
                 responseValue: 8,
                 resultChange: [
-                    [0, -2], [3, -1], [5, 2]
+                    [0,1],[1,1],[2,1]
                 ]
             },
             {
                 responseValue: 9,
                 resultChange: [
-                    [2, -1], [4, -1]
+                    [0,1],[1,1],[2,1]
                 ]
             },
             {
                 responseValue: 10,
                 resultChange: [
-                    [0, -1], [3, 1], [5, 1]
+                    [0,1],[1,1],[2,1]
                 ]
             }
         ]
@@ -78,25 +79,25 @@ export const questions = [
             {
                 responseValue: "Liberal",
                 resultChange: [
-                    [0, 2], [3, 1], [4, -1]
+                    [1,1]
                 ]
             },
             {
                 responseValue: "Moderate",
                 resultChange: [
-                    [2, -1], [3, -2]
+                    [0,1],[1,1],[3,1],[4,1]
                 ]
             },
             {
                 responseValue: "Conservative",
                 resultChange: [
-                    [1, 3], [2, -1]
+                    [2,1]
                 ]
             },
             {
                 responseValue: "I don't know",
                 resultChange: [
-                    [1, -2], [4, 1]
+                    [3,1],[4,1],[5,1]
                 ]
             }
         ]
@@ -108,25 +109,25 @@ export const questions = [
             {
                 responseValue: "Very closely",
                 resultChange: [
-                    [1, 3], [2, -1]
+                    [0,1],[1,1],[2,1]
                 ]
             },
             {
                 responseValue: "Somewhat closely",
                 resultChange: [
-                    [0, -1], [3, 1], [5, 1]
+                    [0,1],[1,1],[2,1]
                 ]
             },
             {
                 responseValue: "Not very closely",
                 resultChange: [
-                    [0, -2], [3, -1], [5, 2]
+                    [3,1],[4,1]
                 ]
             },
             {
                 responseValue: "Not at all",
                 resultChange: [
-                    [0, 2], [3, 1], [4, -1]
+                    [3,1],[4,1],[5,1]
                 ]
             }
         ]
@@ -138,13 +139,19 @@ export const questions = [
             {
                 responseValue: "Yes",
                 resultChange: [
-                    [1, 0], [2, 1], [5, -1]
+                    [0,1],[1,1],[2,1],[3,1]
                 ]
             },
             {
                 responseValue: "No",
                 resultChange: [
-                    [0, -2], [3, -1], [5, 2]
+                    [4, 1],[5,1]
+                ]
+            },
+            {
+                responseValue: "I'm not sure",
+                resultChange: [
+                    [4, 1],[5,2]
                 ]
             }
         ]
@@ -156,25 +163,25 @@ export const questions = [
             {
                 responseValue: "Very Confident",
                 resultChange: [
-                    [1, 3], [2, -1]
+                    [1,1],[2,1]
                 ]
             },
             {
                 responseValue: "Somewhat Confident",
                 resultChange: [
-                    [0, 1], [1, 4], [2, 3], [5, 1]
+                    [0,1],[1,1],[2,1]
                 ]
             },
             {
                 responseValue: "Not very confident",
                 resultChange: [
-                    [1, 0], [2, 1], [5, -1]
+                    [0,1],[3,1],[4,1],[5,1]
                 ]
             },
             {
                 responseValue: "Not confident at all",
                 resultChange: [
-                    [0, 2], [3, 1], [4, -1]
+                    [4,1],[5,1]
                 ]
             }
         ]
@@ -186,37 +193,230 @@ export const questions = [
             {
                 responseValue: "News",
                 resultChange: [
-                    [0, 2], [3, 1], [4, -1]
+                    [1,1],[2,1]
                 ]
             },
             {
                 responseValue: "Social Media",
-                resultChage: [
-                    [0, -1], [3, 1], [5, 1]
+                resultChange: [
+                    [3,1],[4,1],[5,1]
                 ]
             },
             {
                 responseValue: "TV Shows & Movies",
                 resultChange: [
-                    [0, -2], [3, -1], [5, 2]
+                    [3,1],[4,1],[5,1]
                 ]
             },
             {
                 responseValue: "Gaming",
                 resultChange: [
-                    [1, 3], [2, -1]
+                    [3,1],[4,1],[5,1]
                 ]
             },
             {
                 responseValue: "Sports",
                 resultChange: [
-                    [1, -2], [4, 1]
+                    [3,1],[4,1],[5,1]
                 ]
             },
             {
                 responseValue: "Something else",
                 resultChange: [
-                    [1, 0], [2, 1], [5, -1]
+                    [3,1],[4,1],[5,1]
+                ]
+            }
+        ]
+    },
+    {
+        question: "How often do you volunteer at an organization (non-profit, religious group, school group or any other)",
+        type: "choices",
+        responses: [
+            {
+                responseValue: "Every week",
+                resultChange: [
+                    [1,1]
+                ]
+            },
+            {
+                responseValue: "A few times a month",
+                resultChange: [
+                    [1,1]
+                ]
+            },
+            {
+                responseValue: "A few times a year",
+                resultChange: [
+                    [0,1],[1,1],[2,1]
+                ]
+            },
+            {
+                responseValue: "Once a year",
+                resultChange: [
+                    [0,1],[2,1],[4,1],[5,1]
+                ]
+            },
+            {
+                responseValue: "Every few years",
+                resultChange: [
+                    [0,1],[3,1],[4,1],[5,1]
+                ]
+            },
+            {
+                responseValue: "Never",
+                resultChange: [
+                    [3,1],[4,1],[5,1]
+                ]
+            }
+        ]
+    },
+    {
+        question: "How easy is it to vote?",
+        type: "slider",
+        legend: ['Easy', 'Hard'],
+        responses: [
+            {
+                responseValue: 0,
+                resultChange: [
+                    [5,1]
+                ]
+            },
+            {
+                responseValue: 1,
+                resultChange: [
+                    [4,1],[5,1]
+                ]
+            },
+            {
+                responseValue: 2,
+                resultChange: [
+                    [0,1],[4,1],[5,1]
+                ]
+            },
+            {
+                responseValue: 3,
+                resultChange: [
+                    [0,1],[4,1]
+                ]
+            },
+            {
+                responseValue: 4,
+                resultChange: [
+                    [0,1],[4,1]
+                ]
+            },
+            {
+                responseValue: 5,
+                resultChange: [
+                    [0,1],[3,1]
+                ]
+            },
+            {
+                responseValue: 6,
+                resultChange: [
+                    [0,1],[3,1]
+                ]
+            },
+            {
+                responseValue: 7,
+                resultChange: [
+                    [3,1]
+                ]
+            },
+            {
+                responseValue: 8,
+                resultChange: [
+                    [1,1],[2,1],[3,1]
+                ]
+            },
+            {
+                responseValue: 9,
+                resultChange: [
+                    [1,1],[2,1]
+                ]
+            },
+            {
+                responseValue: 10,
+                resultChange: [
+                    [1,1],[2,1]
+                ]
+            }
+        ]
+    },
+    {
+        question: "Are you registered to vote?",
+        type: "choices",
+        responses: [
+            {
+                responseValue: "Yes",
+                resultChange: [
+                    [0,1],[1,1],[2,1],[3,1]
+                ]
+            },
+            {
+                responseValue: "No",
+                resultChange: [
+                    [4,1]
+                ]
+            },
+            {
+                responseValue: "I'm not sure",
+                resultChange: [
+                    [5,3]
+                ]
+            }
+        ]
+    },
+    {
+        question: "Will you vote in 2020?",
+        type: "choices",
+        responses: [
+            {
+                responseValue: "Yes",
+                resultChange: [
+                    [0,1],[2,1]
+                ]
+            },
+            {
+                responseValue: "No",
+                resultChange: [
+                    [4,1],[5,1]
+                ]
+            },
+            {
+                responseValue: "I'm not sure",
+                resultChange: [
+                    [0,1],[3,1],[4,1],[5,1]
+                ]
+            }
+        ]
+    },
+    {
+        question: "Who would you elect if you had to choose the next President?",
+        type: "choices",
+        responses: [
+            {
+                responseValue: "President Donald Trump",
+                resultChange: [
+                    [2,1]
+                ]
+            },
+            {
+                responseValue: "The Democratic Nominee",
+                resultChange: [
+                    [0,1],[1,1],[2,-1]
+                ]
+            },
+            {
+                responseValue: "A Third Party Candidate",
+                resultChange: [
+                    [1,1],[2,1]
+                ]
+            },
+            {
+                responseValue: "I don't know",
+                resultChange: [
+                    [0,1],[4,1],[5,1]
                 ]
             }
         ]
