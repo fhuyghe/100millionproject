@@ -3,7 +3,7 @@ import './PopupWindow.scss'
 
 const PopupWindow = (props) => { 
     return (
-        <div className="popup-window">
+        <div id={props.id} className="popup-window">
             <div class="popup-header"><i class="far fa-times"></i></div>
             <div class="popup-text">{props.text}</div>
         </div>

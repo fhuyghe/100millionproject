@@ -40,11 +40,10 @@ class Landing extends React.Component {
              triggerElement: '#sign',
              offset: 350,
              triggerHook: 1,
-             duration: 800 // the scene should last for a scroll distance of 100px
+             duration: 800
          })
              .setTween(signTween)
-             //.setPin('#sign') // pins the element for the the scene's duration
-             .addTo(controller); // assign the scene to the controller
+             .addTo(controller);
 
         //Counting up to 12,000
         new ScrollMagic.Scene({
@@ -65,19 +64,45 @@ class Landing extends React.Component {
             duration: 1000 // the scene should last for a scroll distance of 100px
         })
             .setTween(tween)
-            //.setPin('#sign') // pins the element for the the scene's duration
             .addTo(controller); // assign the scene to the controller
         
         // Browser 18-24 animation
         new ScrollMagic.Scene({
             triggerElement: '#browser',
-            //offset: 50, // start this scene after scrolling for 50px
-            duration: 3000,
+            duration: 1000,
             triggerHook: 0
         })
             .setPin('#browser')
-            //.setPin('#sign') // pins the element for the the scene's duration
-            .addTo(controller); // assign the scene to the controller
+            .addTo(controller); 
+        
+        var popupTween1 = TweenMax.to("#popup-1", 1, {y:-1000, ease: Linear.easeNone });
+        new ScrollMagic.Scene({
+            triggerElement: '#browser',
+            duration: 500,
+            triggerHook: 0
+        })
+            .setTween(popupTween1)
+            .addTo(controller);
+        
+        var popupTween2 = TweenMax.to("#popup-2", 1, { y: -1000, ease: Linear.easeNone });
+        new ScrollMagic.Scene({
+            triggerElement: '#browser',
+            offset: 500,
+            duration: 500,
+            triggerHook: 0
+        })
+            .setTween(popupTween2)
+            .addTo(controller);
+        
+            var popupTween3 = TweenMax.to("#popup-3", 1, { y: -500, ease: Linear.easeNone });
+            new ScrollMagic.Scene({
+                triggerElement: '#browser',
+                offset: 1000,
+                duration: 500,
+                triggerHook: 0
+            })
+                .setTween(popupTween3)
+                .addTo(controller);
     }
 
     render() {
@@ -159,7 +184,7 @@ class Landing extends React.Component {
                         <div className="col-md-6">
                             <p>Although non-voters are evenly distributed across party lines, as a bloc, they could greatly impact swing states in the next election.</p>
                             </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 offset-md-6">
                         <div className="number">71%</div>
                             <p>of non-voters polled said they intend on voting in the next election.</p>
                             </div>
@@ -192,9 +217,9 @@ class Landing extends React.Component {
                                 <InstaWindow image="https://66.media.tumblr.com/30243eb75aa86ee15c7f7f40923b148e/tumblr_pak3z2ET3g1r9qwkso1_500.jpg" />
                             </div>
                             <div className="col-md-6">
-                                <PopupWindow text="The emerging electorate are more dissatisfied with President Trump than current voters and non-voters. " />
-                                <PopupWindow text="When they do encounter the news, it’s often when it’s bumped into on social media where it exists alongside other kinds of content." />
-                                <PopupWindow text="Social media, gaming, and streaming services all outpace traditional news sources in this group’s media consumption." />
+                                <PopupWindow id="popup-3" text="The emerging electorate are more dissatisfied with President Trump than current voters and non-voters. " />
+                                <PopupWindow id="popup-2" text="When they do encounter the news, it’s often when it’s bumped into on social media where it exists alongside other kinds of content." />
+                                <PopupWindow id="popup-1" text="Social media, gaming, and streaming services all outpace traditional news sources in this group’s media consumption." />
                             </div>
                             <div className="col-md-3">
                                 <InstaWindow image="https://media.giphy.com/media/4pMX5rJ4PYAEM/giphy.gif"/>

@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 2%;
+  padding: $grid-gutter / 2;
   background: $black;
   color: $white;
   z-index: 999;
@@ -19,12 +19,14 @@
   }
 
   .title {
-    margin-left: 20px;
-    font-size: 1.3em;
-    margin-top:2%;
+    margin-left: $grid-gutter / 2;
 
     a{
       text-decoration: none;
+    }
+
+    img{
+      height: 30px;
     }
   }
 

@@ -33,7 +33,7 @@ class AppHeader extends Component {
           <div className="hamburger" onClick={this.toggleMenu}>
             <i className="far fa-bars"></i>
           </div>
-        <h3 className="title"><Link to='/' onClick={this.state.active && this.toggleMenu}>The 100 MILLION PROJECT</Link></h3>
+        <Link className="title" to='/' onClick={this.state.active && this.toggleMenu}><img src="100million_logo_long.svg"/></Link>
         
         {this.state.active &&
           <div className="menu">
