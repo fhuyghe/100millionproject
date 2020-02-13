@@ -225,27 +225,33 @@ export const questions = [
 
 export const results = [
     {
-        result: "Result 1",
-        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        result: "The Young Moderate",
+        path: "young-moderate",
+        description: "<p>The first profile in the Plugged In group is “Younger Moderates.” This cluster is younger, is the most ethnically diverse, is the most politically moderate, and leans toward the Democratic Party</p>"
     },
     {
-        result: "Result 2",
-        description: "You believe in Y..."
+        result: "The Educated Progressive",
+        path: "educated-progressives",
+        description: "<p>The second group is “TK.” This cluster has high educational attainment and household income. It is the most liberal cluster, the most Democratic, and is more ethnically diverse than non-voters as a whole.</p><p>This group reports high intentionality in news consumption, has the highest opinion of the news media and is the cluster most closely following the news.   They are also the most likely to report their family getting and discussing news growing up at 52% versus the non-voter average of 29%. </p><p>Members of this cluster are very interested in politics, overwhelmingly believe that they have enough information to vote, and belong to social networks with regular voters. Dissatisfaction with candidates is the most common answer for nonparticipation.  They also have the highest levels of civic engagement at twice the rate of average non-voters.</p><p>On the issues this group of non-voters tracks closely with the policy priority of Democratic leaning voters overall: greater opposition to the wall on the Mexican border and greater support for a path to citizenship for undocumented aliens, the Affordable Care Act, abortion rights and stricter gun laws.</p>"
     },
     {
-        result: "Result 3",
-        description: "You believe in Z..."
+        result: "The Frustrated Conservative",
+        path: "frustrated-conservatives",
+        description: "<p>The third group is “TK.” This cluster is on average older, the least diverse (79% white), most likely to be homeowners, highest marriage rate, household income higher than non-voters as a whole, is ideologically conservative and predominantly Republican. This is also the only cluster to be majority male. A key distinguishing factor is that this cluster is most averse to current candidates when they report on their not voting.</p><p>This group boasts the highest intentionality in seeking out news, reports high news consumption, that they are closely following politics, and were raised in households that discussed news. They also have the lowest opinion of the media’s impartiality, the least trust in the media, and 60% believe it’s harder to be informed because of all of the information available today, which is a significant factor contributing to their disengagement from the political process.</p><p>They are also the group most likely to believe the election system represents the will of the people, closely followed by the Democrat-leaning non-voter group.</p><p>Members of this cluster are the most likely of any cluster to cite not liking the candidates as their reason for not voting and 26% stated that nothing would motivate them to vote in the future.   As it pertains to the issues, this group of non-voters’ positions resemble those of Republican leaning voters overall: with greater support for the wall on the Mexican border and greater opposition to a path to citizenship for undocumented aliens, the Affordable Care Act, abortion rights and stricter gun laws.</p>"
     },
     {
-        result: "Result 4",
-        description: "You believe in..."
+        result: "The Average Non-Voter",
+        path: "average-non-voter",
+        description: "<p>In the Checked Out group, the leading profile is “The Average Non-Voter.” This cluster is unique in its lack of specific distinguishing characteristics.  Members of this subgroup have a media diet tipped toward TV & social media at a rate higher than any other cluster; they are for the most part not following the news and are less civically engaged than non-voters as a whole. Their top reasons for not voting are lack of information about issues/candidates, dislike of candidates, and a general feeling that their vote won’t matter.</p><p>On balance, the answers from this group are politically and demographically in line with the results of the overall non-voter sample.</p>"
     },
     {
-        result: "Result 5",
-        description: "You believe in..."
+        result: "The Non-Participator",
+        path: "non-participator",
+        description: "<p>The second Checked Out Profile is the TK. They have lower educational attainment and household income and are most likely to consider themselves as political Independents.</p><p>This cluster is distinguished by their clearly stated lack of interest in news, politics, and voting. News consumption, intentionality, and civic participation rates fall below those of non-voters as a whole.   Two-thirds of this group are not registered to vote, the highest of any cluster, of whom over 36% cite a simple lack of interest as their primary reason for not registering. This is also the cluster most likely to say that nothing would motivate them to participate in voting and is the most comfortable with others making decisions on their behalf.</p><p>As it pertains to 2020, this group is the one least likely to believe that the upcoming Presidential elections are more important than similar contests in the past and they would be more likely than other non-voters to prefer “someone else” to be President versus either the current occupant of the White House or the Democratic Party nominee.</p>"
     },
     {
-        result: "Result 6",
-        description: "You believe in..."
+        result: "The Civically Uninformed",
+        path: "civically-uninformed",
+        description: "<p>The final profile…. Demographically this segment has the lowest educational attainment, lowest homeownership rate, lowest marriage rate, least employment, and lowest household income. This segment is 65% female, the largest gender discrepancy of any cluster. They are distinguished not by their opinions, but in having relatively few opinions.</p><p>This subgroup of the non-voter universe represents the segment least likely to participate in the electoral process for a variety of reasons. Chief among these reasons is a fundamental lack of interest in politics, a characteristic further exacerbated by their dearth of news consumption.</p><p>This group is distinguished not by how they answered questions on the functioning of government and/or various hot button political topics, but rather by their inability to answer at all. On a wide variety of questions throughout the survey, a majority of respondents in this cluster chose the “Don’t Know/No Answer” option.</p>"
     }
 ]

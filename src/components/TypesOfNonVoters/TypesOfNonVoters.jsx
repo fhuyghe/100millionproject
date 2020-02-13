@@ -1,10 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './TypesOfNonVoters.scss'
+import { results } from "../../Data/quizData";
 
 class TypesOfNonVoters extends React.Component {
 
     render() { 
+
+        let displayTypes = results.map((type) => { 
+            return <div className="type">
+                <h3>{type.result}</h3>
+                <div dangerouslySetInnerHTML={{ __html: type.description }}></div>
+            </div>
+        })
+
         return (
             <div id="types-landing">
                 <section id="intro">
@@ -17,7 +26,11 @@ class TypesOfNonVoters extends React.Component {
                 <section id="allTypes">
                     <div className="wrap">
                         <h2>All Types of Non Voters</h2>
-                        </div>
+                        <p>Who are the “typical” non-voters? In order to further refine understanding of the types of Americans who make up the non-voting population, the study used a statistical technique called “cluster analysis.” This approach revealed 6 distinct groups within the non-voter universe, each with its own unique demographic make-up, news consumption habits, opinions on politics and reasons for not voting. These 6 clusters fall broadly into two categories</p>
+                        <div className="types">
+                            {displayTypes}
+                            </div>
+                    </div>
                 </section>
             </div>
         )
