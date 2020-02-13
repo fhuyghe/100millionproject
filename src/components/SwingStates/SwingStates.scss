@@ -1,28 +1,32 @@
 @import '../../assets/styles/variables';
 
 .swingstates-page {
-	height: 100vh;
+	background-color: $blue;
+	min-height: 100vh;
+
 	.swingstates-main {
 		display: flex;
 		flex-direction: column;
 		justify-content: top;
-		background: #009fdd;
-		padding-top: 20%;
-		height: 95%;
+		text-align: center;
 		color: $white;
+
 		.state-name {
 			font-size: 2em;
 		}
 	}
+
 	.swingstates-title {
 		margin-bottom: 3%;
 		height: 10%;
 		color: $black;
 		font-family: $anon-pro;
 	}
+
 	.state-name {
 		padding: 1%;
 	}
+	
 	.state-name-link {
 		text-decoration: none;
 		color: $white;

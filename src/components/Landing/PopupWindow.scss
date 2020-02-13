@@ -1,0 +1,37 @@
+@import '../../assets/styles/variables';
+
+.popup-window{
+    border: 2px solid $black;
+    background: $yellow;
+    color: $black;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .popup-text{
+        padding: $grid-gutter $grid-gutter / 2;
+        font-family: $spoof;
+        font-size: 1.5em;
+    }
+
+    .popup-header{
+        height: $grid-gutter;
+        background: $white;
+        border-bottom: 2px solid $black;
+
+        i{
+            position: absolute;
+            right: 10px;
+            font-size: 40px;
+            top: 3px;
+        }
+    }
+
+    &:nth-of-type(2){
+        transform: translate(-$grid-gutter, -$grid-gutter);
+    }
+
+    &:nth-of-type(3){
+        transform: translate(-2 * $grid-gutter, -2 * $grid-gutter);
+    }
+}

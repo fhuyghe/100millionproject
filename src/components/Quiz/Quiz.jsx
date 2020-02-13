@@ -16,10 +16,11 @@ class Quiz extends Component {
       currentQuestionText: questions[0].question,
       currentQuestionType: questions[0].type,
       leadingResult: {},
-      indexOfLeadingResult: null
+      indexOfLeadingResult: null,
+      resultFromSlider: null
     };
     this.pathRoot = "/quiz/";
-    this.resultId = this.state.indexOfLeadingResult;
+    this.resultId = this.state.indexOfLeadingResult;    
   }
 
   componentDidMount() {
@@ -28,6 +29,12 @@ class Quiz extends Component {
       initialResultScores.push(0);
     });
     this.setState({ resultScores: initialResultScores })
+  }
+
+  handleSliderSubmission = (value) => {
+    console.log('in handle slider submission')
+    // this.setState({ resultFromSlider: value })
+    this.responseSelected(value)
   }
 
   responseSelected(i) {    
@@ -67,17 +74,17 @@ class Quiz extends Component {
   render() {   
     
     return (
-      <div>
+      <div id="quiz-wrap">
+        <div className="wrap">
         {this.state.currentQuestion === questions.length - 1 ? (                                          
           <QuizResult />                 
         ) : (
             <div>
-              <AppHeader className="header" />   
               <div className="quiz-main-wrapper">
               <p className="question-text">{this.state.currentQuestionText}</p>
               {this.state.currentQuestionType === "slider" ? (
                 <div className="range-selector">
-                  <QuizSlider />
+                  <QuizSlider handleSliderSubmission={this.handleSliderSubmission} />
                 </div>
               ) : (
                   <div className="multiple-choice-container">
@@ -98,7 +105,8 @@ class Quiz extends Component {
                 )}
                 </div>           
             </div>
-          )}
+            )}
+          </div>
       </div>
     );
   }

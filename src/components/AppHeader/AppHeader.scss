@@ -3,18 +3,62 @@
 .app-header {
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $grid-gutter / 2;
+  background: $black;
+  color: $white;
+  z-index: 999;
 
-  padding: 0 2%;
-  background: black;
-
-  height: 5%;
-  color: white;
   .hamburger {
+    &:hover{
+      color: $red;
+    }
   }
+
   .title {
-    margin-left: 20px;
-	font-size: 1.3em;
-	margin-top:2%;
-	
+    margin-left: $grid-gutter / 2;
+    width: 100%;
+
+    a{
+      text-decoration: none;
+    }
+
+    img{
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  .menu{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    a{
+        color: $white;
+        font-family: $spoof;
+        font-size: 1.5em;
+        margin-bottom: $grid-gutter / 2;
+        text-decoration: none;
+
+        &.active{
+          color: $yellow;
+        }
+
+        &:hover{
+          color: $yellow;
+        }
+    }
   }
 }

@@ -1,6 +1,137 @@
 @import "../../assets/styles/variables";
 
 .next-button {
-    margin: 0 auto;
-    background: $black;
+  margin: 0 auto;
+  background: $black;
+  width: 100px;
+  height: 50px;
+  color: $white;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#sliderInput {
+    width: 78vw;
+    height: 100%;    
+    transform: rotate(90deg);
+    color: transparent;
+
+    @include media-breakpoint-up(md){
+      transform: rotate(0);
+    }
+}
+
+.slider:-webkit-slider-thumb{
+    width: 50px;
+}
+
+.slider:-moz-range-thumb {
+    width: 50px;
+}
+
+.slider-wrapper {
+    display: flex;    
+    padding: 0;
+
+    @include media-breakpoint-up(md){
+
+    }
+}
+
+.next-button {
+    margin-top: 20px;
+    width: 150px;
+}
+
+// HTML Range styling
+$range-button-color: $purple;
+$range-button-diameter: 30px;
+$range-track-color: $grey;
+$range-track-height: 7px;
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 11.5px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: $range-track-height;
+  cursor: pointer;
+  box-shadow: 0;
+  background: $range-track-color;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000031, 0px 0px 0px #00004b;
+  border: 0px solid #00001e;
+  height: $range-button-diameter;
+  width: $range-button-diameter;
+  border-radius: $range-button-diameter;
+  background: $range-button-color;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: $range-track-color;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: $range-track-height;
+  cursor: pointer;
+  box-shadow: 0;
+  background: $range-track-color;
+  border-radius: 0px;
+  border: 0;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0;
+  border: 0;
+  height: $range-button-diameter;
+  width: $range-button-diameter;
+  border-radius: $range-button-diameter;
+  background: $range-button-color;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: $range-track-height;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: $range-track-color;
+  border: 0;
+  border-radius: $range-button-diameter;
+  box-shadow: 0;
+}
+input[type=range]::-ms-fill-upper {
+  background: $range-track-color;
+  border: 0px solid #010101;
+  border-radius: $range-button-diameter;
+  box-shadow: 0;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0;
+  border: 0;
+  height: $range-button-diameter;
+  width: $range-button-diameter;
+  border-radius: $range-button-diameter;
+  background: $range-button-color;
+  cursor: pointer;
+  height: $range-track-height;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: $range-track-color;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: $range-track-color;
 }

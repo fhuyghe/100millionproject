@@ -70,10 +70,10 @@ class SwingStatesChart extends Component {
  
     return (
       <div className="swingstates-chart">
-        <AppHeader />
+        <div className="wrap">
         <main className="swingstates-chart-main">
           <div className="top">
-            <h3 className="swingstates-chart-title">Swing States</h3>
+            <h1 className="swingstates-chart-title">Swing States</h1>
 
             <Select
               stateId={this.state.stateId}
@@ -86,7 +86,8 @@ class SwingStatesChart extends Component {
           {renderChart}
 
           <ChartSelect handleClick={this.handleClick} />
-        </main>
+          </main>
+          </div>
       </div>
     );
   }

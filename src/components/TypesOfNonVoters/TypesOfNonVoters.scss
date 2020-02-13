@@ -1,0 +1,21 @@
+@import '../../assets/styles/variables';
+
+#types-landing{
+    padding: 0;
+
+    section{
+        padding: $grid-gutter * 2 0;
+    }
+
+    #intro{
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #allTypes{
+        background-color: $purple;
+    }
+}

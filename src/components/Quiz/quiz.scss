@@ -1,14 +1,14 @@
 @import "../../assets/styles/variables";
 
-.header {
-  height: 20px;
+#quiz-wrap{
+  background: $beige;
+  min-height: 100vh;
 }
 
 .quiz-main-wrapper {
-  background: #EDE9E4;
   color: $black;
   font-family: $anon-pro;
-  height: 100vh;
+  text-align: center;
 }
 
 .question-heading {
@@ -16,6 +16,7 @@
 }
 
 .question-text {
+  font-family: $spoof;
   padding: 28px 40px 0px 40px;
   font-size: 23px;
   line-height: 1;
@@ -51,3 +52,5 @@
   background: $green;
   transition: background 0.5s;
 }
+
+

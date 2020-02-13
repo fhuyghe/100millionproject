@@ -4,7 +4,7 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 // import dataviz from "@amcharts/amcharts4/themes/dataviz.js";
-import { fakeData, swingStates } from "../../Data/sharedData.js";
+import { fakeData } from "../../Data/sharedData.js";
 import './CircleChart.scss'
 
 // am4core.useTheme(dataviz);

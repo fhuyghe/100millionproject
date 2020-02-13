@@ -1,5 +1,9 @@
 @import '../../assets/styles/variables.scss';
 
+html{
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
 
 .App {
 	display: flex;
@@ -8,19 +12,35 @@
 	margin: 0 auto;
 	background-color: $black;
 	min-height: 100vh;
-	text-align: center;
+	color: $white;
+	font-family: $anon-pro;
 	
-
+	.wrap{
+    width: 100%;
+		margin: 0 auto;
+    padding: 0 $grid-gutter / 2;
+    
+    @include media-breakpoint-up(md){
+      max-width: $wrap-md;
+    }
+    
+    @include media-breakpoint-up(lg){
+      max-width: $wrap-lg;
+    }
+	}
 }
+
 // Splash page styling
 .app-body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	min-height: 100vh;
-}
-.App-link {
-	color: #61dafb;
+  min-height: 100vh;
+  overflow: hidden;
+  
+  &>*:first-child{
+    padding: $grid-gutter * 2 0;
+  }
 }
 
 
@@ -39,3 +59,52 @@
   }
 }
 
+//Typography
+
+
+h1{
+	font-family: $spoof;
+    font-size: 2.5em;
+}
+
+h2{
+	font-family: $spoof;
+	letter-spacing: .04em;
+}
+
+p{
+  line-height: 1.5em;
+}
+
+a{
+  color: inherit;
+  text-decoration: underline;
+
+    &.button{
+        display: inline-block;
+        text-decoration: none;
+        border: 2px solid $white;
+        padding: 1em 1.5em;
+        margin: 10px;
+        cursor: pointer;
+
+        &.yellow{
+            background-color: $yellow;
+            border-color: $yellow;
+            color: $black;
+        }
+    }
+}
+
+input{
+  font-family: $anon-pro;
+  font-size: 1em;
+}
+
+span.red{
+    color: $red;
+}
+
+.text-center{
+  text-align: center;
+}

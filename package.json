@@ -10,6 +10,8 @@
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "4.4.1",
     "chart.js": "^2.9.3",
+    "countup.js": "^2.0.4",
+    "gsap": "^3.1.1",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -19,6 +21,8 @@
     "react-scripts": "3.3.0",
     "react-select": "^3.0.8",
     "redux": "^4.0.5",
+    "scrollmagic": "^2.0.7",
+    "scrollmagic-plugin-gsap": "^1.0.4",
     "serialize-javascript": "2.1.1",
     "tsutils": "^3.17.1",
     "typescript": "^3.7.5"
@@ -49,12 +53,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sean-p-ryan/100millionproject.git"
+    "url": "git+https://github.com/13milliseconds/100millionproject.git"
   },
-  "author": "Sean Ryan",
+  "author": "13milliseconds",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sean-p-ryan/100millionproject/issues"
+    "url": "https://github.com/13milliseconds/100millionproject/issues"
   },
-  "homepage": "https://github.com/sean-p-ryan/100millionproject#readme"
+  "homepage": "https://the100million.org"
 }

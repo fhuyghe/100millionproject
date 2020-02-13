@@ -8,6 +8,13 @@ $grid-breakpoints: (
 );
 @import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
 
+// Gutter
+$grid-gutter: 50px;
+$wrap-sm: 576px;
+$wrap-md: 768px;
+$wrap-lg: 992px;
+$wrap-xl: 1200px;
+
 //Colors
 $white: #ffffff;
 $black: #111111;
@@ -15,12 +22,22 @@ $red: #F2705E;
 $blue: #009DE0;
 $yellow: #F8D807;
 $green: #3ABA89;
-
-// Gutter
-$grid-gutter: 50px;
+$purple: #AC7EB7;
+$grey: #BFBFBF;
+$beige: #EDE9E4;
 
 // Fonts
+@font-face {
+    font-family: 'spoof';
+    src: url('../fonts/Spoof-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Spoof-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Spoof-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Spoof-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+    /*url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+    /*url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 $anon-pro:"Anonymous Pro", monospace;
+$spoof: "spoof", serif;
 
 // Mixins
 @mixin headerFooter{
