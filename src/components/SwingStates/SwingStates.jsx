@@ -22,8 +22,6 @@ const SwingStates = () => {
   
   return (
     <div className="swingstates-page">
-      <AppHeader />
-
       <main className="swingstates-main">
         <div className="swing-states-title">Swing States</div>
         {swingList}

@@ -69,6 +69,9 @@
     }
 
     #swingStates{
+        display: block;
+        padding: 200px 0;
+
         .swing-animation{
             margin-bottom: $grid-gutter * 2;
 
@@ -104,6 +107,13 @@
                     margin: -$grid-gutter / 2 auto 0;
                 }
             }
+        }
+
+        #swingData{
+            margin-top: $grid-gutter * 2;
+            border: 2px solid $white;
+            min-height: 800px;
+            text-align: center;
         }
     }
 

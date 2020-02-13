@@ -7,6 +7,7 @@ import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import PopupWindow from './PopupWindow' 
 import InstaWindow from './InstaWindow'
 import { CountUp } from 'countup.js';
+import SwingStates from '../SwingStates'
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -166,7 +167,7 @@ class Landing extends React.Component {
                             <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation. </h2>
                         </div>
                         <div className="col-md-6 offset-md-6">
-                            <p>Many cite poor-quality and corrupt elected officials, political fundraising, special interest dominance, and media bias among the reasons why they don’t vote. It can take a lot to convince habitual non-voters to vote as <Link>a House of Delegates candidate in West Virginia found out.</Link> Our study identified <Link>six types of non-voters.</Link></p>
+                            <p>Many cite poor-quality and corrupt elected officials, political fundraising, special interest dominance, and media bias among the reasons why they don’t vote. It can take a lot to convince habitual non-voters to vote as <Link>a House of Delegates candidate in West Virginia found out.</Link> Our study identified <Link to="typesofnonvoters">six types of non-voters.</Link></p>
                             <Link className="button">Why do non-voters matter?</Link>
                         </div>
                     </div>
@@ -181,13 +182,18 @@ class Landing extends React.Component {
                             </div>
                             <div className="swing-triangle"></div>
                         </div>
+
                         <div className="col-md-6">
                             <p>Although non-voters are evenly distributed across party lines, as a bloc, they could greatly impact swing states in the next election.</p>
                             </div>
                         <div className="col-md-6 offset-md-6">
                         <div className="number">71%</div>
                             <p>of non-voters polled said they intend on voting in the next election.</p>
-                            </div>
+                        </div>
+
+                        <div id="swingData">
+                            <h2>Explore the data</h2>
+                        </div>
                     </div>
                 </section>
 
@@ -232,7 +238,7 @@ class Landing extends React.Component {
                     <div className="wrap">
                         <p>The 100 Million Project began as a way to give voice to the concerns of American non-voters since election coverage tends to exclusively favor the opinions of “likely” voters.</p>
                         <p>However, because many non-voters as well as the emerging electorate will participate in the next election, the report ends as a measure of the country’s pulse in the lead up to November and acts as a clarion call for what can happen next.</p>
-                        <Link to="quiz" className="button">What non-voter are you?</Link>
+                        <Link to="typesofnonvoters" className="button">What non-voter are you?</Link>
                     </div>
                 </section>
 
