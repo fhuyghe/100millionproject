@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { questions, results } from "../../Data/quizData";
-import AppHeader from "../AppHeader/AppHeader";
 import "./quiz.scss";
-import QuizResult from "./QuizResult";
 import QuizSlider from "./QuizSlider";
 
 class Quiz extends Component {
