@@ -6,8 +6,8 @@ import { TweenMax, TimelineMax, Linear } from "gsap";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import PopupWindow from './PopupWindow' 
 import InstaWindow from './InstaWindow'
-import { CountUp } from 'countup.js';
-import SwingStates from '../SwingStates'
+import { CountUp } from 'countup.js'
+import VideoBlock from '../Videos/VideoBlock'
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -105,6 +105,16 @@ class Landing extends React.Component {
             })
                 .setTween(popupTween3)
                 .addTo(controller);
+        
+            // 18-24 popup
+            var emergingTween = TweenMax.to("#emerging-numbers", .5, { opacity: 1, scale: 1, ease: Linear.easeNone });
+            new ScrollMagic.Scene({
+                triggerElement: '#emerging-numbers',
+                duration: 300,
+                triggerHook: .8
+            })
+                .setTween(emergingTween)
+                .addTo(controller); 
     }
 
     render() {
@@ -201,10 +211,15 @@ class Landing extends React.Component {
 
                 <section id="mistrust">
                     <div className="wrap">
-                        <div className="col-md-6">
-                            <p>In addition to their mistrust in elections, many non-voters cited a lack of education on current political issues and how elections could personally impact them. Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <Link>their county’s first Latino candidate.</Link></p>
-                            <p>However, there’s one group even less interested and informed than habitual non-voters, and they are the emerging electorate.</p>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <p>In addition to their mistrust in elections, many non-voters cited a lack of education on current political issues and how elections could personally impact them. Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <Link>their county’s first Latino candidate.</Link></p>
                             </div>
+                            <div className="col-md-6">
+                            <VideoBlock video="test-video"/>
+                            </div>
+                        </div>
+                        <h3 className="text-center">However, there’s one group even less interested and informed than habitual non-voters, and they are the emerging electorate.</h3>
                     </div>
                 </section>
 
@@ -213,7 +228,7 @@ class Landing extends React.Component {
                         <h2>The emerging electorate are</h2>
                         <div className="dashes"></div>
                         <p>Voters between</p>
-                        <div className="number yellow">18-24</div>
+                        <div className="number yellow" id="emerging-numbers">18-24</div>
                         <p>this group's behavior and trends will shape how the overall electorate moves in the coming years. </p>
                     </div>
                 </section>

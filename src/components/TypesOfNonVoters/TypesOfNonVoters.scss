@@ -1,7 +1,7 @@
 @import '../../assets/styles/variables';
 
-#types-landing{
-    padding: 0;
+#typesPage{
+    background-color: $purple;
 
     section{
         padding: $grid-gutter * 2 0;
@@ -9,13 +9,45 @@
 
     #intro{
         display: flex;
-        min-height: 100vh;
+        padding: 200px 0;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
 
     #allTypes{
-        background-color: $purple;
+        
+
+        .type{
+            padding: $grid-gutter / 2;
+
+            h3{
+                margin-top: 0;
+            }
+
+            .type-wrap{
+                padding: $grid-gutter / 2;
+
+                &.blue{
+                    background-color: $blue;
+                }
+                &.yellow{
+                    background-color: $yellow;
+                    color: $black;
+                }
+                &.grey{
+                    background-color: $grey;
+                }
+                &.red{
+                    background-color: $red;
+                }
+                &.green{
+                    background-color: $green;
+                }
+                &.black{
+                    background-color: $black;
+                }
+            }
+        }
     }
 }

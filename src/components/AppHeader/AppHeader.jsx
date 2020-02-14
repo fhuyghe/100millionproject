@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './AppHeader.scss'
 import { Link } from 'react-router-dom'
+import 'hamburgers/dist/hamburgers.css'
 
 class AppHeader extends Component {
   constructor(props) {
@@ -22,23 +23,47 @@ class AppHeader extends Component {
 
     let pages = [
       { path: "", title:"The Story" },
-      { path: "typesofnonvoters", title:"What kind of non-voter are you?" },
+      { path: "typesofnonvoters", title: "Quiz", subtitle:"What kind of non-voter are you?" },
       { path: "swingstates", title:"Swing States" },
-      { path: "videos", title:"Videos" },
-      { path: "about", title:"About" }]
+      { path: "videos", title:"Videos" }]
   
     return (
         <>
-      <header className={this.state.active ? "app-header active" : "app-header"}>
-          <div className="hamburger" onClick={this.toggleMenu}>
-            <i className="far fa-bars"></i>
+        <header className={this.state.active ? "app-header active" : "app-header"}>
+          <div className="banner">
+            <button class={this.state.active ? "hamburger hamburger--elastic is-active" : "hamburger hamburger--elastic" } type="button" onClick={this.toggleMenu}>
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+            <Link className="title" to='/' onClick={this.state.active && this.toggleMenu}><img src="100million_logo_long.svg" /></Link>
           </div>
-        <Link className="title" to='/' onClick={this.state.active && this.toggleMenu}><img src="100million_logo_long.svg"/></Link>
-        
+          
         {this.state.active &&
-          <div className="menu">
-            {pages.map((link) => <Link to={"/" + link.path} className={this.props.location === link.path && "active"} onClick={this.toggleMenu}>{link.title}</Link>)}
-            <Link to='/study' className={this.props.location === 'quiz' && "active"} className="button" onClick={this.toggleMenu}>Download the study</Link>
+            <div className="menu-wrap">
+            <div className="menu">
+            <div className="wrap">
+            <div className="row">
+              <div className="col-md-6">
+                  {pages.map((link) => <div class="page-link">
+                    <Link to={"/" + link.path} className={this.props.location === link.path && "active"} onClick={this.toggleMenu}>{link.title}</Link>
+                    {link.subtitle && <p>{link.subtitle}</p>}
+                  </div>)}
+                </div>
+                <div className="col-md-6">
+                  <Link to='/about' className={this.props.location === 'about' && "active"} onClick={this.toggleMenu}>About</Link>
+                  <p>A little paragraph about the study.</p>
+                  <Link to='/study' className="button" onClick={this.toggleMenu}>Download the report</Link>
+                  <div className="social">
+                    <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+            <div className="menu-bg" onClick={this.toggleMenu}></div>
           </div>
         }
         </header>
