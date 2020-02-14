@@ -8,6 +8,10 @@
     #intro{
         margin-bottom: $grid-gutter;
 
+        h1{
+            margin-bottom: 10px;
+        }
+
         @include media-breakpoint-up(md){
             margin-bottom: $grid-gutter * 2;
         }
@@ -30,9 +34,13 @@
                     left: 50%;
                     transform: translate(-50%, -50%);
                     color: $white;
-                    font-size: 100px;
+                    font-size: $grid-gutter;
                     transition: .25s;
                     cursor: pointer;
+
+                    @include media-breakpoint-up(md){
+                        font-size: $grid-gutter * 2;
+                    }
 
                     &:hover{
                         transform: translate(-50%, -50%) scale(1.1);
