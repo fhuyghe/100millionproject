@@ -16,6 +16,7 @@ class CircleChart extends Component {
    
   }
   componentDidMount() {
+    console.log('sd')
     let id = this.props.stateId ? this.props.stateId : 0
 
     am4core.useTheme(am4themes_animated)
@@ -70,7 +71,7 @@ class CircleChart extends Component {
 
     // series.data = fakeData[id].children[this.state.activeIndex].children;
     series.data = this.props.data.children
-    this.setState({ series: series, title:title })
+    this.setState({ series: series, title:title, chart:chart })
   }
 
 
@@ -81,11 +82,19 @@ class CircleChart extends Component {
     })
     this.state.series.data = this.props.data.children
   }
-componentDidUpdate(prevProps){
-  console.log(prevProps, this.props)
-  if(this.props.data.title !== prevProps.data.title){
-    this.state.title = this.state.props.data.title
+
+  update(){
+    
+    this.state.series.data = this.props.data.children
+    this.state.title.text = this.props.data.name
+    
+
   }
+componentDidUpdate(prevProps){
+  // console.log(prevProps.data.name, this.props.data.name)
+  // if(this.props.data.name !== prevProps.data.name){
+  //   this.state.title.text = this.props.data.name
+  // }
 }
   componentWillUnmount() {
     if (this.chart) {
@@ -95,6 +104,7 @@ componentDidUpdate(prevProps){
   
   render() {
     console.log(this.props)
+    let update = this.state.series && this.state.chart && this.update()
     // let activeIndex
     return (
       <main className="circle-chart-main">

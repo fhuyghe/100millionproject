@@ -56,13 +56,13 @@ class BarChart extends Component {
   
 
   updateData = (data) => {
-    let chart = {...this.state.chart}
-    
+    let { chart }  = this.state
     chart.data = this.props.data
-  chart.update()
+    chart.options.title.text = this.props.title
+    this.state.chart.update()
   }
 
-
+ 
   createChart(data) {
      console.log(this.props.data)
     const ctx = document.querySelector("#states")
