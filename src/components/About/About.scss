@@ -1,0 +1,20 @@
+@import '../../assets/styles/variables';
+
+#aboutPage{
+    background-color: $white;
+    color: $black;
+    padding-bottom: 0;
+
+    section{
+        padding: 200px 0;
+    }
+
+    #team{
+        background-color: $lightgrey;
+    }
+
+    #knight{
+        background-color: $black;
+        color: $white;
+    }
+}

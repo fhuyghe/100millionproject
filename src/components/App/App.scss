@@ -3,6 +3,10 @@
 html{
   scroll-behavior: smooth;
   font-size: 18px;
+
+  *:focus{
+    outline: 0;
+  }
 }
 
 .App {
@@ -72,8 +76,20 @@ h2{
 	letter-spacing: .04em;
 }
 
+h3{
+  font-family: $spoof;
+  margin-bottom: 10px;
+}
+
+h5{
+  font-weight: 400;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
 p{
   line-height: 1.5em;
+  margin-top: 0;
 }
 
 a{
@@ -83,15 +99,27 @@ a{
     &.button{
         display: inline-block;
         text-decoration: none;
+        text-transform: uppercase;
         border: 2px solid $white;
-        padding: 1em 1.5em;
+        padding: .8em 1em;
         margin: 10px;
+        transition: .25s;
         cursor: pointer;
 
         &.yellow{
             background-color: $yellow;
             border-color: $yellow;
             color: $black;
+        }
+
+        &.black{
+          background-color: $black;
+          border: 0;
+          color: $white;
+
+          &:hover{
+            background-color: $red;
+          }
         }
     }
 }
@@ -103,6 +131,10 @@ input{
 
 span.red{
     color: $red;
+}
+
+img, video{
+  max-width: 100%;
 }
 
 .text-center{
