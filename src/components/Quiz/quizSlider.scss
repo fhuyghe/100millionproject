@@ -1,5 +1,9 @@
 @import "../../assets/styles/variables";
 
+.range-selector {
+  height: 100%;
+}
+
 .next-button {
   margin: 0 auto;
   background: $black;
@@ -11,11 +15,18 @@
   justify-content: center;
 }
 
+.slider-conponent-container {
+  height: 70vh;
+}
+
 #sliderInput {
-    width: 78vw;
+    width: 325px;
     height: 100%;    
     transform: rotate(90deg);
-    color: transparent;
+    color: $beige;
+    background: #EDE9E4;
+    margin-top: 53%;
+    
 
     @include media-breakpoint-up(md){
       transform: rotate(0);
@@ -33,6 +44,7 @@
 .slider-wrapper {
     display: flex;    
     padding: 0;
+    margin-bottom: 165px;
 
     @include media-breakpoint-up(md){
 

@@ -3,6 +3,7 @@
 #quiz-wrap{
   background: $beige;
   min-height: 100vh;
+  padding-top: 60px;
 }
 
 .quiz-main-wrapper {
@@ -11,16 +12,31 @@
   text-align: center;
 }
 
+.progress-marker-wrapper {
+  height: 10px;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid $black;
+  margin: 0 auto;
+}
+
+.progress-marker-bar {
+  border: 1px solid $black;  
+  width: 10%;
+}
+
 .question-heading {
   size: 30px;
 }
 
 .question-text {
   font-family: $spoof;
-  padding: 28px 40px 0px 40px;
-  font-size: 23px;
+  padding: 0;
+  font-size: 25px;
   line-height: 1;
-  font-weight: 900;
+  font-weight: 500;
+  margin-top: 20px;
 }
 
 .result-description {
@@ -36,7 +52,7 @@
 
 .option-button {
   color: $black;
-  width: 250px;
+  width: 225px;
   height: 50px;
   margin: 10px 0;
   border: 1px solid $black;  

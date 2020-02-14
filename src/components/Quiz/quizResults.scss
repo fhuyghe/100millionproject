@@ -3,18 +3,20 @@
 .main-wrapper {
     padding: 20px;
     background: #D8D8D8;
-    height: 100vh;
+    height: 100%;
     text-align: left;
 }
 
 .lead-in {    
-    font-size: 25px;
+    font-family: $spoof;
+    font-size: 22px;
     font-weight: bold;
     color: $black;
-    font-family: $anon-pro;
+    font-weight: 200;
 }
 
 .result-heading {    
+    font-family: $spoof;
     font-size: 33px;
     color: $black;
     font-weight: 900;
