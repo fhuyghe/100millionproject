@@ -160,7 +160,7 @@ class Landing extends React.Component {
                         <ul>
                             {quizOptions.map((option, index) => {
                                 return <li onClick={() => this.answerQuiz(index + 1)} key={index}>
-                                        <div class={this.state.answer == index + 1 ? "box active" : "box"}></div> {option}
+                                        <div className={this.state.answer === index + 1 ? "box active" : "box"}></div> {option}
                                     </li>
                             })}
                         </ul>

@@ -4,13 +4,13 @@ import './InstaWindow.scss'
 const InstaWindow = (props) => { 
     return (
         <div className="insta-window">
-            <div class="insta-image" style={{
+            <div className="insta-image" style={{
                 backgroundImage: "url('" + props.image + "')"
             }}></div>
-            <div class="insta-footer">
-            <i class="fal fa-comment"></i>
-            <i class="fal fa-paper-plane"></i>
-                <i class="fal fa-heart"></i>
+            <div className="insta-footer">
+            <i className="fal fa-comment"></i>
+            <i className="fal fa-paper-plane"></i>
+                <i className="fal fa-heart"></i>
             </div>
         </div>
     )

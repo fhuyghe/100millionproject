@@ -5,13 +5,13 @@ const About = () => {
 
     return <div id="aboutPage">
         <section id="about">
-            <div class="wrap">
+            <div className="wrap">
                 <h1>About the project</h1>
                 <p>Lorem ipsum</p>
             </div>
         </section>
         <section id="team">
-        <div class="wrap">
+        <div className="wrap">
                 <h2>The Team</h2>
                 <h3>Bendixen & Amandi International</h3>
                 <ul>
@@ -45,7 +45,7 @@ const About = () => {
                 </div>
         </section>
         <section id="knight">
-            <div class="wrap">
+            <div className="wrap">
                 <h2>About the John S. and James L. Knight Foundation</h2>
                 <p>Knight Foundation is a national foundation with strong local roots.  We invest in journalism, in the arts, and in the success of cities where brothers John S. and James L. Knight once published newspapers. Our goal is to foster informed and engaged communities, which we believe are essential for a healthy democracy. </p>
                 <p>For more, visit kf.org.</p>

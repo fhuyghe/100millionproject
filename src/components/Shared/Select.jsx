@@ -13,7 +13,7 @@ export const Select = props => {
       >
         {props.options}
       </select>
-      <div className="selectArrow"><i class="far fa-chevron-down"></i></div>
+      <div className="selectArrow"><i className="far fa-chevron-down"></i></div>
     </form>
   );
 };

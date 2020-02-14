@@ -31,9 +31,9 @@ class AppHeader extends Component {
         <>
         <header className={this.state.active ? "app-header active" : "app-header"}>
           <div className="banner">
-            <button class={this.state.active ? "hamburger hamburger--elastic is-active" : "hamburger hamburger--elastic" } type="button" onClick={this.toggleMenu}>
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
+            <button className={this.state.active ? "hamburger hamburger--elastic is-active" : "hamburger hamburger--elastic" } type="button" onClick={this.toggleMenu}>
+            <span className="hamburger-box">
+              <span className="hamburger-inner"></span>
             </span>
           </button>
             <Link className="title" to='/' onClick={this.state.active && this.toggleMenu}><img src="/100M_logo__long_white-600.png" /></Link>
@@ -45,7 +45,7 @@ class AppHeader extends Component {
             <div className="wrap">
             <div className="row">
               <div className="col-md-6">
-                  {pages.map((link) => <div class="page-link">
+                  {pages.map((link) => <div className="page-link">
                     <Link to={"/" + link.path} className={this.props.location === link.path && "active"} onClick={this.toggleMenu}>{link.title}</Link>
                     {link.subtitle && <p>{link.subtitle}</p>}
                   </div>)}
@@ -55,9 +55,9 @@ class AppHeader extends Component {
                   <p>A little paragraph about the study.</p>
                   <Link to='/study' className="button" onClick={this.toggleMenu}>Download the report</Link>
                   <div className="social">
-                    <a href="" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="" target="_blank"><i className="fab fa-facebook"></i></a>
+                    <a href="" target="_blank"><i className="fab fa-twitter"></i></a>
+                    <a href="" target="_blank"><i className="fab fa-instagram"></i></a>
                   </div>
                 </div>
               </div>
