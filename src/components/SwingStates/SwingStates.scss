@@ -2,10 +2,14 @@
 
 .swingstates-page {
 	background-color: $blue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	min-height: 100vh;
 
 	.swingstates-main {
 		display: flex;
+		width: 100%;
 		flex-direction: column;
 		justify-content: top;
 		text-align: center;
@@ -13,18 +17,12 @@
 
 		.state-name {
 			font-size: 2em;
+			padding: 10px;
+
+			a:hover{
+				color: $yellow;
+			}
 		}
-	}
-
-	.swingstates-title {
-		margin-bottom: 3%;
-		height: 10%;
-		color: $black;
-		font-family: $anon-pro;
-	}
-
-	.state-name {
-		padding: 1%;
 	}
 	
 	.state-name-link {

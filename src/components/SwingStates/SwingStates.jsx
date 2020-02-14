@@ -26,7 +26,7 @@ const SwingStates = () => {
     <div className="swingstates-page">
       <main className="swingstates-main">
         <div className="wrap">
-        <div className="swing-states-title">Swing States</div>
+          <h1>Swing States</h1>
           {swingList}
           </div>
       </main>
