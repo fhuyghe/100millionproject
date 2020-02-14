@@ -7,7 +7,9 @@ import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import PopupWindow from './PopupWindow' 
 import InstaWindow from './InstaWindow'
 import { CountUp } from 'countup.js'
+//Video elements
 import VideoBlock from '../Videos/VideoBlock'
+import VideoPlayer from '../Videos/VideoPlayer'
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -179,8 +181,7 @@ class Landing extends React.Component {
                             <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation. </h2>
                         </div>
                         <div className="col-md-6 offset-md-6">
-                            <p>Many cite poor-quality and corrupt elected officials, political fundraising, special interest dominance, and media bias among the reasons why they don’t vote. It can take a lot to convince habitual non-voters to vote as <Link>a House of Delegates candidate in West Virginia found out.</Link> Our study identified <Link to="typesofnonvoters">six types of non-voters.</Link></p>
-                            <Link className="button">Why do non-voters matter?</Link>
+                            <p>Many cite poor-quality and corrupt elected officials, political fundraising, special interest dominance, and media bias among the reasons why they don’t vote. It can take a lot to convince habitual non-voters to vote as <VideoPlayer vimeoID="76979871" title="West Virginia video">a House of Delegates candidate in West Virginia found out.</VideoPlayer> Our study identified <Link to="typesofnonvoters">six types of non-voters.</Link></p>
                         </div>
                     </div>
                 </section>
@@ -213,7 +214,7 @@ class Landing extends React.Component {
                     <div className="wrap">
                         <div className="row">
                             <div className="col-md-6">
-                                <p>In addition to their mistrust in elections, many non-voters cited a lack of education on current political issues and how elections could personally impact them. Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <Link>their county’s first Latino candidate.</Link></p>
+                                <p>In addition to their mistrust in elections, many non-voters cited a lack of education on current political issues and how elections could personally impact them. Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <VideoPlayer vimeoID="76979871" title="Arizona video">their county’s first Latino candidate.</VideoPlayer></p>
                             </div>
                             <div className="col-md-6">
                             <VideoBlock video="test-video"/>

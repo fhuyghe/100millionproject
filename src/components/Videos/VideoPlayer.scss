@@ -1,0 +1,25 @@
+@import '../../assets/styles/variables';
+
+.video-player{
+    display: inline;
+
+    a{
+        white-space: normal;
+        cursor: pointer;
+    }
+
+    .video-player-wrap{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: $white;
+        z-index: 99;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import VideoBlock from './VideoBlock'
+import VideoPlayer from './VideoPlayer'
 import './Videos.scss'
 
 const Videos = () => {
@@ -8,25 +9,25 @@ const Videos = () => {
         {
             title: "West Virginia",
             description: "A video in West Virginia",
-            vimeoID: "1234",
+            vimeoID: "76979871",
             name: "test-video"
         },
         {
             title: "Arizona",
             description: "A video in West Virginia",
-            vimeoID: "1234",
+            vimeoID: "76979871",
             name: "test-video"
         },
         {
             title: "New York City",
             description: "A video in West Virginia",
-            vimeoID: "1234",
+            vimeoID: "76979871",
             name: "test-video"
         },
         {
             title: "Explainer video",
             description: "A video in West Virginia",
-            vimeoID: "1234",
+            vimeoID: "76979871",
             name: "test-video"
         }
     ]
@@ -40,10 +41,12 @@ const Videos = () => {
             
             <div className="videos-wrap">
             {videos.map((video) => { 
-                return <div className="video">
+                return <div className="video" key={video.name}>
                     <div className="video-thumbnail">
                         <VideoBlock video={video.name} />
-                        <div className="video-play"><i class="fas fa-play"></i></div>
+                        <VideoPlayer vimeoID={video.vimeoID} title={video.title}>
+                            <div className="video-play"><i className="fas fa-play"></i></div>
+                        </VideoPlayer>
                     </div>
                     <h3>{ video.title }</h3>
                     <p>{ video.description }</p>
