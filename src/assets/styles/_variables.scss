@@ -58,3 +58,27 @@ $spoof: "spoof", serif;
         background-size: 20.37%; // Making sure it shows a bar at the end
     }
 }
+
+@mixin typeColors {
+    &.blue{
+        background-color: $blue;
+    }
+    &.yellow{
+        background-color: $yellow;
+        color: $black;
+    }
+    &.grey{
+        background-color: $grey;
+        color: $black;
+    }
+    &.red{
+        background-color: $red;
+    }
+    &.green{
+        background-color: $green;
+    }
+    &.black{
+        background-color: $black;
+        color: $white;
+    }
+  }

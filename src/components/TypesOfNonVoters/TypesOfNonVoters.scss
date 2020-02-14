@@ -28,25 +28,7 @@
             .type-wrap{
                 padding: $grid-gutter / 2;
 
-                &.blue{
-                    background-color: $blue;
-                }
-                &.yellow{
-                    background-color: $yellow;
-                    color: $black;
-                }
-                &.grey{
-                    background-color: $grey;
-                }
-                &.red{
-                    background-color: $red;
-                }
-                &.green{
-                    background-color: $green;
-                }
-                &.black{
-                    background-color: $black;
-                }
+                @include typeColors;
             }
         }
     }

@@ -10,7 +10,7 @@ class TypesOfNonVoters extends React.Component {
         let displayTypes = results.map((type) => {
             return <div className="type col-md-6 ">
                 <div className={"type-wrap " + type.color}>
-                <h3>{type.result}</h3>
+                <h3>{type.name}</h3>
                     <div dangerouslySetInnerHTML={{ __html: type.description }}></div>
                     </div>
             </div>

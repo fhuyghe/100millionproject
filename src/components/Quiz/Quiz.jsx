@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
 import { questions, results } from "../../Data/quizData";
 import "./quiz.scss";
 import QuizSlider from "./QuizSlider";
@@ -34,22 +33,15 @@ class Quiz extends Component {
 
   responseSelected(i) {
     // Get new result scores    
-    let currentScores = this.state.resultScores;
+    let newResultScores = this.state.resultScores;
     let resultChanges = questions[this.state.currentQuestion].responses[i].resultChange;
-    let newResultScores = [];
-    currentScores.forEach((score, i) => {
-      resultChanges.forEach((result) => {
-        let resultIndex = result[0];
-        let resultChange = result[1];
-        if (i === resultIndex) {
-          newResultScores.push(currentScores[i] += resultChange);
-        } else {
-          newResultScores[i] = currentScores[i];
-        }
-      });
+
+    //Update Scores
+    resultChanges.forEach((change) => {
+        let changeIndex = change[0];
+        let changeAmount = change[1];
+        newResultScores[changeIndex] += changeAmount
     })
-
-
 
     let highestScore = this.getHighestScore(newResultScores);
 
@@ -75,6 +67,7 @@ class Quiz extends Component {
         highestScore = score;
       }
     })
+    console.log('Score in getHighestScore: ', highestScore)
     return highestScore;
   }
 
@@ -83,28 +76,24 @@ class Quiz extends Component {
     console.log("indexOfLeadingResult " + this.state.indexOfLeadingResult)
     console.log("currentQuestion " + this.state.currentQuestion)
     console.log("number of questions " + questions.length)
+
+    let leadingResult = results[this.state.indexOfLeadingResult]
+
     return (
       <div id="quiz-page">
         <div className="wrap">
         <div className="progress-marker-wrapper">
-          {questions.map((question, i) => {
-            return (
-              (i === this.state.currentQuestion) ? (
-                <div style={{ background: '#111111' }}
-                  className="progress-marker-bar">
-                </div>
-              ) : (
-                  <div className="progress-marker-bar">
-                  </div>
-                )
-            )
+            {questions.map((question, i) => {
+              let classes = "progress-marker-bar"
+              classes += i === this.state.currentQuestion ? " active" : ""
+              classes += i < this.state.currentQuestion ? " passed" : ""
+            return <div className={classes}></div>
           })}
-        </div>
+          </div>
+          
           {this.state.currentQuestion === questions.length - 1 ?
-            window.location.href = `./${this.state.indexOfLeadingResult}`
-            : (
-              <div>
-                <div className="quiz-main-wrapper">
+            window.location.href = `./${leadingResult.path}`
+            : <div className="quiz-main-wrapper">
                   <p className="question-text">{this.state.currentQuestionText}</p>
                   {this.state.currentQuestionType === "slider" ? (
                     <div className="range-selector">
@@ -128,8 +117,7 @@ class Quiz extends Component {
                       </div>
                     )}
                 </div>
-              </div>
-            )}
+            }
           </div>
       </div>
     );
