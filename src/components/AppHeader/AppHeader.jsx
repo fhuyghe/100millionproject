@@ -52,12 +52,12 @@ class AppHeader extends Component {
                 </div>
                 <div className="col-md-6">
                   <Link to='/about' className={this.props.location === 'about' && "active"} onClick={this.toggleMenu}>About</Link>
-                  <p>A little paragraph about the study.</p>
+                  <p>The 100 Million Project is a comprehensive national study of the non-voting adult population in the United States and aims to understand citizen disengagement from the political process.</p>
                   <Link to='/study' className="button" onClick={this.toggleMenu}>Download the report</Link>
                   <div className="social">
-                    <a href="" target="_blank"><i className="fab fa-facebook"></i></a>
-                    <a href="" target="_blank"><i className="fab fa-twitter"></i></a>
-                    <a href="" target="_blank"><i className="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/the100million" target="_blank"><i className="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/the100_million" target="_blank"><i className="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/the100_million/" target="_blank"><i className="fab fa-instagram"></i></a>
                   </div>
                 </div>
               </div>
