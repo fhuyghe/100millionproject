@@ -19,10 +19,11 @@ class QuizSlider extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="slider-component-container">
+        <div>Extremely Interested</div>
         <form>
           <div className="slider-wrapper">
-          <div>Extremely Interested</div>
+          
           <input
             id="sliderInput"
             className="slider"
@@ -32,11 +33,11 @@ class QuizSlider extends React.Component {
             value={this.state.value}
             onChange={this.handleChange}
             step="1"
-          />
-          <div>Not Interested</div>
-          </div>
-          <input className="next-button" onClick={() => this.props.handleSliderSubmission(this.state.value)} type="submit" value="Next" />
+          />          
+          </div>          
         </form>
+        <div>Not Interested</div>
+        <input for="sliderInput" className="next-button" onClick={() => this.props.handleSliderSubmission(this.state.value)} type="submit" value="Next" />        
       </div>
     );
   }

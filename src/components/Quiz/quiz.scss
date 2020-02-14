@@ -3,6 +3,7 @@
 #quiz-wrap{
   background: $beige;
   min-height: 100vh;
+  padding-top: 60px;
 }
 
 .quiz-main-wrapper {
@@ -31,10 +32,11 @@
 
 .question-text {
   font-family: $spoof;
-  padding: 28px 40px 0px 40px;
-  font-size: 23px;
+  padding: 0;
+  font-size: 25px;
   line-height: 1;
-  font-weight: 900;
+  font-weight: 500;
+  margin-top: 20px;
 }
 
 .result-description {
@@ -50,7 +52,7 @@
 
 .option-button {
   color: $black;
-  width: 250px;
+  width: 225px;
   height: 50px;
   margin: 10px 0;
   border: 1px solid $black;  
