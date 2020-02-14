@@ -25,8 +25,10 @@ const SwingStates = () => {
   return (
     <div className="swingstates-page">
       <main className="swingstates-main">
+        <div className="wrap">
         <div className="swing-states-title">Swing States</div>
-        {swingList}
+          {swingList}
+          </div>
       </main>
     </div>
   );

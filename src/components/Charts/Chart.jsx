@@ -119,7 +119,7 @@ class Chart extends Component {
           {renderChart}
           <i className="fal fa-angle-right" onClick={this.rightArrow}></i>
         </div>
-        <ChartSelect handleChartSelect={this.handleChartSelect} />
+        <ChartSelect index={this.state.surveyDataIndex} handleChartSelect={this.handleChartSelect} />
 
        
       </>

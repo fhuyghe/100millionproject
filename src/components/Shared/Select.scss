@@ -1,17 +1,16 @@
 @import '../../assets/styles/variables';
 
 .select-box {
-	display: flex;
-	position: relative;
-	justify-content: center;
 	margin: 0 auto;
-	border: 1px solid #000;
+	border: 2px solid #000;
 	padding: 0 0;
-	width: 90%;
+	max-width: 400px;
 	
 	overflow: hidden;
 	text-align: center;
 	max-height:45%;
+	position: relative;
+
 	.select {
 		
 		position: relative;
@@ -28,18 +27,12 @@
 			background: $blue;
 		}
 	}
-}
-.select-box:after {
-	top: 40%;
-	right: 15px;
-	transform: rotate(180deg) translate(0, -0.7em) scaleX(1.7);
-	z-index: 98;
-	border-right: 6px solid transparent;
-	width: 0;
-	height: 0;
-	font-weight: 100;
-	content: "^";
-	/* border-left: 6px solid transparent;
-	*/
-  position: absolute;
+
+	.selectArrow{
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		font-size: 1.5em;
+		transform: translateY(-50%);
+	}
 }

@@ -72,8 +72,8 @@ class SwingStatesChart extends Component {
 
     return (
       <div className="swingstates-chart">
-        <AppHeader />
         <main className="swingstates-chart-main">
+          <div className="wrap">
           <div className="top">
             <h3 className="swingstates-chart-title">Swing States</h3>
 
@@ -85,7 +85,8 @@ class SwingStatesChart extends Component {
             />
           </div>
 
-          <Chart stateId={stateId} chartType={chartType} />
+            <Chart stateId={stateId} chartType={chartType} />
+            </div>
         </main>
       </div>
     )
