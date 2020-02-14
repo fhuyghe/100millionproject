@@ -6,7 +6,7 @@ const About = () => {
     return <div id="aboutPage">
         <section id="about">
             <div className="wrap">
-                <h1>About the project</h1>
+                <h2>About the project</h2>
                 <p>Lorem ipsum</p>
             </div>
         </section>

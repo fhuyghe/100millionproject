@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./quizSlider.scss";
 
-class QuizSlider extends React.Component {
+class QuizSlider extends Component {
   constructor(props) {
     super(props);
     this.state = { value: 3 };

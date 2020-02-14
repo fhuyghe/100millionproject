@@ -36,7 +36,7 @@ class AppHeader extends Component {
               <span className="hamburger-inner"></span>
             </span>
           </button>
-            <Link className="title" to='/' onClick={this.state.active && this.toggleMenu}><img src="/100M_logo__long_white-600.png" /></Link>
+            <Link className="title" to='/' onClick={() => {return this.state.active && this.toggleMenu}}><img src="/100M_logo__long_white-600.png" /></Link>
           </div>
           
         {this.state.active &&
@@ -46,12 +46,12 @@ class AppHeader extends Component {
             <div className="row">
               <div className="col-md-6">
                   {pages.map((link) => <div className="page-link">
-                    <Link to={"/" + link.path} className={this.props.location === link.path && "active"} onClick={this.toggleMenu}>{link.title}</Link>
+                    <Link to={"/" + link.path} className={this.props.location === link.path ? "active" : ""} onClick={this.toggleMenu}>{link.title}</Link>
                     {link.subtitle && <p>{link.subtitle}</p>}
                   </div>)}
                 </div>
                 <div className="col-md-6">
-                  <Link to='/about' className={this.props.location === 'about' && "active"} onClick={this.toggleMenu}>About</Link>
+                  <Link to='/about' className={this.props.location === 'about' ? "active" : ""} onClick={this.toggleMenu}>About</Link>
                   <p>The 100 Million Project is a comprehensive national study of the non-voting adult population in the United States and aims to understand citizen disengagement from the political process.</p>
                   <Link to='/study' className="button" onClick={this.toggleMenu}>Download the report</Link>
                   <div className="social">
