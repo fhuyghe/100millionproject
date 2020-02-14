@@ -18,6 +18,7 @@
     padding-left: 30px;
     background: $black;
     width: 100%;
+    height: $grid-gutter;
 
     .hamburger {
       position: absolute;
@@ -95,7 +96,7 @@
 
     @include media-breakpoint-up(md){
       min-height: 0;
-      padding: $grid-gutter 0;
+      padding: $grid-gutter * 2 0 $grid-gutter;
     }
   
     .page-link{

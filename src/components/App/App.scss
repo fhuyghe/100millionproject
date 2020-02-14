@@ -68,23 +68,31 @@ html{
 
 h1{
 	font-family: $spoof;
-    font-size: 2.5em;
+  font-size: 2.5em;
+  margin-top: 0;
 }
 
 h2{
 	font-family: $spoof;
-	letter-spacing: .04em;
+  letter-spacing: .04em;
+  margin-top: 0;
 }
 
 h3{
   font-family: $spoof;
   margin-bottom: 10px;
+  margin-top: 0;
 }
 
 h5{
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.5em;
+  margin-top: 0;
+  
+  @include media-breakpoint-up(md){
+    font-size: 1.2em;
+  }
 }
 
 p{
@@ -105,6 +113,10 @@ a{
         margin: 10px;
         transition: .25s;
         cursor: pointer;
+
+        &:hover{
+          border-color: $red;
+        }
 
         &.yellow{
             background-color: $yellow;
