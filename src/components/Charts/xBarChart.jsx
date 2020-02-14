@@ -1,71 +1,97 @@
-import React, { Component } from "react"
-import Chart from "chart.js"
-import { fakeData } from "../../Data/sharedData.js"
+import React, { Component } from "react";
+import Chart from "chart.js";
+import { fakeData } from "../../Data/sharedData.js";
 import "./BarChart.scss"
 
-Chart.defaults.global.defaultFontColor = "#fff"
+Chart.defaults.global.defaultFontColor = "#fff";
 Chart.plugins.register({
   afterDatasetsDraw: function(chart, easing) {
-    var ctx = chart.ctx
+    var ctx = chart.ctx;
 
     chart.data.datasets.forEach(function(dataset, i) {
-      var meta = chart.getDatasetMeta(i)
+      var meta = chart.getDatasetMeta(i);
       if (meta.type === "bubble") {
         meta.data.forEach(function(element, index) {
           // Draw the text in black, with the specified font
-          ctx.fillStyle = "rgb(0, 0, 0)"
-          var fontSize = 13
-          var fontStyle = "normal"
-          var fontFamily = "Helvetica Neue"
-          ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily)
+          ctx.fillStyle = "rgb(0, 0, 0)";
+          var fontSize = 13;
+          var fontStyle = "normal";
+          var fontFamily = "Helvetica Neue";
+          ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
 
+          
           // Make sure alignment settings are correct
-          ctx.textAlign = "center"
-          ctx.textBaseline = "middle"
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
 
-          var padding = 15
-          var position = element.tooltipPosition()
+          var padding = 15;
+          var position = element.tooltipPosition();
           ctx.fillText(
             dataset.title,
             position.x,
             position.y - fontSize / 2 - padding
-          )
-        })
-      }
-    })
+          );
+        });
+      } 
+    });
   }
-})
+});
 
 class BarChart extends Component {
   constructor(props) {
-    super(props)
-    this.state = {}
+    super(props);
+    this.state = {};
   }
   componentDidMount() {
-    console.log(this.props.data)
-
-    let chart = this.createChart(this.props.data)
-
+    let id = this.props.stateId ? this.props.stateId : 0
+   
+    let chart = this.createChart(this.prepareData(id));
+  
     this.setState({
-      chart: chart
+      chart:chart
     })
   }
   update = (chart, id) => {
+    chart.data = this.prepareData(id)
     chart.update()
+
   }
   
+  componentDidUpdate(prevProps){
+    
+    if(this.state.chart && this.props.stateId !== prevProps.stateId){
+      
+      this.state.chart.data = this.prepareData(this.props.stateId)
+      this.state.chart.update()
+    }
 
-  updateData = (data) => {
-    let { chart } = this.state
-    chart.data = this.props.data
-    this.state.chart.update()
   }
 
+  prepareData(id) {
+    
+    const chartData = {
+      labels: [],
+      datasets: [
+        {
+          data: [],
+          backgroundColor: ["#3ABA89", "#F8D807", "#009DE0"],
+          borderWidth: 1
+        }
+      ]
+    };
+   
+    fakeData[id].children.forEach(d => {
+      chartData.labels.push(d.name);
+      chartData.datasets[0].data.push(d.value);
+    });
+
+    return chartData;
+  }
 
   createChart(data) {
-    const ctx = document.querySelector("#states")
+    const ctx = document.querySelector("#states");
     let barChart = new Chart(ctx, {
-      type: "bar",
+      type: 'bar',
       data: data,
 
       options: {
@@ -74,7 +100,7 @@ class BarChart extends Component {
         showTooltips: true,
 
         onAnimationComplete: function() {
-          this.showTooltip(this.datasets[0].points, true)
+          this.showTooltip(this.datasets[0].points, true);
         },
         tooltipEvents: [],
         responsive: false,
@@ -124,27 +150,29 @@ class BarChart extends Component {
           ]
         }
       }
-    })
+    });
 
+   
     //    Chart.defaults.scale.gridLines.drawOnChartArea = false;
     Chart.defaults.global.maintainAspectRatio = false
     return barChart
+    
   }
-  componentWillUnmount() {
-    if (this.chart) {
-      this.chart.dispose()
-    }
-  }
+ componentWillUnmount() {
+      if (this.chart) {
+        this.chart.dispose();
+      }
+ }
+  
   render() {
-    console.log(this.props)
-    this.state.chart && this.updateData()
+    
     return (
       <>
         <main className="bar-chart-main">
           <canvas
             id="states"
             className="bar-chart"
-            style={{ height: "75%", width: "90%" }}
+            style={{ height: "100%", width:"100%"}}
           ></canvas>
           <section className="backdrop">
             More Non-Voters in New Hampshire plan to vote compared to the
@@ -152,11 +180,11 @@ class BarChart extends Component {
           </section>
         </main>
       </>
-    )
+    );
   }
 }
 
-export default BarChart
+export default BarChart;
 
 ////TEST DATA FOR CHARTJS BUBBLE CHART, NOW USING AMCHART CIRCLE
 
