@@ -16,32 +16,14 @@ class CircleChart extends Component {
    
   }
   componentDidMount() {
-    console.log('sd')
-    let id = this.props.stateId ? this.props.stateId : 0
-
     am4core.useTheme(am4themes_animated)
 
     let chart = am4core.create(
       "circle-chart",
       am4plugins_forceDirected.ForceDirectedTree
     )
-    chart.background.fill = "#F2705E"
 
     chart.dataFields.color = "color"
-
-    let title = chart.titles.create()
-    title.text = this.props.data.name
-    title.fill = "white"
-    title.fontSize = 20
-
-    title.wrap = true
-    title.textAlign = "middle"
-    title.isMeasured = false
-    title.y = 20
-    title.x = 10
-    title.paddingLeft = 30
-    title.paddingRight = 30
-    title.marginBottom = 50
 
     let series = chart.series.push(
       new am4plugins_forceDirected.ForceDirectedSeries()
@@ -65,13 +47,44 @@ class CircleChart extends Component {
     series.nodes.template.label.fontFamily = "Anonymous Pro"
     series.nodes.template.label.wrap = true
 
-    series.fontSize = 14
+    series.fontSize = 16
     series.minRadius = 15
     series.maxRadius = 65
 
-    // series.data = fakeData[id].children[this.state.activeIndex].children;
-    series.data = this.props.data.children
-    this.setState({ series: series, title:title, chart:chart })
+    let dataSets = this.formatData(this.props.data.children)
+    console.log('DATASET: ', dataSets[0])
+
+    series.data = dataSets[0]
+    this.setState({
+      series,
+      chart,
+      dataSets
+    }) //, title:title
+  }
+
+  formatData(data) { 
+    let dataSets = []
+
+    // Figure out the number of data sets
+    const dataSetNumber = this.props.data.legend.length
+    
+    data.forEach(dataPoint => {
+      //Extract one value out of all values
+      let values = dataPoint.values[this.props.state] || dataPoint.values.average
+      
+      //Please each each number in its own array according to the legend
+      for (let i = 0; i < dataSetNumber; i++) {
+        let newDataPoint = {
+          name: dataPoint.name,
+          value: values[i] ? values[i] : 0
+        }
+        dataSets[i]
+          ? dataSets[i].push(newDataPoint)
+          : dataSets[i] = [newDataPoint]
+      }
+    });
+
+    return dataSets
   }
 
 
@@ -80,22 +93,22 @@ class CircleChart extends Component {
       activeIndex:index,
       
     })
-    this.state.series.data = this.props.data.children
+    this.state.series.data = this.state.dataSets[index]
   }
 
-  update(){
-    
-    this.state.series.data = this.props.data.children
-    this.state.title.text = this.props.data.name
-    
-
+  update() {
+    let dataSets = this.formatData(this.props.data.children)
+    this.state.series.data = dataSets[this.state.activeIndex]
+    //this.state.title.text = this.props.data.name
   }
-componentDidUpdate(prevProps){
+
+  componentDidUpdate(prevProps){
   // console.log(prevProps.data.name, this.props.data.name)
   // if(this.props.data.name !== prevProps.data.name){
   //   this.state.title.text = this.props.data.name
   // }
-}
+  }
+  
   componentWillUnmount() {
     if (this.chart) {
       this.chart.dispose()
@@ -103,13 +116,19 @@ componentDidUpdate(prevProps){
   }
   
   render() {
-    console.log(this.props)
     let update = this.state.series && this.state.chart && this.update()
-    // let activeIndex
+
     return (
-      <main className="circle-chart-main">
-        <div id="circle-chart"></div>
-        <div className="swing-circle-selectors">
+      <main className="chart-main">
+        <header>
+          <h3>{this.props.data.name}</h3>
+        </header>
+
+        {/* The Chart element */}
+        <div className="circle-chart chart"></div>
+
+        {/* The subset selection */}
+        <footer className="swing-circle-selectors">
           {this.props.data.legend.map((legendName, index) => {
             let active = this.state.activeIndex === index ? 1 : 0
             let bgcolor =
@@ -138,7 +157,7 @@ componentDidUpdate(prevProps){
               </div>
             )
           })}
-        </div>
+          </footer>
       </main>
     )
   }

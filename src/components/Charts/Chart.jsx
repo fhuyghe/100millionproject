@@ -20,6 +20,7 @@ class Chart extends Component {
       barChartData:this.barChartData(this.props.stateId)
     })
   }
+
   componentDidUpdate(prevProps) {
     console.log(this.props.stateId, prevProps.stateId)
     if (this.props.stateId !== prevProps.stateId) {
@@ -34,6 +35,7 @@ class Chart extends Component {
       this.chart.dispose()
     }
   }
+
   barChartData = stateId => {
     const chartData = {
       labels: [],
@@ -56,6 +58,7 @@ class Chart extends Component {
     // })
     return [chartData, chartTitle]
   }
+
   circleChartData(stateId) {
     let id = this.state.surveyDataIndex
 
@@ -65,14 +68,12 @@ class Chart extends Component {
   }
 
   handleChartSelect = (chartType, index) => {
-    console.log(index)
     this.setState({
-      
-
       chartType: chartType.substring(0, chartType.length - 1),
       surveyDataIndex:index
     })
   }
+
   leftArrow = () => {
     console.log(this.state.surveyDataIndex)
     this.state.surveyDataIndex > 0 &&
@@ -80,6 +81,7 @@ class Chart extends Component {
       surveyDataIndex: this.state.surveyDataIndex - 1
     })
   }
+
   rightArrow = () => {
     console.log(this.state.surveyDataIndex)
 
@@ -99,25 +101,30 @@ class Chart extends Component {
 
     let renderChart =
       chartType === "bar" ? (
-        <BarChart stateId={stateId} data={barChartData[0]} title={barChartData[1]} />
+        <BarChart
+          stateId={stateId}
+          data={barChartData[0]}
+          title={barChartData[1]} />
       ) : chartType === "circle" ? (
         <CircleChart
-          // stateId={stateId}
-          // legend={circleChartData.legend}
-          data={circleChartData}
+            data={circleChartData}
+            state={stateId}
         />
       ) : null
-
-    console.log("this props", this.props, circleChartData)
-
   
     return (
       <>
        
         <div className="chartContainer">
-          <i className="fal fa-angle-left" onClick={()=>this.leftArrow()}></i>
-          {renderChart}
-          <i className="fal fa-angle-right" onClick={this.rightArrow}></i>
+          <div className="nav nav-left">
+            <i className="fal fa-angle-left" onClick={() => this.leftArrow()}></i>
+            </div>
+            <div className="chart-wrap">
+            {renderChart}
+          </div>
+          <div className="nav nav-right">
+            <i className="fal fa-angle-right" onClick={this.rightArrow}></i>
+            </div>
         </div>
         <ChartSelect index={this.state.surveyDataIndex} handleChartSelect={this.handleChartSelect} />
 

@@ -58,7 +58,6 @@ class BarChart extends Component {
   updateData = (data) => {
     let { chart }  = this.state
     chart.data = this.props.data
-    chart.options.title.text = this.props.title
     this.state.chart.update()
   }
 
@@ -85,15 +84,6 @@ class BarChart extends Component {
           labels: {
             fontColor: "white"
           }
-        },
-
-        title: {
-          display: true,
-          text: this.props.title,
-          padding: 20,
-          fontColor: "white",
-          fontSize: 20
-          // fontFamily: 'anonymous pro',
         },
         scales: {
           tooltips: {
@@ -141,68 +131,17 @@ class BarChart extends Component {
     console.log(this.props)
     this.state.chart && this.updateData()
     return (
-      <>
-        <main className="bar-chart-main">
+      <main className="chart-main">
+        <header>
+          <h3>{this.props.title}</h3>
+        </header>
           <canvas
             id="states"
-            className="bar-chart"
-            style={{ height: "75%", width: "90%" }}
+            className="bar-chart chart"
           ></canvas>
-          <section className="backdrop">
-            More Non-Voters in New Hampshire plan to vote compared to the
-            average for swing states.
-          </section>
         </main>
-      </>
     )
   }
 }
 
 export default BarChart
-
-////TEST DATA FOR CHARTJS BUBBLE CHART, NOW USING AMCHART CIRCLE
-
-//   label: [],
-//   backgroundColor: "rgba(255,221,50,0.2)",
-//   borderColor: "rgba(255,221,50,1)",
-//   fontSize:40,
-//   fontStyle:'italic',
-//   title: "dataTitle1",
-//   color: 'green',
-//   textsize:40,
-//   data: [{
-//     x: 21269017,
-//     y: 5.245,
-//     r: 60
-//     }]
-// }, {
-//   label: [],
-//   backgroundColor: "rgba(60,186,159,0.2)",
-//   borderColor: "rgba(60,186,159,1)",
-//   title: "dataTitle2",
-//   fontSize:50,
-//   data: [{
-//     x: 258702,
-//     y: 7.526,
-//     r: 10
-//   }]
-// }, {
-//   label: [],
-//   backgroundColor: "rgba(0,0,0,0.2)",
-//   borderColor: "#000",
-//   title: "dataTitle3",
-//   data: [{
-//     x: 3979083,
-//     y: 6.994,
-//     r: 15
-//   }]
-// }, {
-//   label: [],
-//   backgroundColor: "rgba(193,46,120,0.2)",
-//   borderColor: "rgba(193,46,12,1)",
-//   title: "dataTitle4",
-//   data: [{
-//     x: 4931877,
-//     y: 5.921,
-//     r: 15
-//   }]

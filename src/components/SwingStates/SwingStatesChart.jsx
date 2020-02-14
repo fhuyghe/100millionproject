@@ -1,11 +1,8 @@
 import React, { Component } from "react"
-import BarChart from "../Charts/BarChart.jsx"
-import AppHeader from "../AppHeader/AppHeader"
 import { Select } from "../Shared/Select"
 import "./SwingStatesChart.scss"
 import Chart from "../Charts/Chart.jsx"
-import CircleChart from "../Charts/CircleChart"
-import { fakeData, swingStates } from "../../Data/sharedData.js"
+import { swingStates } from "../../Data/sharedData.js"
 
 class SwingStatesChart extends Component {
   constructor() {
@@ -49,11 +46,7 @@ class SwingStatesChart extends Component {
       stateName: swingStates[id]
     })
   }
-  // handleClick = chartType => {
-  //   this.setState({
-  //     chartType: chartType
-  //   })
-  // }
+ 
   handleChartSelect = chartType => {
     this.setState({
       chartType: chartType.substring(0, chartType.length - 1)
@@ -75,7 +68,7 @@ class SwingStatesChart extends Component {
         <main className="swingstates-chart-main">
           <div className="wrap">
           <div className="top">
-            <h3 className="swingstates-chart-title">Swing States</h3>
+            <h1 className="swingstates-chart-title">Swing States</h1>
 
             <Select
               stateId={stateId}

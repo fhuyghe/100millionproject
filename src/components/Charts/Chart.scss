@@ -1,3 +1,4 @@
+@import '../../assets/styles/variables';
 // .slick-slider{
 //     width:80%;
 //     margin:0 auto;
@@ -13,11 +14,31 @@
 
 
 .chartContainer{
-    margin:0 1%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    height:500px;
+    
+    .chart-wrap{
+      width: 100%;
+      min-height: 500px;
+      background: $red;
+      padding: $grid-gutter/ 2;
+      display: flex;
+      flex-direction: column;
+
+      main{
+        flex: 1;
+      }
+    }
+
+    .nav-left{
+      padding-right: $grid-gutter / 2;
+    }
+
+    .nav-right{
+      padding-left: $grid-gutter / 2;
+    }
+
     .fal{
       font-size:25px;
       transform:scaleY(1.5)
