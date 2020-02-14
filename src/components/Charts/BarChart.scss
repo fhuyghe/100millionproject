@@ -6,6 +6,7 @@
   justify-content: center;
   z-index: 2;
   height: 100%;
+  // margin:0 1%;
 
   #states {
     z-index: 1;
@@ -29,7 +30,7 @@
     text-align: left;
     line-height: 1.25em;
     font-size: 1em;
-    // min-height: 110%;
+    color:black;
     // border: 2px solid black;
   }
 }

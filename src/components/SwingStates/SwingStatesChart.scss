@@ -8,10 +8,13 @@
     flex-direction: column;
     text-align: center;
     height: 800px;
-    // justify-content: space-around;
+    justify-content:flex-start;
+    
 
     .top {
+
       margin-bottom: $grid-gutter;
     }
+   
   }
 }

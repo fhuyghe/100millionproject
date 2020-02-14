@@ -56,18 +56,20 @@ class BarChart extends Component {
   
 
   updateData = (data) => {
-    let { chart } = this.state
+    let chart = {...this.state.chart}
+    
     chart.data = this.props.data
-    this.state.chart.update()
+  chart.update()
   }
 
 
   createChart(data) {
+     console.log(this.props.data)
     const ctx = document.querySelector("#states")
     let barChart = new Chart(ctx, {
       type: "bar",
       data: data,
-
+      
       options: {
         tooltipTemplate: "<%= value %>",
 
@@ -87,7 +89,7 @@ class BarChart extends Component {
 
         title: {
           display: true,
-          text: "Do you plan on voting in 2020?",
+          text: this.props.title,
           padding: 20,
           fontColor: "white",
           fontSize: 20

@@ -29,7 +29,7 @@ class CircleChart extends Component {
     chart.dataFields.color = "color"
 
     let title = chart.titles.create()
-    title.text = "What is the most important issue facing the U.S. today?"
+    title.text = this.props.data.name
     title.fill = "white"
     title.fontSize = 20
 
@@ -70,7 +70,7 @@ class CircleChart extends Component {
 
     // series.data = fakeData[id].children[this.state.activeIndex].children;
     series.data = this.props.data.children
-    this.setState({ series: series })
+    this.setState({ series: series, title:title })
   }
 
 
@@ -81,13 +81,18 @@ class CircleChart extends Component {
     })
     this.state.series.data = this.props.data.children
   }
-
+componentDidUpdate(prevProps){
+  console.log(prevProps, this.props)
+  if(this.props.data.title !== prevProps.data.title){
+    this.state.title = this.state.props.data.title
+  }
+}
   componentWillUnmount() {
     if (this.chart) {
       this.chart.dispose()
     }
   }
-
+  
   render() {
     console.log(this.props)
     // let activeIndex

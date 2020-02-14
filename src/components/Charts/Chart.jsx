@@ -2,19 +2,22 @@ import React, { Component } from "react"
 import BarChart from "./BarChart"
 import CircleChart from "./CircleChart"
 import Slider from "react-slick"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import "./Chart.scss"
+import ChartSelect from "../Shared/ChartSelect"
 
 import { surveyData } from "../../Data/sharedData.js"
 
 class Chart extends Component {
   state = {
-    barChartData: null
+    surveyDataIndex:0,
+    chartType:'circle'
   }
   componentDidMount() {
     console.log(this.barChartData(this.props.stateId))
     this.setState({
-      barChartData: this.barChartData(this.props.stateId)
+      barChartData:this.barChartData(this.props.stateId)
     })
   }
   componentDidUpdate(prevProps) {
@@ -31,7 +34,7 @@ class Chart extends Component {
       this.chart.dispose()
     }
   }
-  barChartData = id => {
+  barChartData = stateId => {
     const chartData = {
       labels: [],
       datasets: [
@@ -42,32 +45,45 @@ class Chart extends Component {
         }
       ]
     }
-    // console.log(this.props, fakeData[this.props.stateId])
-    console.log(id)
+    let id = this.state.surveyDataIndex
 
-    chartData.labels = surveyData[0].legend
-    chartData.datasets[0].data = surveyData[0].children[0].values[id]
-
+    chartData.labels = surveyData[id].legend
+    chartData.datasets[0].data = surveyData[id].children[0].values[stateId]
+    let chartTitle = surveyData[id].name
     // fakeData[0].children.forEach(data => {
     // chartData.labels.push(data.name)
     // chartData.datasets[0].data.push(data.value)
     // })
-    return chartData
+    return [chartData, chartTitle]
   }
-  circleChartData(id) {
+  circleChartData(stateId) {
+    let id = this.state.surveyDataIndex
+
     // console.log(this.state.selectorId)
-    let data = surveyData[0]
+    let data = surveyData[id]
     return data
   }
 
+  handleChartSelect = (chartType, index) => {
+    console.log(index)
+    this.setState({
+      
+
+      chartType: chartType.substring(0, chartType.length - 1),
+      surveyDataIndex:index
+    })
+  }
+
   render() {
-    let { chartType, stateId } = this.props
+    let { stateId } = this.props
+    let { chartType } = this.state
     let barChartData = this.barChartData(stateId)
     let circleChartData = this.circleChartData(stateId)
+    console.log(barChartData[1])
 
     let renderChart =
       chartType === "bar" ? (
-        <BarChart stateId={stateId} data={barChartData} />
+        <BarChart stateId={stateId} data={barChartData[0]} title={barChartData[1]} />
       ) : chartType === "circle" ? (
         <CircleChart
           stateId={stateId}
@@ -77,32 +93,19 @@ class Chart extends Component {
       ) : null
 
     console.log("this props", this.props, circleChartData)
-    // console.log('this state', this.state)
-    let settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    }
+
 
     return (
       <>
-        <Slider {...settings}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-        </Slider>
-        {/* {renderChart} */}
-        {/* {this.state.barChartData && (
-          <BarChart stateId={this.props.stateId} data={barChartData} />
-        )} */}
+       
+        <div className="chartContainer">
+          <i class="fal fa-angle-left" onClick={this.handleChartSelect}></i>
+          {renderChart}
+          <i class="fal fa-angle-right"></i>
+        </div>
+        <ChartSelect handleChartSelect={this.handleChartSelect} />
+
+       
       </>
     )
   }

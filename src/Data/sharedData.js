@@ -733,6 +733,7 @@ export const surveyData = [
   {
     name: "What party would you vote for in 2020?",
     type: "bars",
+    legend: ['Non-voters', '18-24'],
     children: [
       {
         name: "Democratic Party",
@@ -803,6 +804,7 @@ export const surveyData = [
   {
     name: "Are you planning to vote in 2020?",
     type: "bars",
+    legend: ['Non-voters', '18-24'],
     children: [
       {
         name: "Yes",
