@@ -1,9 +1,8 @@
 @import "../../assets/styles/variables";
 
-#quiz-wrap{
+#quiz-page{
   background: $beige;
   min-height: 100vh;
-  padding-top: 60px;
 }
 
 .quiz-main-wrapper {
@@ -14,7 +13,7 @@
 
 .progress-marker-wrapper {
   height: 10px;
-  width: 90vw;
+  max-width: 400px;
   display: flex;
   flex-direction: row;
   border: 1px solid $black;

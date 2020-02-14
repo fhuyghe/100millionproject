@@ -84,7 +84,8 @@ class Quiz extends Component {
     console.log("currentQuestion " + this.state.currentQuestion)
     console.log("number of questions " + questions.length)
     return (
-      <div id="quiz-wrap">
+      <div id="quiz-page">
+        <div className="wrap">
         <div className="progress-marker-wrapper">
           {questions.map((question, i) => {
             return (
@@ -99,7 +100,6 @@ class Quiz extends Component {
             )
           })}
         </div>
-        <div className="wrap">
           {this.state.currentQuestion === questions.length - 1 ?
             window.location.href = `./${this.state.indexOfLeadingResult}`
             : (
@@ -108,7 +108,7 @@ class Quiz extends Component {
                   <p className="question-text">{this.state.currentQuestionText}</p>
                   {this.state.currentQuestionType === "slider" ? (
                     <div className="range-selector">
-                      <QuizSlider handleSliderSubmission={this.handleSliderSubmission} />
+                      <QuizSlider legend={questions[this.state.currentQuestion].legend} handleSliderSubmission={this.handleSliderSubmission} />
                     </div>
                   ) : (
                       <div className="multiple-choice-container">
@@ -130,7 +130,7 @@ class Quiz extends Component {
                 </div>
               </div>
             )}
-        </div>
+          </div>
       </div>
     );
   }

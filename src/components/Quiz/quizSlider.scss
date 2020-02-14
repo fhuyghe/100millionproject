@@ -16,16 +16,16 @@
 }
 
 .slider-conponent-container {
-  height: 70vh;
+
+  @include media-breakpoint-up(md){
+    display: flex;
+  }
 }
 
-#sliderInput {
-    width: 325px;
-    height: 100%;    
+#sliderInput {    
     transform: rotate(90deg);
     color: $beige;
     background: #EDE9E4;
-    margin-top: 53%;
     
 
     @include media-breakpoint-up(md){
@@ -44,10 +44,9 @@
 .slider-wrapper {
     display: flex;    
     padding: 0;
-    margin-bottom: 165px;
 
     @include media-breakpoint-up(md){
-
+      margin-bottom: $grid-gutter;
     }
 }
 
