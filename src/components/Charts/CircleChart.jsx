@@ -110,7 +110,7 @@ componentDidUpdate(prevProps){
       <main className="circle-chart-main">
         <div id="circle-chart"></div>
         <div className="swing-circle-selectors">
-          {this.props.legend.map((legendName, index) => {
+          {this.props.data.legend.map((legendName, index) => {
             let active = this.state.activeIndex === index ? 1 : 0
             let bgcolor =
               this.state.activeIndex === index ? "black" : "transparent"

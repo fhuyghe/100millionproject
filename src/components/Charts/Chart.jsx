@@ -73,6 +73,22 @@ class Chart extends Component {
       surveyDataIndex:index
     })
   }
+  leftArrow = () => {
+    console.log(this.state.surveyDataIndex)
+    this.state.surveyDataIndex > 0 &&
+    this.setState({
+      surveyDataIndex: this.state.surveyDataIndex - 1
+    })
+  }
+  rightArrow = () => {
+    console.log(this.state.surveyDataIndex)
+
+    this.state.surveyDataIndex <= 6 && 
+        this.setState({
+      surveyDataIndex: this.state.surveyDataIndex + 1,
+      chartType: surveyData[this.state.surveyDataIndex + 1].type.substring(0, surveyData[this.state.surveyDataIndex + 1].type.length - 1)
+    })
+  }
 
   render() {
     let { stateId } = this.props
@@ -86,22 +102,22 @@ class Chart extends Component {
         <BarChart stateId={stateId} data={barChartData[0]} title={barChartData[1]} />
       ) : chartType === "circle" ? (
         <CircleChart
-          stateId={stateId}
-          legend={circleChartData.legend}
+          // stateId={stateId}
+          // legend={circleChartData.legend}
           data={circleChartData}
         />
       ) : null
 
     console.log("this props", this.props, circleChartData)
 
-
+  
     return (
       <>
        
         <div className="chartContainer">
-          <i class="fal fa-angle-left" onClick={this.handleChartSelect}></i>
+          <i className="fal fa-angle-left" onClick={()=>this.leftArrow()}></i>
           {renderChart}
-          <i class="fal fa-angle-right"></i>
+          <i className="fal fa-angle-right" onClick={this.rightArrow}></i>
         </div>
         <ChartSelect handleChartSelect={this.handleChartSelect} />
 
