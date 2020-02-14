@@ -14,11 +14,12 @@
     z-index: 2;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     background: $black;
     width: 100%;
 
     .hamburger {
+      position: absolute;
       padding: 5px 10px;
       
       .hamburger-inner,
