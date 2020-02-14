@@ -2,6 +2,7 @@ import React from "react";
 import "./Select.scss";
 
 export const Select = props => {
+  
   return (
     <form className="select-box">
       <select

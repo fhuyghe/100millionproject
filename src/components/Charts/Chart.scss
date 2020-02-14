@@ -1,0 +1,25 @@
+// .slick-slider{
+//     width:80%;
+//     margin:0 auto;
+//     height: 50%;
+
+// }
+// main div div.slick-list{
+//     height:100%;
+//     .slick-track{
+//         height:100%;
+//     }
+// }
+
+
+.chartContainer{
+    margin:0 1%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:500px;
+    .fal{
+      font-size:25px;
+      transform:scaleY(1.5)
+    }
+  }

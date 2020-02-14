@@ -72,8 +72,8 @@ export const surveyData = [
         name: "Immigration",
         values: {
           average: [22, 19, 11],
-          AZ: [],
-          FL: [],
+          AZ: [30, 20, 10],
+          FL: [10, 20, 30],
           GA: [],
           MI: [],
           MN: [],
@@ -733,6 +733,7 @@ export const surveyData = [
   {
     name: "What party would you vote for in 2020?",
     type: "bars",
+    legend: ['Non-voters', '18-24'],
     children: [
       {
         name: "Democratic Party",
@@ -803,6 +804,7 @@ export const surveyData = [
   {
     name: "Are you planning to vote in 2020?",
     type: "bars",
+    legend: ['Non-voters', '18-24'],
     children: [
       {
         name: "Yes",
