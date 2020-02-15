@@ -117,13 +117,19 @@
         &:hover{
           color: $yellow;
         }
+    }
 
-        &.button{
-          padding: 10px;
-          font-size: 1em;
-          border-color: $red;
-          margin: 0;
-        }
+    .button{
+      margin: 0;
+
+      a{
+        font-size: 1em;
+        //border-color: $red;
+        background-color: $black;
+      }
+      .shadow{
+        background-color: $red;
+      }
     }
 
     .social{

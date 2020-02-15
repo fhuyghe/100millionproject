@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './AppHeader.scss'
 import { Link } from 'react-router-dom'
 import SocialLinks from '../Shared/SocialLinks'
+import Button from '../Shared/Button'
 import 'hamburgers/dist/hamburgers.css'
 
 class AppHeader extends Component {
@@ -54,7 +55,7 @@ class AppHeader extends Component {
                 <div className="col-md-6">
                   <Link to='/about' className={this.props.location === 'about' ? "active" : ""} onClick={this.toggleMenu}>About</Link>
                   <p>The 100 Million Project is a comprehensive national study of the non-voting adult population in the United States and aims to understand citizen disengagement from the political process.</p>
-                  <Link to='/study' className="button" onClick={this.toggleMenu}>Download the report</Link>
+                  <Button to='/study' color="transparent" onClick={this.toggleMenu}>Download the report</Button>
                   <SocialLinks />
                 </div>
               </div>
