@@ -103,60 +103,72 @@ p{
 a{
   color: inherit;
   text-decoration: underline;
+}
 
-    &.button{
-        //display: inline-block;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-family: $spoof;
-        border: 2px solid $white;
-        padding: .8em 1em;
-        margin: 10px;
-        transition: .25s;
-        cursor: pointer;
+.button{
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition: .25s;
+  cursor: pointer;
 
-        &:hover{
-          border-color: $red;
-        }
+  a{
+    text-decoration: none;
+    padding: .8em 1em;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: $spoof;
+    border: 2px solid $white;
+  }
 
-        &.yellow{
-            position: relative;
-            background-color: $yellow;
-            border-color: $yellow;
-            color: $black;
-            z-index: 0;
-            
-            &:after{
-              content: '';
-              position: absolute;
-              top: 5px;
-              left: 5px;
-              z-index: -1;
-              width: 100%;
-              height: 100%;
-              background-color: $black;
-              transition: .25s;
-            }
+  &:hover{
+    border-color: $red;
 
-            &:hover{
-              &:after{
-                top: 10px;
-                left: 10px;
-              }
-            }
-        }
-
-        &.black{
-          background-color: $black;
-          //border: 0;
-          color: $white;
-          border-width: 0 4px 4px 0;
-
-          &:hover{
-            background-color: $red;
-          }
-        }
+    .shadow{
+      top: 10px;
+      left: 10px;
     }
+  }
+
+  .shadow{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    transition: .25s;
+  }
+
+  &.yellow{
+      a{
+        background-color: $yellow;
+        border-color: $yellow;
+        color: $black;
+      }
+      
+      .shadow{
+        background-color: $black;
+      }
+  }
+
+  &.black{
+    a{
+      background-color: $black;
+      border-color: $black;
+      color: $white;
+    }
+
+    &:after{
+      //background-color: $black;
+    }
+
+    &:hover{
+      //background-color: $red;
+    }
+  }
 }
 
 input{

@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../Shared/Button'
 import './LandingQuiz.scss'
 
 
@@ -89,11 +90,11 @@ class LandingQuiz extends React.Component {
                         </li>
                     })}
                 </ul>
-                <a class="button yellow" onClick={this.checkQuiz}>{
+                <Button color="yellow" onClick={this.checkQuiz}>{
                     this.state.revealAnswers
                         ? "Refresh"
                         : "Submit"
-                }</a>
+                }</Button>
             </div>
         )
     }

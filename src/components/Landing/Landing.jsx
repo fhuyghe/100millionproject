@@ -9,6 +9,7 @@ import InstaWindow from './InstaWindow'
 import { CountUp } from 'countup.js'
 import SwingStatesChart from '../SwingStates/SwingStatesChart'
 import LandingQuiz from './LandingQuiz'
+import Button from '../Shared/Button'
 //Video elements
 import VideoBlock from '../Videos/VideoBlock'
 import VideoPlayer from '../Videos/VideoPlayer'
@@ -227,7 +228,7 @@ class Landing extends React.Component {
                         <div className="col-md-6">
                         <p>The 100 Million Project began as a way to give voice to the concerns of American non-voters since election coverage tends to exclusively favor the opinions of “likely” voters.</p>
                             <p>However, because many non-voters as well as the emerging electorate will participate in the next election, the report ends as a measure of the country’s pulse in the lead up to November and acts as a clarion call for what can happen next.</p>
-                            <Link className="button yellow" to="" >Read the Full report</Link>
+                            <Button color="yellow" to="" >Read the Full report</Button>
                         </div>
                         <div className="col-md-3 offset-md-3">
                                 <div className="black box">
@@ -245,17 +246,17 @@ class Landing extends React.Component {
                         <div className="col-md-4 next-item" id="explore">
                             <h2>Explore</h2>
                             <p>See how non-voters can impact swing states.</p>
-                            <Link className="button black" to="/swingstates">Explore</Link>
+                            <Button color="black" to="/swingstates">Explore</Button>
                         </div>
                         <div className="col-md-4 next-item" id="watch">
                             <h2>Watch</h2>
                             <p>Travel to Arizona, West Virginia and New York to learn why some citizens chose not to vote.</p>
-                            <Link className="button black" to="/swingstates">Watch</Link>
+                            <Button color="black" to="/swingstates">Watch</Button>
                         </div>
                         <div className="col-md-4 next-item" id="learn">
                             <h2>Learn</h2>
                             <p>Are you a younf moderate, a frustrated conservative or a non-participator?</p>
-                            <Link className="button black" to="/swingstates">Learn</Link>
+                            <Button color="black" to="/swingstates">Learn</Button>
                         </div>
                     </div>
                 </section>
