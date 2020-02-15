@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './AppHeader.scss'
 import { Link } from 'react-router-dom'
+import SocialLinks from '../Shared/SocialLinks'
 import 'hamburgers/dist/hamburgers.css'
 
 class AppHeader extends Component {
@@ -54,11 +55,7 @@ class AppHeader extends Component {
                   <Link to='/about' className={this.props.location === 'about' ? "active" : ""} onClick={this.toggleMenu}>About</Link>
                   <p>The 100 Million Project is a comprehensive national study of the non-voting adult population in the United States and aims to understand citizen disengagement from the political process.</p>
                   <Link to='/study' className="button" onClick={this.toggleMenu}>Download the report</Link>
-                  <div className="social">
-                    <a href="https://www.facebook.com/the100million" target="_blank"><i className="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com/the100_million" target="_blank"><i className="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/the100_million/" target="_blank"><i className="fab fa-instagram"></i></a>
-                  </div>
+                  <SocialLinks />
                 </div>
               </div>
               </div>

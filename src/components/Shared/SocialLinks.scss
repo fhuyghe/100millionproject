@@ -1,0 +1,15 @@
+@import '../../assets/styles/variables';
+
+.social{
+    margin-top: $grid-gutter / 2;
+
+    a{
+      font-size: 1.2em;
+      display: inline-block;
+      margin-right: 15px;
+
+      &:hover{
+        color: $yellow;
+      }
+    }
+  }

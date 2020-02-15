@@ -11,6 +11,7 @@ import SwingStatesChart from '../SwingStates/SwingStatesChart'
 //Video elements
 import VideoBlock from '../Videos/VideoBlock'
 import VideoPlayer from '../Videos/VideoPlayer'
+import SocialLinks from '../Shared/SocialLinks';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -41,10 +42,10 @@ class Landing extends React.Component {
          // Voting sign falling down
          var signTween = TweenMax.to("#sign", 1, { rotation: 40, y:400, opacity: 0, ease: Linear.easeNone });
          new ScrollMagic.Scene({
-             triggerElement: '#sign',
-             offset: 350,
+             triggerElement: '#interviews',
+             offset: 0,
              triggerHook: 1,
-             duration: 800
+             duration: 1000
          })
              .setTween(signTween)
              .addTo(controller);
@@ -136,9 +137,11 @@ class Landing extends React.Component {
             <div className="landing-page">
                 <section id="intro">
                     <div className="wrap">
-                        <h2>During the 2016 presidential election, nearly half of the eligible voting population in America—100 million people— <span className="red">did not cast a vote.</span></h2>
-                        {/* <a className="button yellow">WHAT?</a>
-                        <a className="button">Download the Study</a> */}
+                        <div className="row">
+                            <div className="col-md-6">
+                            <h2>During the 2016 presidential election, nearly half of the eligible voting population in America—100 million people— <span className="red">did not cast a vote.</span></h2>
+                        </div>
+                        </div>
                     </div>
                     <div id="sign"><img src="/images/100M_story_sign.svg"/></div>
                 </section>
@@ -256,9 +259,40 @@ class Landing extends React.Component {
 
                 <section id="conclusion">
                     <div className="wrap">
+                        <div className="row">
+                        <div className="col-md-6">
                         <p>The 100 Million Project began as a way to give voice to the concerns of American non-voters since election coverage tends to exclusively favor the opinions of “likely” voters.</p>
-                        <p>However, because many non-voters as well as the emerging electorate will participate in the next election, the report ends as a measure of the country’s pulse in the lead up to November and acts as a clarion call for what can happen next.</p>
-                        <Link to="typesofnonvoters" className="button">What non-voter are you?</Link>
+                            <p>However, because many non-voters as well as the emerging electorate will participate in the next election, the report ends as a measure of the country’s pulse in the lead up to November and acts as a clarion call for what can happen next.</p>
+                            <Link className="button yellow" to="" >Read the Full report</Link>
+                        </div>
+                        <div className="col-md-3 offset-md-3">
+                                <div className="black box">
+                                    <h3> Not planning on voting?</h3>
+                                    <p>Tell us why.</p>
+                                    <SocialLinks />
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="next">
+                    <div className="row">
+                        <div className="col-md-4 next-item" id="explore">
+                            <h2>Explore</h2>
+                            <p>See how non-voters can impact swing states.</p>
+                            <Link className="button black" to="/swingstates">Explore</Link>
+                        </div>
+                        <div className="col-md-4 next-item" id="watch">
+                            <h2>Watch</h2>
+                            <p>Travel to Arizona, West Virginia and New York to learn why some citizens chose not to vote.</p>
+                            <Link className="button black" to="/swingstates">Watch</Link>
+                        </div>
+                        <div className="col-md-4 next-item" id="learn">
+                            <h2>Learn</h2>
+                            <p>Are you a younf moderate, a frustrated conservative or a non-participator?</p>
+                            <Link className="button black" to="/swingstates">Learn</Link>
+                        </div>
                     </div>
                 </section>
 

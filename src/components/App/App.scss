@@ -126,8 +126,9 @@ a{
 
         &.black{
           background-color: $black;
-          border: 0;
+          //border: 0;
           color: $white;
+          border-width: 0 4px 4px 0;
 
           &:hover{
             background-color: $red;

@@ -1,25 +1,34 @@
 @import '../../assets/styles/variables';
 
 .landing-page{
-    padding-top: 0!important;
+    padding: 0!important;
 
     section{
-        min-height: 100vh;
+        padding: 100px 0;
         display: flex;
         align-items: center;
+
+        @include media-breakpoint-up(md){
+            padding: 200px 0;
+        }
     }
 
     #intro{
         min-height: 100vh;
+        padding: 0;
         display: flex;
-        flex-direction: column;
-        
-        .wrap{
-            flex: 1;
-            flex-direction: column;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        align-items: center;
+
+        #sign{
+            position: absolute;
+            bottom: 0;
+            left: 60%;
+            width: 30%;
+            max-width: 500px;
+
+            img{
+                width: 100%;
+            }
         }
     }
     
@@ -162,6 +171,45 @@
     }
 
     #conclusion{
+        background-color: $white;
+        color: $black;
+    }
+
+    #next{
+        padding: 0;
+
+        .next-item{
+            text-align: center;
+            padding: 100px $grid-gutter;
+
+            @include media-breakpoint-up(md){
+                padding: 200px $grid-gutter;
+            }
+
+            h2{
+                text-transform: uppercase;
+            }
+
+            &#learn{
+                background-color: $purple;
+            }
+            &#watch{
+                background-color: $red;
+            }
+            &#explore{
+                background-color: $blue;
+            }
+        }
+    }
+
+    .box{
+        padding: $grid-gutter / 2;
+        text-align: center;
+
+        &.black{
+            background-color: $black;
+            color: $white;
+        }
 
     }
 
