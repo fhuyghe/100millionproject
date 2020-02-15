@@ -92,7 +92,8 @@ class Quiz extends Component {
           </div>
           
           {this.state.currentQuestion === questions.length - 1 ?
-            window.location.href = `./${leadingResult.path}`
+            this.props.history.push(`./${leadingResult.path}`)
+            //window.location.href = `./${leadingResult.path}`
             : <div className="quiz-main-wrapper">
                   <p className="question-text">{this.state.currentQuestionText}</p>
                   {this.state.currentQuestionType === "slider" ? (

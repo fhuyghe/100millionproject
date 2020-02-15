@@ -4,7 +4,7 @@ import "./quizSlider.scss";
 class QuizSlider extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: 3 };
+    this.state = { value: 5 };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
