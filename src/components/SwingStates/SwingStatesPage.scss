@@ -1,0 +1,11 @@
+@import '../../assets/styles/variables';
+
+#swingstatesPage{
+    background: $blue;
+    min-height: 100vh;
+    text-align: center;
+
+    .top {
+        margin-bottom: $grid-gutter;
+      }
+}

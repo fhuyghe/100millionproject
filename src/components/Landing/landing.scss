@@ -114,6 +114,14 @@
             border: 2px solid $white;
             min-height: 800px;
             text-align: center;
+
+            .swingstates-chart{
+                background-color: transparent;
+                
+                .chartContainer .chart-wrap{
+                    background-color: transparent;
+                }
+            }
         }
     }
 

@@ -11,7 +11,7 @@ import About from "../About";
 import Videos from "../Videos";
 import Landing from "../Landing";
 import SwingStates from "../SwingStates/SwingStates";
-import SwingStatesChart from "../SwingStates/SwingStatesChart"
+import SwingStatesPage from "../SwingStates/SwingStatesPage"
 import Quiz from "../Quiz/Quiz"
 import QuizResult from "../Quiz/QuizResult";
 import TypesOfNonVoters from "../TypesOfNonVoters"
@@ -28,9 +28,7 @@ const App = () => {
         <AppHeader location={pathClass} />
         <div className="app-body">
           <Switch>
-            <Route exact path="/">
-              <Landing />
-            </Route>
+            <Route exact path="/" render={props => <Landing {...props} />} />
 
             <Route exact path="/splash">
               <Splash />
@@ -46,7 +44,7 @@ const App = () => {
 
             {/* Swing States */}
             <Route exact path="/swingstates" render={props => <SwingStates {...props} />} />
-            <Route path="/swingstates/:statename" render={props => <SwingStatesChart {...props} />} />
+            <Route path="/swingstates/:statename" render={props => <SwingStatesPage {...props} />} />
             
             {/* Types of Non-Voters */}
             <Route exact path="/typesofnonvoters" render={props => <TypesOfNonVoters {...props} />}  />

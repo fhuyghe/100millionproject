@@ -7,6 +7,7 @@ import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import PopupWindow from './PopupWindow' 
 import InstaWindow from './InstaWindow'
 import { CountUp } from 'countup.js'
+import SwingStatesChart from '../SwingStates/SwingStatesChart'
 //Video elements
 import VideoBlock from '../Videos/VideoBlock'
 import VideoPlayer from '../Videos/VideoPlayer'
@@ -206,6 +207,7 @@ class Landing extends React.Component {
 
                         <div id="swingData">
                             <h2>Explore the data</h2>
+                            <SwingStatesChart {...this.props} />
                         </div>
                     </div>
                 </section>

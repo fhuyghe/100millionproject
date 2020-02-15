@@ -1,20 +1,12 @@
 @import "../../assets/styles/variables";
 
 .swingstates-chart {
-  background: $blue;
-  min-height: 100vh;
+  
 
   .swingstates-chart-main {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content:flex-start;
-    
-
-    .top {
-
-      margin-bottom: $grid-gutter;
-    }
-   
   }
 }

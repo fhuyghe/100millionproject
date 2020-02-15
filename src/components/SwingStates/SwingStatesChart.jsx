@@ -8,43 +8,37 @@ class SwingStatesChart extends Component {
   constructor() {
     super()
     this.state = {
-      stateId: "AZ",
+      stateInfo: {},
       chartType: "bar",
-      selectorId: 0
+      selectorId: 0,
+      onOwnPage: false
     }
   }
+
   componentDidMount() {
+    // Check location if needed
     let url = this.props.location.pathname
     let statePath = url.substring(url.lastIndexOf("/") + 1)
-    let stateAbbr
 
-    swingStates.forEach(state => {
-      statePath = state.path === statePath ? state.path : "arizona"
-      stateAbbr = state.path === statePath ? state.abbr : "AZ"
-    })
-    // stateName = swingStates.includes(stateName) ? stateName : "arizona"
-    // let stateId = stateName && swingStates.indexOf(statePath)
-    // console.log(stateId)
+    // If the path matches a state, select it
+    let stateSelect = swingStates.filter((state) => state.path === statePath)
+    let stateInfo = stateSelect[0] ? stateSelect[0] : swingStates[0]
+    
     this.setState({
-      stateId: stateAbbr,
-      stateName: statePath
+      stateInfo,
+      onOwnPage: stateSelect[0] ? true : false
     })
   }
 
   handleChange = event => {
-    let id = event.target.value
-    console.log(id)
-    let statename = swingStates.filter(state => {
-      console.log(state.abbr)
+    let stateInfo = swingStates.filter(state => {
       return state.abbr === event.target.value
     })
 
-    this.props.history.push(statename[0].path)
+    //Change the URL only if on the swingstates page
+    if (this.state.onOwnPage) this.props.history.push(stateInfo[0].path)
 
-    this.setState({
-      stateId: id,
-      stateName: swingStates[id]
-    })
+    this.setState({ stateInfo })
   }
  
   handleChartSelect = chartType => {
@@ -54,8 +48,7 @@ class SwingStatesChart extends Component {
   }
 
   render() {
-    console.log("this state", this.state)
-    let { stateId, stateName, chartType } = this.state
+    let { stateInfo, chartType } = this.state
 
     let options = swingStates.map((state, i) => (
       <option key={i} value={state.abbr}>
@@ -65,22 +58,15 @@ class SwingStatesChart extends Component {
 
     return (
       <div className="swingstates-chart">
-        <main className="swingstates-chart-main">
-          <div className="wrap">
           <div className="top">
-            <h1 className="swingstates-chart-title">Swing States</h1>
-
             <Select
-              stateId={stateId}
-              stateName={stateName}
+              stateId={stateInfo.abbr}
+              stateName={stateInfo.name}
               handleChange={this.handleChange}
               options={options}
             />
           </div>
-
-            <Chart stateId={stateId} chartType={chartType} />
-            </div>
-        </main>
+            <Chart stateId={stateInfo.abbr} chartType={chartType} />
       </div>
     )
   }
