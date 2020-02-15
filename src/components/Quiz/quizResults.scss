@@ -5,6 +5,27 @@
     @include typeColors;
     min-height: 100vh;
 
+    .other-menu{
+
+        p{
+            font-size: .9em;
+            padding-top: 1em;
+            border-top: 1px solid $black;
+        }
+
+        li{
+            margin-bottom: 1em;
+        }
+
+        a{
+            text-decoration: none;
+            font-family: $spoof;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .main-wrapper {
