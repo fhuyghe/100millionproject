@@ -105,9 +105,10 @@ a{
   text-decoration: underline;
 
     &.button{
-        display: inline-block;
+        //display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
+        font-family: $spoof;
         border: 2px solid $white;
         padding: .8em 1em;
         margin: 10px;
@@ -119,9 +120,30 @@ a{
         }
 
         &.yellow{
+            position: relative;
             background-color: $yellow;
             border-color: $yellow;
             color: $black;
+            z-index: 0;
+            
+            &:after{
+              content: '';
+              position: absolute;
+              top: 5px;
+              left: 5px;
+              z-index: -1;
+              width: 100%;
+              height: 100%;
+              background-color: $black;
+              transition: .25s;
+            }
+
+            &:hover{
+              &:after{
+                top: 10px;
+                left: 10px;
+              }
+            }
         }
 
         &.black{

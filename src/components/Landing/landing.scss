@@ -58,31 +58,6 @@
         h3{
             color: $black;
         }
-
-        ul{
-            margin: $grid-gutter auto;
-            text-align: left;
-            color: $yellow;
-
-            li{
-                list-style: none;
-                display: flex;
-                align-items: center;
-                margin-bottom: $grid-gutter / 2;
-
-                .box{
-                    border: 2px solid $yellow;
-                    width: 30px;
-                    height: 30px;
-                    display: inline-block;
-                    margin-right: $grid-gutter / 2;
-
-                    &.active{
-                        background-color: $yellow;
-                    }
-                }
-            }
-        }
     }
 
     #swingStates{

@@ -8,6 +8,7 @@ import PopupWindow from './PopupWindow'
 import InstaWindow from './InstaWindow'
 import { CountUp } from 'countup.js'
 import SwingStatesChart from '../SwingStates/SwingStatesChart'
+import LandingQuiz from './LandingQuiz'
 //Video elements
 import VideoBlock from '../Videos/VideoBlock'
 import VideoPlayer from '../Videos/VideoPlayer'
@@ -20,20 +21,6 @@ class Landing extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            answer: 0
-        };
-
-        this.answerRef = React.createRef()  
-    
-        this.answerQuiz = this.answerQuiz.bind(this)
-    }
-    
-    answerQuiz(index) { 
-        this.setState({
-            answer: index
-        })
-        window.scrollTo(0, this.answerRef.current.offsetTop)
     }
 
     componentDidMount() { 
@@ -123,16 +110,6 @@ class Landing extends React.Component {
 
     render() {
 
-        let quizOptions = ['Ignorance of the issues', 'Laziness', 'Candidates lack appeal', 'Mistrust in elections', 'Disinterest']
-        let quizAnswers = {
-            0: 'Many non-voters polled said their dislike of the candidates was a major reason why they did not vote in the last election, followed closely behind their mistrust in elections.',
-            1: 'Many voters agree. XX% of those polled in fact. However, according to our research, the two major reasons why people didn’t vote in 2016 were because the candidates lacked appeal and because of their mistrust in elections.',
-            2: 'Many voters agree. XX% of those polled in fact. However, according to our research, the two major reasons why people didn’t vote in 2016 were because the candidates lacked appeal and because of their mistrust in elections.',
-            3: 'Good choice. Many non-voters polled said their dislike of the candidates was a major reason why they did not vote in the last election, followed closely behind their mistrust in elections.',
-            4: 'Although mistrust in elections is a significant factor, it was not as large as non-voters’ dislike for the candidates, which more people reported as the main reason why they didn’t vote during the 2016 election.',
-            5: 'Many voters agree. XX% of those polled in fact. However, according to our research, the two major reasons why people didn’t vote in 2016 were because the candidates lacked appeal and because of their mistrust in elections.'
-        }
-
         return (
             <div className="landing-page">
                 <section id="intro">
@@ -162,20 +139,7 @@ class Landing extends React.Component {
                 <section id="quizQuestion">
                     <div className="wrap">
                         <h3>But probably, you have your own ideas about non-voters already.</h3>
-                        <h2>Why do you think a person doesn’t vote?</h2>
-                        <ul>
-                            {quizOptions.map((option, index) => {
-                                return <li onClick={() => this.answerQuiz(index + 1)} key={index}>
-                                        <div className={this.state.answer === index + 1 ? "box active" : "box"}></div> {option}
-                                    </li>
-                            })}
-                        </ul>
-                    </div>
-                </section>
-
-                <section id="quizAnswer" ref={this.answerRef}>
-                    <div className="wrap">
-                        <p>{quizAnswers[this.state.answer]}</p>
+                        <LandingQuiz />
                     </div>
                 </section>
 
