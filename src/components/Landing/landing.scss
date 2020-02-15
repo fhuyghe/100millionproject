@@ -5,8 +5,6 @@
 
     section{
         padding: 100px 0;
-        display: flex;
-        align-items: center;
 
         @include media-breakpoint-up(md){
             padding: 200px 0;
@@ -15,19 +13,29 @@
 
     #intro{
         min-height: 100vh;
-        padding: 0;
-        display: flex;
-        align-items: center;
+        padding-bottom: 0;
+        
 
         #sign{
             position: absolute;
             bottom: 0;
-            left: 60%;
-            width: 30%;
-            max-width: 500px;
+            left: 25%;
+            width: 50%;
 
             img{
                 width: 100%;
+            }
+        }
+
+        @include media-breakpoint-up(md){
+            display: flex;
+            align-items: center;
+            padding-top: 0;
+
+            #sign{
+                left: 60%;
+                width: 30%;
+                max-width: 500px;
             }
         }
     }
@@ -168,6 +176,12 @@
             max-width: $wrap-sm;
             margin: auto;
         }
+    }
+
+    #browser{
+        min-height: 100vh;
+        display: flex;
+            align-items: center;
     }
 
     #conclusion{
