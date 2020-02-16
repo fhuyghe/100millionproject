@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import BarChart from "./BarChart"
 import CircleChart from "./CircleChart"
-import Slider from "react-slick"
+import PieChart from "./PieChart"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "./Chart.scss"
@@ -11,18 +11,16 @@ import { surveyData } from "../../Data/sharedData.js"
 
 class Chart extends Component {
   state = {
-    surveyDataIndex:0,
-    chartType:'circle'
+    surveyDataIndex:0
   }
+
   componentDidMount() {
-    console.log(this.barChartData(this.props.stateId))
     this.setState({
       barChartData:this.barChartData(this.props.stateId)
     })
   }
 
   componentDidUpdate(prevProps) {
-    console.log(this.props.stateId, prevProps.stateId)
     if (this.props.stateId !== prevProps.stateId) {
       this.setState({
         barChartData: this.barChartData(this.props.stateId)
@@ -52,62 +50,84 @@ class Chart extends Component {
     chartData.labels = surveyData[id].legend
     chartData.datasets[0].data = surveyData[id].children[0].values[stateId]
     let chartTitle = surveyData[id].name
-    // fakeData[0].children.forEach(data => {
-    // chartData.labels.push(data.name)
-    // chartData.datasets[0].data.push(data.value)
-    // })
     return [chartData, chartTitle]
   }
 
-  circleChartData(stateId) {
-    let id = this.state.surveyDataIndex
+  formatData(data) {
+    let dataSets = []
 
-    // console.log(this.state.selectorId)
-    let data = surveyData[id]
-    return data
+    // Figure out the number of data sets
+    const dataSetNumber = data.legend.length
+    
+    data.children.forEach(dataPoint => {
+      //Extract one value out of all values
+      let values = dataPoint.values[this.props.stateId] || dataPoint.values.average
+      
+      //Please each each number in its own array according to the legend
+      for (let i = 0; i < dataSetNumber; i++) {
+        let newDataPoint = {
+          name: dataPoint.name,
+          value: values[i] ? values[i] : 0
+        }
+        dataSets[i]
+          ? dataSets[i].push(newDataPoint)
+          : dataSets[i] = [newDataPoint]
+      }
+    });
+
+    return dataSets
   }
 
-  handleChartSelect = (chartType, index) => {
+  handleChartSelect = (index) => {
     this.setState({
-      chartType: chartType.substring(0, chartType.length - 1),
       surveyDataIndex:index
     })
   }
 
   leftArrow = () => {
-    console.log(this.state.surveyDataIndex)
-    this.state.surveyDataIndex > 0 &&
+    let newIndex = this.state.surveyDataIndex > 0 
+      ? this.state.surveyDataIndex - 1
+      : surveyData.length - 1
+    
     this.setState({
-      surveyDataIndex: this.state.surveyDataIndex - 1
+      surveyDataIndex: newIndex
     })
   }
 
   rightArrow = () => {
-    console.log(this.state.surveyDataIndex)
+    let newIndex = this.state.surveyDataIndex < surveyData.length - 1
+      ? this.state.surveyDataIndex + 1
+      : 0
 
-    this.state.surveyDataIndex <= 6 && 
         this.setState({
-      surveyDataIndex: this.state.surveyDataIndex + 1,
-      chartType: surveyData[this.state.surveyDataIndex + 1].type.substring(0, surveyData[this.state.surveyDataIndex + 1].type.length - 1)
+      surveyDataIndex: newIndex
     })
   }
 
   render() {
     let { stateId } = this.props
-    let { chartType } = this.state
     let barChartData = this.barChartData(stateId)
-    let circleChartData = this.circleChartData(stateId)
-    console.log(barChartData[1])
+    let fullData = surveyData[this.state.surveyDataIndex]
+    let chartType = fullData.type
 
     let renderChart =
-      chartType === "bar" ? (
+      chartType === "bars" ? (
         <BarChart
           stateId={stateId}
           data={barChartData[0]}
           title={barChartData[1]} />
-      ) : chartType === "circle" ? (
+      ) : chartType === "circles" ? (
         <CircleChart
-            data={circleChartData}
+            data={this.formatData(fullData)}
+            legend={fullData.legend}
+            name={fullData.name}
+            state={stateId}
+        />
+      ) : chartType === "pie" ? (
+        <PieChart
+              data={this.formatData(fullData)}
+              legend={fullData.legend}
+              name={fullData.name}
             state={stateId}
         />
       ) : null
@@ -119,7 +139,7 @@ class Chart extends Component {
           <div className="nav nav-left">
             <i className="fal fa-angle-left" onClick={() => this.leftArrow()}></i>
             </div>
-            <div className="chart-wrap">
+          <div className="chart-wrap">
             {renderChart}
           </div>
           <div className="nav nav-right">

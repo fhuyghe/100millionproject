@@ -3,7 +3,7 @@ import * as am4core from "@amcharts/amcharts4/core"
 // import * as am4charts from "@amcharts/amcharts4/charts";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected"
 import am4themes_animated from "@amcharts/amcharts4/themes/animated"
-// import dataviz from "@amcharts/amcharts4/themes/dataviz.js";
+import ChartSubsetSelector from './ChartSubsetSelector'
 import "./CircleChart.scss"
 
 // am4core.useTheme(dataviz);
@@ -51,53 +51,25 @@ class CircleChart extends Component {
     series.minRadius = 25
     series.maxRadius = 120
 
-    let dataSets = this.formatData(this.props.data.children)
-
-    series.data = dataSets[0]
+    series.data = this.props.data[0]
     this.setState({
       series,
-      chart,
-      dataSets
+      chart
     }) //, title:title
   }
 
-  formatData(data) { 
-    let dataSets = []
 
-    // Figure out the number of data sets
-    const dataSetNumber = this.props.data.legend.length
-    
-    data.forEach(dataPoint => {
-      //Extract one value out of all values
-      let values = dataPoint.values[this.props.state] || dataPoint.values.average
-      
-      //Please each each number in its own array according to the legend
-      for (let i = 0; i < dataSetNumber; i++) {
-        let newDataPoint = {
-          name: dataPoint.name,
-          value: values[i] ? values[i] : 0
-        }
-        dataSets[i]
-          ? dataSets[i].push(newDataPoint)
-          : dataSets[i] = [newDataPoint]
-      }
-    });
-
-    return dataSets
-  }
-
-
-  handleLegend = (legendName, index) => {
+  handleLegend = (index) => {
     this.setState({
       activeIndex:index,
       
     })
-    this.state.series.data = this.state.dataSets[index]
+    this.state.series.data = this.props.data[index]
   }
 
   update() {
-    let dataSets = this.formatData(this.props.data.children)
-    this.state.series.data = dataSets[this.state.activeIndex]
+    console.log('update')
+    this.state.series.data = this.props.data[this.state.activeIndex]
     //this.state.title.text = this.props.data.name
   }
 
@@ -120,38 +92,18 @@ class CircleChart extends Component {
     return (
       <main className="chart-main">
         <header>
-          <h3>{this.props.data.name}</h3>
+          <h3>{this.props.name}</h3>
         </header>
 
         {/* The Chart element */}
         <div className="circle-chart chart"></div>
 
         {/* The subset selection */}
-        <footer className="swing-circle-selectors">
-          {this.props.data.legend.map((legendName, index) => {
-            let active = this.state.activeIndex === index ? 1 : 0
-            let vis = this.state.activeIndex === index ? "visible" : "hidden"
-            return (
-              <div className={active === 1 ? "selectors active" : "selectors"} key={index}>
-                <div
-                  className={"arrow-up"}
-                  style={{
-                    visibility: `${vis}`
-                  }}
-                ></div>
-                <div
-                  className="selectors-text"
-                  key={index}
-                  active={active}
-                  onClick={() => this.handleLegend(legendName, index)}
-                  name={legendName}
-                >
-                  {legendName}
-                </div>
-              </div>
-            )
-          })}
-          </footer>
+        <ChartSubsetSelector
+          legend={this.props.legend}
+          handleLegend={this.handleLegend}
+          activeIndex={this.state.activeIndex}
+        />
       </main>
     )
   }

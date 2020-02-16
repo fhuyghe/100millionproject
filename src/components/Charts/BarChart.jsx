@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import Chart from "chart.js"
-import { fakeData } from "../../Data/sharedData.js"
 import "./BarChart.scss"
 
 Chart.defaults.global.defaultFontColor = "#fff"
