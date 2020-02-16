@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import Button from '../Shared/Button'
 import './TypesOfNonVoters.scss'
 import { results } from "../../Data/quizData";
 
@@ -21,7 +21,7 @@ class TypesOfNonVoters extends React.Component {
                 <section id="intro">
                     <div className="wrap text-center">
                         <h1>What type of non-voter are you?</h1>
-                        <Link className="button black" to="/typesofnonvoters/quiz">Take the Quiz</Link>
+                        <Button color="yellow" to="/typesofnonvoters/quiz">Take the Quiz</Button>
                     </div>
                 </section>
                 <section id="allTypes">

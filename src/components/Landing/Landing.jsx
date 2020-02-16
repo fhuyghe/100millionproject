@@ -133,13 +133,22 @@ class Landing extends React.Component {
                         <div className="col-md-6 offset-md-6">
                             <p>chronic non-voters in America, across the country and in key battleground states.</p>
                             <p>The study sought to understand who they are, what they care about and surface insights about why they don’t vote.</p>
-                    </div>
+                        </div>
+
+                        <div className="explainer-video">
+                        <div className="video-thumbnail">
+                            <h3>But enough said, we'll let Ed Harris explain it for us</h3>
+                                <VideoPlayer vimeoID="76979871" title="Explainer video">
+                                    <VideoBlock video="test-video" playSign={true}/>
+                                </VideoPlayer>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 <section id="quizQuestion">
                     <div className="wrap">
-                        <h3>But probably, you have your own ideas about non-voters already.</h3>
+                        <h3>You probably have your own ideas about non-voters already.</h3>
                         <LandingQuiz />
                     </div>
                 </section>

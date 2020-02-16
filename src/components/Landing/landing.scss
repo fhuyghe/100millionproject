@@ -50,6 +50,19 @@
                 font-size: 150px;
             }
         }
+
+        .explainer-video{
+            margin-top: $grid-gutter * 2;
+            text-align: center;
+
+            @include media-breakpoint-up(md){
+                margin-top: 200px;
+            }
+
+            h3{
+                margin-bottom: $grid-gutter;
+            }
+        }
     }
 
     #quizQuestion{

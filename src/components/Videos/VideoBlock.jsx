@@ -1,4 +1,5 @@
 import React from 'react'
+import './VideoBlock.scss'
 
 const VideoBlock = (props) => { 
     let urlBase = "/videos/" + props.video
@@ -9,6 +10,7 @@ const VideoBlock = (props) => {
                 <source type="video/ogv" src={urlBase + "/video.ogv"} />
                 <source type="video/webm" src={urlBase + "/video.webm"} />
             </video>
+            {props.playSign && <div className="video-play"><i className="fas fa-play"></i></div>}
         </div>
     )
 }
