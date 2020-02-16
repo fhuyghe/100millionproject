@@ -101,7 +101,7 @@ export const surveyData = [
         }
       },
       {
-        name: "Jobs and EAZnomy",
+        name: "Jobs and Economy",
         values: {
           average: [10, 13, 8],
           AZ: [],
@@ -149,7 +149,7 @@ export const surveyData = [
         }
       },
       {
-        name: "Racism and Race relations",
+        name: "Race relations",
         values: {
           average: [9, 7, 10],
           AZ: [],
@@ -363,7 +363,7 @@ export const surveyData = [
         }
       },
       {
-        name: "The system is AZrrupt",
+        name: "The system is corrupt",
         values: {
           average: [9, 6],
           AZ: [],

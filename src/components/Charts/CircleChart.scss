@@ -16,6 +16,11 @@
     flex: 1;
   }
 
+  //Get rid of branding
+  g[opacity="0.4"]{
+    display: none;
+  }
+
   .swing-circle-selectors {
     display: flex;
     justify-content: space-around;
@@ -25,6 +30,16 @@
       flex-direction: column;
       align-items: center;
       height: 20px;
+
+      .selectors-text{
+        padding: 3px 5px;
+      }
+
+      &.active{
+        .selectors-text{
+          background-color: $black;
+        }
+      }
 
       .arrow-up {
         border-right: 5px solid transparent;

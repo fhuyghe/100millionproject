@@ -116,15 +116,34 @@
 
         #swingData{
             margin-top: $grid-gutter * 2;
+            padding: $grid-gutter $grid-gutter / 2;
             border: 2px solid $white;
             min-height: 800px;
             text-align: center;
+            background-color: $blue;
 
             .swingstates-chart{
                 background-color: transparent;
                 
                 .chartContainer .chart-wrap{
                     background-color: transparent;
+
+                    .swing-circle-selectors {
+                    
+                        .selectors {
+
+                            &.active{
+                                .selectors-text{
+                                  background-color: $yellow;
+                                  color: $black;
+                                }
+                            }
+                    
+                          .arrow-up {
+                            border-bottom-color: $yellow;
+                          }
+                        }
+                      }
                 }
             }
         }

@@ -45,14 +45,13 @@ class CircleChart extends Component {
 
     series.nodes.template.label.text = "[black]{name}[/]"
     series.nodes.template.label.fontFamily = "Anonymous Pro"
-    series.nodes.template.label.wrap = true
+    series.nodes.template.label.wrap = false
 
     series.fontSize = 16
-    series.minRadius = 15
-    series.maxRadius = 65
+    series.minRadius = 25
+    series.maxRadius = 120
 
     let dataSets = this.formatData(this.props.data.children)
-    console.log('DATASET: ', dataSets[0])
 
     series.data = dataSets[0]
     this.setState({
@@ -131,24 +130,19 @@ class CircleChart extends Component {
         <footer className="swing-circle-selectors">
           {this.props.data.legend.map((legendName, index) => {
             let active = this.state.activeIndex === index ? 1 : 0
-            let bgcolor =
-              this.state.activeIndex === index ? "black" : "transparent"
             let vis = this.state.activeIndex === index ? "visible" : "hidden"
             return (
-              <div className="selectors" key={index}>
+              <div className={active === 1 ? "selectors active" : "selectors"} key={index}>
                 <div
                   className={"arrow-up"}
                   style={{
-                    // background: `${bgcolor}`,
                     visibility: `${vis}`
                   }}
                 ></div>
                 <div
+                  className="selectors-text"
                   key={index}
                   active={active}
-                  style={{
-                    background: `${bgcolor}`
-                  }}
                   onClick={() => this.handleLegend(legendName, index)}
                   name={legendName}
                 >
