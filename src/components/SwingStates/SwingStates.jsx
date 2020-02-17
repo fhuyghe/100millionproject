@@ -5,7 +5,7 @@ import { swingStates } from "../../Data/sharedData.js";
 
 const SwingStates = () => {
   const swingList = swingStates.map((state, index) => (
-    <div className="state-name">
+    <div className="state-name" key={index}>
       <NavLink
         className="state-name-link"
         activeClassName="active"

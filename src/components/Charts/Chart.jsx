@@ -1,7 +1,6 @@
 import React, { Component } from "react"
-import BarChart from "./BarChart"
-import CircleChart from "./CircleChart"
-import PieChart from "./PieChart"
+
+import AllChart from "./AllChart"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "./Chart.scss"
@@ -11,21 +10,21 @@ import { surveyData } from "../../Data/sharedData.js"
 
 class Chart extends Component {
   state = {
-    surveyDataIndex:0
+    surveyDataIndex: 0
   }
 
   componentDidMount() {
-    this.setState({
-      barChartData:this.barChartData(this.props.stateId)
-    })
+    // this.setState({
+    //   barChartData: this.barChartData(this.props.stateId)
+    // })
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.stateId !== prevProps.stateId) {
-      this.setState({
-        barChartData: this.barChartData(this.props.stateId)
-      })
-    }
+    // if (this.props.stateId !== prevProps.stateId) {
+    //   this.setState({
+    //     barChartData: this.barChartData(this.props.stateId)
+    //   })
+    // }
   }
 
   componentWillUnmount() {
@@ -34,35 +33,36 @@ class Chart extends Component {
     }
   }
 
-  barChartData = stateId => {
-    const chartData = {
-      labels: [],
-      datasets: [
-        {
-          data: [],
-          backgroundColor: ["#37B98B", "#E5F83C", "#6B9BCA"],
-          borderWidth: 1
-        }
-      ]
-    }
-    let id = this.state.surveyDataIndex
+  // barChartData = stateId => {
+  //   const chartData = {
+  //     labels: [],
+  //     datasets: [
+  //       {
+  //         data: [],
+  //         backgroundColor: ["#37B98B", "#E5F83C", "#6B9BCA"],
+  //         borderWidth: 1
+  //       }
+  //     ]
+  //   }
+  //   let id = this.state.surveyDataIndex
 
-    chartData.labels = surveyData[id].legend
-    chartData.datasets[0].data = surveyData[id].children[0].values[stateId]
-    let chartTitle = surveyData[id].name
-    return [chartData, chartTitle]
-  }
+  //   chartData.labels = surveyData[id].legend
+  //   chartData.datasets[0].data = surveyData[id].children[0].values[stateId]
+  //   let chartTitle = surveyData[id].name
+  //   return [chartData, chartTitle]
+  // }
 
   formatData(data) {
     let dataSets = []
 
     // Figure out the number of data sets
     const dataSetNumber = data.legend.length
-    
+
     data.children.forEach(dataPoint => {
       //Extract one value out of all values
-      let values = dataPoint.values[this.props.stateId] || dataPoint.values.average
-      
+      let values =
+        dataPoint.values[this.props.stateId] || dataPoint.values.average
+
       //Please each each number in its own array according to the legend
       for (let i = 0; i < dataSetNumber; i++) {
         let newDataPoint = {
@@ -71,84 +71,82 @@ class Chart extends Component {
         }
         dataSets[i]
           ? dataSets[i].push(newDataPoint)
-          : dataSets[i] = [newDataPoint]
+          : (dataSets[i] = [newDataPoint])
       }
-    });
+    })
 
     return dataSets
   }
 
-  handleChartSelect = (index) => {
+  handleChartSelect = index => {
     this.setState({
-      surveyDataIndex:index
+      surveyDataIndex: index
     })
   }
 
   leftArrow = () => {
-    let newIndex = this.state.surveyDataIndex > 0 
-      ? this.state.surveyDataIndex - 1
-      : surveyData.length - 1
-    
+    let newIndex =
+      this.state.surveyDataIndex > 0
+        ? this.state.surveyDataIndex - 1
+        : surveyData.length - 1
+
     this.setState({
       surveyDataIndex: newIndex
     })
   }
 
   rightArrow = () => {
-    let newIndex = this.state.surveyDataIndex < surveyData.length - 1
-      ? this.state.surveyDataIndex + 1
-      : 0
+    let newIndex =
+      this.state.surveyDataIndex < surveyData.length - 1
+        ? this.state.surveyDataIndex + 1
+        : 0
 
-        this.setState({
+    this.setState({
       surveyDataIndex: newIndex
     })
   }
 
   render() {
     let { stateId } = this.props
-    let barChartData = this.barChartData(stateId)
+    // let barChartData = this.barChartData(stateId)
     let fullData = surveyData[this.state.surveyDataIndex]
     let chartType = fullData.type
 
-    let renderChart =
-      chartType === "bars" ? (
-        <BarChart
-          stateId={stateId}
-          data={barChartData[0]}
-          title={barChartData[1]} />
-      ) : chartType === "circles" ? (
-        <CircleChart
-            data={this.formatData(fullData)}
-            legend={fullData.legend}
-            name={fullData.name}
-            state={stateId}
+    let renderChart =(     
+        <AllChart
+          data={this.formatData(fullData)}
+          legend={fullData.legend}
+          name={fullData.name}
+          type={
+            chartType === "bars"
+              ? "bar"
+              : chartType === "circles"
+              ? "circle"
+              : chartType === "pie"
+              ? "pie"
+              : null
+          }
         />
-      ) : chartType === "pie" ? (
-        <PieChart
-              data={this.formatData(fullData)}
-              legend={fullData.legend}
-              name={fullData.name}
-            state={stateId}
-        />
-      ) : null
-  
+      ) 
+
     return (
       <>
-       
         <div className="chartContainer">
           <div className="nav nav-left">
-            <i className="fal fa-angle-left" onClick={() => this.leftArrow()}></i>
-            </div>
-          <div className="chart-wrap">
-            {renderChart}
+            <i
+              className="fal fa-angle-left"
+              onClick={() => this.leftArrow()}
+            ></i>
           </div>
+          <div className="chart-wrap">{renderChart}</div>
           <div className="nav nav-right">
             <i className="fal fa-angle-right" onClick={this.rightArrow}></i>
-            </div>
+          </div>
         </div>
-        <ChartSelect index={this.state.surveyDataIndex} handleChartSelect={this.handleChartSelect} />
-
-       
+        <ChartSelect
+          index={this.state.surveyDataIndex}
+          handleChartSelect={this.handleChartSelect}
+        />
       </>
     )
   }
