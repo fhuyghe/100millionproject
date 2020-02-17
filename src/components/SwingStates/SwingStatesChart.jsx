@@ -37,7 +37,7 @@ class SwingStatesChart extends Component {
 
     //Change the URL only if on the swingstates page
     if (this.state.onOwnPage) this.props.history.push(stateInfo[0].path)
-
+    stateInfo = stateInfo[0]
     this.setState({ stateInfo })
   }
  
@@ -49,7 +49,7 @@ class SwingStatesChart extends Component {
 
   render() {
     let { stateInfo, chartType } = this.state
-
+console.log(stateInfo)
     let options = swingStates.map((state, i) => (
       <option key={i} value={state.abbr}>
         {state.name}
@@ -66,6 +66,7 @@ class SwingStatesChart extends Component {
               options={options}
             />
           </div>
+          {console.log(stateInfo)}
             <Chart stateId={stateInfo.abbr} chartType={chartType} />
       </div>
     )

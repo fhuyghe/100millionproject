@@ -72,8 +72,8 @@ export const surveyData = [
         name: "Immigration",
         values: {
           average: [22, 19, 11],
-          AZ: [30, 20, 10],
-          FL: [10, 20, 30],
+          AZ: [4, 14, 24],
+          FL: [36, 26, 16],
           GA: [],
           MI: [],
           MN: [],
@@ -88,7 +88,7 @@ export const surveyData = [
         name: "Gun Control",
         values: {
           average: [11, 8, 15],
-          AZ: [],
+          AZ: [30, 20, 10],
           FL: [],
           GA: [],
           MI: [],
@@ -270,7 +270,7 @@ export const surveyData = [
         name: "I don't care",
         values: {
           average: [29, 28],
-          AZ: [],
+          AZ: [3, 20],
           FL: [],
           GA: [],
           MI: [],
@@ -286,7 +286,7 @@ export const surveyData = [
         name: "My vote doesn't matter",
         values: {
           average: [13, 5],
-          AZ: [],
+          AZ: [10, 8],
           FL: [],
           GA: [],
           MI: [],
