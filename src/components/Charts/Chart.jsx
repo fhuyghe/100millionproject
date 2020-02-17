@@ -31,6 +31,7 @@ class Chart extends Component {
 
   formatData(data) {
     let dataSets = []
+    console.log(this.props)
 
     // Figure out the number of data sets
     const dataSetNumber = data.legend.length
@@ -89,6 +90,7 @@ class Chart extends Component {
     
     let renderChart =(     
         <AllChart
+        
           data={this.formatData(fullData)}
           legend={fullData.legend}
           name={fullData.name}

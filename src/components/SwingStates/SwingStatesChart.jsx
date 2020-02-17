@@ -49,7 +49,7 @@ class SwingStatesChart extends Component {
 
   render() {
     let { stateInfo, chartType } = this.state
-
+console.log(stateInfo)
     let options = swingStates.map((state, i) => (
       <option key={i} value={state.abbr}>
         {state.name}
