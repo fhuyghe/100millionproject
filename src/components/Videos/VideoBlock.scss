@@ -13,10 +13,6 @@
         transition: .25s;
         cursor: pointer;
 
-        @include media-breakpoint-up(md){
-            font-size: $grid-gutter * 2;
-        }
-
         &:hover{
             transform: translate(-50%, -50%) scale(1.1);
         }

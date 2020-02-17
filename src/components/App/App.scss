@@ -76,6 +76,10 @@ h2{
 	font-family: $spoof;
   letter-spacing: .04em;
   margin-top: 0;
+
+  @include media-breakpoint-up(md){
+    font-size: 1.8em;
+  }
 }
 
 h3{

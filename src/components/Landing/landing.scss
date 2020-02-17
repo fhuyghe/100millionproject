@@ -194,6 +194,16 @@
     #conclusion{
         background-color: $white;
         color: $black;
+        
+        @include media-breakpoint-up(md){
+            padding-bottom: 400px;
+        }
+
+        //Capitol image
+        background-image: url('/images/capitol_header.png');
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: 50%;
     }
 
     #next{

@@ -149,13 +149,29 @@ class Landing extends React.Component {
                     </div>
                 </section>
 
+                <section id="reasons">
+                    <div className="wrap text-center">
+                        <h2>Top responses from non-voters</h2>
+                        <p>Bar charts of the top responses.</p>
+                    </div>
+                </section>
+
                 <section id="demographics">
                     <div className="wrap">
+                        <div className="row">
                         <div className="col-md-8">
-                            <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation. </h2>
+                            <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation, and there are many reasons why they don’t vote.</h2>
                         </div>
-                        <div className="col-md-6 offset-md-6">
-                            <p>Many cite poor-quality and corrupt elected officials, political fundraising, special interest dominance, and media bias among the reasons why they don’t vote. It can take a lot to convince habitual non-voters to vote as <VideoPlayer vimeoID="76979871" title="West Virginia video">a House of Delegates candidate in West Virginia found out.</VideoPlayer> Our study identified <Link to="typesofnonvoters">six types of non-voters.</Link></p>
+
+                        <div className="col-md-6">
+                            <VideoPlayer vimeoID="76979871" title="NYC video">
+                                <VideoBlock video="test-video" playSign={true}/>
+                            </VideoPlayer>
+                        </div>
+
+                        <div className="col-md-6">
+                            <p>The top reasons non-voters cite is that they don’t like the candidates and feel their vote doesn’t matter. It can take a lot to convince habitual non-voters to vote as <VideoPlayer vimeoID="76979871" title="West Virginia video">a House of Delegates candidate in West Virginia found out.</VideoPlayer> Our study identified <Link to="typesofnonvoters">six types of non-voters.</Link></p>
+                            </div>
                         </div>
                     </div>
                 </section>
