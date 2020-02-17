@@ -4,7 +4,7 @@ import './Button.scss'
 
 const Button = (props) => {
     let classes = "button " + props.color
-    return <div class={classes} onClick={props.onClick}>
+    return <div className={classes} onClick={props.onClick}>
         <Link to={props.to}>{props.children}</Link>
         <div className="shadow"></div>
     </div>

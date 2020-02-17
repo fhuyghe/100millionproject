@@ -36,7 +36,7 @@ class QuizSlider extends Component {
           <div className="legend" >{this.props.legend[1]}</div>  
           </div>          
         </form>
-        <input for="sliderInput" className="next-button" onClick={() => this.props.handleSliderSubmission(this.state.value)} type="submit" value="Next" />        
+        <input htmlFor="sliderInput" className="next-button" onClick={() => this.props.handleSliderSubmission(this.state.value)} type="submit" value="Next" />        
       </div>
     );
   }

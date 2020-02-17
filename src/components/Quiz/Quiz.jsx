@@ -87,7 +87,7 @@ class Quiz extends Component {
               let classes = "progress-marker-bar"
               classes += i === this.state.currentQuestion ? " active" : ""
               classes += i < this.state.currentQuestion ? " passed" : ""
-            return <div className={classes}></div>
+              return <div className={classes} key={question.question}></div>
           })}
           </div>
           
