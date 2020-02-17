@@ -20,7 +20,6 @@ import AppHeader from "../AppHeader"
 
 const App = () => {
 
-  let location = useLocation()
   let pathClass = useLocation().pathname.split('/')[1] //Get the page name from the path
 
     return (

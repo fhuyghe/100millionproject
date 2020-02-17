@@ -38,7 +38,7 @@ class AppHeader extends Component {
               <span className="hamburger-inner"></span>
             </span>
           </button>
-            <Link className="title" to='/' onClick={() => {return this.state.active && this.toggleMenu}}><img src="/100M_logo__long_white-600.png" /></Link>
+            <Link className="title" to='/' onClick={() => {return this.state.active && this.toggleMenu}}><img src="/100M_logo__long_white-600.png" alt="The 100 Million Project" /></Link>
           </div>
           
         {this.state.active &&

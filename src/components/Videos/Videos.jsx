@@ -43,9 +43,8 @@ const Videos = () => {
             {videos.map((video) => { 
                 return <div className="video" key={video.name}>
                     <div className="video-thumbnail">
-                        <VideoBlock video={video.name} />
                         <VideoPlayer vimeoID={video.vimeoID} title={video.title}>
-                            <div className="video-play"><i className="fas fa-play"></i></div>
+                            <VideoBlock video={video.name} playSign={true}/>
                         </VideoPlayer>
                     </div>
                     <h3>{ video.title }</h3>

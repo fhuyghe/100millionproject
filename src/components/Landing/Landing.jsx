@@ -20,10 +20,6 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
 class Landing extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() { 
         var controller = new ScrollMagic.Controller();
 
@@ -117,17 +113,17 @@ class Landing extends React.Component {
                     <div className="wrap">
                         <div className="row">
                             <div className="col-md-6">
-                            <h2>During the 2016 presidential election, nearly half of the eligible voting population in America—100 million people— <span className="red">did not cast a vote.</span></h2>
+                            <h2>During the 2016 presidential election nearly 100 million people, almost half of the eligible voting population in America, <span className="red">did not cast a vote.</span></h2>
                         </div>
                         </div>
                     </div>
-                    <div id="sign"><img src="/images/100M_story_sign.svg"/></div>
+                    <div id="sign"><img src="/images/100M_story_sign.svg" alt="Voting Sign" /></div>
                 </section>
 
                 <section id="interviews">
                     <div className="wrap">
                         <div className="col-md-6">
-                            In 2020, Knight Foundation released a study of
+                        In 2020, Knight Foundation released a study of over
                     </div>
                         <div className="number" id="countup-12000">10,234</div>
                         <div className="col-md-6 offset-md-6">

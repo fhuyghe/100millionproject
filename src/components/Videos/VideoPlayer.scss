@@ -1,9 +1,9 @@
 @import '../../assets/styles/variables';
 
 .video-player{
-    display: inline;
+    //display: inline;
 
-    a{
+    .video-player-toggle{
         white-space: normal;
         cursor: pointer;
     }

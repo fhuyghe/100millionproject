@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../Shared/Button'
 import './LandingQuiz.scss'
 
 
@@ -56,10 +55,10 @@ class LandingQuiz extends React.Component {
 
         return (
             <div id="landingQuizWrap">
-                <h2>Why do you think a person doesn’t vote?</h2>
+                <h2>Which of the following do you believe is more true of non-voters than active voters who consistently turn out on election day?</h2>
                 <ul>
             {quizOptions.map((option, index) => {
-                return this.state.revealAnswer == index
+                return this.state.revealAnswer === index
                     ? <li className={option.value ? "right" : "wrong"} key={option.text}>
                         <div className="question">
                             <div className="checkbox active"></div> {option.text}

@@ -3,9 +3,6 @@ import SwingStatesCharts from "./SwingStatesChart"
 import "./SwingStatesPage.scss"
 
 class SwingStatesPage extends Component {
-  constructor() {
-    super()
-  }
 
   render() {
 

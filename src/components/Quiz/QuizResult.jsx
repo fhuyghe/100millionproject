@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom'
 import "./quizResults.scss";
 
 class QuizResult extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
+
   render() {
 
     const result = results.find((option) => { return option.path === this.props.match.params.type })
@@ -29,7 +26,7 @@ class QuizResult extends Component {
                   <p>Explore other types of non-voters</p>
                   <ul>
                     {results.map((type) => { 
-                      return type.name != result.name
+                      return type.name !== result.name
                         ? <li key={type.name}>
                           <Link to={type.path}>{ type.name }</Link>
                         </li>
