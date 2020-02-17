@@ -15,7 +15,7 @@ const About = () => {
 
         <section id="about">
             <div className="wrap">
-                <h2>About the project</h2>
+                <h2>Why Knight funded the 100 Million Project</h2>
                 <p>We’re well into campaign season in what could be one of the most divisive elections in living memory. But while the polls and pundits will focus on the “likely voters” who reliably cast ballots, nearly 100 million non-voters — and the underlying causes keeping them home on Election Day — will likely be ignored.  While the Americans who do turn out will drive the election result, so much of the underlying health of our democracy can be assessed by looking at those who don’t turn out—and asking why.</p>
                 <p>That’s why Knight Foundation commissioned Bendixen and Amandi International to develop a landmark study of 12,000 chronic non-voters, nationwide and in key battleground states. No previous study has surveyed this segment of the electorate at such depth and scale. Knight foundation is focused on ensuring the enduring strength of our representative democracy.  And a truly representative democracy is just that: one defined by the broad and representative participation of its people.</p>
                 <p>Voting is a fundamental form of democratic engagement, but the United States lags behind most of the world’s 36 developed democracies in terms of voter turnout.[1]  And it’s a long running trend, according to U.S. Census Bureau data, that active voters over-represent certain groups (the college educated, upper income and older) and under-represent others.[2] This has ramifications on the capacity of our elected government to mirror the values of its entire citizenry.</p>
@@ -44,7 +44,7 @@ const About = () => {
                     <li>Yanna Krupnikov, Asst. Professor of Political Science at Stony Brook University</li>
                 </ul>
 
-                <h3>Review Committee</h3>
+                <h2>Review Committee</h2>
                 <ul>
                     <li>Seth Flaxman, Co-Founder & Executive Director, Democracy Works </li>
                     <li>Keesha Gaskins-Nathan, Director of Democratic Practice–US Program, Rockefeller Brothers Fund </li>
