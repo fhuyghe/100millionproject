@@ -72,8 +72,8 @@ export const surveyData = [
         name: "Immigration",
         values: {
           average: [22, 19, 11],
-          AZ: [30, 20, 10],
-          FL: [10, 20, 30],
+          AZ: [4, 14, 24],
+          FL: [36, 26, 16],
           GA: [],
           MI: [],
           MN: [],

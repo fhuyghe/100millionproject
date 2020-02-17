@@ -14,17 +14,13 @@ class Chart extends Component {
   }
 
   componentDidMount() {
-    // this.setState({
-    //   barChartData: this.barChartData(this.props.stateId)
-    // })
+  
   }
 
   componentDidUpdate(prevProps) {
-    // if (this.props.stateId !== prevProps.stateId) {
-    //   this.setState({
-    //     barChartData: this.barChartData(this.props.stateId)
-    //   })
-    // }
+    if (this.props.stateId !== prevProps.stateId) {
+  
+    }
   }
 
   componentWillUnmount() {
@@ -32,25 +28,6 @@ class Chart extends Component {
       this.chart.dispose()
     }
   }
-
-  // barChartData = stateId => {
-  //   const chartData = {
-  //     labels: [],
-  //     datasets: [
-  //       {
-  //         data: [],
-  //         backgroundColor: ["#37B98B", "#E5F83C", "#6B9BCA"],
-  //         borderWidth: 1
-  //       }
-  //     ]
-  //   }
-  //   let id = this.state.surveyDataIndex
-
-  //   chartData.labels = surveyData[id].legend
-  //   chartData.datasets[0].data = surveyData[id].children[0].values[stateId]
-  //   let chartTitle = surveyData[id].name
-  //   return [chartData, chartTitle]
-  // }
 
   formatData(data) {
     let dataSets = []
@@ -107,11 +84,9 @@ class Chart extends Component {
   }
 
   render() {
-    let { stateId } = this.props
-    // let barChartData = this.barChartData(stateId)
     let fullData = surveyData[this.state.surveyDataIndex]
     let chartType = fullData.type
-
+    
     let renderChart =(     
         <AllChart
           data={this.formatData(fullData)}
