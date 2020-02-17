@@ -16,10 +16,12 @@
     }
 
     #allTypes{
-        
-
         .type{
-            padding: $grid-gutter / 2;
+            padding: 15px;
+
+            @include media-breakpoint-up(md){
+                padding: $grid-gutter / 2;
+            }
 
             h3{
                 margin-top: 0;

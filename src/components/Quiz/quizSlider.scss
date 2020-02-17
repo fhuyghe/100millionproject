@@ -23,7 +23,9 @@
 }
 
 #sliderInput {    
-    transform: rotate(90deg);
+    transform: rotate(-90deg) translateY(-50%);
+    height: 0;
+    padding-top: 100%;
     color: $beige;
     background: #EDE9E4;
     
@@ -43,9 +45,11 @@
 
 .slider-wrapper {
     display: flex;    
+    flex-direction: column-reverse;
     padding: 0;
 
     @include media-breakpoint-up(md){
+      flex-direction: row;
       margin: $grid-gutter * 2 auto;
     }
 

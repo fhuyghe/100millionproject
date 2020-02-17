@@ -68,8 +68,12 @@ html{
 
 h1{
 	font-family: $spoof;
-  font-size: 2.5em;
+  font-size: 2em;
   margin-top: 0;
+
+  @include media-breakpoint-up(md){
+    font-size: 2.5em;
+  }
 }
 
 h2{

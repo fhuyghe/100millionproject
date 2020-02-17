@@ -11,7 +11,6 @@ class QuizResult extends Component {
 
     return (
         <div id="resultPage" className={result.color}>    
-        <div className="main-wrapper">
           <div className="wrap">
             <div className="result-content">
               <h1>What type of non-voter are you?</h1>
@@ -19,7 +18,18 @@ class QuizResult extends Component {
                 <div className="col-md-7">
                   <h3 className="lead-in">You are:</h3>
                   <h2 className="result-heading">{result.name}</h2>
-                  <div className="result-description" dangerouslySetInnerHTML={{__html: result.description}}></div>
+                  <div className="result-description">
+                  <p>{result.description}</p>
+                  <h3>Behavior</h3>
+                  {result.behaviors.map(data => { 
+                    console.log(data)
+                    return <p>{data}</p>
+                  })}
+                  <h3>Demographics</h3>
+                  {result.demographics.map(data => { 
+                    return <p>{data}</p>
+                  })}
+                  </div>
                 </div>   
                   
                 <div className="col-md-4 offset-md-1 other-menu">
@@ -36,7 +46,6 @@ class QuizResult extends Component {
                   </div>
               </div>
               </div>
-          </div>
           </div>
         </div>
     );
