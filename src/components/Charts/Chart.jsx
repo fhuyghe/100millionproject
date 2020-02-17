@@ -18,6 +18,7 @@ class Chart extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    console.log(this.props, prevProps)
     if (this.props.stateId !== prevProps.stateId) {
   
     }
@@ -87,7 +88,7 @@ class Chart extends Component {
   render() {
     let fullData = surveyData[this.state.surveyDataIndex]
     let chartType = fullData.type
-    
+    console.log(this.props)
     let renderChart =(     
         <AllChart
         
