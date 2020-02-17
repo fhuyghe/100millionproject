@@ -167,22 +167,39 @@
         text-align: center;
         padding: $grid-gutter * 4 0;
 
-        .dashes{
-            height: 80vh;
-            width: 0px;
-            border-left: 2px dashed $yellow;
-            margin: $grid-gutter auto;
+        #dashes{
+            height: 800px;
+
+            .dashes-wrap{
+                width: 5px;
+                background: url('../../assets/images/dashes-dot.png');
+                background-size: contain;
+                margin: $grid-gutter auto;
+            }
         }
 
         #emerging-numbers{
             opacity: 0;
             transform: scale(0);
+            padding-top: $grid-gutter;
+
+            h3{
+                color: $yellow;
+            }
+
+            .number{
+                line-height: 1em;
+            }
         }
 
         p{
             max-width: $wrap-sm;
             margin: auto;
         }
+    }
+
+    #emergingText{
+        font-size: 1.5em;
     }
 
     #browser{

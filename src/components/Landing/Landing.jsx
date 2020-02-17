@@ -94,7 +94,17 @@ class Landing extends React.Component {
                 .setTween(popupTween3)
                 .addTo(controller);
         
-            // 18-24 popup
+            // Emerging dashes
+            var dashesTween = TweenMax.to(".dashes-wrap", .5, { height: 800, ease: Linear.easeNone });
+            new ScrollMagic.Scene({
+                triggerElement: '#dashes',
+                duration: 800,
+                triggerHook: .5
+            })
+                .setTween(dashesTween)
+                .addTo(controller); 
+           
+                // 18-24 popup
             var emergingTween = TweenMax.to("#emerging-numbers", .5, { opacity: 1, scale: 1, ease: Linear.easeNone });
             new ScrollMagic.Scene({
                 triggerElement: '#emerging-numbers',
@@ -102,6 +112,15 @@ class Landing extends React.Component {
                 triggerHook: .8
             })
                 .setTween(emergingTween)
+                .addTo(controller); 
+             
+                // Losing voters
+            var losingVotersTween = TweenMax.to(".disappear", .5, { opacity: 0, ease: Linear.easeNone });
+            new ScrollMagic.Scene({
+                triggerElement: '#losingVoters',
+                duration: 400,
+            })
+                .setTween(losingVotersTween)
                 .addTo(controller); 
     }
 
@@ -218,28 +237,41 @@ class Landing extends React.Component {
                 <section id="emerging">
                     <div className="wrap">
                         <h2>The emerging electorate are</h2>
-                        <div className="dashes"></div>
-                        <p>Voters between</p>
-                        <div className="number yellow" id="emerging-numbers">18-24</div>
-                        <p>this group's behavior and trends will shape how the overall electorate moves in the coming years. </p>
+                        <div id="dashes"><div className="dashes-wrap"></div></div>
+                        <div id="emerging-numbers">
+                            <h3>Voters between</h3>
+                            <div className="number yellow">18-24</div>     
+                        </div>
+                    </div>
+                </section>
+
+                <section id="emergingText">
+                    <div className="wrap text-center">
+                            <p>This group's behavior and trends will shape how the overall electorate moves in the coming years. </p>
                     </div>
                 </section>
 
                 <section id="browser">
-                    <div className="wrap">
+                        <div className="container">
                         <div className="row">
-                            <div className="col-md-3">
+                            <div className="col-md-3 offset-md-1">
                                 <InstaWindow image="https://66.media.tumblr.com/30243eb75aa86ee15c7f7f40923b148e/tumblr_pak3z2ET3g1r9qwkso1_500.jpg" />
                             </div>
-                            <div className="col-md-6">
-                                <PopupWindow id="popup-3" text="The emerging electorate are more dissatisfied with President Trump than current voters and non-voters. " />
-                                <PopupWindow id="popup-2" text="When they do encounter the news, it’s often when it’s bumped into on social media where it exists alongside other kinds of content." />
-                                <PopupWindow id="popup-1" text="Social media, gaming, and streaming services all outpace traditional news sources in this group’s media consumption." />
+                            <div className="col-md-4 offset-md-1">
+                                <PopupWindow id="popup-3" text="The emerging electorate are more dissatisfied with President Trump than current voters and non-voters." />
+                                <PopupWindow id="popup-2" text="Their top concerns are gun control, climate change, and racism, rather than immigration like active voters and non-voters." />
+                                <PopupWindow id="popup-1" text="Alongside their disinterest in politics, they are also the least likely group to believe that increased participation in elections is a good thing." />
                             </div>
                             <div className="col-md-3">
                                 <InstaWindow image="https://media.giphy.com/media/4pMX5rJ4PYAEM/giphy.gif"/>
                             </div>
                             </div>
+                            </div>
+                </section>
+
+                <section id="losingVoters">
+                    <div className="wrap text-center">
+                        <h2><span className="disappear">Are we </span>losing<span className="disappear"> a generation of </span>voters?</h2>
                     </div>
                 </section>
 
