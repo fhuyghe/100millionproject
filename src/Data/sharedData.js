@@ -46,8 +46,8 @@ export const swingStates = [
     abbr: 'VA'
   },
   {
-    name: "Wiskonsin",
-    path: "wiskonsin",
+    name: "Wisconsin",
+    path: "wisconsin",
     abbr: 'WI'
   }
 ];

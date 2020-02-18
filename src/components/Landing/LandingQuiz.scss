@@ -8,8 +8,10 @@
         color: $black;
     
         li{
-            padding: 10px;
+            padding: 2.5%;
             list-style: none;
+            margin-left: -2.5%;
+            width: 105%;
             margin-bottom: $grid-gutter / 2;
 
             .question{
@@ -30,6 +32,7 @@
                 height: 30px;
                 display: inline-block;
                 margin-right: $grid-gutter / 2;
+                flex: 0 0 30px;
     
                 &.active{
                     background-color: $yellow;
@@ -41,10 +44,6 @@
                 .question{
                     cursor: default;
                 }
-            }
-
-            &.wrong{
-                background-color: $red;
 
                 .checkbox{
                     position: relative;
@@ -64,8 +63,30 @@
                 }
             }
 
+            &.wrong{
+                background-color: $red;
+
+                .checkbox{
+                    background-color: $black;
+                    border-color: $black;
+
+                    &:after{
+                        content: 'X';
+                    }
+                }
+            }
+
             &.right{
-                color: $yellow;
+                background-color: $green;
+
+                .checkbox{
+                    background-color: $black;
+                    border-color: $black;
+
+                    &:after{
+                        content: 'V';
+                    }
+                }
             }
         }
     }
