@@ -31,6 +31,7 @@
     
 
     @include media-breakpoint-up(md){
+      padding-top: 0;
       transform: rotate(0);
     }
 }
@@ -51,6 +52,7 @@
     @include media-breakpoint-up(md){
       flex-direction: row;
       margin: $grid-gutter * 2 auto;
+      align-items: center;
     }
 
     .legend{
