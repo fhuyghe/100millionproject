@@ -149,8 +149,12 @@
         }
     }
 
-    #demographics{
-        background-color: $red;
+    #demography{
+        background: $purple;
+    }
+
+    #personalImpact{
+        background-color: $yellow;
         color: $black;
     }
 
@@ -211,6 +215,10 @@
     #conclusion{
         background-color: $white;
         color: $black;
+
+        .text{
+            margin-bottom: $grid-gutter;
+        }
         
         @include media-breakpoint-up(md){
             padding-bottom: 400px;

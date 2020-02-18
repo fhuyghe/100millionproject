@@ -64,6 +64,77 @@ export const swingStates = [
 
 export const surveyData = [
   {
+    name: "What party would you vote for in 2020?",
+    type: "pie",
+    legend: ['Non-voters'],
+    children: [
+      {
+        name: "Democratic Party",
+        values: {
+          average: [33],
+          AZ: [25],
+          FL: [31],
+          GA: [34],
+          MI: [32],
+          MN: [29],
+          NV: [33],
+          NH: [29],
+          WI: [33],
+          PA: [28],
+          VA: [31]
+        }
+      },
+      {
+        name: "President Trump",
+        values: {
+          average: [30],
+          AZ: [34],
+          FL: [36],
+          GA: [29],
+          MI: [31],
+          MN: [29],
+          NV: [33],
+          NH: [30],
+          WI: [31],
+          PA: [36],
+          VA: [5]
+        }
+      },
+      {
+        name: "Someone else",
+        values: {
+          average: [18],
+          AZ: [22],
+          FL: [17],
+          GA: [18],
+          MI: [19],
+          MN: [20],
+          NV: [21],
+          NH: [23],
+          WI: [19],
+          PA: [18],
+          VA: [18]
+        }
+      },
+      {
+        name: "Don't know",
+        values: {
+          average: [19],
+          AZ: [20],
+          FL: [16],
+          GA: [19],
+          MI: [18],
+          MN: [23],
+          NV: [13],
+          NH: [18],
+          WI: [17],
+          PA: [19],
+          VA: [17]
+        }
+      }
+    ]
+  },
+  {
     name: "What do you think is the most important issue for the US?",
     type: 'circles',
     legend: ['Non-voters'],
@@ -234,77 +305,6 @@ export const surveyData = [
           PA: [5.952],
           WI: [5.787],
           VA: [6.113]
-        }
-      }
-    ]
-  },
-  {
-    name: "What party would you vote for in 2020?",
-    type: "pie",
-    legend: ['Non-voters'],
-    children: [
-      {
-        name: "Democratic Party",
-        values: {
-          average: [33],
-          AZ: [25],
-          FL: [31],
-          GA: [34],
-          MI: [32],
-          MN: [29],
-          NV: [33],
-          NH: [29],
-          WI: [33],
-          PA: [28],
-          VA: [31]
-        }
-      },
-      {
-        name: "President Trump",
-        values: {
-          average: [30],
-          AZ: [34],
-          FL: [36],
-          GA: [29],
-          MI: [31],
-          MN: [29],
-          NV: [33],
-          NH: [30],
-          WI: [31],
-          PA: [36],
-          VA: [5]
-        }
-      },
-      {
-        name: "Someone else",
-        values: {
-          average: [18],
-          AZ: [22],
-          FL: [17],
-          GA: [18],
-          MI: [19],
-          MN: [20],
-          NV: [21],
-          NH: [23],
-          WI: [19],
-          PA: [18],
-          VA: [18]
-        }
-      },
-      {
-        name: "Don't know",
-        values: {
-          average: [19],
-          AZ: [20],
-          FL: [16],
-          GA: [19],
-          MI: [18],
-          MN: [23],
-          NV: [13],
-          NH: [18],
-          WI: [17],
-          PA: [19],
-          VA: [17]
         }
       }
     ]

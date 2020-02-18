@@ -142,7 +142,7 @@ class AllChart extends Component {
         <div className="all-chart chart" ref={this.chartRef}></div>
 
         {/* The subset selection */}
-        {this.props.legend.length > 0 &&
+        {this.props.legend.length > 1 &&
         <ChartSubsetSelector
           legend={this.props.legend}
           handleLegend={this.handleLegend}

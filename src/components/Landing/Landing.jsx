@@ -102,7 +102,7 @@ class Landing extends React.Component {
             new ScrollMagic.Scene({
                 triggerElement: '#dashes',
                 duration: 800,
-                triggerHook: .5
+                triggerHook: .8
             })
                 .setTween(dashesTween)
                 .addTo(controller); 
@@ -186,13 +186,39 @@ class Landing extends React.Component {
                         </div>
 
                         <div className="col-md-6">
-                            <VideoPlayer vimeoID="76979871" title="NYC video">
-                                <VideoBlock video="test-video" playSign={true}/>
+                            <VideoPlayer vimeoID="76979871" title="West Virginia">
+                                    <VideoBlock
+                                        video="test-video"
+                                        playSign={true} />
                             </VideoPlayer>
                         </div>
 
                         <div className="col-md-6">
-                            <p>The top reasons non-voters cite is that they don’t like the candidates and feel their vote doesn’t matter. It can take a lot to convince habitual non-voters to vote as <VideoPlayer vimeoID="76979871" title="West Virginia video">a House of Delegates candidate in West Virginia found out.</VideoPlayer> Our study identified <Link to="typesofnonvoters">six types of non-voters.</Link></p>
+                            <p>It can take a lot to convince habitual non-voters to vote as <VideoPlayer vimeoID="76979871" title="West Virginia video">a House of Delegates candidate in West Virginia found out.</VideoPlayer> Our study identified <Link to="typesofnonvoters">six types of non-voters.</Link></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="demography">
+                    <div className="wrap">
+                        <div className="row">
+                            <div className="col-md-8">
+                            <p>Compared to active voters, non-voters are more likely to be less educated, lower income,  non-white and unmarried.</p>
+                            </div>
+                            <div className="col-md-6">
+                                Chart
+                            </div>
+                            <div className="col-md-6">
+                                Chart
+                            </div>
+                            <div className="col-md-6 offset-md-3">
+                                <p>Although there is not one way to define a non-voter, our study identified <Link to="/typesofnonvoters">six types of non-voters.</Link></p>
+                                <VideoPlayer vimeoID="76979871" title="NYC Video">
+                                    <VideoBlock
+                                        video="test-video"
+                                        playSign={true} />
+                                </VideoPlayer>
                             </div>
                         </div>
                     </div>
@@ -207,13 +233,8 @@ class Landing extends React.Component {
                             </div>
                             <div className="swing-triangle"></div>
                         </div>
-
-                        <div className="col-md-6">
-                            <p>Although non-voters are evenly distributed across party lines, as a bloc, they could greatly impact swing states in the next election.</p>
-                            </div>
-                        <div className="col-md-6 offset-md-6">
-                        <div className="number">71%</div>
-                            <p>of non-voters polled said they intend on voting in the next election.</p>
+                        <div className="col-md-8 offset-md-2 text-center">
+                            <h4>Although non-voters are fairly split across party lines nationally, there are clearer preferences for President in 2020 across swing states.</h4>
                         </div>
 
                         <div id="swingData">
@@ -223,16 +244,34 @@ class Landing extends React.Component {
                     </div>
                 </section>
 
-                <section id="mistrust">
+                <section id="personalImpact">
                     <div className="wrap">
                         <div className="row">
-                            <div className="col-md-6">
-                                <p>In addition to their mistrust in elections, many non-voters cited a lack of education on current political issues and how elections could personally impact them. Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <VideoPlayer vimeoID="76979871" title="Arizona video">their county’s first Latino candidate.</VideoPlayer></p>
-                            </div>
-                            <div className="col-md-6">
-                            <VideoBlock video="test-video"/>
+                            <div className="col-md-8 offset-md-2">
+                                <h4>In addition to consuming less news and information on political issues, non-voters are also less certain that decisions made in Washington personally impact them.</h4>
                             </div>
                         </div>
+                        <SingleChart data={landingData[0]} />
+                        <div className="row">
+                            <div className="col-md-6">
+                                <VideoBlock video="test-video"/>
+                            </div>
+                            <div className="col-md-6">
+                                <p>Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <VideoPlayer vimeoID="76979871" title="Arizona video">their county’s first Latino candidate.</VideoPlayer></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="news">
+                    <div className="wrap">
+                    <h3 className="text-center">One of the clearest findings of the study is that non-voters feel (and are) under-informed on political issues.</h3>
+                        <div className="row">
+                            <div className="col-md-6">
+                            <p>Compared with active voters, non-voter media diets involve less traditional news and more entertainment, and these individuals were less likely to grow up in a family that discussed current events together.</p>
+                            </div>
+                        </div>
+                        <SingleChart data={landingData[0]} />
                         <h3 className="text-center">However, there’s one group even less interested and informed than habitual non-voters, and they are the emerging electorate.</h3>
                     </div>
                 </section>
@@ -282,16 +321,18 @@ class Landing extends React.Component {
                     <div className="wrap">
                         <div className="row">
                         <div className="col-md-6">
-                            <p>The 100 Million Project began as a way to give voice to the concerns of American non-voters since election coverage tends to exclusively favor the opinions of “likely” voters.</p>
-                            <p>However, because many non-voters as well as the emerging electorate will participate in the next election, the report ends as a measure of the country’s pulse in the lead up to November and acts as a clarion call for what can happen next.</p>
-                            <a href="http://kf.org/100millionblog" target="_blank" rel="noopener noreferrer">Read the blog post</a>
-                            <Button color="yellow" to="" >Read the Full report</Button>
+                            <div className="text">
+                                <p>The 100 Million Project began as a way to give voice to the concerns of American non-voters who receive little to no attention in our national political conversation. While non-voters are diverse in their politics and demographic makeup, </p>
+                                <p>The 100 Million Project helps dispel outdated assumptions about non-voters. These are our fellow citizens, and they come from every walk of life. But there are some factors that unite them. In bringing to life this diverse group, the report ends as a measure of the country’s pulse in the lead up to November and acts as a clarion call to energize a new generation of engaged citizens—all in the service of our democracy.</p>
+                                <a href="http://kf.org/100millionblog" target="_blank" rel="noopener noreferrer">Read the blog post</a>
+                                </div>
+                                    <Button color="yellow" to="" >Read the Full report</Button>
                         </div>
                         <div className="col-md-3 offset-md-3">
-                                <div className="black box">
-                                    <h3> Not planning on voting?</h3>
-                                    <p>Tell us why.</p>
-                                    <SocialLinks />
+                            <div className="black box">
+                                <h3> Not planning on voting?</h3>
+                                <p>Tell us why.</p>
+                                <SocialLinks />
                             </div>
                         </div>
                         </div>
