@@ -142,17 +142,18 @@ class Landing extends React.Component {
                         </div>
                     </div>
                     <div id="sign"><img src="/images/100M_story_sign.svg" alt="Voting Sign" /></div>
+                    <div id="arrow"><img src="/images/scroll-arrow.png" alt="" /></div>
                 </section>
 
                 <section id="interviews">
                     <div className="wrap">
                         <div className="col-md-6">
-                        In 2020, Knight Foundation released a study of over
+                        <h4>In 2020, Knight Foundation released a study of over</h4>
                     </div>
                         <div className="number" id="countup-12000">10,234</div>
                         <div className="col-md-6 offset-md-6">
-                            <p>chronic non-voters in America, across the country and in key battleground states.</p>
-                            <p>The study sought to understand who they are, what they care about and surface insights about why they don’t vote.</p>
+                            <h4>chronic non-voters in America, across the country and in key battleground states.</h4>
+                            <h4>The study sought to understand who they are, what they care about and surface insights about why they don’t vote.</h4>
                         </div>
 
                         <div className="explainer-video">

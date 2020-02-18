@@ -15,11 +15,17 @@
         min-height: 100vh;
         padding: 100px 0 0;
         
+        #arrow{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40%;
+        }
 
         #sign{
             position: absolute;
             bottom: 0;
-            left: 25%;
+            left: 50%;
             width: 50%;
 
             img{
@@ -31,6 +37,11 @@
             display: flex;
             align-items: center;
             padding-top: 0;
+
+            #arrow{
+                left: $grid-gutter * 2;
+                width: 150px;
+            }
 
             #sign{
                 left: 60%;
@@ -49,6 +60,10 @@
             @include media-breakpoint-up(md){
                 font-size: 150px;
             }
+        }
+
+        h4{
+            text-align: left;
         }
 
         .explainer-video{
@@ -74,6 +89,12 @@
     }
 
     #reasons{
+        padding-bottom: 0;
+
+        h2{
+            margin-bottom: $grid-gutter;
+        }
+
         .chart-wrap{
             min-height: 500px;
         }
