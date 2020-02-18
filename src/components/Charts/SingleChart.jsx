@@ -29,9 +29,11 @@ class SingleChart extends Component {
 
   render() {
     let fullData = this.props.data
+    let classes = "chart-wrap color-" + this.props.color;
 
     let renderChart =(     
-        <AllChart
+      <AllChart
+        {...this.props}
           data={this.formatData(fullData)}
           legend={fullData.legend}
           name={fullData.name}
@@ -40,8 +42,10 @@ class SingleChart extends Component {
       ) 
 
     return (
-        <div className="chartContainer">
-          <div className="chart-wrap">{renderChart}</div>
+        <div className="chartContainer"> 
+          <div className={classes} >
+            {renderChart}
+          </div>
         </div>
     )
   }

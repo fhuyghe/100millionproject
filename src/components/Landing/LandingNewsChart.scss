@@ -1,0 +1,136 @@
+@import '../../assets/styles/variables';
+
+.landing-news-chart-wrap{
+    h3{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .landing-seek-chart{
+        margin-top: $grid-gutter * 2;
+
+        .legend-wrap{
+            display: flex;
+            position: relative;
+        }
+        .legend1,
+        .legend2{
+            flex: 1 1 40%;
+        }
+
+        .legend1{
+            padding-right: $grid-gutter;
+        }
+
+        .legend2{
+            text-align: right;
+            padding-left: $grid-gutter;
+        }
+
+        .results-wrap{
+            display: flex;
+        }
+
+        .result-wrap1,
+        .result-wrap2{
+            width: 50%;
+
+            .result{
+                height: $grid-gutter
+            }
+        }
+        .result-wrap1{
+            .result{
+                float: right;
+                background-color: $green;
+            }
+        }
+
+        .result-wrap2{
+            .result{
+                background-color: $blue;
+            }
+        }
+
+        .voters{
+            .result-wrap1{
+                .result{
+                    width: 73%;
+                }
+            }
+    
+            .result-wrap2{
+                .result{
+                    width: 27%;
+                }
+            }
+        }
+        
+        .non-voters{
+            .result-wrap1{
+                .result{
+                    width: 56%;
+                }
+            }
+    
+            .result-wrap2{
+                .result{
+                    width: 44%;
+                }
+            }
+        }
+    }
+
+    .landing-info-chart{
+        margin-top: $grid-gutter * 2;
+
+        .results-wrap{
+            display: flex;
+
+            .result1,
+            .result2,
+            .result3{
+                height: $grid-gutter;
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+            }
+
+            .result1{
+                background-color: $green;
+            }
+
+            .result2{
+                background-color: $red;
+            }
+
+            .result3{
+                background-color: $purple;
+            }
+
+            &.voters{
+                .result1{
+                    flex: 1 1 80%;
+                }
+                .result2{
+                    flex: 1 1 15%;
+                }
+                .result3{
+                    flex: 1 1 5%;
+                }
+            }
+            
+            &.non-voters{
+                .result1{
+                    flex: 1 1 59%;
+                }
+                .result2{
+                    flex: 1 1 29%;
+                }
+                .result3{
+                    flex: 1 1 12%;
+                }
+            }
+        }
+    }
+}

@@ -87,23 +87,15 @@ class Chart extends Component {
 
   render() {
     let fullData = surveyData[this.state.surveyDataIndex]
-    let chartType = fullData.type
     console.log(fullData)
     let renderChart =(     
         <AllChart
           stateId={this.props.stateId}
           data={this.formatData(fullData)}
           legend={fullData.legend}
+          maxValue={fullData.maxValue}
           name={fullData.name}
-          type={
-            chartType === "bars"
-              ? "bar"
-              : chartType === "circles"
-              ? "circle"
-              : chartType === "pie"
-              ? "pie"
-              : null
-          }
+          type={fullData.type}
         />
       ) 
 

@@ -30,12 +30,22 @@ class AllChart extends Component {
         ? am4plugins_forceDirected.ForceDirectedTree
         : type === "pie"
         ? am4charts.PieChart
-        : type === "bar"
+        : type === "bar" || type === "bar-vertical" || type === "line"
         ? am4charts.XYChart
         : null
     )
 
+    chart.colors.list = [
+      am4core.color("#F2705E"),//red
+      am4core.color("#009DE0"),//blue
+      am4core.color("#F8D807"),//yellow
+      am4core.color("#3ABA89"),//green
+      am4core.color("#AC7EB7")//purple
+    ];
+
+
     let series
+
     if (type === "circle") {
       series = chart.series.push(
         new am4plugins_forceDirected.ForceDirectedSeries()
@@ -66,13 +76,101 @@ class AllChart extends Component {
 
     if (type === "bar") {
       chart.data = this.props.data[0]
+      
+      //Color
+      const color = this.props.color
+      chart.colors.list = color === "red"
+        ? [am4core.color("#F8D807")]//yellow]
+        :  color === "yellow"
+          ? [am4core.color("#F8D807")]//yellow
+          : [am4core.color("#F2705E")]//blue
+      
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis())
       categoryAxis.dataFields.category = "name"
+
+
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis())
+      valueAxis.max = this.props.maxValue || 10
+      valueAxis.min = 0
+
       series = chart.series.push(new am4charts.ColumnSeries())
-      // series.name = "Web Traffic"
       series.dataFields.categoryX = "name"
       series.dataFields.valueY = "value"
+    }
+    
+    if (type === "bar-vertical") {
+      
+      chart.data = this.props.data[0]
+
+      //Sort the data
+      chart.data.sort(function(a, b) {
+        return (a.value - b.value)
+      });
+
+      //Colors
+      chart.colors.list = [
+        am4core.color("#F8D807"),//yellow
+        am4core.color("#F2705E"),//red
+        am4core.color("#009DE0"),//blue
+        am4core.color("#3ABA89"),//green
+        am4core.color("#AC7EB7")//purple
+      ];
+
+      const color = this.props.color
+      chart.colors.list = color === "red"
+        ? [am4core.color("#F8D807")]//yellow]
+        : color === "yellow"
+          ? [am4core.color("#F8D807")]//yellow
+          : [am4core.color("#009DE0")]//blue
+      
+      //Categories
+      let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis())
+      categoryAxis.dataFields.category = "name"
+      categoryAxis.renderer.inside = true;
+      
+      // Values
+      let valueAxis = chart.xAxes.push(new am4charts.ValueAxis())
+      valueAxis.max = this.props.maxValue || 100
+      valueAxis.min = 0
+      
+      series = chart.series.push(new am4charts.ColumnSeries())
+      series.dataFields.categoryY = "name"
+      series.dataFields.valueX = "value"
+      chart.numberFormatter.numberFormat = "#";
+
+      //Cursor
+      chart.cursor = this.props.cursor ? new am4charts.XYCursor() : null
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////
+    if (type === "line") {
+      
+      chart.data = this.props.data[0]
+
+      //Colors
+      const color = this.props.color
+      chart.colors.list = color === "red"
+        ? [am4core.color("#F8D807")]//yellow]
+        : [am4core.color("#009DE0")]//blue
+      
+      //Categories
+      let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+      categoryAxis.dataFields.category = "name"
+      categoryAxis.renderer.inside = true;
+      
+      // Values
+      let valueAxis = chart.yAxes.push(new am4charts.ValueAxis())
+      valueAxis.max = this.props.maxValue || 100
+      valueAxis.min = 0
+      
+      series = chart.series.push(new am4charts.LineSeries())
+      series.dataFields.categoryX = "name"
+      series.dataFields.valueY = "value"
+      chart.numberFormatter.numberFormat = "#";
+      valueAxis.renderer.labels.wrap = true
+      
+      //Cursor
+      chart.cursor = this.props.cursor ? new am4charts.XYCursor() : null
     }
 
     console.log("create", series, chart)
@@ -91,21 +189,13 @@ class AllChart extends Component {
   }
 
   handleLegend = index => {
-    console.log(this.props.data, this.state.series.data)
-    // let newChart = {
-    //   ...this.state.series,
-    //   data: this.props.data[index]
-    // }
     this.state.series.data = this.props.data[index]
-    // console.log(this.props.data, this.state.series.data)
 
-  
     this.setState({
-      activeIndex: index,
-      // series: newChart
+      activeIndex: index
     })
-    // this.update()
   }
+
   update() {
    
     let seriesChart = this.createChart(this.props.type)
@@ -132,11 +222,10 @@ class AllChart extends Component {
   }
 
   render() {
+
+
     return (
       <main className="chart-main">
-        <header>
-          {/* <h3>{this.props.name}</h3> */}
-        </header>
 
         {/* The Chart element */}
         <div className="all-chart chart" ref={this.chartRef}></div>

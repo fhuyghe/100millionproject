@@ -12,7 +12,8 @@ import Button from '../Shared/Button'
 //Charts
 import SwingStatesChart from '../SwingStates/SwingStatesChart'
 import SingleChart from '../Charts/SingleChart'
-import {landingData} from '../../Data/sharedData'
+import { landingData } from '../../Data/sharedData'
+import LandingNewsChart from './LandingNewsChart'
 //Video elements
 import VideoBlock from '../Videos/VideoBlock'
 import VideoPlayer from '../Videos/VideoPlayer'
@@ -122,6 +123,7 @@ class Landing extends React.Component {
             new ScrollMagic.Scene({
                 triggerElement: '#losingVoters',
                 duration: 400,
+                triggerHook: 0
             })
                 .setTween(losingVotersTween)
                 .addTo(controller); 
@@ -173,17 +175,15 @@ class Landing extends React.Component {
 
                 <section id="reasons">
                     <div className="wrap text-center">
-                        <h2>Top responses from non-voters</h2>
-                        <SingleChart data={landingData[0]} />
+                            <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation, and there are many reasons why they don’t vote.</h2>
+                        <h4>Top responses from non-voters</h4>
+                        <SingleChart color="yellow" maxValue={20} data={landingData[0]} />
                     </div>
                 </section>
 
                 <section id="demographics">
                     <div className="wrap">
                         <div className="row">
-                        <div className="col-md-8">
-                            <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation, and there are many reasons why they don’t vote.</h2>
-                        </div>
 
                         <div className="col-md-6">
                             <VideoPlayer vimeoID="76979871" title="West Virginia">
@@ -203,17 +203,30 @@ class Landing extends React.Component {
                 <section id="demography">
                     <div className="wrap">
                         <div className="row">
-                            <div className="col-md-8">
-                            <p>Compared to active voters, non-voters are more likely to be less educated, lower income,  non-white and unmarried.</p>
+                            <div className=" text-center">
+                            <h4>Compared to active voters, non-voters are more likely to be less educated, lower income,  non-white and unmarried.</h4>
                             </div>
-                            <div className="col-md-6">
-                                Chart
+                            {/* <div className="col-md-6">
+                                <SingleChart color="yellow" maxValue={20} data={landingData[2]} />
+                            </div> */}
+                            <div className="col-md-12">
+                                <SingleChart color="green" maxValue={40} data={landingData[3]} />
                             </div>
-                            <div className="col-md-6">
-                                Chart
-                            </div>
-                            <div className="col-md-6 offset-md-3">
-                                <p>Although there is not one way to define a non-voter, our study identified <Link to="/typesofnonvoters">six types of non-voters.</Link></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="types">
+                    <div className="wrap">
+                        <img src="images/type-average-nonvoter.svg" className="type" />
+                        <img src="images/type-civically-uninformed.svg" className="type" />
+                        <img src="images/type-educated-progressives.svg" className="type" />
+                        <img src="images/type-frustrated-conservatives.svg" className="type" />
+                        <img src="images/type-non-participators.svg" className="type" />
+                        <img src="images/type-young-moderates.png" className="type" />
+                        <div className="row">
+                            <div className="col-md-8 offset-md-2 text-center">
+                                <h4>Although there is not one way to define a non-voter, our study identified <Link to="/typesofnonvoters">six types of non-voters.</Link></h4>
                                 <VideoPlayer vimeoID="76979871" title="NYC Video">
                                     <VideoBlock
                                         video="test-video"
@@ -251,13 +264,24 @@ class Landing extends React.Component {
                                 <h4>In addition to consuming less news and information on political issues, non-voters are also less certain that decisions made in Washington personally impact them.</h4>
                             </div>
                         </div>
-                        <SingleChart data={landingData[0]} />
+                        <div className=""></div>
+                        <SingleChart
+                            cursor={true}
+                            color="red"
+                            maxValue={50}
+                            data={landingData[1]} />
+                        </div>
+                </section>
+                <section id="personalImpact">
+                    <div className="wrap">
                         <div className="row">
                             <div className="col-md-6">
-                                <VideoBlock video="test-video"/>
-                            </div>
-                            <div className="col-md-6">
                                 <p>Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <VideoPlayer vimeoID="76979871" title="Arizona video">their county’s first Latino candidate.</VideoPlayer></p>
+                            </div>
+                            <div className="col-md-12">
+                            <VideoPlayer vimeoID="76979871" title="NYC Video">
+                                    <VideoBlock video="test-video" playSign={true} />
+                                </VideoPlayer>
                             </div>
                         </div>
                     </div>
@@ -265,14 +289,16 @@ class Landing extends React.Component {
 
                 <section id="news">
                     <div className="wrap">
-                    <h3 className="text-center">One of the clearest findings of the study is that non-voters feel (and are) under-informed on political issues.</h3>
+                    <h2 className="news-intro text-center">One of the clearest findings of the study is that non-voters feel (and are) under-informed on political issues.</h2>
                         <div className="row">
                             <div className="col-md-6">
                             <p>Compared with active voters, non-voter media diets involve less traditional news and more entertainment, and these individuals were less likely to grow up in a family that discussed current events together.</p>
                             </div>
                         </div>
-                        <SingleChart data={landingData[0]} />
-                        <h3 className="text-center">However, there’s one group even less interested and informed than habitual non-voters, and they are the emerging electorate.</h3>
+
+                        <LandingNewsChart />
+
+                        <h4 className="emerging-intro text-center">However, there’s one group even less interested and informed than habitual non-voters, and they are the emerging electorate.</h4>
                     </div>
                 </section>
 
@@ -294,25 +320,26 @@ class Landing extends React.Component {
                 </section>
 
                 <section id="browser">
-                        <div className="container">
+                    <div className="container">
                         <div className="row">
                             <div className="col-md-3 offset-md-1">
                                 <InstaWindow image="https://66.media.tumblr.com/30243eb75aa86ee15c7f7f40923b148e/tumblr_pak3z2ET3g1r9qwkso1_500.jpg" />
                             </div>
                             <div className="col-md-4 offset-md-1">
-                                <PopupWindow id="popup-3" text="The emerging electorate are more dissatisfied with President Trump than current voters and non-voters." />
-                                <PopupWindow id="popup-2" text="Their top concerns are gun control, climate change, and racism, rather than immigration like active voters and non-voters." />
-                                <PopupWindow id="popup-1" text="Alongside their disinterest in politics, they are also the least likely group to believe that increased participation in elections is a good thing." />
+                                <PopupWindow id="popup-3" text="The 18-24 year olds are following news and information about politics even less closely than non-voters." />
+                                <PopupWindow id="popup-2" text="Social media, gaming, and streaming services all outpace traditional news sources in this group’s media consumption." />
+                                <PopupWindow id="popup-1" text="When they do encounter the news, it’s often when it’s bumped into on social media where it exists alongside other kinds of content." />
                             </div>
                             <div className="col-md-3">
                                 <InstaWindow image="https://media.giphy.com/media/4pMX5rJ4PYAEM/giphy.gif"/>
                             </div>
                             </div>
-                            </div>
+                    </div>
                 </section>
 
                 <section id="losingVoters">
                     <div className="wrap text-center">
+                        <h4>The emerging electorate are more dissatisfied with President Trump than current voters and non-voters. A significant portion would rather vote for the Democratic Party’s nominee  (38%) than re-elect President Trump (22%)</h4>
                         <h2><span className="disappear">Are we </span>losing<span className="disappear"> a generation of </span>voters?</h2>
                     </div>
                 </section>

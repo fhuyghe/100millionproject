@@ -136,7 +136,8 @@ export const surveyData = [
   },
   {
     name: "What do you think is the most important issue for the US?",
-    type: 'circles',
+    type: 'circle',
+    maxValue: 10,
     legend: ['Non-voters'],
     children: [
       {
@@ -287,7 +288,7 @@ export const surveyData = [
   },
   {
     name: "What is your level of interest in politics?",
-    type: "bars",
+    type: "bar",
     legend: ['Non-voters'],
     scale: 10,
     children: [
@@ -312,10 +313,35 @@ export const surveyData = [
 ]
 
 
-export const landingData = [
+export const landingData = [{
+  name: "What would you say is the main reason for not voting?",
+  type: "bar-vertical",
+  legend: ['Non-voters'],
+  children: [
+    {
+      name: "They don't like the candidates",
+      values: [17]
+    },{
+      name: "Vote doesn't matter",
+      values: [12]
+    },{
+      name: "They don't know the candidates",
+      values: [8]
+    },{
+      name: "No time for voting",
+      values: [8]
+    },{
+      name: "Not interested",
+      values: [8]
+    },{
+      name: "The system is corrupt",
+      values: [8]
+    }
+    ]
+  },
   {
     name: "How confident are you that the results of an election represent the will of the people?",
-    type: 'bar',
+    type: 'line',
     legend: ['Voters', 'Non-voters', '18-24'],
     children: [
       {
@@ -337,6 +363,56 @@ export const landingData = [
       {
         name: "Don't know",
         values: [3, 10, 9]
+      }
+    ]
+  },
+  {
+    name: "Gender",
+    type: 'pie',
+    legend: ['Voters', 'Non-voters', '18-24'],
+    children: [
+      {
+        name: "Male",
+        values: [50, 47, 46]
+      },
+      {
+        name: "Female",
+        values: [50, 53, 54]
+      }
+    ]
+  },
+  {
+    name: "Education",
+    type: 'bar',
+    legend: ['Voters', 'Non-voters', '18-24'],
+    children: [
+      {
+        name: "Grade School",
+        values: [1, 1, 1]
+      },
+      {
+        name: "Some High School",
+        values: [1, 5, 8]
+      },
+      {
+        name: "High School Graduate",
+        values: [14, 26, 30]
+      },
+      {
+        name: "Technical Scool",
+        values: [3, 6, 3]
+      },
+      {
+        name: "College Graduate",
+        values: [35, 26, 24]
+      },
+      {
+        name: "Graduate School",
+        values: [18, 11, 3]
+      },
+      {
+        name: "Don't Know",
+        values: [0, 3, 4]
       }
     ]
   }

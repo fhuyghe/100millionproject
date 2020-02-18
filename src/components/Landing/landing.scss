@@ -73,6 +73,62 @@
         }
     }
 
+    #reasons{
+        .chart-wrap{
+            min-height: 500px;
+        }
+    }
+
+    #types{
+        background-color: $purple;
+
+        .wrap{
+            position: relative;
+        }
+
+        .type{
+            position: absolute;
+            animation: rotation 10s;
+            animation-iteration-count: infinite;
+
+            &:nth-child(1){
+                top: -$grid-gutter;
+                left: -$grid-gutter;
+                animation-delay: 3s;
+            }
+            
+            &:nth-child(2){
+                top: -$grid-gutter;
+                right: -$grid-gutter;
+            }
+
+            &:nth-child(3){
+                top: 50%;
+                left: -$grid-gutter * 2;
+                animation-delay: 5s;
+            }
+
+            &:nth-child(4){
+                top: 50%;
+                right: -$grid-gutter * 2;
+                animation-delay: 6s;
+            }
+
+            &:nth-child(5){
+                bottom: -200px;
+                left: $grid-gutter;
+                animation-delay: 7s;
+                animation-direction: reverse;
+            }
+
+            &:nth-child(6){
+                bottom: -200px;
+                right: $grid-gutter;
+                animation-delay: 1s;
+            }
+        }
+    }
+
     #swingStates{
         display: block;
         padding: 200px 0;
@@ -167,6 +223,16 @@
         }
     }
 
+    #news{
+        .news-intro{
+            margin-bottom: $grid-gutter * 2;
+        }
+
+        .emerging-intro{
+            padding-top: 200px;
+        }
+    }
+
     #emerging{
         text-align: center;
         padding: $grid-gutter * 4 0;
@@ -210,6 +276,14 @@
         min-height: 100vh;
         display: flex;
             align-items: center;
+    }
+
+    #losingVoters{
+        padding-top: 0;
+        
+        h4{
+            margin-bottom: 400px;
+        }
     }
 
     #conclusion{
@@ -279,4 +353,18 @@
             font-size: 200px;
         }
     }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotateZ(0);
+      }
+    
+    90% {
+        transform: rotateZ(0);
+      }
+    
+      100% {
+        transform: rotateZ(360deg);
+      }
 }
