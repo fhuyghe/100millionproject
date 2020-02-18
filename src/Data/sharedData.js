@@ -291,22 +291,43 @@ export const surveyData = [
     type: "bar",
     legend: ['Non-voters'],
     scale: 10,
-    children: [
+    values: [
       {
-        name: "Voters",
-        values: {
-          average: [7.21, 5.4],
-          AZ: [6.323, 3.21],
-          FL: [6.598],
-          GA: [6.137],
-          MI: [5.780],
-          MN: [6.181],
-          NV: [6.243],
-          NH: [6.271],
-          PA: [5.952],
-          WI: [5.787],
-          VA: [6.113]
-        }
+        name: 'AZ',
+        value: 6.323
+  },
+      {
+        name: 'FL', 
+        value: 6.598},
+      {
+        name: 'GA', 
+        value: 6.137},
+      {
+        name: 'MI', 
+        value: 5.780},
+      {
+        name: 'MN', 
+        value: 6.181
+      },
+      {
+        name: 'NV', 
+        value: 6.243
+      },
+      {
+        name: 'NH', 
+        value: 6.271
+      },
+      {
+        name: 'PA', 
+        value: 5.952
+      },
+      {
+        name: 'WI', 
+        value: 5.787
+      },
+      {
+        name: 'VA', 
+        value: 6.113
       }
     ]
   }

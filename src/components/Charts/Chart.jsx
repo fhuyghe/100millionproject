@@ -36,8 +36,9 @@ class Chart extends Component {
 
     // Figure out the number of data sets
     const dataSetNumber = data.legend.length
-    console.log(dataSetNumber)
-    data.children.forEach(dataPoint => {
+    
+    data.children
+      ? data.children.forEach(dataPoint => {
       //Extract one value out of all values
       let values =
         dataPoint.values[this.props.stateId] || dataPoint.values.average
@@ -51,8 +52,10 @@ class Chart extends Component {
         dataSets[i]
           ? dataSets[i].push(newDataPoint)
           : (dataSets[i] = [newDataPoint])
-      }
-    })
+        }
+      })
+      :dataSets[0] = data.values
+
     console.log(dataSets)
     return dataSets
   }
