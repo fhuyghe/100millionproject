@@ -10,7 +10,7 @@ import "./AllChart.scss"
 am4core.useTheme(am4themes_animated)
 
 class AllChart extends Component {
-  constructor(props) { 
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -18,14 +18,14 @@ class AllChart extends Component {
       activeIndex: 0
     }
 
-    this.chartRef = React.createRef();
+    this.chartRef = React.createRef()
   }
 
   createChart(type) {
     console.log(type)
     am4core.useTheme(am4themes_animated)
     let chart = am4core.create(
-      this.chartRef.current,//"all-chart",
+      this.chartRef.current, //"all-chart",
       type === "circle"
         ? am4plugins_forceDirected.ForceDirectedTree
         : type === "pie"
@@ -46,6 +46,11 @@ class AllChart extends Component {
     }
     if (type === "pie") {
       series = chart.series.push(new am4charts.PieSeries())
+      series.ticks.template.disabled = true
+      series.alignLabels = false
+      series.labels.template.text = "{value.percent.formatNumber('#.0')}%"
+      series.labels.template.radius = am4core.percent(-40)
+      series.labels.template.fill = am4core.color("white")
     }
     if (type === "circle" || type === "pie") {
       // console.log(this.state.activeIndex)
@@ -69,10 +74,16 @@ class AllChart extends Component {
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis())
       categoryAxis.dataFields.category = "name"
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis())
+      valueAxis.renderer.labels.template.disabled = true
+      valueAxis.tooltip.disabled = true
+      categoryAxis.renderer.grid.template.disabled = true
+      valueAxis.renderer.grid.template.disabled = true
       series = chart.series.push(new am4charts.ColumnSeries())
       // series.name = "Web Traffic"
       series.dataFields.categoryX = "name"
       series.dataFields.valueY = "value"
+      series.columns.template.fill = am4core.color("red")
+      series.columns.template.fill = am4core.color("yellow")
     }
 
     console.log("create", series, chart)
@@ -83,11 +94,11 @@ class AllChart extends Component {
     let seriesChart = this.createChart(this.props.type)
     let series = seriesChart[0]
     let chart = seriesChart[1]
-   
+
     this.setState({
       series,
       chart
-    }) 
+    })
   }
 
   handleLegend = index => {
@@ -99,15 +110,13 @@ class AllChart extends Component {
     this.state.series.data = this.props.data[index]
     // console.log(this.props.data, this.state.series.data)
 
-  
     this.setState({
-      activeIndex: index,
+      activeIndex: index
       // series: newChart
     })
     // this.update()
   }
   update() {
-   
     let seriesChart = this.createChart(this.props.type)
     let series = seriesChart[0]
     let chart = seriesChart[1]
@@ -122,8 +131,8 @@ class AllChart extends Component {
     this.props.name !== prevProps.name && this.update()
     // this.props.stateId !== prevProps.stateId && this.update()
 
-    if(this.props.stateId !== prevProps.stateId){
-    this.state.series.data = this.props.data[this.state.activeIndex]
+    if (this.props.stateId !== prevProps.stateId) {
+      this.state.series.data = this.props.data[this.state.activeIndex]
     }
   }
 
@@ -134,20 +143,19 @@ class AllChart extends Component {
   render() {
     return (
       <main className="chart-main">
-        <header>
-          {/* <h3>{this.props.name}</h3> */}
-        </header>
+        <header>{/* <h3>{this.props.name}</h3> */}</header>
 
         {/* The Chart element */}
         <div className="all-chart chart" ref={this.chartRef}></div>
 
         {/* The subset selection */}
-        {this.props.type !== 'bar' &&
-        <ChartSubsetSelector
-          legend={this.props.legend}
-          handleLegend={this.handleLegend}
-          activeIndex={this.state.activeIndex}
-        />}
+        {this.props.type !== "bar" && (
+          <ChartSubsetSelector
+            legend={this.props.legend}
+            handleLegend={this.handleLegend}
+            activeIndex={this.state.activeIndex}
+          />
+        )}
       </main>
     )
   }
