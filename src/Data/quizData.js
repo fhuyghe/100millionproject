@@ -425,7 +425,7 @@ export const questions = [
 
 export const results = [
     {
-        name: "Established Progressive",
+        name: "Established Progressives",
         path: "educated-progressives",
         percentage: 21,
         color: "blue",
@@ -437,8 +437,8 @@ export const results = [
         demographics: ["This profile has the highest educational attainment, with nearly half holding a college degree, and they have a high average income and homeownership rate. They are slightly older on average, yet very likely to be working full time."]
     },
     {
-        name: "Traditional Conservative",
-        path: "traditional-conservative",
+        name: "Traditional Conservatives",
+        path: "traditional-conservatives",
         percentage: 17,
         color: "red",
         description: "Compared to other non-voters, they hold the most conservative political beliefs and are more likely to be enjoying a comfortable retirement.",
@@ -446,13 +446,13 @@ export const results = [
         demographics: ["This profile is the oldest and least diverse at 79% white. They are the most likely to be married, homeowners and retired, and they boast the highest household income level. This is also the only profile to be majority male (60%)."] 
     },
     {
-        name: "Modern Moderate",
-        path: "young-moderate",
+        name: "Modern Moderates",
+        path: "young-moderates",
         color: "yellow",
         percentage: 20,
         description: "Compared to other non-voters, they are left-leaning moderates working hard as they approach middle age.",
-        behaviors: ["Most non-voters in this profile self-identify as having “moderate”political viewpoints, yet the majority show clear preference for the Democratic Partyand platform on key issues. Their top issue is tied between “jobs/the economy” and“healthcare.” They are fairly high consumers of news and have a high opinion of thenews media, but are only following news about politics “somewhat closely.” They have amoderate interest in politics and are moderately civically engaged. They are the least likelyto say that voting is very easy, and most likely to report that it is difficult. Only moderatelyinterested in voting, they show a clear preference for the Democratic nominee (55%), butsome would vote Republican (16%) and third party (18%)."],
-        demographics: ["They are slightly younger than the average non-voter and the mostethnically diverse, although still majority white (57%). They are fairly educated and themost likely to be employed full time."]
+        behaviors: ["Most non-voters in this profile self-identify as having “moderate” political viewpoints, yet the majority show clear preference for the Democratic Party and platform on key issues. Their top issue is tied between “jobs/the economy” and“healthcare.” They are fairly high consumers of news and have a high opinion of the news media, but are only following news about politics “somewhat closely.” They have a moderate interest in politics and are moderately civically engaged. They are the least likely to say that voting is very easy, and most likely to report that it is difficult. Only moderately interested in voting, they show a clear preference for the Democratic nominee (55%), but some would vote Republican (16%) and third party (18%)."],
+        demographics: ["They are slightly younger than the average non-voter and the mostethnically diverse, although still majority white (57%). They are fairly educated and the most likely to be employed full time."]
     },
     {
         name: "Indifferent Average",
@@ -464,8 +464,8 @@ export const results = [
         demographics: ["They are predominantly female (63%) and the most likely profile to report children living in the home. They are mostly middle income, and a third are college educated."]
     },
     {
-        name: "Unattached Apolitical",
-        path: "unattached-apolitical",
+        name: "Unattached Apoliticals",
+        path: "unattached-apoliticals",
         color: "black",
         percentage: 17,
         description: "Compared to other non-voters, they are young and staunchly independent, both politically and in life.",
@@ -473,8 +473,8 @@ export const results = [
         demographics: ["They are the youngest profile on average and have generally low educational attainment and household income. A large majority is unmarried, and they are the most likely to be have moved within the last three years."]
     },
     {
-        name: "Underemployed Unsure",
-        path: "underemployed-unsure",
+        name: "Underemployed Unsures",
+        path: "underemployed-unsures",
         percentage: 8.4,
         color: "grey",
         description: "Compared to other non-voters, they are the least resourced and engaged across the board, and unsure of where they stand on politics.",

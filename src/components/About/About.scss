@@ -24,5 +24,15 @@
     #knight{
         background-color: $black;
         color: $white;
+        
+        @include media-breakpoint-up(md){
+            padding-bottom: 100px;
+        }
+    }
+
+    #about{
+        @include media-breakpoint-up(md){
+            padding-top: 100px;
+        }
     }
 }

@@ -194,7 +194,7 @@ class Landing extends React.Component {
                         </div>
 
                         <div className="col-md-6">
-                            <p>It can take a lot to convince habitual non-voters to vote as <VideoPlayer vimeoID="76979871" title="West Virginia video">a House of Delegates candidate in West Virginia found out.</VideoPlayer> Our study identified <Link to="typesofnonvoters">six types of non-voters.</Link></p>
+                            <p>It can take a lot to convince habitual non-voters to vote as <VideoPlayer vimeoID="76979871" title="West Virginia video">a House of Delegates candidate in West Virginia found out.</VideoPlayer></p>
                             </div>
                         </div>
                     </div>
@@ -307,7 +307,7 @@ class Landing extends React.Component {
                         <h2>The emerging electorate are</h2>
                         <div id="dashes"><div className="dashes-wrap"></div></div>
                         <div id="emerging-numbers">
-                            <h3>Voters between</h3>
+                            <h3>Eligible voters between</h3>
                             <div className="number yellow">18-24</div>     
                         </div>
                     </div>
@@ -375,12 +375,12 @@ class Landing extends React.Component {
                         </div>
                         <div className="col-md-4 next-item" id="watch">
                             <h2>Watch</h2>
-                            <p>Travel to Arizona, West Virginia and New York to learn why some citizens chose not to vote.</p>
+                            <p>Travel to Arizona, West Virginia and New York to learn why some citizens who can vote, don’t.</p>
                             <Button color="black" to="/swingstates">Watch</Button>
                         </div>
                         <div className="col-md-4 next-item" id="learn">
                             <h2>Learn</h2>
-                            <p>Are you a younf moderate, a frustrated conservative or a non-participator?</p>
+                            <p>Are you a modern moderate, a traditional conservative or a unattached apolitical?</p>
                             <Button color="black" to="/swingstates">Learn</Button>
                         </div>
                     </div>

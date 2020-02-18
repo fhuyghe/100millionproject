@@ -342,7 +342,7 @@ export const landingData = [{
   {
     name: "How confident are you that the results of an election represent the will of the people?",
     type: 'line',
-    legend: ['Voters', 'Non-voters', '18-24'],
+    legend: ['Voters', 'Non-voters'],
     children: [
       {
         name: "Very Confident",
@@ -384,11 +384,11 @@ export const landingData = [{
   {
     name: "Education",
     type: 'bar',
-    legend: ['Voters', 'Non-voters', '18-24'],
+    legend: ['Voters', 'Non-voters'],
     children: [
       {
         name: "Grade School",
-        values: [1, 1, 1]
+        values: [1, 1]
       },
       {
         name: "Some High School",
