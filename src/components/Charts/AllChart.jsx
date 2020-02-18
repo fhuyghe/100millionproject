@@ -10,16 +10,22 @@ import "./AllChart.scss"
 am4core.useTheme(am4themes_animated)
 
 class AllChart extends Component {
-  state = {
-    index: 0,
-    activeIndex: 0
+  constructor(props) { 
+    super(props)
+
+    this.state = {
+      index: 0,
+      activeIndex: 0
+    }
+
+    this.chartRef = React.createRef();
   }
 
   createChart(type) {
     console.log(type)
     am4core.useTheme(am4themes_animated)
     let chart = am4core.create(
-      "all-chart",
+      this.chartRef.current,//"all-chart",
       type === "circle"
         ? am4plugins_forceDirected.ForceDirectedTree
         : type === "pie"
@@ -118,14 +124,11 @@ class AllChart extends Component {
 
     if(this.props.stateId !== prevProps.stateId){
     this.state.series.data = this.props.data[this.state.activeIndex]
-
     }
-
-    
   }
 
   componentWillUnmount() {
-    this.state.chart.dispose()
+    this.state.chart && this.state.chart.dispose()
   }
 
   render() {
@@ -136,7 +139,7 @@ class AllChart extends Component {
         </header>
 
         {/* The Chart element */}
-        <div className="all-chart chart"></div>
+        <div className="all-chart chart" ref={this.chartRef}></div>
 
         {/* The subset selection */}
         {this.props.type !== 'bar' &&
