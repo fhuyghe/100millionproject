@@ -218,12 +218,12 @@ class Landing extends React.Component {
 
                 <section id="types">
                     <div className="wrap">
-                        <img src="images/type-average-nonvoter.svg" className="type" />
-                        <img src="images/type-civically-uninformed.svg" className="type" />
-                        <img src="images/type-educated-progressives.svg" className="type" />
-                        <img src="images/type-frustrated-conservatives.svg" className="type" />
-                        <img src="images/type-non-participators.svg" className="type" />
-                        <img src="images/type-young-moderates.png" className="type" />
+                        <img src="images/type-indifferent-average.svg" className="type" />
+                        <img src="images/type-underemployed-unsure.svg" className="type" />
+                        <img src="images/type-established-progressives.svg" className="type" />
+                        <img src="images/type-traditional-conservatives.svg" className="type" />
+                        <img src="images/type-unattached-apolitical.svg" className="type" />
+                        <img src="images/type-modern-moderates.svg" className="type" />
                         <div className="row">
                             <div className="col-md-8 offset-md-2 text-center">
                                 <h4>Although there is not one way to define a non-voter, our study identified <Link to="/typesofnonvoters">six types of non-voters.</Link></h4>
