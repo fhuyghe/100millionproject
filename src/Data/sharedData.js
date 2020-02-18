@@ -65,174 +65,151 @@ export const swingStates = [
 export const surveyData = [
   {
     name: "What do you think is the most important issue for the US?",
-    type: 'pie',
-    legend: ['Voters', 'Non-voters', '18-24'],
+    type: 'circles',
+    legend: ['Non-voters'],
     children: [
       {
         name: "Immigration",
         values: {
-          average: [22, 19, 11],
-          AZ: [4, 14, 24],
-          FL: [36, 26, 16],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          PA: [],
-          VA: [],
-          WI: []
+          average: [19],
+          AZ: [27],
+          FL: [22],
+          GA: [18],
+          MI: [18],
+          MN: [18],
+          NV: [25],
+          NH: [19],
+          PA: [18],
+          VA: [23],
+          WI: [16]
         }
       },
       {
         name: "Gun Control",
         values: {
-          average: [11, 8, 15],
-          AZ: [30, 20, 10],
-          FL: [14, 20, 106],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
+          average: [8],
+          AZ: [5],
+          FL: [7],
+          GA: [8],
+          MI: [9],
+          MN: [10],
+          NV: [9],
+          NH: [8],
+          PA: [8],
+          VA: [9],
+          WI: [9]
         }
       },
       {
         name: "Jobs and Economy",
         values: {
-          average: [10, 13, 8],
-          AZ: [],
-          FL: [36, 26, 16],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
+          average: [13],
+          AZ: [12],
+          FL: [15],
+          GA: [14],
+          MI: [11],
+          MN: [10],
+          NV: [13],
+          NH: [15],
+          PA: [19],
+          VA: [16],
+          WI: [13]
         }
       },
       {
         name: "Healthcare",
         values: {
-          average: [10, 13, 9],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
+          average: [13],
+          AZ: [10],
+          FL: [11],
+          GA: [12],
+          MI: [12],
+          MN: [15],
+          NV: [8],
+          NH: [15],
+          PA: [11],
+          VA: [14],
+          WI: [14]
         }
       },
       {
         name: "Environment",
         values: {
-          average: [7,5,10],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
+          average: [5],
+          AZ: [5],
+          FL: [5],
+          GA: [3],
+          MI: [6],
+          MN: [7],
+          NV: [6],
+          NH: [10],
+          PA: [6],
+          VA: [6],
+          WI: [6]
         }
       },
       {
         name: "Race relations",
         values: {
-          average: [9, 7, 10],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      }
-    ]
-  },
-  {
-    name: "How closely do you follow the news?",
-    type: "bars",
-    legend: ['Voters', 'Non-voters', '18-24'],
-    children: [
-        {
-          name: "Very Closely",
-          values: {
-            average: [40, 24, 16],
-            AZ: [],
-            FL: [],
-            GA: [],
-            MI: [],
-            MN: [],
-            NV: [],
-            NH: [],
-            WI: [],
-            PA: [],
-            VA: []
-          }
-      },
-      {
-        name: "Somewhat Closely",
-        values: {
-          average: [42, 38, 42],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
+          average: [7],
+          AZ: [4],
+          FL: [6],
+          GA: [5],
+          MI: [5],
+          MN: [5],
+          NV: [5],
+          NH: [3],
+          PA: [4],
+          VA: [5],
+          WI: [4]
         }
       },
       {
-        name: "Not Very Closely",
+        name: "Education",
         values: {
-          average: [13, 24, 30],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
+          average: [4],
+          AZ: [4],
+          FL: [6],
+          GA: [4],
+          MI: [4],
+          MN: [4],
+          NV: [4],
+          NH: [5],
+          PA: [5],
+          VA: [5],
+          WI: [3]
         }
       },
       {
-        name: "Not at all",
+        name: "Income Inequality",
         values: {
-          average: [4, 11, 8],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
+          average: [3],
+          AZ: [3],
+          FL: [3],
+          GA: [3],
+          MI: [3],
+          MN: [3],
+          NV: [4],
+          NH: [4],
+          PA: [4],
+          VA: [3],
+          WI: [3]
+        }
+      },
+      {
+        name: "Foreign Policy",
+        values: {
+          average: [3],
+          AZ: [2],
+          FL: [2],
+          GA: [2],
+          MI: [4],
+          MN: [4],
+          NV: [3],
+          NH: [3],
+          PA: [2],
+          VA: [4],
+          WI: [5]
         }
       }
     ]
@@ -240,13 +217,13 @@ export const surveyData = [
   {
     name: "What is your level of interest in politics?",
     type: "bars",
-    legend: ['Voters', 'Non-voters', '18-24'],
+    legend: ['Non-voters'],
     scale: 10,
     children: [
       {
         name: "",
         values: {
-          average: [7.65, 7.21, 6.101],
+          average: [7.21],
           AZ: [5.981],
           FL: [6.598],
           GA: [6.137],
@@ -262,483 +239,14 @@ export const surveyData = [
     ]
   },
   {
-    name: "Why are you not currently registered to vote?",
-    type: "circles",
-    legend: ['Non-voters', '18-24'],
-    children: [
-      {
-        name: "I don't care",
-        values: {
-          average: [29, 28],
-          AZ: [3, 20],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "My vote doesn't matter",
-        values: {
-          average: [13, 5],
-          AZ: [10, 8],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "I don't know how",
-        values: {
-          average: [8, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "I keep forgetting to register",
-        values: {
-          average: [7, 12],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "I'm too busy",
-        values: {
-          average: [6, 9],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "I recently moved",
-        values: {
-          average: [13, 5],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "The system is corrupt",
-        values: {
-          average: [9, 6],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "Religion objection",
-        values: {
-          average: [4, 3],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "To avoid jury duty",
-        values: {
-          average: [4, 2],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "I don't know",
-        values: {
-          average: [15, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      }
-    ]
-  },
-  {
-    name: "What could motivate you to vote in more elections?",
-    type: "circles",
-    legend: ['Non-voters', '18-24'],
-    children: [
-      {
-        name: "A candidate I believe in",
-        values: {
-          average: [22, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "If I could vote online",
-        values: {
-          average: [15, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "Better quality information",
-        values: {
-          average: [9, 11],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "If my vote mattered",
-        values: {
-          average: [7, 10],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "A particular issue",
-        values: {
-          average: [15, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "More information on candidates",
-        values: {
-          average: [15, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "A more convenient process to register",
-        values: {
-          average: [15, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "More time to learn",
-        values: {
-          average: [15, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "If they made voting mandatory",
-        values: {
-          average: [15, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "More time to vote",
-        values: {
-          average: [4, 4],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "If there were an incentive",
-        values: {
-          average: [2, 4],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "A more convenient process to vote",
-        values: {
-          average: [2, 3],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "Nothing",
-        values: {
-          average: [17, 15],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      }
-    ]
-  },
-  {
-    name: "How much to you think the results of an election represent the will of the people?",
-    type: "bars",
-    legend: ['Voters', 'Non-voters', '18-24'],
-    children: [
-      {
-        name: "Very Confident",
-        values: {
-          average: [23, 18, 15],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "Somewhat Confident",
-        values: {
-          average: [40, 34, 31],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "Not Very Confident",
-        values: {
-          average: [25, 25, 33],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "Not Confident at all",
-        values: {
-          average: [9, 13, 12],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      },
-      {
-        name: "Don't know",
-        values: {
-          average: [3, 10, 9],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
-      }
-    ]
-  },
-  {
     name: "What party would you vote for in 2020?",
-    type: "bars",
-    legend: ['Non-voters', '18-24'],
+    type: "pie",
+    legend: ['Non-voters'],
     children: [
       {
         name: "Democratic Party",
         values: {
-          average: [46, 33, 41],
+          average: [33],
           AZ: [25],
           FL: [31],
           GA: [34],
@@ -754,7 +262,7 @@ export const surveyData = [
       {
         name: "President Trump",
         values: {
-          average: [37, 30, 19],
+          average: [30],
           AZ: [34],
           FL: [36],
           GA: [29],
@@ -770,7 +278,7 @@ export const surveyData = [
       {
         name: "Someone else",
         values: {
-          average: [11, 18, 25],
+          average: [18],
           AZ: [22],
           FL: [17],
           GA: [18],
@@ -786,7 +294,7 @@ export const surveyData = [
       {
         name: "Don't know",
         values: {
-          average: [7, 19, 15],
+          average: [19],
           AZ: [20],
           FL: [16],
           GA: [19],
@@ -800,59 +308,35 @@ export const surveyData = [
         }
       }
     ]
-  },
+  }
+]
+
+
+export const landingData = [
   {
-    name: "Are you planning to vote in 2020?",
-    type: "bars",
-    legend: ['Non-voters', '18-24'],
+    name: "How confident are you that the results of an election represent the will of the people?",
+    type: 'bar',
+    legend: ['Voters', 'Non-voters', '18-24'],
     children: [
       {
-        name: "Yes",
-        values: {
-          average: [97, 71, 66],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
+        name: "Very Confident",
+        values: [23, 18, 15]
       },
       {
-        name: "No",
-        values: {
-          average: [2, 16, 20],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
+        name: "Somewhat confident",
+        values: [40, 34, 31]
+      },
+      {
+        name: "Not very confident",
+        values: [25, 25, 33]
+      },
+      {
+        name: "Not confident at all",
+        values: [9, 13, 12]
       },
       {
         name: "Don't know",
-        values: {
-          average: [1, 14, 14],
-          AZ: [],
-          FL: [],
-          GA: [],
-          MI: [],
-          MN: [],
-          NV: [],
-          NH: [],
-          WI: [],
-          PA: [],
-          VA: []
-        }
+        values: [3, 10, 9]
       }
     ]
   }

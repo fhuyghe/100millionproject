@@ -7,9 +7,12 @@ import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import PopupWindow from './PopupWindow' 
 import InstaWindow from './InstaWindow'
 import { CountUp } from 'countup.js'
-import SwingStatesChart from '../SwingStates/SwingStatesChart'
 import LandingQuiz from './LandingQuiz'
 import Button from '../Shared/Button'
+//Charts
+import SwingStatesChart from '../SwingStates/SwingStatesChart'
+import SingleChart from '../Charts/SingleChart'
+import {landingData} from '../../Data/sharedData'
 //Video elements
 import VideoBlock from '../Videos/VideoBlock'
 import VideoPlayer from '../Videos/VideoPlayer'
@@ -48,12 +51,12 @@ class Landing extends React.Component {
             })
 
         // build Swing State rotation tween
-        var tween = TweenMax.to(".swing-text", 1, { rotation: -20, ease: Linear.easeNone });
+        var swingTween = TweenMax.to(".swing-text", 1, { rotation: -20, ease: Linear.easeNone });
         new ScrollMagic.Scene({
             triggerElement: '.swing-text',
             duration: 1000
         })
-            .setTween(tween)
+            .setTween(swingTween)
             .addTo(controller); 
         
         // Browser 18-24 animation
@@ -171,7 +174,7 @@ class Landing extends React.Component {
                 <section id="reasons">
                     <div className="wrap text-center">
                         <h2>Top responses from non-voters</h2>
-                        <p>Bar charts of the top responses.</p>
+                        <SingleChart data={landingData[0]} />
                     </div>
                 </section>
 
