@@ -2,43 +2,15 @@ import React from 'react'
 import VideoBlock from './VideoBlock'
 import VideoPlayer from './VideoPlayer'
 import './Videos.scss'
+import {videos} from '../../Data/videoData'
 
 const Videos = () => {
-
-    const videos = [
-        {
-            title: "West Virginia",
-            description: "A video in West Virginia",
-            vimeoID: "76979871",
-            url: "https://youtu.be/SI3TUI9aUSI",
-            name: "west-virginia"
-        },
-        // {
-        //     title: "Arizona",
-        //     description: "A video in West Virginia",
-        //     vimeoID: "76979871",
-        //     name: "test-video"
-        // },
-        {
-            title: "New York City",
-            description: "A video in West Virginia",
-            url: "https://youtu.be/jEZxvrCFuxE",
-            name: "new-york"
-        },
-        {
-            title: "Explainer video",
-            description: "A video in West Virginia",
-            url: "https://youtu.be/9nDwFBWk0ZA",
-            vimeoID: "76979871",
-            name: "explainer"
-        }
-    ]
-
     return <main id="videoPage">
         <div className="wrap">
             <div id="intro">
                 <h1>Videos</h1>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis sagittis tempus. Morbi mattis neque ac sapien fermentum, interdum convallis neque eleifend. Fusce eu libero in ipsum eleifend facilisis id in quam. Donec fringilla, leo in gravida lacinia, lacus leo pellentesque tortor, eget sodales tellus lorem eu dolor. </h5>
+                <h5>Knight partnered with Show of Force to create short documentary films and supporting content that dives deeper into the stories of non-voters and the on-the-ground efforts to engage these Americans in democracy.</h5>
+                    <h5>Their stories are emotional, experiential, and bring viewers into the point-of-views of 'forgotten' non-voters. These voters also represent a diverse cross section of Americans——conservative and democratic, rich and poor, young and old, rural and urban.</h5>
             </div>
             
             <div className="videos-wrap">
