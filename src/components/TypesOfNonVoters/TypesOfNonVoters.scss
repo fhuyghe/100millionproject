@@ -17,10 +17,6 @@
 
     #typeChart{
         display: none;
-
-        @include media-breakpoint-up(md){
-            display: block;
-        }
         
         .types-wrap{
             display: flex;
