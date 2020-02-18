@@ -79,6 +79,7 @@ h1{
 h2{
 	font-family: $spoof;
   letter-spacing: .04em;
+  font-size: 1.3em;
   margin-top: 0;
 
   @include media-breakpoint-up(md){
@@ -95,8 +96,12 @@ h3{
 h4{
   font-weight: 400;
   line-height: 1.3em;
-  font-size: 1.4em;
+  font-size: 1.2em;
   text-align: center;
+
+  @include media-breakpoint-up(md){
+    font-size: 1.4em;
+  }
 }
 
 h5{

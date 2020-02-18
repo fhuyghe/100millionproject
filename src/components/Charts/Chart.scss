@@ -47,11 +47,16 @@
     
     .chart-wrap{
       width: 100%;
-      min-height: 700px;
+      min-height: 500px;
       background: $red;
-      padding: $grid-gutter/ 2;
+      //padding: 10px;
       display: flex;
       flex-direction: column;
+
+      @include media-breakpoint-up(md){
+        padding: $grid-gutter/ 2;
+        min-height: 700px;
+      }
 
       main{
         flex: 1;

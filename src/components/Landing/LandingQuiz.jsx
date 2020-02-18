@@ -15,7 +15,7 @@ class LandingQuiz extends React.Component {
 
     toggleAnswer(index) { 
         this.setState({
-            revealAnswer: index
+            revealAnswer: this.state.revealAnswer === index ? null : index
         })
     }
 
@@ -60,7 +60,7 @@ class LandingQuiz extends React.Component {
                 <ul>
             {quizOptions.map((option, index) => {
                 return this.state.revealAnswer === index
-                    ? <li className={option.value ? "right" : "wrong"} key={option.text}>
+                    ? <li onClick={() => this.toggleAnswer(index)} className={option.value ? "right" : "wrong"} key={option.text}>
                         <div className="question">
                             <div className="checkbox active"></div> {option.text}
                             </div>

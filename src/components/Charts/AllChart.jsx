@@ -181,9 +181,6 @@ class AllChart extends Component {
       
       //Cursor
       chart.cursor = this.props.cursor ? new am4charts.XYCursor() : null
-      
-      series.columns.template.fill = am4core.color("red")
-      series.columns.template.fill = am4core.color("yellow")
     }
 
     console.log("create", series, chart)
