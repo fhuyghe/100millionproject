@@ -15,6 +15,45 @@
         flex-direction: column;
     }
 
+    #typeChart{
+        .types-wrap{
+            display: flex;
+
+            .type{
+                position: relative;
+
+                p{
+                    position: absolute;
+                    top: -50px;
+                    width: 130px;              
+                    line-height: 1.2em;
+                }
+
+                &:nth-child(2n){
+                    p{
+                        top: auto;
+                        bottom: -70px;
+                    }
+                }
+
+                &:last-child{
+                    p{
+                        text-align: right;
+                        right: 0;
+                    }
+                }
+            }
+
+            .type-wrap{
+                height: $grid-gutter;
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                @include typeColors;
+            }
+        }
+    }
+
     #allTypes{
         .type{
             padding: 15px;
@@ -24,6 +63,12 @@
             }
 
             h3{
+                margin: 0;
+            }
+
+            h4{
+                font-size: 1.2em;
+                text-align: left;
                 margin-top: 0;
             }
 

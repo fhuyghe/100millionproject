@@ -425,16 +425,9 @@ export const questions = [
 
 export const results = [
     {
-        name: "Modern Moderate",
-        path: "young-moderate",
-        color: "yellow",
-        description: "Compared to other non-voters, they are left-leaning moderates working hard as they approach middle age.",
-        behaviors: ["Most non-voters in this profile self-identify as having “moderate”political viewpoints, yet the majority show clear preference for the Democratic Partyand platform on key issues. Their top issue is tied between “jobs/the economy” and“healthcare.” They are fairly high consumers of news and have a high opinion of thenews media, but are only following news about politics “somewhat closely.” They have amoderate interest in politics and are moderately civically engaged. They are the least likelyto say that voting is very easy, and most likely to report that it is difficult. Only moderatelyinterested in voting, they show a clear preference for the Democratic nominee (55%), butsome would vote Republican (16%) and third party (18%)."],
-        demographics: ["They are slightly younger than the average non-voter and the mostethnically diverse, although still majority white (57%). They are fairly educated and themost likely to be employed full time."]
-    },
-    {
         name: "Established Progressive",
         path: "educated-progressives",
+        percentage: 21,
         color: "blue",
         description: "Compared to other non-voters, they are well established both in life and in their left-leaning political beliefs.",
         behaviors: [
@@ -446,14 +439,25 @@ export const results = [
     {
         name: "Traditional Conservative",
         path: "traditional-conservative",
+        percentage: 17,
         color: "red",
         description: "Compared to other non-voters, they hold the most conservative political beliefs and are more likely to be enjoying a comfortable retirement.",
         behaviors: ["This group is predominantly Republican, and their stated positions on key issues align most with the party’s current platform. This group has the highest intentionality in seeking out news, high news consumption, closely follows politics and were raised in households that discussed news. They also have the lowest opinion of the media’s impartiality and the least trust in the media. A majority believes it’s harder to be informed because of the increase in information available today. However, they have the highest degree of trust in the elections system. They are particularly concerned with immigration, cited by 44% of this profile as the top issue facing the U.S., compared with the 19% non-voter average. This profile is the most interested in voting in 2020 and is the most consolidated as to their 2020 preferred candidate, President Trump (84%)."],
         demographics: ["This profile is the oldest and least diverse at 79% white. They are the most likely to be married, homeowners and retired, and they boast the highest household income level. This is also the only profile to be majority male (60%)."] 
     },
     {
+        name: "Modern Moderate",
+        path: "young-moderate",
+        color: "yellow",
+        percentage: 20,
+        description: "Compared to other non-voters, they are left-leaning moderates working hard as they approach middle age.",
+        behaviors: ["Most non-voters in this profile self-identify as having “moderate”political viewpoints, yet the majority show clear preference for the Democratic Partyand platform on key issues. Their top issue is tied between “jobs/the economy” and“healthcare.” They are fairly high consumers of news and have a high opinion of thenews media, but are only following news about politics “somewhat closely.” They have amoderate interest in politics and are moderately civically engaged. They are the least likelyto say that voting is very easy, and most likely to report that it is difficult. Only moderatelyinterested in voting, they show a clear preference for the Democratic nominee (55%), butsome would vote Republican (16%) and third party (18%)."],
+        demographics: ["They are slightly younger than the average non-voter and the mostethnically diverse, although still majority white (57%). They are fairly educated and themost likely to be employed full time."]
+    },
+    {
         name: "Indifferent Average",
         path: "indifferent-average",
+        percentage: 17,
         color: "green",
         description: "Compared to other non-voters, they appear very middle-of-the-road in their politics, engagement and situation in life.",
         behaviors: ["This profile has a mix of political viewpoints but is united by its members’ lack of interest in news or following political current affairs. Members of this subgroup have a media diet tipped toward entertainment and social media more than any other profile. They are also less civically engaged than the “Plugged In” profiles. However, a decent number are registered to vote and think the voting process is easy. Their top reason for not voting is “lack of information about issues/candidates.”"],
@@ -463,6 +467,7 @@ export const results = [
         name: "Unattached Apolitical",
         path: "unattached-apolitical",
         color: "black",
+        percentage: 17,
         description: "Compared to other non-voters, they are young and staunchly independent, both politically and in life.",
         behaviors: ["This profile is distinguished by a lack of attachment to either major party and for reporting the least interest in politics and voting. News consumption, intentionality and civic participation rates fall below those of non-voters as a whole. They have the lowest voter registration rate of any profile at 65%, and a simple lack of interest is the top reason cited for not registering. This is also the cluster most likely to say that nothing would motivate them to participate in voting. This group is the least likely to see the 2020 election as more important than others and the most likely to vote for a third party if they were forced to choose a candidate."],
         demographics: ["They are the youngest profile on average and have generally low educational attainment and household income. A large majority is unmarried, and they are the most likely to be have moved within the last three years."]
@@ -470,6 +475,7 @@ export const results = [
     {
         name: "Underemployed Unsure",
         path: "underemployed-unsure",
+        percentage: 8.4,
         color: "grey",
         description: "Compared to other non-voters, they are the least resourced and engaged across the board, and unsure of where they stand on politics.",
         behaviors: ["This group is distinguished by its lack of political opinions compared to other non-voters, with members often answering that they “did not know” on policy, favorability and candidate preference questions. They are also unsure whether they trust the election system. They have very low interest in politics or following political news. They are the least civically engaged and have the second lowest voter registration rate, at 60% unregistered."],

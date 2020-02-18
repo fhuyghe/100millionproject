@@ -2,8 +2,12 @@
 
 .landing-news-chart-wrap{
     h3{
+        margin-bottom: $grid-gutter;
+    }
+
+    h4{
         text-align: center;
-        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .landing-seek-chart{
@@ -36,7 +40,11 @@
             width: 50%;
 
             .result{
-                height: $grid-gutter
+                height: $grid-gutter;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                color: $black;
             }
         }
         .result-wrap1{
@@ -49,6 +57,7 @@
         .result-wrap2{
             .result{
                 background-color: $blue;
+                justify-content: flex-end;
             }
         }
 

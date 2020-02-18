@@ -1,0 +1,14 @@
+@import '../../assets/styles/variables';
+
+.drawer-toggle-wrap{
+    .drawer-toggle-title{
+        display: flex;
+        justify-content: space-between;
+        margin: $grid-gutter / 2 0;
+        cursor: pointer;
+
+        h6{
+            margin: 0;
+        }
+    }
+}
