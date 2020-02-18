@@ -36,7 +36,7 @@ class Chart extends Component {
 
     // Figure out the number of data sets
     const dataSetNumber = data.legend.length
-
+    console.log(dataSetNumber)
     data.children.forEach(dataPoint => {
       //Extract one value out of all values
       let values =

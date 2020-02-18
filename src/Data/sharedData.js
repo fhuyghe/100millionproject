@@ -293,10 +293,10 @@ export const surveyData = [
     scale: 10,
     children: [
       {
-        name: "",
+        name: "Voters",
         values: {
-          average: [7.21],
-          AZ: [5.981],
+          average: [7.21, 5.4],
+          AZ: [6.323, 3.21],
           FL: [6.598],
           GA: [6.137],
           MI: [5.780],
