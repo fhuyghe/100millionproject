@@ -22,7 +22,7 @@ class VideoPlayer extends React.Component {
 
         return (
             <span className="video-player">
-                <span class="video-player-toggle" onClick={this.toggleVideo}>{this.props.children}</span>
+                <span className="video-player-toggle" onClick={this.toggleVideo}>{this.props.children}</span>
 
                 {this.state.active &&
                     <div className="video-player-wrap" onClick={this.toggleVideo}>
