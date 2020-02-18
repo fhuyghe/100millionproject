@@ -121,6 +121,11 @@ h6{
   margin-bottom: $grid-gutter / 2;
 }
 
+input, 
+select{
+  font-family: $anon-pro;
+}
+
 p{
   line-height: 1.5em;
   margin-top: 0;
@@ -154,4 +159,12 @@ img, video{
 
 .text-center{
   text-align: center;
+}
+
+.space-up{
+  margin-top: 100px;
+  
+  @include media-breakpoint-up(md){
+    margin-top: 200px;
+  }
 }

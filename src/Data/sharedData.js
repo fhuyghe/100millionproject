@@ -403,7 +403,7 @@ export const landingData = [{
     ]
   },
   {
-    name: "Education",
+    name: "Level of Education",
     type: 'bar',
     legend: ['Voters', 'Non-voters'],
     children: [

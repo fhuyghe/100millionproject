@@ -2,33 +2,70 @@
 
 .landing-news-chart-wrap{
     h3{
-        margin-bottom: $grid-gutter;
+        text-align: center;
+        margin-bottom: 0;
     }
 
-    h4{
+    p{
         text-align: center;
-        margin-bottom: 10px;
+        margin: 10px 0 5px;
     }
+
+    .landing-seek-chart,
+    .landing-info-chart{
+        margin-top: $grid-gutter * 2;
+        background: $white;
+        color: $black;
+
+        .header{
+            padding: $grid-gutter / 2;
+            background-color: $purple;
+            color: $white;
+        }
+
+        .content{
+            padding:  $grid-gutter;
+        }
+    }
+
 
     .landing-seek-chart{
-        margin-top: $grid-gutter * 2;
+
+        .content{
+            position: relative;
+            //padding:  $grid-gutter 0;
+
+            .line{
+                border: 1px solid rgba($black, .1);
+                position: absolute;
+                left: 50%;
+                top: 0;
+                height: 100%;
+                width: 0;
+            }
+        }
 
         .legend-wrap{
             display: flex;
             position: relative;
+            font-size: 1.2em;
         }
+
         .legend1,
         .legend2{
             flex: 1 1 40%;
+            text-align: center;
+            padding: 0 10px;
         }
 
         .legend1{
             padding-right: $grid-gutter;
+            color: $green;
         }
 
         .legend2{
-            text-align: right;
             padding-left: $grid-gutter;
+            color: $blue;
         }
 
         .results-wrap{
@@ -38,6 +75,7 @@
         .result-wrap1,
         .result-wrap2{
             width: 50%;
+            background-color: $lightgrey;
 
             .result{
                 height: $grid-gutter;
@@ -91,7 +129,6 @@
     }
 
     .landing-info-chart{
-        margin-top: $grid-gutter * 2;
 
         .results-wrap{
             display: flex;

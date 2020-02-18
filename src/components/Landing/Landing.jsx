@@ -119,11 +119,11 @@ class Landing extends React.Component {
                 .addTo(controller); 
              
                 // Losing voters
-            var losingVotersTween = TweenMax.to(".disappear", .5, { opacity: 0, ease: Linear.easeNone });
+            var losingVotersTween = TweenMax.to(".disappear", 1, { opacity: 0, ease: Linear.easeNone });
             new ScrollMagic.Scene({
                 triggerElement: '#losingVoters',
                 duration: 400,
-                triggerHook: 0
+                triggerHook: .3
             })
                 .setTween(losingVotersTween)
                 .addTo(controller); 
@@ -158,7 +158,7 @@ class Landing extends React.Component {
 
                         <div className="explainer-video">
                         <div className="video-thumbnail">
-                            <h3>But enough said, we'll let Ed Harris explain it for us</h3>
+                            <h3>But enough said — we’ll let Ed Harris explain it for us.</h3>
                                 <VideoPlayer url="https://youtu.be/9nDwFBWk0ZA" title="Who Are the 100 Million?">
                                     <VideoBlock video="explainer" playSign={true}/>
                                 </VideoPlayer>
@@ -169,16 +169,16 @@ class Landing extends React.Component {
 
                 <section id="quizQuestion">
                     <div className="wrap">
-                        <h3>You probably have your own ideas about non-voters already.</h3>
+                        {/* TODO: Add transition box */}
                         <LandingQuiz />
                     </div>
                 </section>
 
                 <section id="reasons">
                     <div className="wrap text-center">
-                            <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation, and there are many reasons why they don’t vote.</h2>
-                        <h4>Top responses from non-voters</h4>
-                        <SingleChart color="yellow" maxValue={20} data={landingData[0]} />
+                        <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation, and there are many reasons why they don’t vote.</h2>
+                        {/* TODO: Add title based on prop */}
+                        <SingleChart title="Top responses from non-voters" color="yellow" maxValue={20} data={landingData[0]} />
                     </div>
                 </section>
 
@@ -194,7 +194,8 @@ class Landing extends React.Component {
                             </VideoPlayer>
                         </div>
 
-                        <div className="col-md-6">
+                            <div className="col-md-6">
+                                <h3>49th Out of 50 and Still Running</h3>
                             <p>It can take a lot to convince habitual non-voters to vote as <VideoPlayer vimeoID="76979871" title="West Virginia video">a House of Delegates candidate in West Virginia found out.</VideoPlayer></p>
                             </div>
                         </div>
@@ -205,7 +206,7 @@ class Landing extends React.Component {
                     <div className="wrap">
                         <div className="row">
                             <div className=" text-center">
-                            <h4>Compared to active voters, non-voters are more likely to be less educated, lower income,  non-white and unmarried.</h4>
+                            <h2>Compared to active voters, non-voters are more likely to be less educated, lower income,  non-white and unmarried.</h2>
                             </div>
                             {/* <div className="col-md-6">
                                 <SingleChart color="yellow" maxValue={20} data={landingData[2]} />
@@ -252,7 +253,7 @@ class Landing extends React.Component {
                         </div>
 
                         <div id="swingData">
-                            <h2>Explore the data</h2>
+                            <h2>Explore the swing states</h2>
                             <SwingStatesChart {...this.props} />
                         </div>
                     </div>
@@ -261,8 +262,8 @@ class Landing extends React.Component {
                 <section id="personalImpact">
                     <div className="wrap">
                         <div className="row">
-                            <div className="col-md-8 offset-md-2">
-                                <h4>In addition to consuming less news and information on political issues, non-voters are also less certain that decisions made in Washington personally impact them.</h4>
+                            <div className="col-md-10">
+                                <h2>In addition to consuming less news and information on political issues, non-voters are also less certain that decisions made in Washington personally impact them.</h2>
                             </div>
                         </div>
                         <div className=""></div>
@@ -271,12 +272,12 @@ class Landing extends React.Component {
                             color="red"
                             maxValue={50}
                             data={landingData[1]} />
-                        </div>
-                </section>
-                <section id="personalImpact">
+                    </div>
+                    
                     <div className="wrap">
-                        <div className="row">
+                        <div className="row space-up">
                             <div className="col-md-6">
+                                <h3>Organizing in 2016's Lowest Voting Congressional District</h3>
                                 <p>Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <VideoPlayer vimeoID="76979871" title="Arizona video">their county’s first Latino candidate.</VideoPlayer></p>
                             </div>
                             <div className="col-md-12">
@@ -290,16 +291,18 @@ class Landing extends React.Component {
 
                 <section id="news">
                     <div className="wrap">
-                    <h2 className="news-intro text-center">One of the clearest findings of the study is that non-voters feel (and are) under-informed on political issues.</h2>
                         <div className="row">
-                            <div className="col-md-6">
+                        <div className="col-md-6">
+                        <h2 className="news-intro">One of the clearest findings of the study is that non-voters feel (and are) under-informed on political issues.</h2>
+                            </div>
+                            <div className="col-md-5 offset-md-1">
                             <p>Compared with active voters, non-voter media diets involve less traditional news and more entertainment, and these individuals were less likely to grow up in a family that discussed current events together.</p>
                             </div>
                         </div>
 
                         <LandingNewsChart />
 
-                        <h4 className="emerging-intro text-center">However, there’s one group even less interested and informed than habitual non-voters, and they are the emerging electorate.</h4>
+                        <h2 className="emerging-intro text-center">However, there’s one group even <span>less interested and informed</span> than habitual non-voters — the emerging electorate.</h2>
                     </div>
                 </section>
 
@@ -349,10 +352,11 @@ class Landing extends React.Component {
                     <div className="wrap">
                         <div className="row">
                         <div className="col-md-6">
-                            <div className="text">
-                                <p>The 100 Million Project began as a way to give voice to the concerns of American non-voters who receive little to no attention in our national political conversation. While non-voters are diverse in their politics and demographic makeup, </p>
-                                <p>The 100 Million Project helps dispel outdated assumptions about non-voters. These are our fellow citizens, and they come from every walk of life. But there are some factors that unite them. In bringing to life this diverse group, the report ends as a measure of the country’s pulse in the lead up to November and acts as a clarion call to energize a new generation of engaged citizens—all in the service of our democracy.</p>
-                                <a href="http://kf.org/100millionblog" target="_blank" rel="noopener noreferrer">Read the blog post</a>
+                                <div className="text">
+                                <h3>The 100 Million Project began as an effort to illuminate the challenges surrounding work to bring disengaged voters to the polls. </h3>
+                                <p>Though they make up a large portion of our population, these Americans receive little-to-no attention in national political conversations, and remain a mystery to many institutions. As organizations seek to reach and motivate the disengaged electorate, information from this project should help inform their work.</p>
+                                <p>The 100 Million Project helps dispel outdated assumptions about non-voters. These are our fellow citizens, and they come from every walk of life. But there are some factors that unite them, which we examine in this report. By bringing to life this diverse group and their views on politics, the study acts as a clarion call to energize a new generation of engaged citizens — and ensure all citizens have a voice in our democracy.</p>
+                                <p>Read our follow up article on <a href="http://kf.org/100millionblog" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
                                 </div>
                                     <Button color="yellow" url="https://kf.org/100million" >Download the report</Button>
                         </div>

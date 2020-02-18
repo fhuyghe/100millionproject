@@ -42,8 +42,11 @@ class SingleChart extends Component {
       ) 
 
     return (
-        <div className="chartContainer"> 
-          <div className={classes} >
+      <div className="chartContainer"> 
+        <div className={classes} >
+          <header className="chart-header">
+            <h4>{fullData.name}</h4>
+            </header>
             {renderChart}
           </div>
         </div>

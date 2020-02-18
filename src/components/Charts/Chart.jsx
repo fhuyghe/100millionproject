@@ -109,7 +109,7 @@ class Chart extends Component {
         <div className="nav nav-left">
             <i className="fal fa-angle-left" onClick={() => this.leftArrow()}></i>
           </div>
-        <h3>{fullData.name}</h3>
+          <h4>{fullData.name}</h4>
           <div className="nav nav-right">
             <i className="fal fa-angle-right" onClick={this.rightArrow}></i>
             </div>
