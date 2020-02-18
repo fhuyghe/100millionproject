@@ -376,12 +376,12 @@ class Landing extends React.Component {
                         <div className="col-md-4 next-item" id="watch">
                             <h2>Watch</h2>
                             <p>Travel to Arizona, West Virginia and New York to learn why some citizens who can vote, don’t.</p>
-                            <Button color="black" to="/swingstates">Watch</Button>
+                            <Button color="black" to="/videos">Watch</Button>
                         </div>
                         <div className="col-md-4 next-item" id="learn">
                             <h2>Learn</h2>
                             <p>Are you a modern moderate, a traditional conservative or a unattached apolitical?</p>
-                            <Button color="black" to="/swingstates">Learn</Button>
+                            <Button color="black" to="/typesofnonvoters">Learn</Button>
                         </div>
                     </div>
                 </section>

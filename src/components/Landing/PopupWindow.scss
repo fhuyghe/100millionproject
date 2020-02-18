@@ -1,10 +1,10 @@
 @import '../../assets/styles/variables';
 
 .popup-window{
+    margin: $grid-gutter 0;
     border: 2px solid $black;
     background: $yellow;
     color: $black;
-    position: absolute;
     top: 0;
     left: 0;
 
@@ -28,10 +28,20 @@
     }
 
     &:nth-of-type(2){
-        transform: translate(-$grid-gutter, -$grid-gutter);
+        position: absolute;
+        transform: translateY($grid-gutter);
+
+        @include media-breakpoint-up(md){
+            transform: translate(-$grid-gutter, -$grid-gutter);
+        }
     }
 
     &:nth-of-type(3){
-        transform: translate(-2 * $grid-gutter, -2 * $grid-gutter);
+        position: absolute;
+        transform: translateY(2 * $grid-gutter);
+
+        @include media-breakpoint-up(md){
+            transform: translate(-2 * $grid-gutter, -2 * $grid-gutter);
+        }
     }
 }

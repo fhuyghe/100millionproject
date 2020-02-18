@@ -13,7 +13,7 @@
 
     #intro{
         min-height: 100vh;
-        padding-bottom: 0;
+        padding: 100px 0 0;
         
 
         #sign{
@@ -300,16 +300,25 @@
         padding-top: 0;
         
         h4{
-            margin-bottom: 400px;
+            margin-bottom: 100px;
+
+            @include media-breakpoint-up(md){
+                margin-bottom: 400px;
+            }
         }
     }
 
     #conclusion{
         background-color: $white;
         color: $black;
+        padding-bottom: 200px;
 
         .text{
             margin-bottom: $grid-gutter;
+        }
+
+        .box{
+            margin-top: $grid-gutter;
         }
         
         @include media-breakpoint-up(md){
