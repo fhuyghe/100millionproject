@@ -55,7 +55,7 @@ class AppHeader extends Component {
                 <div className="col-md-6">
                   <Link to='/about' className={this.props.location === 'about' ? "active" : ""} onClick={this.toggleMenu}>About</Link>
                   <p>The 100 Million Project is a comprehensive national study of the non-voting adult population in the United States and aims to understand citizen disengagement from the political process.</p>
-                  <Button to='/study' color="transparent" onClick={this.toggleMenu}>Download the report</Button>
+                  <Button url='https://kf.org/100million' color="transparent" onClick={this.toggleMenu}>Download the report</Button>
                   <SocialLinks />
                 </div>
               </div>

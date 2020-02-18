@@ -353,7 +353,7 @@ class Landing extends React.Component {
                                 <p>The 100 Million Project helps dispel outdated assumptions about non-voters. These are our fellow citizens, and they come from every walk of life. But there are some factors that unite them. In bringing to life this diverse group, the report ends as a measure of the country’s pulse in the lead up to November and acts as a clarion call to energize a new generation of engaged citizens—all in the service of our democracy.</p>
                                 <a href="http://kf.org/100millionblog" target="_blank" rel="noopener noreferrer">Read the blog post</a>
                                 </div>
-                                    <Button color="yellow" to="" >Read the Full report</Button>
+                                    <Button color="yellow" url="https://kf.org/100million" >Download the report</Button>
                         </div>
                         <div className="col-md-3 offset-md-3">
                             <div className="black box">

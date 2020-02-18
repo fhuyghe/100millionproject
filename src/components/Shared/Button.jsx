@@ -5,7 +5,10 @@ import './Button.scss'
 const Button = (props) => {
     let classes = "button " + props.color
     return <div className={classes} onClick={props.onClick}>
-        <Link to={props.to}>{props.children}</Link>
+        {props.to
+            ? <Link to={props.to}>{props.children}</Link>
+            : <a href={props.url} target="_blank" rel="noopener noreferrer">{props.children}</a>
+        }
         <div className="shadow"></div>
     </div>
 }
