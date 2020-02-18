@@ -101,19 +101,19 @@ class Chart extends Component {
 
     return (
       <>
-      <div>
-        <h3>{fullData.name}</h3>
-        <div className="chartContainer">
-          <div className="nav nav-left">
-            <i
-              className="fal fa-angle-left"
-              onClick={() => this.leftArrow()}
-            ></i>
+        <div>
+          <div className="chart-header">
+        <div className="nav nav-left">
+            <i className="fal fa-angle-left" onClick={() => this.leftArrow()}></i>
           </div>
-          <div className="chart-wrap">{renderChart}</div>
+        <h3>{fullData.name}</h3>
           <div className="nav nav-right">
             <i className="fal fa-angle-right" onClick={this.rightArrow}></i>
-          </div>
+            </div>
+            </div>
+        <div className="chartContainer">
+          
+          <div className="chart-wrap">{renderChart}</div>
         </div>
         <ChartSelect
           index={this.state.surveyDataIndex}

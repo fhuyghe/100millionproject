@@ -12,6 +12,33 @@
 //     }
 // }
 
+.chart-header{
+  display: flex;
+  align-items: center;
+
+  h3{
+    flex: 1;
+  }
+
+  .nav{
+    font-size: $grid-gutter;
+    padding: 10px;
+    cursor: pointer;
+    transition: .25s;
+
+    &:hover{
+      color: $yellow;
+    }
+  }
+
+  .nav-left{
+    padding-right: $grid-gutter / 2;
+  }
+
+  .nav-right{
+    padding-left: $grid-gutter / 2;
+  }
+}
 
 .chartContainer{
     display:flex;
@@ -41,25 +68,5 @@
       &.color-yellow{
         background-color: $blue;
       }
-    }
-
-    .nav{
-      font-size: $grid-gutter;
-      padding: 10px;
-      cursor: pointer;
-      transition: .25s;
-      transform: translateY(-80%);
-
-      &:hover{
-        color: $yellow;
-      }
-    }
-
-    .nav-left{
-      padding-right: $grid-gutter / 2;
-    }
-
-    .nav-right{
-      padding-left: $grid-gutter / 2;
     }
   }

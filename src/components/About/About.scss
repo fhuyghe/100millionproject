@@ -8,13 +8,18 @@
     section{
         padding: 100px 0;
 
-        @include media-breakpoint-up(md){
-            padding: 200px 0;
+        h2{
+            margin-top: $grid-gutter;
+
+            &:first-child{
+                margin-top: 0;
+            }
         }
     }
 
     ul li{
         margin-bottom: 10px;
+        line-height: 1.5em;
     }
 
     #team{
