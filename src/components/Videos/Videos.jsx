@@ -10,25 +10,27 @@ const Videos = () => {
             title: "West Virginia",
             description: "A video in West Virginia",
             vimeoID: "76979871",
-            name: "test-video"
+            url: "https://youtu.be/SI3TUI9aUSI",
+            name: "west-virginia"
         },
-        {
-            title: "Arizona",
-            description: "A video in West Virginia",
-            vimeoID: "76979871",
-            name: "test-video"
-        },
+        // {
+        //     title: "Arizona",
+        //     description: "A video in West Virginia",
+        //     vimeoID: "76979871",
+        //     name: "test-video"
+        // },
         {
             title: "New York City",
             description: "A video in West Virginia",
-            vimeoID: "76979871",
-            name: "test-video"
+            url: "https://youtu.be/jEZxvrCFuxE",
+            name: "new-york"
         },
         {
             title: "Explainer video",
             description: "A video in West Virginia",
+            url: "https://youtu.be/9nDwFBWk0ZA",
             vimeoID: "76979871",
-            name: "test-video"
+            name: "explainer"
         }
     ]
 
@@ -43,7 +45,7 @@ const Videos = () => {
             {videos.map((video) => { 
                 return <div className="video" key={video.name}>
                     <div className="video-thumbnail">
-                        <VideoPlayer vimeoID={video.vimeoID} title={video.title}>
+                        <VideoPlayer url={video.url} title={video.title}>
                             <VideoBlock video={video.name} playSign={true}/>
                         </VideoPlayer>
                     </div>

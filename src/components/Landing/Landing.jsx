@@ -158,8 +158,8 @@ class Landing extends React.Component {
                         <div className="explainer-video">
                         <div className="video-thumbnail">
                             <h3>But enough said, we'll let Ed Harris explain it for us</h3>
-                                <VideoPlayer vimeoID="76979871" title="Explainer video">
-                                    <VideoBlock video="test-video" playSign={true}/>
+                                <VideoPlayer url="https://youtu.be/9nDwFBWk0ZA" title="Explainer video">
+                                    <VideoBlock video="explainer" playSign={true}/>
                                 </VideoPlayer>
                             </div>
                         </div>
@@ -186,9 +186,9 @@ class Landing extends React.Component {
                         <div className="row">
 
                         <div className="col-md-6">
-                            <VideoPlayer vimeoID="76979871" title="West Virginia">
+                            <VideoPlayer url="https://youtu.be/SI3TUI9aUSI" vimeoID="76979871" title="West Virginia">
                                     <VideoBlock
-                                        video="test-video"
+                                        video="west-virginia"
                                         playSign={true} />
                             </VideoPlayer>
                         </div>
@@ -227,9 +227,9 @@ class Landing extends React.Component {
                         <div className="row">
                             <div className="col-md-8 offset-md-2 text-center">
                                 <h4>Although there is not one way to define a non-voter, our study identified <Link to="/typesofnonvoters">six types of non-voters.</Link></h4>
-                                <VideoPlayer vimeoID="76979871" title="NYC Video">
+                                <VideoPlayer url="https://youtu.be/jEZxvrCFuxEv" imeoID="76979871" title="NYC Video">
                                     <VideoBlock
-                                        video="test-video"
+                                        video="new-york"
                                         playSign={true} />
                                 </VideoPlayer>
                             </div>
@@ -279,8 +279,8 @@ class Landing extends React.Component {
                                 <p>Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <VideoPlayer vimeoID="76979871" title="Arizona video">their county’s first Latino candidate.</VideoPlayer></p>
                             </div>
                             <div className="col-md-12">
-                            <VideoPlayer vimeoID="76979871" title="NYC Video">
-                                    <VideoBlock video="test-video" playSign={true} />
+                            <VideoPlayer url="https://youtu.be/9nDwFBWk0ZA" title="NYC Video">
+                                    <VideoBlock video="explainer" playSign={true} />
                                 </VideoPlayer>
                             </div>
                         </div>
