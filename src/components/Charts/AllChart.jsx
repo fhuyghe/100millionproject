@@ -16,6 +16,7 @@ class AllChart extends Component {
   }
 
   createChart(type) {
+    console.log(type)
     am4core.useTheme(am4themes_animated)
     let chart = am4core.create(
       "all-chart",
@@ -41,7 +42,7 @@ class AllChart extends Component {
       series = chart.series.push(new am4charts.PieSeries())
     }
     if (type === "circle" || type === "pie") {
-      console.log(this.state.activeIndex)
+      // console.log(this.state.activeIndex)
       series.colors.list = [
         am4core.color("#FBD535"),
         am4core.color("#6B9BCA"),
@@ -84,19 +85,23 @@ class AllChart extends Component {
   }
 
   handleLegend = index => {
-    console.log(this.props.data)
-    let newChart = {
-      ...this.state.series,
-      data: this.props.data[index]
-    }
+    console.log(this.props.data, this.state.series.data)
+    // let newChart = {
+    //   ...this.state.series,
+    //   data: this.props.data[index]
+    // }
     this.state.series.data = this.props.data[index]
+    // console.log(this.props.data, this.state.series.data)
+
   
     this.setState({
       activeIndex: index,
-      series: newChart
+      // series: newChart
     })
+    // this.update()
   }
   update() {
+    console.log('here')
     let seriesChart = this.createChart(this.props.type)
     let series = seriesChart[0]
     let chart = seriesChart[1]
@@ -109,6 +114,14 @@ class AllChart extends Component {
   componentDidUpdate(prevProps) {
     console.log("cdu", this.props, prevProps, this.state)
     this.props.name !== prevProps.name && this.update()
+    // this.props.stateId !== prevProps.stateId && this.update()
+
+    if(this.props.stateId !== prevProps.stateId){
+    this.state.series.data = this.props.data[this.state.activeIndex]
+
+    }
+
+    
   }
 
   componentWillUnmount() {

@@ -89,7 +89,7 @@ export const surveyData = [
         values: {
           average: [11, 8, 15],
           AZ: [30, 20, 10],
-          FL: [],
+          FL: [14, 20, 106],
           GA: [],
           MI: [],
           MN: [],
@@ -105,7 +105,7 @@ export const surveyData = [
         values: {
           average: [10, 13, 8],
           AZ: [],
-          FL: [],
+          FL: [36, 26, 16],
           GA: [],
           MI: [],
           MN: [],

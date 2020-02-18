@@ -42,7 +42,7 @@ class Chart extends Component {
       let values =
         dataPoint.values[this.props.stateId] || dataPoint.values.average
 
-      //Please each each number in its own array according to the legend
+      //Place each each number in its own array according to the legend
       for (let i = 0; i < dataSetNumber; i++) {
         let newDataPoint = {
           name: dataPoint.name,
@@ -53,7 +53,7 @@ class Chart extends Component {
           : (dataSets[i] = [newDataPoint])
       }
     })
-
+    console.log(dataSets)
     return dataSets
   }
 
@@ -88,10 +88,10 @@ class Chart extends Component {
   render() {
     let fullData = surveyData[this.state.surveyDataIndex]
     let chartType = fullData.type
-    console.log(this.props)
+    console.log(this.formatData(fullData))
     let renderChart =(     
         <AllChart
-        
+          stateId={this.props.stateId}
           data={this.formatData(fullData)}
           legend={fullData.legend}
           name={fullData.name}

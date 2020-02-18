@@ -21,9 +21,9 @@ class SwingStatesChart extends Component {
     let statePath = url.substring(url.lastIndexOf("/") + 1)
 
     // If the path matches a state, select it
-    let stateSelect = swingStates.filter((state) => state.path === statePath)
+    let stateSelect = swingStates.filter(state => state.path === statePath)
     let stateInfo = stateSelect[0] ? stateSelect[0] : swingStates[0]
-    
+
     this.setState({
       stateInfo,
       onOwnPage: stateSelect[0] ? true : false
@@ -40,7 +40,7 @@ class SwingStatesChart extends Component {
     stateInfo = stateInfo[0]
     this.setState({ stateInfo })
   }
- 
+
   handleChartSelect = chartType => {
     this.setState({
       chartType: chartType.substring(0, chartType.length - 1)
@@ -49,7 +49,7 @@ class SwingStatesChart extends Component {
 
   render() {
     let { stateInfo, chartType } = this.state
-console.log(stateInfo)
+    console.log(stateInfo)
     let options = swingStates.map((state, i) => (
       <option key={i} value={state.abbr}>
         {state.name}
@@ -58,16 +58,16 @@ console.log(stateInfo)
 
     return (
       <div className="swingstates-chart">
-          <div className="top">
-            <Select
-              stateId={stateInfo.abbr}
-              stateName={stateInfo.name}
-              handleChange={this.handleChange}
-              options={options}
-            />
-          </div>
-          {console.log(stateInfo)}
-            <Chart stateId={stateInfo.abbr} chartType={chartType} />
+        <div className="top">
+          <Select
+            stateId={stateInfo.abbr}
+            stateName={stateInfo.name}
+            handleChange={this.handleChange}
+            options={options}
+          />
+        </div>
+        {console.log(stateInfo)}
+        <Chart stateId={stateInfo.abbr} chartType={chartType} />
       </div>
     )
   }
