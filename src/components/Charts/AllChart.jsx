@@ -107,7 +107,7 @@ class AllChart extends Component {
     // this.update()
   }
   update() {
-    console.log('here')
+   
     let seriesChart = this.createChart(this.props.type)
     let series = seriesChart[0]
     let chart = seriesChart[1]
@@ -135,7 +135,7 @@ class AllChart extends Component {
     return (
       <main className="chart-main">
         <header>
-          <h3>{this.props.name}</h3>
+          {/* <h3>{this.props.name}</h3> */}
         </header>
 
         {/* The Chart element */}

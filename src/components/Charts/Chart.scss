@@ -16,7 +16,7 @@
 .chartContainer{
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:flex-start;
     
     .chart-wrap{
       width: 100%;
@@ -36,6 +36,7 @@
       padding: 10px;
       cursor: pointer;
       transition: .25s;
+      transform: translateY(-80%);
 
       &:hover{
         color: $yellow;

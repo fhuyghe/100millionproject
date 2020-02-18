@@ -88,7 +88,7 @@ class Chart extends Component {
   render() {
     let fullData = surveyData[this.state.surveyDataIndex]
     let chartType = fullData.type
-    console.log(this.formatData(fullData))
+    console.log(fullData)
     let renderChart =(     
         <AllChart
           stateId={this.props.stateId}
@@ -109,6 +109,8 @@ class Chart extends Component {
 
     return (
       <>
+      <div>
+        <h3>{fullData.name}</h3>
         <div className="chartContainer">
           <div className="nav nav-left">
             <i
@@ -125,6 +127,7 @@ class Chart extends Component {
           index={this.state.surveyDataIndex}
           handleChartSelect={this.handleChartSelect}
         />
+        </div>
       </>
     )
   }
