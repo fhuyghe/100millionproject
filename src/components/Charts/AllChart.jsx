@@ -58,7 +58,7 @@ class AllChart extends Component {
       series = chart.series.push(new am4charts.PieSeries())
       series.ticks.template.disabled = true
       series.alignLabels = false
-      series.labels.template.text = "{value.percent.formatNumber('#.0')}%"
+      series.labels.template.text = "[black]{name}" + " " + "[/][black]{value.percent.formatNumber('#.0')}%"
       series.labels.template.radius = am4core.percent(-40)
       series.labels.template.fill = am4core.color("white")
     }
@@ -92,15 +92,23 @@ class AllChart extends Component {
       
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis())
       categoryAxis.dataFields.category = "name"
+      categoryAxis.renderer.grid.template.disabled = true;
 
 
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis())
       valueAxis.max = this.props.maxValue || 10
       valueAxis.min = 0
+      valueAxis.renderer.grid.template.disabled = true;
+      valueAxis.renderer.labels.template.disabled = true;
+      valueAxis.tooltip.disabled = true;
+
+
 
       series = chart.series.push(new am4charts.ColumnSeries())
       series.dataFields.categoryX = "name"
       series.dataFields.valueY = "value"
+      series.columns.template.fill = am4core.color("red")
+      // series.columns.template.fill = am4core.color("yellow")
     }
     
     if (type === "bar-vertical") {
@@ -140,8 +148,8 @@ class AllChart extends Component {
       
       valueAxis.renderer.labels.template.disabled = true
       valueAxis.tooltip.disabled = true
-      categoryAxis.renderer.grid.template.disabled = true
-      valueAxis.renderer.grid.template.disabled = true
+      // categoryAxis.renderer.grid.template.disabled = true
+      // valueAxis.renderer.grid.template.disabled = true
       
       series = chart.series.push(new am4charts.ColumnSeries())
       series.dataFields.categoryY = "name"
