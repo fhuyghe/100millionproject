@@ -29,10 +29,9 @@ class VideoPlayer extends React.Component {
                     <div className="video-player-container" >
                         <div className="video-player-ratio" >
                         <ReactPlayer
-                                playing
+                                playing={this.state.active}
                                 url={this.props.url}
                                 controls={true}
-                                //url={"https://player.vimeo.com/video/" + this.props.vimeoID}
                                 width="100%"
                                 height="100%"
                                 onEnded={this.toggleVideo}
