@@ -11,8 +11,8 @@ export const videos = [
         {
             title: "Organizing in 2016's Lowest Voting Congressional District",
             description: "How is one Arizona DREAMer who can't vote increasing voter turnout in his community- which had one of the lowest voter turnouts in 2016?",
-            vimeoID: "76979871",
-            name: "explainer"
+            url: "https://www.youtube.com/watch?v=1lDBucwaqK4",
+            name: "arizona"
         },
         {
             title: "Non-voters are as diverse as N.Y.C.",

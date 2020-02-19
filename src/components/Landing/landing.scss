@@ -335,12 +335,39 @@
 
     #emergingText{
         font-size: 1.5em;
+        padding-top: 0;
     }
 
     #browser{
         min-height: 100vh;
         display: flex;
-            align-items: center;
+        align-items: center;
+
+        .left{
+            display: none;
+
+            @include media-breakpoint-up(md){
+                display: block;
+            }
+        }
+
+        .right{
+            margin-top: $grid-gutter * 3;
+        }
+        
+        .popup-wrap{
+            position: relative;
+        }
+
+        .highlight{
+            border: 2px solid $red;
+            padding: 25px;
+
+            .number{
+                font-size: 80px;
+                color: $red;
+            }
+        }
     }
 
     #losingVoters{

@@ -294,8 +294,8 @@ class Landing extends React.Component {
                                 <p>Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <VideoPlayer vimeoID="76979871" title="Arizona video">their county’s first Latino candidate.</VideoPlayer></p>
                             </div>
                             <div className="col-md-12">
-                            <VideoPlayer url="https://youtu.be/9nDwFBWk0ZA" title="Organizing in 2016's Lowest Voting Congressional District">
-                                    <VideoBlock video="explainer" playSign={true} />
+                            <VideoPlayer url="https://www.youtube.com/watch?v=1lDBucwaqK4" title="Organizing in 2016's Lowest Voting Congressional District">
+                                    <VideoBlock video="arizona" playSign={true} />
                                 </VideoPlayer>
                             </div>
                         </div>
@@ -339,16 +339,26 @@ class Landing extends React.Component {
                 <section id="browser">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-3 offset-md-1">
-                                <InstaWindow image="https://66.media.tumblr.com/30243eb75aa86ee15c7f7f40923b148e/tumblr_pak3z2ET3g1r9qwkso1_500.jpg" />
+                            <div className="col-md-3 offset-md-1 left">
+                                <div className="highlight">
+                                    <div className="number">39%</div>
+                                    <p>of 18-24 year olds say they primarily access social media</p>
+                                </div>
+                                {/* <InstaWindow image="https://66.media.tumblr.com/30243eb75aa86ee15c7f7f40923b148e/tumblr_pak3z2ET3g1r9qwkso1_500.jpg" /> */}
                             </div>
                             <div className="col-md-4 offset-md-1">
-                                <PopupWindow id="popup-3" text="The 18-24 year olds are following news and information about politics even less closely than non-voters." />
-                                <PopupWindow id="popup-2" text="Social media, gaming, and streaming services all outpace traditional news sources in this group’s media consumption." />
-                                <PopupWindow id="popup-1" text="When they do encounter the news, it’s often when it’s bumped into on social media where it exists alongside other kinds of content." />
+                                <div className="popup-wrap">
+                                    <PopupWindow id="popup-3" text="The 18-24 year olds are following news and information about politics even less closely than non-voters." />
+                                    <PopupWindow id="popup-2" text="Social media, gaming, and streaming services all outpace traditional news sources in this group’s media consumption." />
+                                    <PopupWindow id="popup-1" text="When they do encounter the news, it’s often when it’s bumped into on social media where it exists alongside other kinds of content." />
+                                </div>
                             </div>
-                            <div className="col-md-3">
-                                <InstaWindow image="https://media.giphy.com/media/4pMX5rJ4PYAEM/giphy.gif"/>
+                            <div className="col-md-3 right">
+                                <div className="highlight">
+                                    <div className="number">9%</div>
+                                    <p>of 18-24 year olds say they primarily access news</p>
+                                </div>
+                                {/* <InstaWindow image="https://media.giphy.com/media/4pMX5rJ4PYAEM/giphy.gif"/> */}
                             </div>
                             </div>
                     </div>
@@ -366,7 +376,7 @@ class Landing extends React.Component {
                         <div className="row">
                         <div className="col-md-6">
                                 <div className="text">
-                                <h3>The 100 Million Project began as an effort to illuminate the challenges surrounding work to bring disengaged voters to the polls. </h3>
+                                <h3>The 100 Million Project began as a way to illuminate the challenges that need to be addressed if disengaged voters are to be enticed to the polls.</h3>
                                 <p>Though they make up a large portion of our population, these Americans receive little-to-no attention in national political conversations, and remain a mystery to many institutions. As organizations seek to reach and motivate the disengaged electorate, information from this project should help inform their work.</p>
                                 <p>The 100 Million Project helps dispel outdated assumptions about non-voters. These are our fellow citizens, and they come from every walk of life. But there are some factors that unite them, which we examine in this report. By bringing to life this diverse group and their views on politics, the study acts as a clarion call to energize a new generation of engaged citizens — and ensure all citizens have a voice in our democracy.</p>
                                 <p>Read our follow up article on <a href="http://kf.org/100millionblog" target="_blank" rel="noopener noreferrer">Medium</a>.</p>

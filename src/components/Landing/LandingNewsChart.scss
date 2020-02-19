@@ -18,13 +18,21 @@
         color: $black;
 
         .header{
-            padding: $grid-gutter / 2;
+            padding: 15px;
             background-color: $purple;
             color: $white;
+
+            @include media-breakpoint-up(md){
+                padding: $grid-gutter / 2;
+            }
         }
 
         .content{
-            padding:  $grid-gutter;
+            padding:  5px;
+
+            @include media-breakpoint-up(md){
+                padding:  $grid-gutter;
+            }
         }
     }
 
@@ -48,7 +56,6 @@
         .legend-wrap{
             display: flex;
             position: relative;
-            font-size: 1.2em;
         }
 
         .legend1,
@@ -56,15 +63,18 @@
             flex: 1 1 40%;
             text-align: center;
             padding: 0 10px;
+
+            @include media-breakpoint-up(md){
+                padding:  0 $grid-gutter / 2;
+                font-size: 1.2em;
+            }
         }
 
         .legend1{
-            padding-right: $grid-gutter;
             color: $green;
         }
 
         .legend2{
-            padding-left: $grid-gutter;
             color: $blue;
         }
 

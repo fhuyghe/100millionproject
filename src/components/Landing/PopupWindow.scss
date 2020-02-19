@@ -1,12 +1,16 @@
 @import '../../assets/styles/variables';
 
 .popup-window{
-    margin: $grid-gutter 0;
+    margin: $grid-gutter 0 $grid-gutter * 2;
     border: 2px solid $black;
     background: $yellow;
     color: $black;
     top: 0;
     left: 0;
+
+    @include media-breakpoint-up(md){
+        margin: $grid-gutter 0;
+    }
 
     .popup-text{
         padding: $grid-gutter $grid-gutter / 2;
@@ -29,19 +33,19 @@
 
     &:nth-of-type(2){
         position: absolute;
-        transform: translateY($grid-gutter);
+        transform: translateY(20px);
 
         @include media-breakpoint-up(md){
-            transform: translate(-$grid-gutter, -$grid-gutter);
+            transform: translate(-$grid-gutter, -2 * $grid-gutter);
         }
     }
 
     &:nth-of-type(3){
         position: absolute;
-        transform: translateY(2 * $grid-gutter);
+        transform: translateY(90px);
 
         @include media-breakpoint-up(md){
-            transform: translate(-2 * $grid-gutter, -2 * $grid-gutter);
+            transform: translate(-2 * $grid-gutter, -3 * $grid-gutter);
         }
     }
 }
