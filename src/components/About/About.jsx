@@ -60,7 +60,7 @@ const About = () => {
                         <h6>Secretary of State (former), Kentucky</h6></li>
                     <li>Kei Kawashima-Ginsberg
                         <h6>Director of the Center for Information and Research on Civic Learning and Engagement (CIRCLE), Tufts University</h6></li>
-                    <li>David Phoenix
+                    <li>Davin Phoenix
                         <h6>Assistant Professor of Political Science, University of California-Irvine</h6></li>
                     <li>Trevor Potter
                         <h6>Chairman, US Federal Election Commission (former); President, Campaign Legal Center</h6></li>

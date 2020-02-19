@@ -169,7 +169,7 @@ class Landing extends React.Component {
 
                         <div className="explainer-video">
                         <div className="video-thumbnail">
-                            <h3>But enough said — we’ll let Ed Harris explain it for us.</h3>
+                            <h3>Who Are the 100 Million?</h3>
                                 <VideoPlayer url="https://youtu.be/9nDwFBWk0ZA" title="Who Are the 100 Million?">
                                     <VideoBlock video="explainer" playSign={true}/>
                                 </VideoPlayer>
