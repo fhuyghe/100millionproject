@@ -140,6 +140,7 @@
                 display: flex;
                 align-items: center;
                 padding-left: 10px;
+                overflow: hidden;
             }
 
             .result1{
@@ -151,7 +152,7 @@
             }
 
             .result3{
-                background-color: $purple;
+                background-color: $grey;
             }
 
             &.voters{

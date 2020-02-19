@@ -38,13 +38,17 @@ const LandingNewsChart = () => {
                 <div className="results-wrap voters">
                     <div className="result1">80% Yes</div>
                     <div className="result2">15% No</div>
-                    <div className="result3">5% Don't know</div>
+                        <div className="result3">
+                            {/* 5% Don't know */}
+                            </div>
                 </div>
                 <p>Non-Voters</p>
                 <div className="results-wrap non-voters">
                     <div className="result1">59% Yes</div>
                     <div className="result2">29% No</div>
-                    <div className="result3">12% Don't Know</div>
+                        <div className="result3">
+                            {/* 12% Don't Know */}
+                            </div>
                     </div>
                 </div>
             </div>

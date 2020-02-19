@@ -11,6 +11,7 @@ const VideoBlock = (props) => {
                 <source type="video/webm" src={urlBase + "/video.webm"} />
             </video>
             {props.playSign && <div className="video-play"><i className="fas fa-play"></i></div>}
+            <div className="background"></div>
         </div>
     )
 }

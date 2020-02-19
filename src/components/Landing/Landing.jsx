@@ -55,7 +55,8 @@ class Landing extends React.Component {
         var swingTween = TweenMax.to(".swing-text", 1, { rotation: -20, ease: Linear.easeNone });
         new ScrollMagic.Scene({
             triggerElement: '.swing-text',
-            duration: 1000
+            duration: 1000,
+            triggerHook: .8
         })
             .setTween(swingTween)
             .addTo(controller); 
@@ -175,8 +176,8 @@ class Landing extends React.Component {
                 </section>
 
                 <section id="reasons">
-                    <div className="wrap text-center">
-                        <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation, and there are many reasons why they don’t vote.</h2>
+                    <div className="wrap">
+                        <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation, and there are <span>many reasons</span> why they don’t vote.</h2>
                         {/* TODO: Add title based on prop */}
                         <SingleChart title="Top responses from non-voters" color="yellow" maxValue={20} data={landingData[0]} />
                     </div>
@@ -205,7 +206,7 @@ class Landing extends React.Component {
                 <section id="demography">
                     <div className="wrap">
                         <div className="row">
-                            <div className=" text-center">
+                            <div className="col-md-9">
                             <h2>Compared to active voters, non-voters are more likely to be less educated, lower income,  non-white and unmarried.</h2>
                             </div>
                             {/* <div className="col-md-6">
@@ -293,7 +294,7 @@ class Landing extends React.Component {
                     <div className="wrap">
                         <div className="row">
                         <div className="col-md-6">
-                        <h2 className="news-intro">One of the clearest findings of the study is that non-voters feel (and are) under-informed on political issues.</h2>
+                        <h2 className="news-intro">One of the clearest findings of the study is that non-voters feel (and are) <span>under-informed on political issues</span>.</h2>
                             </div>
                             <div className="col-md-5 offset-md-1">
                             <p>Compared with active voters, non-voter media diets involve less traditional news and more entertainment, and these individuals were less likely to grow up in a family that discussed current events together.</p>

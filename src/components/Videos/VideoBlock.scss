@@ -2,6 +2,7 @@
 
 .video-block{
     position: relative;
+    z-index: 1;
 
     .video-play{
         position: absolute;
@@ -12,8 +13,16 @@
         font-size: $grid-gutter;
         transition: .25s;
         cursor: pointer;
+    }
 
-        
+    .background{
+        position: absolute;
+        top:10px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+        background: $red;
+        z-index: -1;
     }
 
     &:hover{

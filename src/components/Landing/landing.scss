@@ -9,6 +9,12 @@
         @include media-breakpoint-up(md){
             padding: 200px 0;
         }
+
+        h2{
+            span{
+                color: $yellow;
+            }
+        }
     }
 
     #intro{
@@ -107,10 +113,7 @@
 
     #types{
         background-color: $purple;
-
-        .wrap{
-            position: relative;
-        }
+        position: relative;
 
         .type{
             display: none;
@@ -123,38 +126,38 @@
             }
 
             &:nth-child(1){
-                top: -$grid-gutter;
-                left: -$grid-gutter;
+                top: $grid-gutter;
+                left: 200px;
                 animation-delay: 3s;
             }
             
             &:nth-child(2){
-                top: -$grid-gutter;
-                right: -$grid-gutter;
+                top: $grid-gutter;
+                right: 200px;
             }
 
             &:nth-child(3){
                 top: 50%;
-                left: -$grid-gutter * 2;
+                left: $grid-gutter * 2;
                 animation-delay: 5s;
             }
 
             &:nth-child(4){
                 top: 50%;
-                right: -$grid-gutter * 2;
+                right: $grid-gutter * 2;
                 animation-delay: 6s;
             }
 
             &:nth-child(5){
-                bottom: -200px;
-                left: $grid-gutter;
+                bottom: -100px;
+                left: 300px;
                 animation-delay: 7s;
                 animation-direction: reverse;
             }
 
             &:nth-child(6){
-                bottom: -200px;
-                right: $grid-gutter;
+                bottom: -100px;
+                right: 300px;
                 animation-delay: 1s;
             }
         }
@@ -162,7 +165,11 @@
 
     #swingStates{
         display: block;
-        //padding: 200px 0;
+        padding-top: 100px;
+
+        @include media-breakpoint-up(md){
+            padding-top: 300px;
+        }
 
         .swing-animation{
             margin-bottom: $grid-gutter * 2;
@@ -204,7 +211,7 @@
         #swingData{
             margin-top: $grid-gutter * 2;
             padding: $grid-gutter / 2 0;
-            border: 2px solid $white;
+            //border: 2px solid $white;
             min-height: 800px;
             text-align: center;
             background-color: $blue;
@@ -278,10 +285,6 @@
 
         .emerging-intro{
             padding-top: 200px;
-
-            span{
-                color: $yellow;
-            }
         }
     }
 
