@@ -200,7 +200,7 @@ class Landing extends React.Component {
                         <div className="row">
 
                         <div className="col-md-6">
-                            <VideoPlayer url="https://youtu.be/SI3TUI9aUSI" vimeoID="76979871" title="49th Out of 50 and Still Running">
+                            <VideoPlayer url="https://youtu.be/FpwVUIYJNa0" vimeoID="76979871" title="49th Out of 50 and Still Running">
                                     <VideoBlock
                                         video="west-virginia"
                                         playSign={true} />
