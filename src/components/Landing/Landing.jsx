@@ -247,7 +247,7 @@ class Landing extends React.Component {
                         <div className="row">
                             <div className="col-md-8 offset-md-2 text-center">
                                 <h4>Although there is not one way to define a non-voter, our study identified <Link to="/typesofnonvoters">six types of non-voters.</Link></h4>
-                                <VideoPlayer url="https://youtu.be/jEZxvrCFuxEv" imeoID="76979871" title="Non-voters are as diverse as N.Y.C.">
+                                <VideoPlayer url="https://youtu.be/jEZxvrCFuxEv" imeoID="76979871" title="Non-voters are as Diverse as N.Y.C.">
                                     <VideoBlock
                                         video="new-york"
                                         playSign={true} />
@@ -304,7 +304,7 @@ class Landing extends React.Component {
                         <div className="row space-up">
                             <div className="col-md-6">
                                 <h3>Organizing in 2016's Lowest Voting Congressional District</h3>
-                                <p>Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <VideoPlayer vimeoID="76979871" title="Arizona video">their county’s first Latino candidate.</VideoPlayer></p>
+                                <p>Non-voters also want candidates they can believe in. By going door-to-door with issue-based education, one community in Arizona increased voter registration among non-English-speaking eligible voters and elected <VideoPlayer vimeoID="76979871" title="Arizona video">their district’s first Latino candidate.</VideoPlayer></p>
                             </div>
                             <div className="col-md-12">
                             <VideoPlayer url="https://www.youtube.com/watch?v=1lDBucwaqK4" title="Organizing in 2016's Lowest Voting Congressional District">

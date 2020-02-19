@@ -40,7 +40,7 @@ class LandingQuiz extends React.Component {
             {
                 text: 'Less consumption of news and information',
                 value: true,
-                answer: 'Correct! Non-voters consume less news and information than active votres. '
+                answer: 'Correct! Non-voters consume less news and information than active voters. '
             },
             {
                 text: 'Do not believe that the government works to improve their lives',

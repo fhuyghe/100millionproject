@@ -22,8 +22,8 @@ export const videos = [
             name: "arizona"
         },
         {
-            title: "Non-voters are as diverse as N.Y.C.",
-            description: "On America’s most diverse train, New York City's 7 subway line, we go seeking out nonvoters from all walks of life, to get some straight talk on why so many Americans don’t vote?",
+            title: "Non-voters are as Diverse as N.Y.C.",
+            description: "On America’s most diverse train, New York City's 7 subway line, non-voters from all walks of life straight talk about why so many Americans don’t vote.",
             url: "https://youtu.be/jEZxvrCFuxE",
             name: "new-york"
         }

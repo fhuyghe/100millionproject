@@ -29,33 +29,74 @@ const About = () => {
                 <h2>The Team</h2>
                 <h3>Bendixen & Amandi International</h3>
                 <ul>
-                    <li>Fernand Amandi, Principal</li>
-                    <li>Anthony Williams, Project Director</li>
-                    <li>Dave Feldman, Cluster Analysis Consultant </li>
-                    <li>Rick Hunter, Methodological Consultant </li>
-                    <li>Hannah Artman, Qualitative Research Coordinator </li>
-                    <li>Daniela Ferrera, Research Associate </li>
-                    <li>Maurizio Passariello, Communications Associate</li>
+                    <li>Fernand Amandi
+                        <h6>Principal</h6></li>
+                    <li>Anthony Williams<h6>Project Director</h6></li>
+                    <li>Dave Feldman<h6>Cluster Analysis Consultant</h6></li>
+                    <li>Rick Hunter<h6>Methodological Consultant</h6></li>
+                    <li>Hannah Artman<h6>Qualitative Research Coordinator</h6></li>
+                    <li>Daniela Ferrera<h6>Research Associate</h6></li>
+                    <li>Maurizio Passariello<h6>Communications Associate</h6></li>
                 </ul>
 
                 <h3>Academic Advisers</h3>
                 <ul>
-                    <li>Eitan Hersh, Associate Professor of Political Science at Tufts University </li>
-                    <li>Yanna Krupnikov, Asst. Professor of Political Science at Stony Brook University</li>
+                    <li>Eitan Hersh
+                    <h6>Associate Professor of Political Science at Tufts University</h6></li>
+                    <li>Yanna Krupnikov
+                    <h6>Asst. Professor of Political Science at Stony Brook University</h6></li>
                 </ul>
 
                 <h2>Review Committee</h2>
                 <ul>
-                    <li>Seth Flaxman, Co-Founder & Executive Director, Democracy Works </li>
-                    <li>Keesha Gaskins-Nathan, Director of Democratic Practice–US Program, Rockefeller Brothers Fund </li>
-                    <li>Nellie Gorbea, Secretary of State, Rhode Island </li>
-                    <li>Trey Grayson, Secretary of State (former), Kentucky </li>
-                    <li>Kei Kawashima-Ginsberg, Director of the Center for Information and Research on Civic Learning and Engagement (CIRCLE), Tufts University </li>
-                    <li>David Phoenix, Assistant Professor of Political Science, University of California-Irvine </li>
-                    <li>Trevor Potter, Chairman, US Federal Election Commission (former); President, Campaign Legal Center</li>
-                    <li>Meredith Rolfe, Associate Professor of Political Science, University of Massachusetts Amherst </li>
-                    <li>Ryan Streeter, Director of Domestic Policy Studies, American Enterprise Institute</li>
+                    <li>Seth Flaxman
+                        <h6>Co-Founder & Executive Director, Democracy Works</h6>
+                    </li>
+                    <li>Keesha Gaskins-Nathan
+                        <h6>Director of Democratic Practice–US Program, Rockefeller Brothers Fund</h6></li>
+                    <li>Nellie Gorbea
+                        <h6>Secretary of State, Rhode Island</h6></li>
+                    <li>Trey Grayson
+                        <h6>Secretary of State (former), Kentucky</h6></li>
+                    <li>Kei Kawashima-Ginsberg
+                        <h6>Director of the Center for Information and Research on Civic Learning and Engagement (CIRCLE), Tufts University</h6></li>
+                    <li>David Phoenix
+                        <h6>Assistant Professor of Political Science, University of California-Irvine</h6></li>
+                    <li>Trevor Potter
+                        <h6>Chairman, US Federal Election Commission (former); President, Campaign Legal Center</h6></li>
+                    <li>Meredith Rolfe
+                        <h6>Associate Professor of Political Science, University of Massachusetts Amherst</h6></li>
+                    <li>Ryan Streeter
+                        <h6>Director of Domestic Policy Studies, American Enterprise Institute</h6></li>
                 </ul>
+
+                <h2>Video Series</h2>
+                <h4>Produced by <a href="https://showofforce.com" target="_blank" rel="noopener noreferrer">Show of Force</a></h4>
+                <ul className="video-credits">
+                    <li><h5>Executive Producers</h5>
+                        Joshua Bennett<br />Maro Chermayef<br />Jeff Dupre</li>
+                    <li><h5>Director</h5>Alexandra Nikolchev</li>
+                    <li><h5>Co-Producer</h5>Prisca Pointdujour</li>
+                    <li><h5>Editor</h5>David Hoon Newman</li>
+                    <li><h5>Cinematographer</h5>Ruben Pacheco</li>
+                    <li><h5>Production Manager</h5>Maura McGloin</li>
+                    <li><h5>Production Coordinator</h5>Jessica Luya</li>
+                    <li><h5>Director Partnerships/Engagement</h5>Lauren Mitte Wood, Enfield Road</li>
+                    <li><h5>Director Social engagement</h5>John Hill</li>
+                    <li><h5>Music Composed by</h5>Daniel Olshansky</li>
+                    <li><h5>Post Supervisor</h5>Dan Hacker</li>
+                    <li><h5>Assistant Editor</h5>David Scherker</li>
+                    <li><h5>Graphics and Animation</h5>13milliseconds<br/>Tim Ballard</li>
+                    <li><h5>Assistant Camera</h5>Zara Katz<br/>Said Ramirez<br/>Jose Garcia</li>
+                    <li><h5>Sound</h5>Mike Haldin<br/>Chris Mas</li>
+                    <li><h5>Field Production Coordinator</h5>Jack Dalleywater</li>
+                    <li><h5>Production Assistants</h5>Nathan Burge<br/>Tameika Dorman<br/>Erick Tello<br/>Julian Zentner</li>
+                    <li><h5>DIT</h5>Sam Torres</li>
+                    <li><h5>Colorist</h5>Evgeniy Yavtushenko</li>
+                    <li><h5>Post Sound Mixer</h5>Dan Hacker</li>
+                    <li><h5>Post Production Assistants</h5>Chelsea Laufer<br/>Hyeseung Kim<br/>Nicholas Okrepkie<br/>Brian Chen<br/>Kailey Radcliffe</li>
+                    </ul>
+                <h4>Website by <a href="https://13milliseconds.com" target="_blank" rel="noopener noreferrer">13milliseconds</a></h4>
                 </div>
         </section>
     </div>

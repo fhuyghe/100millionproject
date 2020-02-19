@@ -15,11 +15,59 @@
                 margin-top: 0;
             }
         }
+
+        h4{
+            text-align: left;
+            font-size: 1.2em;
+        }
+
+        h5{
+            text-transform: uppercase;
+            font-size: .9em;
+            margin-bottom: 0;
+        }
+
+        h6{
+            font-family: $anon-pro;
+            font-style: italic;
+            font-weight: 400;
+            font-size: .9em;
+            margin-top: 0;
+        }
     }
 
-    ul li{
-        margin-bottom: 10px;
-        line-height: 1.5em;
+    ul{
+        @include media-breakpoint-up(md){
+            columns: 2;
+
+            &.video-credits{
+                margin-bottom: $grid-gutter * 2;
+            }
+            
+            li{
+                padding-right: $grid-gutter / 2;
+                break-inside: avoid;
+            }
+        }
+
+        @include media-breakpoint-up(lg){
+            &.video-credits{
+                columns: 3;
+            }
+        }
+
+        &.video-credits{
+            margin-bottom: $grid-gutter;
+
+            li{
+                margin-bottom: 20px;
+            }
+        }
+
+        li{
+            margin-bottom: 10px;
+            line-height: 1.5em;
+        }
     }
 
     #team{

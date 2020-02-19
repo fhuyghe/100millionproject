@@ -25,14 +25,14 @@
         
         #arrow{
             position: absolute;
-            bottom: 0;
+            bottom: $grid-gutter;
             left: 0;
             width: 40%;
         }
 
         #sign{
             position: absolute;
-            bottom: 0;
+            bottom: $grid-gutter;
             left: 50%;
             width: 50%;
 
@@ -47,11 +47,13 @@
             padding-top: 0;
 
             #arrow{
+                bottom: 0;
                 left: 40%;
                 width: 15%;
             }
 
             #sign{
+                bottom: 0;
                 left: 60%;
                 width: 30%;
                 max-width: 500px;
@@ -350,10 +352,11 @@
         display: flex;
         align-items: center;
 
-        .left{
+        .left, 
+        .right{
             display: none;
 
-            @include media-breakpoint-up(md){
+            @include media-breakpoint-up(lg){
                 display: block;
             }
         }
