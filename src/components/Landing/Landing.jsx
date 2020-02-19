@@ -61,6 +61,16 @@ class Landing extends React.Component {
             .setTween(swingTween)
             .addTo(controller); 
         
+            // Text bubble
+        var bubbleTween = TweenMax.to(".bubble", 1, { x: 1000, ease: Linear.easeNone });
+        new ScrollMagic.Scene({
+            triggerElement: '.bubble',
+            duration: 500,
+            triggerHook: .5
+        })
+            .setTween(bubbleTween)
+            .addTo(controller); 
+        
         // Browser 18-24 animation
         new ScrollMagic.Scene({
             triggerElement: '#browser',
@@ -143,7 +153,7 @@ class Landing extends React.Component {
                         </div>
                     </div>
                     <div id="sign"><img src="/images/100M_story_sign.svg" alt="Voting Sign" /></div>
-                    <div id="arrow"><img src="/images/scroll-arrow.png" alt="" /></div>
+                    <div id="arrow"><img src="/images/scroll-arrow-2.png" alt="" /></div>
                 </section>
 
                 <section id="interviews">
@@ -170,7 +180,9 @@ class Landing extends React.Component {
 
                 <section id="quizQuestion">
                     <div className="wrap">
-                        {/* TODO: Add transition box */}
+                        <div className="bubble">
+                            <img src="images/but-probably-bubble.svg" alt="But you probably have some ideas of your own." />
+                        </div>
                         <LandingQuiz />
                     </div>
                 </section>

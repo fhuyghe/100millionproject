@@ -45,8 +45,8 @@
             padding-top: 0;
 
             #arrow{
-                left: $grid-gutter * 2;
-                width: 150px;
+                left: 40%;
+                width: 15%;
             }
 
             #sign{
@@ -93,6 +93,16 @@
 
     #quizQuestion{
         background-color: $purple;
+
+        .wrap{
+            position: relative;
+
+            .bubble{
+                position: absolute;
+                top: -250px;
+                right: 0;
+            }
+        }
 
         h3{
             color: $black;
@@ -335,6 +345,10 @@
 
     #losingVoters{
         padding-top: 0;
+
+        .disappear{
+            color: $white;
+        }
         
         h4{
             margin-bottom: 100px;
