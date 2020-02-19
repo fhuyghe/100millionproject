@@ -20,6 +20,7 @@
     #intro{
         min-height: 100vh;
         padding: 100px 0 0;
+        overflow: hidden;
         
         #arrow{
             position: absolute;
@@ -99,7 +100,7 @@
 
             .bubble{
                 display: none;
-                
+
                 @include media-breakpoint-up(md){
                     display: block;
                     position: absolute;

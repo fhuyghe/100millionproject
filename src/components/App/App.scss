@@ -2,12 +2,17 @@
 
 html{
   //scroll-behavior: smooth;
+  margin: 0;
   background-color: $black;
   font-size: 18px;
 
   *:focus{
     outline: 0;
   }
+}
+
+html, body{
+  overflow-x: hidden;
 }
 
 .App {

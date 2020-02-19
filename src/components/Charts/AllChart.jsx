@@ -35,6 +35,8 @@ class AllChart extends Component {
         : null
     )
 
+    chart.responsive.enabled = true;
+
     chart.colors.list = [
       am4core.color("#F2705E"),//red
       am4core.color("#009DE0"),//blue
@@ -106,12 +108,11 @@ class AllChart extends Component {
       //valueAxis.renderer.labels.template.disabled = true;
       valueAxis.tooltip.disabled = true;
 
-
-
       series = chart.series.push(new am4charts.ColumnSeries())
       series.dataFields.categoryX = "name"
       series.dataFields.valueY = "value"
       series.columns.template.fill = am4core.color("#F8D807")
+      series.columns.template.strokeWidth = 0
       // series.columns.template.fill = am4core.color("yellow")
     }
     

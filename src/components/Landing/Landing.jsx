@@ -226,6 +226,7 @@ class Landing extends React.Component {
                             </div> */}
                             <div className="col-md-12">
                                 <SingleChart color="green" maxValue={40} data={landingData[3]} />
+                                <SingleChart type="bar-" color="green" maxValue={40} data={landingData[3]} />
                             </div>
                         </div>
                     </div>
