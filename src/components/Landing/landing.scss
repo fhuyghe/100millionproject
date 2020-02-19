@@ -18,9 +18,10 @@
     }
 
     #intro{
+        position: relative;
         min-height: 100vh;
         padding: 100px 0 0;
-        overflow: hidden;
+        //overflow-x: hidden;
         
         #arrow{
             position: absolute;
@@ -368,6 +369,7 @@
         .highlight{
             border: 2px solid $red;
             padding: 25px;
+            text-align: center;
 
             .number{
                 font-size: 80px;

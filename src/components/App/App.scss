@@ -12,7 +12,9 @@ html{
 }
 
 html, body{
+  width: 100vw;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 .App {
