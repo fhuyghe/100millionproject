@@ -6,7 +6,7 @@ class VideoPlayer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: false
+            active: props.active
         };
     
         this.toggleVideo = this.toggleVideo.bind(this)
