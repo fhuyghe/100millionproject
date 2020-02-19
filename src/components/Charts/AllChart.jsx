@@ -58,10 +58,15 @@ class AllChart extends Component {
     if (type === "pie") {
       series = chart.series.push(new am4charts.PieSeries())
       series.ticks.template.disabled = true
-      series.alignLabels = false
+      series.alignLabels = true
       series.labels.template.text = "[black]{name}" + " " + "[/][black]{value.percent.formatNumber('#.0')}%"
       series.labels.template.radius = am4core.percent(-40)
       series.labels.template.fill = am4core.color("white")
+
+      //Disable click and hover
+      let slice = series.slices.template;
+      slice.states.getKey("hover").properties.scale = 1;
+      slice.states.getKey("active").properties.shiftRadius = 0;
     }
     if (type === "circle" || type === "pie") {
       // console.log(this.state.activeIndex)
@@ -128,7 +133,7 @@ class AllChart extends Component {
       series.columns.template.adapter.add("fill", function(fill, target) {
         let index = target.dataItem.index
         return index % 3 === 0 && index !== 2 ? "#F8D807" :
-        index % 2 === 0 ? '#009DE0' :
+        index % 2 === 0 ? '#3ABA89' :
         index % 1 === 0 && index !== 2 ? '#AC7EB7' :
         null
 
@@ -204,9 +209,6 @@ class AllChart extends Component {
       categoryAxis.dataFields.category = "name"
       categoryAxis.renderer.inside = true;
       categoryAxis.renderer.grid.template.disabled = true;
-      // categoryAxis.renderer.labels.template.rotation = 45;
-      // categoryAxis.renderer.labels.template.verticalCenter = "middle";
-      // categoryAxis.renderer.labels.template.horizontalCenter = "left";
       categoryAxis.renderer.minGridDistance = 10;
 
       //labels styling

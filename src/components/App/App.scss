@@ -17,6 +17,20 @@ html, body{
   overscroll-behavior-x: none;
 }
 
+.desktop-only{
+  display: none;
+}
+
+@include media-breakpoint-up(md){
+  .mobile-only{
+    display: none;
+  }
+
+  .desktop-only{
+    display: block;
+  }
+}
+
 .App {
 	display: flex;
 	flex-direction: column;

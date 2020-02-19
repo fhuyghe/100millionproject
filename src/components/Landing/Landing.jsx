@@ -225,8 +225,12 @@ class Landing extends React.Component {
                                 <SingleChart color="yellow" maxValue={20} data={landingData[2]} />
                             </div> */}
                             <div className="col-md-12">
-                                <SingleChart color="green" maxValue={40} data={landingData[3]} />
-                                <SingleChart type="bar-" color="green" maxValue={40} data={landingData[3]} />
+                                <div className="desktop-only">
+                                    <SingleChart color="green" maxValue={40} data={landingData[3]} />
+                                </div>
+                                <div className="mobile-only">
+                                    <SingleChart type="bar-vertical" color="green" maxValue={40} data={landingData[3]} />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -281,11 +285,21 @@ class Landing extends React.Component {
                             </div>
                         </div>
                         <div className=""></div>
-                        <SingleChart
-                            cursor={true}
-                            color="red"
-                            maxValue={50}
-                            data={landingData[1]} />
+                        <div className="desktop-only">
+                            <SingleChart
+                                cursor={true}
+                                color="red"
+                                maxValue={50}
+                                data={landingData[1]} />
+                        </div>
+                        <div className="mobile-only">
+                            <SingleChart
+                                type="bar-vertical"
+                                cursor={true}
+                                color="red"
+                                maxValue={50}
+                                data={landingData[1]} />
+                        </div>
                     </div>
                     
                     <div className="wrap">

@@ -37,7 +37,7 @@ class SingleChart extends Component {
           data={this.formatData(fullData)}
           legend={fullData.legend}
           name={fullData.name}
-          type={fullData.type}
+          type={this.props.type ? this.props.type : fullData.type}
         />
       ) 
 
