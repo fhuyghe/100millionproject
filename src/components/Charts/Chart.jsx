@@ -13,16 +13,6 @@ class Chart extends Component {
     surveyDataIndex: 0
   }
 
-  componentDidMount() {
-  
-  }
-
-  componentDidUpdate(prevProps) {
-    console.log(this.props, prevProps)
-    if (this.props.stateId !== prevProps.stateId) {
-  
-    }
-  }
 
   componentWillUnmount() {
     if (this.chart) {
@@ -32,12 +22,11 @@ class Chart extends Component {
 
   formatData(data) {
     let dataSets = []
-    console.log(this.props)
 
     // Figure out the number of data sets
     const dataSetNumber = data.legend.length
     
-    data.children
+    data.children 
       ? data.children.forEach(dataPoint => {
       //Extract one value out of all values
       let values =
@@ -56,7 +45,6 @@ class Chart extends Component {
       })
       :dataSets[0] = data.values
 
-    console.log(dataSets)
     return dataSets
   }
 
@@ -90,7 +78,7 @@ class Chart extends Component {
 
   render() {
     let fullData = surveyData[this.state.surveyDataIndex]
-    console.log(fullData)
+
     let renderChart =(     
         <AllChart
           stateId={this.props.stateId}

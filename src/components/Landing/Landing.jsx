@@ -226,7 +226,7 @@ class Landing extends React.Component {
                             </div> */}
                             <div className="col-md-12">
                                 <div className="desktop-only">
-                                    <SingleChart color="green" maxValue={40} data={landingData[3]} />
+                                    <SingleChart color="yellow" maxValue={40} data={landingData[3]} />
                                 </div>
                                 <div className="mobile-only">
                                     <SingleChart type="bar-vertical" color="green" maxValue={40} data={landingData[3]} />
@@ -287,18 +287,16 @@ class Landing extends React.Component {
                         <div className=""></div>
                         <div className="desktop-only">
                             <SingleChart
-                                cursor={true}
                                 color="red"
-                                maxValue={50}
-                                data={landingData[1]} />
+                                maxValue={10}
+                                data={landingData[4]} />
                         </div>
                         <div className="mobile-only">
                             <SingleChart
                                 type="bar-vertical"
-                                cursor={true}
                                 color="red"
-                                maxValue={50}
-                                data={landingData[1]} />
+                                maxValue={10}
+                                data={landingData[4]} />
                         </div>
                     </div>
                     
@@ -329,14 +327,12 @@ class Landing extends React.Component {
                         </div>
 
                         <LandingNewsChart />
-
-                        <h2 className="emerging-intro text-center">However, there’s one group even <span>less interested and informed</span> than habitual non-voters — the emerging electorate.</h2>
                     </div>
                 </section>
 
                 <section id="emerging">
                     <div className="wrap">
-                        <h2>The emerging electorate are</h2>
+                    <h2 className="emerging-intro text-center">However, there’s one group even <span>less interested and informed</span> than habitual non-voters — the emerging electorate.</h2>
                         <div id="dashes"><div className="dashes-wrap"></div></div>
                         <div id="emerging-numbers">
                             <h3>Eligible voters between</h3>

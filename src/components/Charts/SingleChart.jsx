@@ -10,7 +10,8 @@ class SingleChart extends Component {
     // Figure out the number of data sets
     const dataSetNumber = data.legend.length
 
-    data.children.forEach(dataPoint => {
+    data.children
+      ? data.children.forEach(dataPoint => {
       let values = dataPoint.values
 
       //Place each each number in its own array according to the legend
@@ -23,7 +24,9 @@ class SingleChart extends Component {
           ? dataSets[i].push(newDataPoint)
           : (dataSets[i] = [newDataPoint])
       }
-    })
+      })
+      : dataSets[0] = data.values
+    
     return dataSets
   }
 

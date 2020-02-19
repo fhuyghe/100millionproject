@@ -436,5 +436,23 @@ export const landingData = [{
         values: [0, 3, 4]
       }
     ]
+  }, {
+    name: "To what degree do you think the decisions made by the president and other elected officials in Washington impact your life?",
+    type: "bar",
+    legend: [],
+    values: [
+      {
+        name: "Voters",
+        value: 8.1
+      },
+      {
+        name: "Non-voters",
+        value: 7.0
+      },
+      {
+        name: "18-24",
+        value: 7.2
+      }
+    ]
   }
 ]

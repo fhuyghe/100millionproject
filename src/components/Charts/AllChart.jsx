@@ -21,9 +21,11 @@ class AllChart extends Component {
     this.chartRef = React.createRef()
   }
 
-  createChart(type) {
-    console.log(type)
+  createChart(data) {
+    const type = data.type
+    console.log(data)
     am4core.useTheme(am4themes_animated)
+
     let chart = am4core.create(
       this.chartRef.current, //"all-chart",
       type === "circle"
@@ -55,10 +57,11 @@ class AllChart extends Component {
       series.nodes.template.label.fontFamily = "Anonymous Pro"
       series.nodes.template.label.wrap = false
     }
+
     if (type === "pie") {
       series = chart.series.push(new am4charts.PieSeries())
       series.ticks.template.disabled = true
-      series.alignLabels = true
+      series.alignLabels = false
       series.labels.template.text = "[black]{name}" + " " + "[/][black]{value.percent.formatNumber('#.0')}%"
       series.labels.template.radius = am4core.percent(-40)
       series.labels.template.fill = am4core.color("white")
@@ -89,13 +92,6 @@ class AllChart extends Component {
       chart.data = this.props.data[0]
       chart.strokeWidth = 0
       
-      //Color
-      const color = this.props.color
-      chart.colors.list = color === "red"
-        ? [am4core.color("#F8D807")]//yellow]
-        :  color === "yellow"
-          ? [am4core.color("#F8D807")]//yellow
-          : [am4core.color("#F2705E")]//blue
       
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis())
       categoryAxis.dataFields.category = "name"
@@ -106,7 +102,6 @@ class AllChart extends Component {
       let label = categoryAxis.renderer.labels.template;
       label.wrap = true;
       label.maxWidth = 120;
-
 
       // "categoryAxesSettings": {
       //   "minPeriod": "mm",
@@ -130,16 +125,28 @@ class AllChart extends Component {
       series.columns.template.fill = am4core.color("#F8D807")
       series.columns.template.strokeWidth = 0
 
-      series.columns.template.adapter.add("fill", function(fill, target) {
-        let index = target.dataItem.index
-        return index % 3 === 0 && index !== 2 ? "#F8D807" :
-        index % 2 === 0 ? '#3ABA89' :
-        index % 1 === 0 && index !== 2 ? '#AC7EB7' :
-        null
-
-
-       
+      series.columns.template.adapter.add("fill", function (fill, target) {
+          let currentState = target.dataItem.categoryX
+          return data.stateId === currentState ? '#F8D807' : '#3ABA89'
       });
+
+       //Color
+       const color = this.props.color
+       chart.colors.list = color === "red"
+         ? [am4core.color("#F8D807")]//yellow]
+         :  color === "yellow"
+           ? [am4core.color("#F8D807")]//yellow
+          : [am4core.color("#F2705E")]//blue
+      
+      // Alternating colors
+      // series.columns.template.adapter.add("fill", function(fill, target) {
+      //   let index = target.dataItem.index
+      //   return index % 3 === 0 && index !== 2 ? "#F8D807" :
+      //   index % 2 === 0 ? '#3ABA89' :
+      //   index % 1 === 0 && index !== 2 ? '#AC7EB7' :
+      //   null
+      // });
+
       // series.columns.template.stroke = 'red'
       // series.columns.template.fill = am4core.color("yellow")
     }
@@ -231,12 +238,12 @@ class AllChart extends Component {
       //chart.cursor = this.props.cursor ? new am4charts.XYCursor() : null
     }
 
-    console.log("create", series, chart)
     return [series, chart]
   }
 
   componentDidMount() {
-    let seriesChart = this.createChart(this.props.type)
+    console.log(this.props.stateId)
+    let seriesChart = this.createChart(this.props)
     let series = seriesChart[0]
     let chart = seriesChart[1]
 
@@ -255,7 +262,7 @@ class AllChart extends Component {
   }
 
   update() {
-    let seriesChart = this.createChart(this.props.type)
+    let seriesChart = this.createChart(this.props)
     let series = seriesChart[0]
     let chart = seriesChart[1]
     this.setState({
