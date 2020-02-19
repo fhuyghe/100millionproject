@@ -29,7 +29,7 @@ class VideoPlayer extends React.Component {
                     <div className="video-player-container" >
                         <div className="video-player-ratio" >
                         <ReactPlayer
-                                playing={this.state.active}
+                                playing
                                 url={this.props.url}
                                 controls={true}
                                 width="100%"
