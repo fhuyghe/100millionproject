@@ -84,7 +84,7 @@ const About = () => {
                     <li><h5>Director Social engagement</h5>John Hill</li>
                     <li><h5>Music Composed by</h5>Daniel Olshansky</li>
                     <li><h5>Post Supervisor</h5>Dan Hacker</li>
-                    <li><h5>Assistant Editor</h5>David Scherker</li>
+                    <li><h5>Additional Editing/Assistant Editor</h5>David Scherker</li>
                     <li><h5>Production Coordinator</h5>Jessica Luya</li>
                     <li><h5>Graphics and Animation</h5>13milliseconds<br/>Tim Ballard</li>
                     <li><h5>Assistant Camera</h5>Zara Katz<br/>Said Ramirez<br/>Jose Garcia</li>
