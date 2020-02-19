@@ -324,9 +324,13 @@
     }
 
     #news{
-        .news-intro{
-            margin-bottom: $grid-gutter * 2;
+
+        @include media-breakpoint-up(md){
+            .news-intro{
+                margin-bottom: $grid-gutter * 2;
+            }
         }
+        
 
         .emerging-intro{
             padding-top: 200px;
@@ -369,7 +373,6 @@
     }
 
     #emergingText{
-        font-size: 1.5em;
         padding-top: 0;
     }
 

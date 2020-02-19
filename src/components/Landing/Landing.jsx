@@ -335,7 +335,7 @@ class Landing extends React.Component {
 
                 <section id="emergingText">
                     <div className="wrap text-center">
-                            <p>This group's behavior and trends will shape how the overall electorate moves in the coming years. </p>
+                            <h4>This group's behavior and trends will shape how the overall electorate moves in the coming years. </h4>
                     </div>
                 </section>
 
