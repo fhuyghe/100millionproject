@@ -80,12 +80,12 @@ const About = () => {
                     <li><h5>Editor</h5>David Hoon Newman</li>
                     <li><h5>Cinematographer</h5>Ruben Pacheco</li>
                     <li><h5>Production Manager</h5>Maura McGloin</li>
-                    <li><h5>Production Coordinator</h5>Jessica Luya</li>
                     <li><h5>Director Partnerships/Engagement</h5>Lauren Mitte Wood, Enfield Road</li>
                     <li><h5>Director Social engagement</h5>John Hill</li>
                     <li><h5>Music Composed by</h5>Daniel Olshansky</li>
                     <li><h5>Post Supervisor</h5>Dan Hacker</li>
                     <li><h5>Assistant Editor</h5>David Scherker</li>
+                    <li><h5>Production Coordinator</h5>Jessica Luya</li>
                     <li><h5>Graphics and Animation</h5>13milliseconds<br/>Tim Ballard</li>
                     <li><h5>Assistant Camera</h5>Zara Katz<br/>Said Ramirez<br/>Jose Garcia</li>
                     <li><h5>Sound</h5>Mike Haldin<br/>Chris Mas</li>

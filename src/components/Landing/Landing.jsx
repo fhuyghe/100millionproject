@@ -147,9 +147,9 @@ class Landing extends React.Component {
                 <section id="intro">
                     <div className="wrap">
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-lg-6">
                             <h2>During the 2016 presidential election nearly 100 million people, almost half of the eligible voting population in America, <span className="red">did not cast a vote.</span></h2>
-                        </div>
+                            </div>
                         </div>
                     </div>
                     <div id="sign"><img src="/images/100M_story_sign.svg" alt="Voting Sign" /></div>
@@ -189,7 +189,7 @@ class Landing extends React.Component {
 
                 <section id="reasons">
                     <div className="wrap">
-                        <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation, and there are <span>many reasons</span> why they don’t vote.</h2>
+                        <h2>Non-voters do not necessarily fall into a certain gender, race, class, education level, or even political affiliation, and there are <span>many reasons why they don’t vote.</span></h2>
                         {/* TODO: Add title based on prop */}
                         <SingleChart title="Top responses from non-voters" color="yellow" maxValue={20} data={landingData[0]} />
                     </div>
@@ -245,7 +245,7 @@ class Landing extends React.Component {
                         <img alt="" src="images/type-unattached-apolitical.svg" className="type" />
                         <img alt="" src="images/type-modern-moderates.svg" className="type" />
                         <div className="row">
-                            <div className="col-md-8 offset-md-2 text-center">
+                            <div className="col-lg-8 col-md-10 offset-lg-2 offset-md-1 text-center">
                                 <h4>Although there is not one way to define a non-voter, our study identified <Link to="/typesofnonvoters">six types of non-voters.</Link></h4>
                                 <VideoPlayer url="https://youtu.be/jEZxvrCFuxEv" imeoID="76979871" title="Non-voters are as Diverse as N.Y.C.">
                                     <VideoBlock
@@ -266,12 +266,12 @@ class Landing extends React.Component {
                             </div>
                             <div className="swing-triangle"></div>
                         </div>
-                        <div className="col-md-8 offset-md-2 text-center">
+                        <div className="col-md-10 col-lg-8 offset-lg-2 offset-md-1 text-center">
                             <h4>Although non-voters are fairly split across party lines nationally, there are clearer preferences for President in 2020 across swing states.</h4>
                         </div>
 
                         <div id="swingData">
-                            <h2>Explore the swing states</h2>
+                            <h2>Explore the Swing States</h2>
                             <SwingStatesChart {...this.props} />
                         </div>
                     </div>
@@ -350,22 +350,22 @@ class Landing extends React.Component {
                 <section id="browser">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-3 offset-md-1 left">
-                                <div className="highlight">
+                            <div className="col-md-3 offset-md-1">
+                                <div className="highlight desktop-only">
                                     <div className="number">39%</div>
                                     <p>of 18-24 year olds say they primarily access social media</p>
                                 </div>
                                 {/* <InstaWindow image="https://66.media.tumblr.com/30243eb75aa86ee15c7f7f40923b148e/tumblr_pak3z2ET3g1r9qwkso1_500.jpg" /> */}
                             </div>
-                            <div className="col-md-4 offset-md-1">
+                            <div className="col-md-8 col-lg-4 offset-md-3 offset-lg-1">
                                 <div className="popup-wrap">
                                     <PopupWindow id="popup-3" text="The 18-24 year olds are following news and information about politics even less closely than non-voters." />
                                     <PopupWindow id="popup-2" text="Social media, gaming, and streaming services all outpace traditional news sources in this group’s media consumption." />
                                     <PopupWindow id="popup-1" text="When they do encounter the news, it’s often when it’s bumped into on social media where it exists alongside other kinds of content." />
                                 </div>
                             </div>
-                            <div className="col-md-3 right">
-                                <div className="highlight">
+                            <div className="col-md-3">
+                                <div className="highlight desktop-only">
                                     <div className="number">9%</div>
                                     <p>of 18-24 year olds say they primarily access news</p>
                                 </div>
@@ -385,7 +385,7 @@ class Landing extends React.Component {
                 <section id="conclusion">
                     <div className="wrap">
                         <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-8 col-lg-6">
                                 <div className="text">
                                 <h3>The 100 Million Project began as a way to illuminate the challenges that need to be addressed if disengaged voters are to be enticed to the polls.</h3>
                                 <p>Though they make up a large portion of our population, these Americans receive little-to-no attention in national political conversations, and remain a mystery to many institutions. As organizations seek to reach and motivate the disengaged electorate, information from this project should help inform their work.</p>
@@ -394,7 +394,7 @@ class Landing extends React.Component {
                                 </div>
                                     <Button color="yellow" url="https://kf.org/100million" >Download the report</Button>
                         </div>
-                        <div className="col-md-3 offset-md-3">
+                        <div className="col-sm-6 col-md-4 col-lg-3 offset-lg-3">
                             <div className="black box">
                                 <h3> Not planning on voting?</h3>
                                 <p>Tell us why.</p>

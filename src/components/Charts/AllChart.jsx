@@ -26,6 +26,15 @@ class AllChart extends Component {
     console.log(data)
     am4core.useTheme(am4themes_animated)
 
+    let colors = {
+      red: '#F2705E',
+      blue: '#009DE0',
+      yellow: '#F8D807',
+      green: '#3ABA89',
+      purple: '#AC7EB7',
+      grey: '#BFBFBF'
+    }
+
     let chart = am4core.create(
       this.chartRef.current, //"all-chart",
       type === "circle"
@@ -40,11 +49,10 @@ class AllChart extends Component {
     chart.responsive.enabled = true;
 
     chart.colors.list = [
-      am4core.color("#F2705E"),//red
-      am4core.color("#009DE0"),//blue
-      am4core.color("#F8D807"),//yellow
-      am4core.color("#3ABA89"),//green
-      am4core.color("#AC7EB7")//purple
+      am4core.color(colors.blue),
+      am4core.color(colors.yellow),
+      am4core.color(colors.green),
+      am4core.color(colors.purple)
     ];
 
     let series
@@ -56,6 +64,23 @@ class AllChart extends Component {
       series.nodes.template.label.text = "[black]{name}[/]"
       series.nodes.template.label.fontFamily = "Anonymous Pro"
       series.nodes.template.label.wrap = false
+
+      series.colors.list = [
+        am4core.color(colors.yellow),
+        // am4core.color(colors.yellow),
+        am4core.color(colors.green)
+        //am4core.color(colors.purple)
+      ]
+      series.colors.wrap = true;
+
+      series.dataFields.value = "value"
+      series.dataFields.name = "name"
+
+      series.data = this.props.data[this.state.activeIndex]
+
+      series.fontSize = 16
+      series.minRadius = 25
+      series.maxRadius = 120
     }
 
     if (type === "pie") {
@@ -71,16 +96,18 @@ class AllChart extends Component {
       slice.states.getKey("hover").properties.scale = 1;
       slice.states.getKey("active").properties.shiftRadius = 0;
     }
-    if (type === "circle" || type === "pie") {
+
+    if (type === "pie") {
       // console.log(this.state.activeIndex)
       series.colors.list = [
-        am4core.color("#FBD535"),
-        am4core.color("#6B9BCA"),
-        am4core.color("#37B98B")
+        am4core.color(colors.blue),
+        am4core.color(colors.yellow),
+        am4core.color(colors.green),
+        am4core.color(colors.purple)
       ]
       series.dataFields.value = "value"
       series.dataFields.name = "name"
-      series.dataFields.children = "children"
+      //series.dataFields.children = "children"
       // series.dataFields.color = "color"
       series.data = this.props.data[this.state.activeIndex]
       series.fontSize = 16
@@ -88,6 +115,7 @@ class AllChart extends Component {
       series.maxRadius = 120
     }
 
+    ///////////////////////////////////////////// BAR
     if (type === "bar") {
       chart.data = this.props.data[0]
       chart.strokeWidth = 0
@@ -122,21 +150,30 @@ class AllChart extends Component {
       series = chart.series.push(new am4charts.ColumnSeries())
       series.dataFields.categoryX = "name"
       series.dataFields.valueY = "value"
-      series.columns.template.fill = am4core.color("#F8D807")
+      series.columns.template.fill = am4core.color(colors.yellow)
       series.columns.template.strokeWidth = 0
 
-      series.columns.template.adapter.add("fill", function (fill, target) {
+      // If this is the states chart
+      if (data.stateId) { 
+        //Sort the data
+        chart.data.sort(function(a, b) {
+          return (b.value - a.value)
+        });
+        // Change color if the right state is selected
+        series.columns.template.adapter.add("fill", function (fill, target) {
           let currentState = target.dataItem.categoryX
-          return data.stateId === currentState ? '#F8D807' : '#3ABA89'
+          return data.stateId === currentState ? colors.yellow : colors.grey // Yellow / grey
       });
+
+      }
 
        //Color
        const color = this.props.color
        chart.colors.list = color === "red"
-         ? [am4core.color("#F8D807")]//yellow]
+         ? [am4core.color(colors.yellow)]
          :  color === "yellow"
-           ? [am4core.color("#F8D807")]//yellow
-          : [am4core.color("#F2705E")]//blue
+           ? [am4core.color(colors.yellow)]
+          : [am4core.color(colors.blue)]
       
       // Alternating colors
       // series.columns.template.adapter.add("fill", function(fill, target) {
@@ -162,19 +199,19 @@ class AllChart extends Component {
 
       //Colors
       chart.colors.list = [
-        am4core.color("#F8D807"),//yellow
-        am4core.color("#F2705E"),//red
-        am4core.color("#009DE0"),//blue
-        am4core.color("#3ABA89"),//green
-        am4core.color("#AC7EB7")//purple
+        am4core.color(colors.yellow),//yellow
+        am4core.color(colors.red),//red
+        am4core.color(colors.blue),//blue
+        am4core.color(colors.green),//green
+        am4core.color(colors.purple)//purple
       ];
 
       const color = this.props.color
       chart.colors.list = color === "red"
-        ? [am4core.color("#F8D807")]//yellow]
+        ? [am4core.color(colors.yellow)]//yellow]
         : color === "yellow"
-          ? [am4core.color("#F8D807")]//yellow
-          : [am4core.color("#009DE0")]//blue
+          ? [am4core.color(colors.yellow)]//yellow
+          : [am4core.color(colors.blue)]//blue
       
       //Categories
       let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis())

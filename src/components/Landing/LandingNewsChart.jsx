@@ -6,7 +6,7 @@ const LandingNewsChart = () => {
         <div className="landing-news-chart-wrap">
             <div className="landing-seek-chart">
                 <div className="header">
-                    <h3>Choose the statement that best describes you</h3>
+                    <h3>Choose the statement that best describes you.</h3>
                 </div>
                 <div className="content">
                 <div className="line"></div>

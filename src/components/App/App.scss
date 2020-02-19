@@ -21,13 +21,13 @@ html, body{
   display: none;
 }
 
-@include media-breakpoint-up(md){
+@include media-breakpoint-up(lg){
   .mobile-only{
     display: none;
   }
 
   .desktop-only{
-    display: block;
+    display: inherit;
   }
 }
 
@@ -66,22 +66,6 @@ html, body{
   
   &>*:first-child{
     padding: $grid-gutter * 2 0;
-  }
-}
-
-
-
-.desktop-only{
-  display: none;
-}
-
-@include media-breakpoint-up(md){
-  .mobile-only{
-    display: none;
-  }
-
-  .desktop-only{
-    display: inherit;
   }
 }
 
@@ -184,9 +168,9 @@ img, video{
 }
 
 .space-up{
-  margin-top: 100px;
+  margin-top: $grid-gutter;
   
   @include media-breakpoint-up(md){
-    margin-top: 200px;
+    margin-top: $grid-gutter * 2;
   }
 }

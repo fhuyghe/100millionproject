@@ -23,32 +23,32 @@ class LandingQuiz extends React.Component {
 
         let quizOptions = [
             {
-                text: 'More concerned that special interest groups influence elections',
+                text: 'Non-voters are more concerned that special interest groups influence elections',
                 value: false,
                 answer: 'Nope! Non-voters are less concerned about special interest groups influencing elections than active voters. '
             },
             {
-                text: 'Less trust in the elections system',
+                text: 'Non-voters have less trust in the elections system',
                 value: true,
                 answer: 'Correct! Non-voters have less trust in the elections system than active voters.  '
             },
             {
-                text: 'Far more likely to vote Democrat in 2020',
+                text: 'Non-voters are far more likely to vote Democrat in 2020',
                 value: false,
                 answer: 'Nope!   Non-voters are more evenly split Democrat/Republican if they were to all vote in 2020 than active voters,  but also more likely than active voters to vote third party.'
             },
             {
-                text: 'Less consumption of news and information',
+                text: 'Non-voters consume less news and information',
                 value: true,
                 answer: 'Correct! Non-voters consume less news and information than active voters. '
             },
             {
-                text: 'Do not believe that the government works to improve their lives',
+                text: 'Non-voters do not believe that the government works to improve their lives',
                 value: false,
                 answer: 'Nope! Non-voters believe that the government works to improve their lives more than active voters. '
             },
             {
-                text: 'Lower pride in the United States',
+                text: 'Non-voters have lower pride in the United States',
                 value: false,
                 answer: 'Nope! Non-voters have about the same level of pride in the United States as active voters.'
             }
