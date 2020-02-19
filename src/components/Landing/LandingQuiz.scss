@@ -51,15 +51,14 @@
                     background-color: $black;
                     border-color: $black;
 
-                    &:after{
-                        content: 'X';
+                    img{
+                        display: none;
                         position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        color: $white;
-                        font-family: $spoof;
-                        font-size: 30px;
+                        width: 40px;
+                        height: 40px;
+                        max-width: none;
+                        top: -5px;
+                        left: -5px;
                     }
                 }
             }
@@ -71,8 +70,8 @@
                     background-color: $black;
                     border-color: $black;
 
-                    &:after{
-                        content: 'X';
+                    .cross{
+                        display: block;
                     }
                 }
             }
@@ -84,8 +83,9 @@
                     background-color: $black;
                     border-color: $black;
 
-                    &:after{
-                        content: 'V';
+                    .check{
+                        top: -15px;
+                        display: block;
                     }
                 }
             }

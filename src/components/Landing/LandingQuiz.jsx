@@ -62,7 +62,10 @@ class LandingQuiz extends React.Component {
                 return this.state.revealAnswer === index
                     ? <li onClick={() => this.toggleAnswer(index)} className={option.value ? "right" : "wrong"} key={option.text}>
                         <div className="question">
-                            <div className="checkbox active"></div> {option.text}
+                            <div className="checkbox active">
+                                <img alt="check" src="images/check-mark.png" className="check" />
+                                <img alt="cross" src="images/x-mark.png" className="cross" />
+                            </div> {option.text}
                             </div>
                         <p>{option.answer}</p>
                         </li>
