@@ -362,7 +362,7 @@ export const landingData = [{
   },
   {
     name: "How confident are you that the results of an election represent the will of the people?",
-    type: 'line',
+    type: 'bar',
     legend: ['Voters', 'Non-voters'],
     children: [
       {

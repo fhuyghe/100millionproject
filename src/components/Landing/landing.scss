@@ -98,9 +98,14 @@
             position: relative;
 
             .bubble{
-                position: absolute;
-                top: -250px;
-                right: 0;
+                display: none;
+                
+                @include media-breakpoint-up(md){
+                    display: block;
+                    position: absolute;
+                    top: -250px;
+                    right: 0;
+                }
             }
         }
 

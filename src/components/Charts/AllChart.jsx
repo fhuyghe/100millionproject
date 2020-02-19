@@ -43,7 +43,6 @@ class AllChart extends Component {
       am4core.color("#AC7EB7")//purple
     ];
 
-
     let series
 
     if (type === "circle") {
@@ -93,13 +92,18 @@ class AllChart extends Component {
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis())
       categoryAxis.dataFields.category = "name"
       categoryAxis.renderer.grid.template.disabled = true;
+      categoryAxis.renderer.minGridDistance = 10;
 
+      //labels styling
+      let label = categoryAxis.renderer.labels.template;
+      label.wrap = true;
+      label.maxWidth = 120;
 
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis())
       valueAxis.max = this.props.maxValue || 10
       valueAxis.min = 0
-      valueAxis.renderer.grid.template.disabled = true;
-      valueAxis.renderer.labels.template.disabled = true;
+      //valueAxis.renderer.grid.template.disabled = true;
+      //valueAxis.renderer.labels.template.disabled = true;
       valueAxis.tooltip.disabled = true;
 
 
@@ -107,7 +111,7 @@ class AllChart extends Component {
       series = chart.series.push(new am4charts.ColumnSeries())
       series.dataFields.categoryX = "name"
       series.dataFields.valueY = "value"
-      series.columns.template.fill = am4core.color("red")
+      series.columns.template.fill = am4core.color("#F8D807")
       // series.columns.template.fill = am4core.color("yellow")
     }
     
@@ -146,8 +150,8 @@ class AllChart extends Component {
       valueAxis.max = this.props.maxValue || 100
       valueAxis.min = 0
       
-      valueAxis.renderer.labels.template.disabled = true
-      valueAxis.tooltip.disabled = true
+      valueAxis.renderer.labels.template.disabled = false
+      valueAxis.tooltip.disabled = false
       // categoryAxis.renderer.grid.template.disabled = true
       // valueAxis.renderer.grid.template.disabled = true
       
@@ -175,6 +179,16 @@ class AllChart extends Component {
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis())
       categoryAxis.dataFields.category = "name"
       categoryAxis.renderer.inside = true;
+      categoryAxis.renderer.grid.template.disabled = true;
+      // categoryAxis.renderer.labels.template.rotation = 45;
+      // categoryAxis.renderer.labels.template.verticalCenter = "middle";
+      // categoryAxis.renderer.labels.template.horizontalCenter = "left";
+      categoryAxis.renderer.minGridDistance = 10;
+
+      //labels styling
+      let label = categoryAxis.renderer.labels.template;
+      label.wrap = true;
+      label.maxWidth = 120;
       
       // Values
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis())
@@ -188,7 +202,7 @@ class AllChart extends Component {
       valueAxis.renderer.labels.wrap = true
       
       //Cursor
-      chart.cursor = this.props.cursor ? new am4charts.XYCursor() : null
+      //chart.cursor = this.props.cursor ? new am4charts.XYCursor() : null
     }
 
     console.log("create", series, chart)
