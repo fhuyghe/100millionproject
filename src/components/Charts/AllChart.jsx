@@ -81,6 +81,7 @@ class AllChart extends Component {
 
     if (type === "bar") {
       chart.data = this.props.data[0]
+      chart.strokeWidth = 0
       
       //Color
       const color = this.props.color
@@ -93,13 +94,24 @@ class AllChart extends Component {
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis())
       categoryAxis.dataFields.category = "name"
       categoryAxis.renderer.grid.template.disabled = true;
+      categoryAxis.renderer.minGridDistance = 10;
 
+
+
+      // "categoryAxesSettings": {
+      //   "minPeriod": "mm",
+      //   "autoGridCount": false,
+      //   "equalSpacing": true,
+      //   "gridCount": 1000,
+      //   "labelRotation": 90, //recommended if you have a lot of labels
+      //   "axisHeight": 50  //recommended to avoid overlap with the scrollbar
+      // },
 
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis())
       valueAxis.max = this.props.maxValue || 10
       valueAxis.min = 0
       valueAxis.renderer.grid.template.disabled = true;
-      valueAxis.renderer.labels.template.disabled = true;
+      // valueAxis.renderer.labels.template.disabled = true;
       valueAxis.tooltip.disabled = true;
 
 
@@ -108,6 +120,18 @@ class AllChart extends Component {
       series.dataFields.categoryX = "name"
       series.dataFields.valueY = "value"
       series.columns.template.fill = am4core.color("red")
+
+      series.columns.template.adapter.add("fill", function(fill, target) {
+        let index = target.dataItem.index
+        return index % 3 === 0 && index !== 2 ? "#F8D807" :
+        index % 2 === 0 ? '#009DE0' :
+        index % 1 === 0 && index !== 2 ? '#AC7EB7' :
+        null
+
+
+       
+      });
+      // series.columns.template.stroke = 'red'
       // series.columns.template.fill = am4core.color("yellow")
     }
     
