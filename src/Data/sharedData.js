@@ -79,9 +79,9 @@ export const surveyData = [
           MN: [29],
           NV: [33],
           NH: [29],
-          WI: [33],
           PA: [28],
-          VA: [31]
+          VA: [31],
+          WI: [33]
         }
       },
       {
@@ -95,9 +95,9 @@ export const surveyData = [
           MN: [29],
           NV: [33],
           NH: [30],
-          WI: [31],
           PA: [36],
-          VA: [5]
+          VA: [35],
+          WI: [31]
         }
       },
       {
@@ -111,9 +111,9 @@ export const surveyData = [
           MN: [20],
           NV: [21],
           NH: [23],
-          WI: [19],
           PA: [18],
-          VA: [18]
+          VA: [18],
+          WI: [19]
         }
       },
       {
@@ -127,9 +127,9 @@ export const surveyData = [
           MN: [23],
           NV: [13],
           NH: [18],
-          WI: [17],
           PA: [19],
-          VA: [17]
+          VA: [17],
+          WI: [17]
         }
       }
     ]
