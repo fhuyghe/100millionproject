@@ -49,7 +49,6 @@ class SwingStatesChart extends Component {
 
   render() {
     let { stateInfo, chartType } = this.state
-    console.log(stateInfo)
     let options = swingStates.map((state, i) => (
       <option key={i} value={state.abbr}>
         {state.name}
@@ -66,7 +65,6 @@ class SwingStatesChart extends Component {
             options={options}
           />
         </div>
-        {console.log(stateInfo)}
         <Chart stateId={stateInfo.abbr} chartType={chartType} />
       </div>
     )

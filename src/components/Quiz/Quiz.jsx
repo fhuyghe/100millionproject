@@ -48,9 +48,6 @@ class Quiz extends Component {
 
     // Get leading result
     let indexOfLeadingResult = newResultScores.indexOf(highestScore);
-    // console.log("Highest score " + highestScore)
-    // console.log("New result scores " + newResultScores)
-    // console.log("indexOfLeadingResult " + indexOfLeadingResult)
     this.setState({
       resultScores: newResultScores,
       currentQuestion: this.state.currentQuestion + 1,
@@ -67,16 +64,10 @@ class Quiz extends Component {
         highestScore = score;
       }
     })
-    console.log('Score in getHighestScore: ', highestScore)
     return highestScore;
   }
 
   render() {
-    console.log("New result scores " + this.state.resultScores)
-    console.log("indexOfLeadingResult " + this.state.indexOfLeadingResult)
-    console.log("currentQuestion " + this.state.currentQuestion)
-    console.log("number of questions " + questions.length)
-
     let leadingResult = results[this.state.indexOfLeadingResult]
 
     return (

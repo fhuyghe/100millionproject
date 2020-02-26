@@ -6,16 +6,10 @@ class QuizSlider extends Component {
     super(props);
     this.state = { value: 5 };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    console.log(event.target.value)
     this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(){
-    console.log(this.props)
   }
 
   render() {

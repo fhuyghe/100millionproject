@@ -23,7 +23,6 @@ class AllChart extends Component {
 
   createChart(data) {
     const type = data.type
-    console.log(data)
     am4core.useTheme(am4themes_animated)
 
     let colors = {
@@ -279,7 +278,6 @@ class AllChart extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.stateId)
     let seriesChart = this.createChart(this.props)
     let series = seriesChart[0]
     let chart = seriesChart[1]
@@ -309,7 +307,6 @@ class AllChart extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log("cdu", this.props, prevProps, this.state)
     this.props.name !== prevProps.name && this.update()
     // this.props.stateId !== prevProps.stateId && this.update()
 

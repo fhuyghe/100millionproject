@@ -22,7 +22,6 @@ class QuizResult extends Component {
                   <p>{result.description}</p>
                   <h3>Behavior</h3>
                   {result.behaviors.map(data => { 
-                    console.log(data)
                     return <p>{data}</p>
                   })}
                   <h3>Demographics</h3>

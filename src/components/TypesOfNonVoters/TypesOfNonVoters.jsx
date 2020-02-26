@@ -16,7 +16,6 @@ class TypesOfNonVoters extends React.Component {
                     <p>{type.description}</p>
                     <DrawerToggle title="Behavior">
                     {type.behaviors.map(data => { 
-                        console.log(data)
                         return <p>{data}</p>
                     })}
                     </DrawerToggle>

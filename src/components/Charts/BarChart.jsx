@@ -41,7 +41,6 @@ class BarChart extends Component {
     this.state = {}
   }
   componentDidMount() {
-    console.log(this.props.data)
 
     let chart = this.createChart(this.props.data)
 
@@ -62,7 +61,6 @@ class BarChart extends Component {
 
  
   createChart(data) {
-     console.log(this.props.data)
     const ctx = document.querySelector("#states")
     let barChart = new Chart(ctx, {
       type: "bar",
@@ -127,7 +125,6 @@ class BarChart extends Component {
     }
   }
   render() {
-    console.log(this.props)
     this.state.chart && this.updateData()
     return (
       <main className="chart-main">
