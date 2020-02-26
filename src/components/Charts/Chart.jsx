@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 
 import AllChart from "./AllChart"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 import "./Chart.scss"
 import ChartSelect from "../Shared/ChartSelect"
 
