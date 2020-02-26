@@ -1,6 +1,6 @@
 # The 100 Million Project website
 
-Interactive data visualization website for the [Knight's Foundation](https://knightfoundation.org) new report about American Nonvoters. See the live website at [the100million.org](https://the100million.org) and the full report [here](https://knightfoundation.org/reports/the-100-million-project/).
+Interactive data visualization website for the [Knight's Foundation](https://knightfoundation.org) new report about American non-voters. See the live website at [the100million.org](https://the100million.org) and the full report [here](https://knightfoundation.org/reports/the-100-million-project/).
 
 ## Built with
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -8,6 +8,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [amCharts](https://www.amcharts.com/)
 
 [ScrollMagic](https://scrollmagic.io/)
+
+[Fort Awesome](https://fortawesome.com/)
 
 ## Get Started
 In the project directory, you can run:
