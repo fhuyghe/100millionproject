@@ -1,2 +1,3 @@
 # https://www.robotstxt.org/robotstxt.html
+Sitemap: https://the100million.org/sitemap.xml
 User-agent: *
