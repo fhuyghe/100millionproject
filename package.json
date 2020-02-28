@@ -48,7 +48,7 @@
     "extends": "react-app"
   },
   "reactSnap": {
-    "skipThirdPartyRequests": true,
+    //"skipThirdPartyRequests": true,
     "asyncScriptTags": true
   },
   "browserslist": {
