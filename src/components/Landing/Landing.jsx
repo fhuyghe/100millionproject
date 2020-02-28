@@ -5,7 +5,6 @@ import * as ScrollMagic from "scrollmagic";
 import { TweenMax, TimelineMax, Linear } from "gsap";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import PopupWindow from './PopupWindow' 
-import InstaWindow from './InstaWindow'
 import { CountUp } from 'countup.js'
 import LandingQuiz from './LandingQuiz'
 import Button from '../Shared/Button'
@@ -347,7 +346,6 @@ class Landing extends React.Component {
                                     <div className="number">39%</div>
                                     <p>of 18-24 year olds say they primarily access social media</p>
                                 </div>
-                                {/* <InstaWindow image="https://66.media.tumblr.com/30243eb75aa86ee15c7f7f40923b148e/tumblr_pak3z2ET3g1r9qwkso1_500.jpg" /> */}
                             </div>
                             <div className="col-md-8 col-lg-4 offset-md-3 offset-lg-1">
                                 <div className="popup-wrap">
@@ -361,7 +359,6 @@ class Landing extends React.Component {
                                     <div className="number">9%</div>
                                     <p>of 18-24 year olds say they primarily access news</p>
                                 </div>
-                                {/* <InstaWindow image="https://media.giphy.com/media/4pMX5rJ4PYAEM/giphy.gif"/> */}
                             </div>
                             </div>
                     </div>
