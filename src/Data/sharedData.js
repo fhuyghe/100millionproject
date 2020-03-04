@@ -420,7 +420,7 @@ export const landingData = [{
         values: [14, 26, 30]
       },
       {
-        name: "Technical Scool",
+        name: "Technical School",
         values: [3, 6, 3]
       },
       {
