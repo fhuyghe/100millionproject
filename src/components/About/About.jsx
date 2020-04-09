@@ -10,6 +10,7 @@ const About = () => {
                 <h2>About the John S. and James L. Knight Foundation</h2>
                 <p>Knight Foundation is a national foundation with strong local roots. We invest in journalism, in the arts, and in the success of cities where brothers John S. and James L. Knight once published newspapers. Our goal is to foster informed and engaged communities, which we believe are essential for a healthy democracy.</p>
                 <p>For more, visit <a href="https://kf.org" target="_blank" rel="noopener noreferrer">kf.org</a>.</p>
+                <p>For press or media inquiries, contact <a href="mailto:media@kf.org" target="_blank">media@kf.org</a>.</p>
             </div>
         </section>
 
