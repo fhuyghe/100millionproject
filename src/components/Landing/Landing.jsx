@@ -189,7 +189,7 @@ class Landing extends React.Component {
                     <div className="wrap">
                         <div className="row">
                             <div className="col-lg-6">
-                            <VideoPlayer active={true} url="https://youtu.be/9nDwFBWk0ZA" title=""></VideoPlayer>
+                            {/* <VideoPlayer active={true} url="https://youtu.be/9nDwFBWk0ZA" title=""></VideoPlayer> */}
                             <h2>During the 2016 presidential election nearly 100 million people, almost half of the eligible voting population in America, <span className="red">did not cast a vote.</span></h2>
                             </div>
                         </div>
@@ -208,6 +208,15 @@ class Landing extends React.Component {
                             <h4>chronic non-voters in America, across the country and in key battleground states.</h4>
                             <h4>The study sought to understand who they are, what they care about and surface insights about why they don’t vote.</h4>
                         </div>
+                        <div className="explainer-video">
+                        <div className="video-thumbnail">
+                            <h3>Who Are the 100 Million?</h3>
+                                <VideoPlayer url="https://youtu.be/9nDwFBWk0ZA" title="Who Are the 100 Million?">
+                                    <VideoBlock video="explainer" playSign={true}/>
+                                </VideoPlayer>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
