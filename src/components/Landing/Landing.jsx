@@ -143,6 +143,48 @@ class Landing extends React.Component {
 
         return (
             <div className="landing-page">
+                <section id="conclusion">
+                    <div className="wrap">
+                        <div className="row">
+                        <div className="col-md-8 col-lg-6">
+                                <div className="text">
+                                <h3>The 100 Million Project began as a way to illuminate the challenges that need to be addressed if disengaged voters are to be enticed to the polls.</h3>
+                                <p>Though they make up a large portion of our population, these Americans receive little-to-no attention in national political conversations, and remain a mystery to many institutions. As organizations seek to reach and motivate the disengaged electorate, information from this project should help inform their work.</p>
+                                <p>The 100 Million Project helps dispel outdated assumptions about non-voters. These are our fellow citizens, and they come from every walk of life. But there are some factors that unite them, which we examine in this report. By bringing to life this diverse group and their views on politics, the study acts as a clarion call to energize a new generation of engaged citizens — and ensure all citizens have a voice in our democracy.</p>
+                                <p>Read our follow up article on <a href="http://kf.org/100millionblog" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
+                                </div>
+                                    <Button color="yellow" url="https://kf.org/100million" >Download the report</Button>
+                        </div>
+                        <div className="col-sm-6 col-md-4 col-lg-3 offset-lg-3">
+                            <div className="black box">
+                                <h3> Not planning on voting?</h3>
+                                <p>Tell us why.</p>
+                                <SocialLinks />
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="next">
+                    <div className="row">
+                        <div className="col-md-4 next-item" id="explore">
+                            <h2>Explore</h2>
+                            <p>See how non-voters can impact swing states.</p>
+                            <Button color="black" to="/swingstates">Explore</Button>
+                        </div>
+                        <div className="col-md-4 next-item" id="watch">
+                            <h2>Watch</h2>
+                            <p>Travel to Arizona, West Virginia and New York to learn why some citizens who can vote, don’t.</p>
+                            <Button color="black" to="/videos">Watch</Button>
+                        </div>
+                        <div className="col-md-4 next-item" id="learn">
+                            <h2>Learn</h2>
+                            <p>Are you a modern moderate, a traditional conservative or a unattached apolitical?</p>
+                            <Button color="black" to="/typesofnonvoters">Learn</Button>
+                        </div>
+                    </div>
+                </section>
                 <section id="intro">
                     <div className="wrap">
                         <div className="row">
@@ -368,49 +410,6 @@ class Landing extends React.Component {
                     <div className="wrap text-center">
                         <h4>The emerging electorate are more dissatisfied with President Trump than current voters and non-voters. A significant portion would rather vote for the Democratic Party’s nominee  (38%) than re-elect President Trump (22%)</h4>
                         <h2><span className="disappear">Are we </span>losing<span className="disappear"> a generation of </span>voters?</h2>
-                    </div>
-                </section>
-
-                <section id="conclusion">
-                    <div className="wrap">
-                        <div className="row">
-                        <div className="col-md-8 col-lg-6">
-                                <div className="text">
-                                <h3>The 100 Million Project began as a way to illuminate the challenges that need to be addressed if disengaged voters are to be enticed to the polls.</h3>
-                                <p>Though they make up a large portion of our population, these Americans receive little-to-no attention in national political conversations, and remain a mystery to many institutions. As organizations seek to reach and motivate the disengaged electorate, information from this project should help inform their work.</p>
-                                <p>The 100 Million Project helps dispel outdated assumptions about non-voters. These are our fellow citizens, and they come from every walk of life. But there are some factors that unite them, which we examine in this report. By bringing to life this diverse group and their views on politics, the study acts as a clarion call to energize a new generation of engaged citizens — and ensure all citizens have a voice in our democracy.</p>
-                                <p>Read our follow up article on <a href="http://kf.org/100millionblog" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
-                                </div>
-                                    <Button color="yellow" url="https://kf.org/100million" >Download the report</Button>
-                        </div>
-                        <div className="col-sm-6 col-md-4 col-lg-3 offset-lg-3">
-                            <div className="black box">
-                                <h3> Not planning on voting?</h3>
-                                <p>Tell us why.</p>
-                                <SocialLinks />
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="next">
-                    <div className="row">
-                        <div className="col-md-4 next-item" id="explore">
-                            <h2>Explore</h2>
-                            <p>See how non-voters can impact swing states.</p>
-                            <Button color="black" to="/swingstates">Explore</Button>
-                        </div>
-                        <div className="col-md-4 next-item" id="watch">
-                            <h2>Watch</h2>
-                            <p>Travel to Arizona, West Virginia and New York to learn why some citizens who can vote, don’t.</p>
-                            <Button color="black" to="/videos">Watch</Button>
-                        </div>
-                        <div className="col-md-4 next-item" id="learn">
-                            <h2>Learn</h2>
-                            <p>Are you a modern moderate, a traditional conservative or a unattached apolitical?</p>
-                            <Button color="black" to="/typesofnonvoters">Learn</Button>
-                        </div>
                     </div>
                 </section>
 

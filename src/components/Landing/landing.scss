@@ -429,6 +429,7 @@
     #conclusion{
         background-color: $white;
         color: $black;
+        padding-top: 100px;
         padding-bottom: 200px;
 
         .text{
@@ -447,7 +448,7 @@
         }
 
         @include media-breakpoint-up(lg){
-            padding-bottom: 400px;
+            padding-bottom: 100px;
 
             .box{
                 margin-top: $grid-gutter;
@@ -459,6 +460,10 @@
         background-position: bottom right;
         background-repeat: no-repeat;
         background-size: 60%;
+
+        @include media-breakpoint-up(md){
+            background-size: 45%;
+        }
     }
 
     #next{
@@ -473,7 +478,7 @@
             }
             
             @include media-breakpoint-up(lg){
-                padding: 200px $grid-gutter;
+                padding: 100px $grid-gutter;
             }
 
             h2{
