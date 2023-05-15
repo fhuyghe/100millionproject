@@ -2,6 +2,8 @@
 
 Interactive data visualization website for the [Knight's Foundation](https://knightfoundation.org) new report about American non-voters. See the live website at [the100million.org](https://the100million.org) and the full report [here](https://knightfoundation.org/reports/the-100-million-project/).
 
+![Screenshot](https://i.imgur.com/2ilaUKf.png)
+
 ## Built with
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
